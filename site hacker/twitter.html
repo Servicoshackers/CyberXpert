@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter your verification code / X</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=TwitterChirp:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'TwitterChirp', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #000;
+            color: #e7e9ea;
+        }
+        
+        .twitter-blue {
+            color: #1d9bf0;
+        }
+        
+        .twitter-blue-bg {
+            background-color: #1d9bf0;
+        }
+        
+        .twitter-blue-bg:hover {
+            background-color: #1a8cd8;
+        }
+        
+        .input-border {
+            border-color: #333;
+        }
+        
+        .input-border:focus {
+            border-color: #1d9bf0;
+            box-shadow: 0 0 0 1px #1d9bf0;
+        }
+        
+        .divider {
+            border-color: #2f3336;
+        }
+        
+        .auth-box {
+            background-color: #16181c;
+            border-color: #333;
+        }
+        
+        .link-hover:hover {
+            background-color: rgba(231, 233, 234, 0.1);
+        }
+        
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: #1d9bf0;
+            border-color: #1d9bf0;
+        }
+        
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 5px;
+            top: 1px;
+            width: 4px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-black bg-opacity-80 backdrop-blur-sm">
+        <div class="max-w-600px mx-auto px-4 py-3 flex items-center">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-gray-800 transition cursor-pointer">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </div>
+            <div class="ml-6">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="w-8 h-8 text-white">
+                    <g><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col max-w-600px mx-auto w-full px-4">
+        <div class="py-5">
+            <h1 class="text-3xl font-bold mb-6">Enter your verification code</h1>
+            
+            <div class="auth-box border rounded-2xl p-4 mb-4">
+                <div class="flex items-start mb-4">
+                    <div class="bg-gray-800 rounded-full p-3 mr-3">
+                        <i class="fas fa-lock text-xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Two-factor authentication required</h2>
+                        <p class="text-gray-500 text-sm">To help keep your account safe, Twitter requires this additional verification when you log in.</p>
+                    </div>
+                </div>
+                
+                <div class="divider border-t my-3"></div>
+                
+                <div class="mb-4">
+                    <p class="text-sm text-gray-500 mb-2">We sent a code to your phone ending in •••••••7319</p>
+                    <div class="relative">
+                        <input type="text" class="w-full bg-transparent border input-border rounded-lg py-3 px-4 focus:outline-none" placeholder="Enter code">
+                        <button class="absolute right-3 top-3 text-gray-500 hover:text-twitter-blue">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-gray-800 text-white font-bold py-3 px-4 rounded-full mb-3 hover:bg-gray-700 transition">
+                    Didn't receive a code?
+                </button>
+                
+                <div class="divider border-t my-3"></div>
+                
+                <div class="flex items-center">
+                    <label class="checkbox-container flex items-center cursor-pointer">
+                        <input type="checkbox" class="absolute opacity-0 cursor-pointer h-0 w-0">
+                        <span class="checkmark h-5 w-5 border rounded-sm border-gray-500 flex-shrink-0"></span>
+                        <span class="ml-2 text-sm">Remember this device</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="w-full twitter-blue-bg text-white font-bold py-3 px-4 rounded-full hover:bg-blue-500 transition">
+                Next
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-3 px-4 text-center text-sm text-gray-500">
+        <div class="max-w-600px mx-auto">
+            <div class="flex flex-wrap justify-center">
+                <a href="#" class="px-3 py-1 hover:underline">Terms of Service</a>
+                <a href="#" class="px-3 py-1 hover:underline">Privacy Policy</a>
+                <a href="#" class="px-3 py-1 hover:underline">Cookie Policy</a>
+                <a href="#" class="px-3 py-1 hover:underline">Accessibility</a>
+                <a href="#" class="px-3 py-1 hover:underline">Ads info</a>
+                <a href="#" class="px-3 py-1 hover:underline">More</a>
+            </div>
+            <div class="mt-2">© 2025 X Corp.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle the checkbox interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.checkbox-container input');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checkmark = this.nextElementSibling;
+                    if (this.checked) {
+                        checkmark.classList.add('bg-twitter-blue', 'border-twitter-blue');
+                    } else {
+                        checkmark.classList.remove('bg-twitter-blue', 'border-twitter-blue');
+                    }
+                });
+            });
+            
+            // Handle back button click
+            document.querySelector('.fa-arrow-left').parentElement.addEventListener('click', function() {
+                alert('Back button clicked - would normally navigate back');
+            });
+            
+            // Handle next button click
+            document.querySelector('.twitter-blue-bg').addEventListener('click', function() {
+                const codeInput = document.querySelector('input[type="text"]');
+                if (!codeInput.value) {
+                    alert('Please enter your verification code');
+                } else {
+                    alert('Code submitted - would normally verify and proceed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

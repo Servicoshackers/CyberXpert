@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberXpert - Diretório de Serviços Hacker</title>
+    <meta name="description" content="Diretório completo de serviços hackers profissionais. Soluções discretas e eficientes para suas necessidades digitais.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6d28d9',
+                        'primary-dark': '#5b21b6',
+                        secondary: '#10b981',
+                        dark: '#1e293b',
+                        light: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #10b981;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            background-color: #6d28d9;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: #5b21b6;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button i {
+            font-size: 24px;
+        }
+        
+        .service-tabs .tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .service-tabs .tab.active {
+            background-color: #6d28d9;
+            color: white;
+        }
+        
+        .service-tabs .tab:not(.active):hover {
+            background-color: #1e293b;
+        }
+        
+        .service-content {
+            display: none;
+        }
+        
+        .service-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .feature-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ec4899;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #6d28d9;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #6d28d9;
+            border: 4px solid #1e293b;
+        }
+        
+        .tooltip {
+            position: relative;
+        }
+        
+        .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #1e293b;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            border: 1px solid #6d28d9;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Media queries para ajustar o posicionamento em telas menores */
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .timeline::before {
+                left: 15px;
+            }
+            
+            .timeline-item::before {
+                left: -35px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center text-green-400">
+                <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse"></div>
+                <span>Online 24/7</span>
+            </div>
+            <div class="flex items-center">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="ml-2">4.8/5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="https://wa.me/5511999999999" class="hover:text-purple-400 transition"><i class="fas fa-phone-alt mr-1"></i> Suporte</a>
+            <a href="https://cyberxpert.com/track-order" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="https://cyberxpert.com" class="text-2xl font-bold gradient-text flex items-center">
+                    <i class="fas fa-user-secret mr-2"></i>
+                    <span>CyberXpert</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="https://cyberxpert.com/about" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
+                <a href="https://cyberxpert.com/faq" class="nav-link font-medium hover:text-purple-400">FAQ</a>
+                <a href="https://cyberxpert.com/contact" class="nav-link font-medium hover:text-purple-400">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
+            <a href="#services" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="https://cyberxpert.com/about" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="https://cyberxpert.com/faq" class="block py-2 hover:text-purple-400">FAQ</a>
+            <a href="https://cyberxpert.com/contact" class="block py-2 hover:text-purple-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Diretório de Serviços</span><br>
+                    <span class="text-white">Hackers Profissionais</span>
+                </h1>
+                <p class="text-lg text-gray-300 mb-8">
+                    Explore nosso catálogo completo de serviços digitais especializados. 
+                    Soluções precisas e discretas para suas necessidades mais complexas, 
+                    executadas por especialistas certificados em segurança cibernética.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#services" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">
+                        <i class="fas fa-search mr-2"></i> Explorar Serviços
+                    </a>
+                    <a href="https://wa.me/5511999999999" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">
+                        <i class="fas fa-comments mr-2"></i> Consultoria Rápida
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-purple-500 rounded-full opacity-20 blur-xl"></div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Hacker Illustration" class="relative z-10 w-full h-full object-contain floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Directory -->
+    <section id="services" class="py-16 px-4 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Diretório de Serviços</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Nossa gama completa de soluções digitais profissionais. Selecione uma categoria para ver detalhes.
+                </p>
+            </div>
+            
+            <!-- Service Tabs -->
+            <div class="service-tabs flex flex-wrap justify-center gap-2 mb-12">
+                <div class="tab active px-4 py-2 rounded-lg font-medium" data-tab="social">Redes Sociais</div>
+                <div class="tab px-4 py-2 rounded-lg font-medium" data-tab="devices">Dispositivos</div>
+                <div class="tab px-4 py-2 rounded-lg font-medium" data-tab="financial">Financeiro</div>
+                <div class="tab px-4 py-2 rounded-lg font-medium" data-tab="education">Educação</div>
+                <div class="tab px-4 py-2 rounded-lg font-medium" data-tab="monitoring">Monitoramento</div>
+                <div class="tab px-4 py-2 rounded-lg font-medium" data-tab="custom">Sob Medida</div>
+            </div>
+            
+            <!-- Social Media Services -->
+            <div class="service-content active" id="social">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-share-alt mr-3 text-purple-500"></i> Serviços para Redes Sociais
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- WhatsApp -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card relative">
+                        <div class="feature-badge">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear WhatsApp</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a qualquer conta do WhatsApp. Leia mensagens, visualize mídias e muito mais, tudo de forma remota.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>24-48 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">98%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.200</span>
+                                <a href="https://cyberxpert.com/whatsapp-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Instagram -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Instagram</h3>
+                            <p class="text-gray-400 mb-4">
+                                Recupere contas perdidas ou acesse qualquer perfil do Instagram. Visualize mensagens diretas e posts privados.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>12-24 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">95%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 950</span>
+                                <a href="https://cyberxpert.com/instagram-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Facebook -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Facebook</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a qualquer conta do Facebook. Visualize mensagens privadas, posts ocultos e informações da conta.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>24-72 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">90%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.100</span>
+                                <a href="https://cyberxpert.com/facebook-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TikTok -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear TikTok</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a contas do TikTok. Visualize mensagens diretas, vídeos privados e informações da conta.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>12-36 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">92%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 900</span>
+                                <a href="https://cyberxpert.com/tiktok-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Twitter -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Twitter</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a contas do Twitter. Visualize mensagens diretas, tweets protegidos e informações da conta.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-green-400">Baixa</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>6-12 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">97%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 850</span>
+                                <a href="https://cyberxpert.com/twitter-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Telegram -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111644.png" alt="Telegram" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Telegram</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a contas do Telegram. Visualize chats secretos, mensagens autodestrutivas e informações da conta.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>48-72 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">85%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.500</span>
+                                <a href="https://cyberxpert.com/telegram-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Devices Services -->
+            <div class="service-content" id="devices">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-mobile-alt mr-3 text-purple-500"></i> Serviços para Dispositivos
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Celular -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card relative">
+                        <div class="feature-badge">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Celular" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Celular</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso remoto completo a qualquer smartphone. Monitore atividades, mensagens, localização e aplicativos.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>48-96 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">88%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.800</span>
+                                <a href="https://cyberxpert.com/phone-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Computador -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2965/2965278.png" alt="Computador" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Computador</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso remoto completo a qualquer computador. Monitore atividades, arquivos, histórico e aplicativos.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>72-120 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">82%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 2.500</span>
+                                <a href="https://cyberxpert.com/computer-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Email</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a qualquer conta de email. Visualize mensagens, contatos e arquivos anexados.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>24-48 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">93%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.000</span>
+                                <a href="https://cyberxpert.com/email-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- iCloud -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/882/882745.png" alt="iCloud" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear iCloud</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a contas iCloud. Visualize fotos, mensagens, backups e localização de dispositivos Apple.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>72-120 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">80%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 2.200</span>
+                                <a href="https://cyberxpert.com/icloud-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Android -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/226/226770.png" alt="Android" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Android</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso remoto completo a dispositivos Android. Monitore atividades, mensagens, localização e aplicativos.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>24-48 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">91%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.500</span>
+                                <a href="https://cyberxpert.com/android-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- iPhone -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/882/882712.png" alt="iPhone" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear iPhone</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso remoto completo a dispositivos iPhone. Monitore atividades, mensagens, localização e aplicativos.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>48-96 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">85%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 2.000</span>
+                                <a href="https://cyberxpert.com/iphone-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Financial Services -->
+            <div class="service-content" id="financial">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-money-bill-wave mr-3 text-purple-500"></i> Serviços Financeiros
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Recuperação de Fundos -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card relative">
+                        <div class="feature-badge">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2933/2933315.png" alt="Recuperação de Fundos" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Recuperação de Fundos</h3>
+                            <p class="text-gray-400 mb-4">
+                                Recupere seu dinheiro perdido em golpes, fraudes ou contas bloqueadas. Especialistas em criptomoedas e bancos.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>7-14 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">75%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">10% do valor</span>
+                                <a href="https://cyberxpert.com/fund-recovery" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hackear Banco -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2489/2489138.png" alt="Hackear Banco" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Conta Bancária</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso a contas bancárias online. Visualize extratos, transferências e informações financeiras.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>5-10 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">70%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">Sob consulta</span>
+                                <a href="https://cyberxpert.com/bank-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Criptomoedas -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4785/4785455.png" alt="Criptomoedas" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Recuperar Criptomoedas</h3>
+                            <p class="text-gray-400 mb-4">
+                                Recupere criptomoedas perdidas em golpes, carteiras bloqueadas ou esquecimento de senhas.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>7-21 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">65%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">15% do valor</span>
+                                <a href="https://cyberxpert.com/crypto-recovery" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cartão de Crédito -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Cartão de Crédito" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Cartão de Crédito</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso a informações de cartões de crédito. Visualize extratos, limites e histórico de compras.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>5-10 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">68%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.500</span>
+                                <a href="https://cyberxpert.com/credit-card-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PayPal -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2504/2502791.png" alt="PayPal" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear PayPal</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a contas PayPal. Visualize saldo, histórico de transações e informações da conta.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>3-7 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">85%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.200</span>
+                                <a href="https://cyberxpert.com/paypal-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Binance -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968208.png" alt="Binance" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Binance</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso completo a contas Binance. Visualize saldo, histórico de transações e informações da conta.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>5-10 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">72%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.800</span>
+                                <a href="https://cyberxpert.com/binance-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education Services -->
+            <div class="service-content" id="education">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap mr-3 text-purple-500"></i> Serviços Educacionais
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Faculdade -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card relative">
+                        <div class="feature-badge">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="Faculdade" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Hackear Faculdade</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso a sistemas acadêmicos para alteração de notas, frequência ou obtenção de provas e materiais exclusivos.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>5-15 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">78%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">Sob consulta</span>
+                                <a href="https://cyberxpert.com/school-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ENEM -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="ENEM" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Alterar Nota ENEM</h3>
+                            <p class="text-gray-400 mb-4">
+                                Alteração de notas no sistema do ENEM para garantir sua aprovação no curso desejado.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>10-20 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">70%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 3.500</span>
+                                <a href="https://cyberxpert.com/enem-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Diploma -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3976/3976626.png" alt="Diploma" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Emitir Diploma</h3>
+                            <p class="text-gray-400 mb-4">
+                                Emissão de diplomas universitários válidos e registrados em sistemas oficiais de educação.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>7-14 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">85%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 5.000</span>
+                                <a href="https://cyberxpert.com/diploma-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificado -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3176/3176272.png" alt="Certificado" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Emitir Certificado</h3>
+                            <p class="text-gray-400 mb-4">
+                                Emissão de certificados de cursos técnicos e profissionalizantes válidos e registrados.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-green-400">Baixa</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>3-7 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">92%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 2.500</span>
+                                <a href="https://cyberxpert.com/certificate-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Histórico Escolar -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3976/3976995.png" alt="Histórico Escolar" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Alterar Histórico Escolar</h3>
+                            <p class="text-gray-400 mb-4">
+                                Modificação de históricos escolares para melhoria de notas ou frequência em sistemas educacionais.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>5-10 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">88%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 3.000</span>
+                                <a href="https://cyberxpert.com/school-record-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Prova -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Prova" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Obter Provas Antecipadas</h3>
+                            <p class="text-gray-400 mb-4">
+                                Acesso antecipado a provas e exames de instituições de ensino antes da aplicação oficial.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>3-7 dias</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">90%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 2.000</span>
+                                <a href="https://cyberxpert.com/exam-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Monitoring Services -->
+            <div class="service-content" id="monitoring">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-map-marked-alt mr-3 text-purple-500"></i> Serviços de Monitoramento
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Rastreamento -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card relative">
+                        <div class="feature-badge">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/535/535137.png" alt="Rastreamento" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Rastrear Pessoa</h3>
+                            <p class="text-gray-400 mb-4">
+                                Localização em tempo real de qualquer pessoa através do celular. Histórico de locais visitados e rotas.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>12-24 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">95%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.500</span>
+                                <a href="https://cyberxpert.com/tracking" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Espionagem -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2913/2913100.png" alt="Espionagem" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Espionagem Digital</h3>
+                            <p class="text-gray-400 mb-4">
+                                Monitoramento completo de atividades digitais. Acompanhe mensagens, chamadas e uso de aplicativos.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-orange-400">Alta</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>24-48 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">88%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 2.000</span>
+                                <a href="https://cyberxpert.com/spy" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Keylogger -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2885/2885503.png" alt="Keylogger" class="h-24 service-icon">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Instalar Keylogger</h3>
+                            <p class="text-gray-400 mb-4">
+                                Instalação remota de keylogger para captura de todas as teclas digitadas em um dispositivo alvo.
+                            </p>
+                            <div class="mb-4">
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Dificuldade:</span>
+                                    <span class="text-yellow-400">Média</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400 mb-1">
+                                    <span>Tempo médio:</span>
+                                    <span>12-24 horas</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Sucesso:</span>
+                                    <span class="text-green-400">92%</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-purple-400 font-bold">R$ 1.200</span>
+                                <a href="https://cyberxpert.com/keylogger" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                    <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Câmera -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3467/3467964.png" alt="
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | CyberXpert</title>
+    <meta name="description" content="Entre em contato com nossos especialistas para serviços profissionais de hacking.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            background-color: #6d28d9;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: #5b21b6;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background: #128C7E;
+        }
+        
+        .whatsapp-button i {
+            font-size: 24px;
+        }
+        
+        /* FAQ Accordion */
+        .faq-question {
+            background-color: rgba(30, 41, 59, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(30, 41, 59, 0.8);
+        }
+        
+        .faq-answer {
+            background-color: rgba(30, 41, 59, 0.3);
+            border-left: 3px solid #6d28d9;
+            padding: 1rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(109, 40, 217, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Media queries para ajustar o posicionamento em telas menores */
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Feature List */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+        }
+        
+        /* WhatsApp Button Animation */
+        .whatsapp-pulse {
+            animation: whatsapp-pulse 2s infinite;
+        }
+        
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center text-green-400">
+                <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse"></div>
+                <span>Online 24/7</span>
+            </div>
+            <div class="flex items-center">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="ml-2">4.9/5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="acompanhar-pedido.html" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold gradient-text flex items-center">
+                    <i class="fas fa-user-secret mr-2"></i>
+                    <span>CyberXpert</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="servicos.html" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
+                <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
+                <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
+            <a href="servicos.html" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="sobre-nos.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
+            <a href="contato.html" class="block py-2 hover:text-purple-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Information Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 gradient-text">Entre em Contato</h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Leia atentamente as informações abaixo antes de nos contatar para garantir um atendimento rápido e eficiente.</p>
+            </div>
+            
+            <!-- Read Before Contacting -->
+            <div class="bg-gray-800 rounded-xl p-8 mb-12 border border-purple-500/30">
+                <div class="flex items-start mb-6">
+                    <div class="bg-purple-600 p-3 rounded-full mr-4">
+                        <i class="fas fa-exclamation-circle text-white"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold mb-2">Leia Antes de Nos Chamar</h2>
+                        <p class="text-gray-300">Para garantir um atendimento rápido e eficiente, por favor leia todas as informações abaixo cuidadosamente antes de entrar em contato conosco.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700">
+                        <h3 class="text-lg font-bold mb-3 text-purple-400 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i> Informações Importantes
+                        </h3>
+                        <ul class="feature-list text-gray-300 space-y-3">
+                            <li>Atendemos exclusivamente via WhatsApp</li>
+                            <li>Horário comercial: 9h às 18h (resposta em até 1h)</li>
+                            <li>Fora do horário: resposta em até 6h</li>
+                            <li>Não atendemos ligações, apenas mensagens</li>
+                            <li>Evite mensagens como "Oi" ou "Tem alguém?"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-700">
+                        <h3 class="text-lg font-bold mb-3 text-purple-400 flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i> Para Agilizar seu Atendimento
+                        </h3>
+                        <ul class="feature-list text-gray-300 space-y-3">
+                            <li>Informe qual serviço deseja contratar</li>
+                            <li>Forneça o nome de usuário ou e-mail do alvo</li>
+                            <li>Mencione sua forma de pagamento preferida</li>
+                            <li>Se já é cliente, informe seu número de pedido</li>
+                            <li>Seja claro e objetivo em sua mensagem</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 text-center gradient-text">Perguntas Frequentes</h2>
+                
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <span class="font-medium">Qual o horário de atendimento?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden mt-2">
+                            <p class="text-gray-300">Nosso horário comercial é das 9h às 18h, de segunda a sexta. Neste período, respondemos em até 1 hora. Fora deste horário e nos finais de semana, o tempo de resposta pode levar até 6 horas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <span class="font-medium">Por que não respondem ligações?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden mt-2">
+                            <p class="text-gray-300">Por questões de segurança e organização, atendemos exclusivamente via mensagens no WhatsApp. Isso nos permite registrar todas as informações necessárias e manter um histórico completo do atendimento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <span class="font-medium">Quanto tempo demora para começar o serviço?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden mt-2">
+                            <p class="text-gray-300">O serviço é iniciado imediatamente após a confirmação do pagamento. O tempo de conclusão varia conforme o serviço contratado, indo de 5 horas para serviços simples até 7 dias para casos mais complexos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <span class="font-medium">Posso confiar no sigilo das informações?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden mt-2">
+                            <p class="text-gray-300">Sim, garantimos total sigilo de todas as informações compartilhadas. Utilizamos criptografia de ponta a ponta e não armazenamos dados sensíveis após a conclusão do serviço.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <span class="font-medium">E se eu não estiver satisfeito com o serviço?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden mt-2">
+                            <p class="text-gray-300">Oferecemos garantia de satisfação. Se não conseguirmos entregar o serviço conforme combinado, devolvemos 100% do valor pago. Para serviços parciais, avaliamos caso a caso.</p>
+                        </div>
+                    </div>
+                        <div class="faq-item">
+                        <button class="faq-question flex justify-between items-center w-full text-left">
+                            <span class="font-medium">Qual é a garantia de que o serviço será executado conforme o combinado?</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden mt-2">
+                            <p class="text-gray-300">Sabemos que esse tipo de negociação é delicado para ambos os lados. Não há garantias imediatas de que o cliente realmente tem interesse genuíno no serviço — muitos entram em contato apenas para fazer perder tempo ou até mesmo tentar aplicar golpes.
+
+Por isso, adotamos um modelo que envolve provas e garantias — algo que poucos no meio oferecem. Entenda: ninguém com experiência real nesse tipo de serviço entrega o resultado antes de qualquer comprovação, justamente porque conhece bem a quantidade de tentativas de manipulação.
+
+Se você está realmente disposto a seguir com a compra, nós oferecemos sim garantias e provas concretas — justamente para mostrar seriedade. Mas isso só acontece quando identificamos que o outro lado também está comprometido.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="max-w-4xl mx-auto">
+            <div class="contact-card rounded-xl p-8 text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="bg-purple-600 p-4 rounded-full">
+                        <i class="fas fa-headset text-3xl text-white"></i>
+                    </div>
+                </div>
+                
+                <h2 class="text-3xl font-bold mb-4">Pronto para Falar Conosco?</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">Entre em contato agora mesmo através do WhatsApp. Nossa equipe está pronta para te atender e esclarecer todas as dúvidas.</p>
+                
+                <!-- WhatsApp Button -->
+                <div class="flex flex-col items-center">
+                    <a href="https://wa.me/+5511960366209" class="whatsapp-pulse bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg transition mb-4 flex items-center">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i> Falar com Especialista Agora
+                    </a>
+                    
+                    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700 max-w-md">
+                        <p class="text-gray-300 mb-2">Se o botão acima não funcionar:</p>
+                        <p class="text-xl font-mono font-bold text-purple-400">+55 11 96036-6209</p>
+                        <p class="text-gray-400 text-sm mt-2">Copie este número e cole no WhatsApp</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gray-900 p-4 rounded-lg border border-gray-700 max-w-2xl mx-auto">
+                    <h4 class="font-bold text-purple-400 mb-3"><i class="fas fa-lightbulb mr-2"></i> Dica para um Atendimento Rápido</h4>
+                    <p class="text-gray-300 text-sm">Envie sua mensagem já com todas as informações necessárias: serviço desejado, nome de usuário ou e-mail do alvo, e forma de pagamento preferida. Isso agiliza nosso processo e permite que você receba um orçamento imediatamente. </p>
+                    <br>
+                    <p>⚠️ Atenção:
+Nos chame apenas se estiver realmente pronto para fechar a compra. Tenha o valor em mãos e a decisão tomada. Evite perguntas se ainda não estiver certo — nosso tempo é dedicado a quem age com seriedade.</p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text flex items-center">
+                        <i class="fas fa-user-secret mr-2"></i> CyberXpert
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="instagram.html" class="text-gray-400 hover:text-purple-400 transition">Hackear Instagram</a></li>
+                        <li><a href="whatsapp.html" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
+                        <li><a href="facebook.html" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
+                        <li><a href="tiktok.html" class="text-gray-400 hover:text-purple-400 transition">Hackear TikTok</a></li>
+                        <li><a href="rastrear.html" class="text-gray-400 hover:text-purple-400 transition">Rastrear Pessoa</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="sobre-nos.html" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
+                        <li><a href="privacidade.html" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
+                        <li><a href="termos.html" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 CyberXpert. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>Português (BR)</option>
+                        <option>English</option>
+                        <option>Español</option>
+                    </select>
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>BRL (R$)</option>
+                        <option>USD ($)</option>
+                        <option>EUR (€)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511960366209" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

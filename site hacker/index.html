@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberXpert - Serviços de Hackers Profissionais</title>
+    <meta name="description" content="Serviços de hackers profissionais disponíveis 24/7. Soluções discretas e eficientes para suas necessidades digitais.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .rotate-text {
+            display: inline-block;
+            perspective: 1000px;
+        }
+        
+        .rotate-text span {
+            display: inline-block;
+            transform-origin: 50% 50%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            background-color: #6d28d9;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: #5b21b6;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button i {
+            font-size: 24px;
+        }
+        
+        /* Media queries para ajustar o posicionamento em telas menores */
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center text-green-400">
+                <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse"></div>
+                <span>Online 24/7</span>
+            </div>
+            <div class="flex items-center">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="ml-2">4.8/5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="contato.html" class="hover:text-purple-400 transition"><i class="fas fa-phone-alt mr-1"></i> Suporte</a>
+            <a href="https://cyberxpert.com/track-order" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="" class="text-2xl font-bold gradient-text flex items-center">
+                    <i class="fas fa-user-secret mr-2"></i>
+                    <span>CyberXpert</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
+                <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
+                <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
+            <a href="#services" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="sobre.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
+            <a href="contato.html" class="block py-2 hover:text-purple-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Serviços de Hackers</span><br>
+                    <span class="text-white">Profissionais & Discretos</span>
+                </h1>
+                <p class="text-lg text-gray-300 mb-8">
+                    Soluções digitais especializadas para suas necessidades mais complexas. 
+                    Nossa equipe de especialistas em segurança cibernética está disponível 24/7 
+                    para ajudá-lo com qualquer desafio digital.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#services" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">
+                        <i class="fas fa-shield-alt mr-2"></i> Nossos Serviços
+                    </a>
+                    <a href="contato.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">
+                        <i class="fas fa-comments mr-2"></i> Fale Conosco
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-purple-500 rounded-full opacity-20 blur-xl"></div>
+                    <img src="https://images.icon-icons.com/827/PNG/512/laptop_icon-icons.com_66540.png" alt="Hacker Illustration" class="relative z-10 w-full h-full object-contain floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 px-4 bg-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="text-purple-500 text-3xl mb-4">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100% Seguro</h3>
+                    <p class="text-gray-400">
+                        Todos os nossos serviços são realizados com total discrição e segurança, garantindo sua privacidade.
+                    </p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Rápido e Eficiente</h3>
+                    <p class="text-gray-400">
+                        Tempo médio de conclusão de 24-48 horas para a maioria dos serviços. Resultados garantidos.
+                    </p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="text-blue-500 text-3xl mb-4">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Profissionais Certificados</h3>
+                    <p class="text-gray-400">
+                        Equipe de hackers éticos com anos de experiência e certificações em segurança cibernética.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 px-4 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Nossos Serviços</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Oferecemos uma ampla gama de serviços de hackers profissionais para atender às suas necessidades específicas.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WhatsApp -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear WhatsApp</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso completo a qualquer conta do WhatsApp. Leia mensagens, visualize mídias e muito mais, tudo de forma remota.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 500,00</span>
+                            <a href="whatsapp.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Celular -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Destaque
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Celular" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Celular</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso remoto completo a qualquer smartphone. Monitore atividades, mensagens, localização e aplicativos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 700,00</span>
+                            <a href="celular.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instagram -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Instagram</h3>
+                        <p class="text-gray-400 mb-4">
+                            Recupere contas perdidas ou acesse qualquer perfil do Instagram. Visualize mensagens diretas e posts privados.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 500</span>
+                            <a href="instagram.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Facebook -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Facebook</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso completo a qualquer conta do Facebook. Visualize mensagens privadas, posts ocultos e informações da conta.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 500</span>
+                            <a href="facebook.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear TikTok</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso completo a contas do TikTok. Visualize mensagens diretas, vídeos privados e informações da conta.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 400</span>
+                            <a href="https://cyberxpert.com/tiktok-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Faculdade -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="Faculdade" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Faculdade</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso a sistemas acadêmicos para alteração de notas, frequência ou obtenção de provas e materiais exclusivos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">Sob consulta</span>
+                            <a href="https://cyberxpert.com/school-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rastreamento -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/535/535137.png" alt="Rastreamento" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Rastrear Pessoa</h3>
+                        <p class="text-gray-400 mb-4">
+                            Localização em tempo real de qualquer pessoa através do celular. Histórico de locais visitados e rotas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 200</span>
+                            <a href="https://cyberxpert.com/tracking" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recuperação de Fundos -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2933/2933315.png" alt="Recuperação de Fundos" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Recuperação de Fundos</h3>
+                        <p class="text-gray-400 mb-4">
+                            Recupere seu dinheiro perdido em golpes, fraudes ou contas bloqueadas. Especialistas em criptomoedas e bancos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">10% do valor recuperado</span>
+                            <a href="https://cyberxpert.com/fund-recovery" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Descobrir um Fake -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Novo
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Descobrir Fake" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Descobrir um Fake</h3>
+                        <p class="text-gray-400 mb-4">
+                            Identifique perfis falsos, contas falsas e pessoas que se passam por outras. Verificação completa de identidade digital.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 850</span>
+                            <a href="https://cyberxpert.com/fake-detection" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Serviço Sob Medida -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Serviço Sob Medida" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Serviço Sob Medida</h3>
+                        <p class="text-gray-400 mb-4">
+                            Solução personalizada para suas necessidades específicas. Nossa equipe desenvolverá uma abordagem exclusiva para seu caso.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">Sob consulta</span>
+                            <a href="https://cyberxpert.com/custom-service" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 px-4 bg-gray-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Como Funciona</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Nosso processo é simples, seguro e discreto. Veja como podemos ajudá-lo em apenas 4 passos.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Escolha o Serviço</h3>
+                    <p class="text-gray-400">
+                        Selecione entre nossos diversos serviços profissionais ou solicite uma solução personalizada.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Forneça Detalhes</h3>
+                    <p class="text-gray-400">
+                        Envie-nos as informações necessárias através de nosso canal seguro e criptografado.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Confirmação</h3>
+                    <p class="text-gray-400">
+                        Analisamos sua solicitação e confirmamos a viabilidade e prazo de execução.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Resultados</h3>
+                    <p class="text-gray-400">
+                        Receba os resultados completos dentro do prazo combinado, com garantia de satisfação.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-4 bg-gradient-to-r from-purple-900 to-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Resolver Seu Problema?</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+                Nossa equipe está disponível 24 horas por dia, 7 dias por semana para ajudá-lo com qualquer desafio digital que você esteja enfrentando.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="contato.html" class="bg-white hover:bg-gray-100 text-purple-800 font-bold py-3 px-8 rounded-lg transition duration-300 text-center">
+                    <i class="fas fa-comment-dots mr-2"></i> Fale Conosco Agora
+                </a>
+                <a href="faq.html" class="bg-transparent hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-lg border border-white transition duration-300 text-center">
+                    <i class="fas fa-question-circle mr-2"></i> Perguntas Frequentes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text flex items-center">
+                        <i class="fas fa-user-secret mr-2"></i> CyberXpert
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="whatsapp.html" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
+                        <li><a href="celular.html" class="text-gray-400 hover:text-purple-400 transition">Hackear Celular</a></li>
+                        <li><a href="facebook.html" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
+                        <li><a href="tiktok.html" class="text-gray-400 hover:text-purple-400 transition">Hackear TikTok</a></li>
+                        <li><a href="rastrear.html" class="text-gray-400 hover:text-purple-400 transition">Rastrear Pessoa</a></li>
+                        <li><a href="descobrir.html" class="text-gray-400 hover:text-purple-400 transition">Descobrir um Fake</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://cyberxpert.com/about" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
+                        <li><a href="https://cyberxpert.com/faq" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
+                        <li><a href="https://cyberxpert.com/privacy" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
+                        <li><a href="https://cyberxpert.com/terms" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 CyberXpert. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>Português (BR)</option>
+                        <option>English</option>
+                        <option>Español</option>
+                    </select>
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>BRL (R$)</option>
+                        <option>USD ($)</option>
+                        <option>EUR (€)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5511999999999" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Rotating Text Animation
+        const words = ["confiáveis", "profissionais", "discretos", "eficientes"];
+        let currentWordIndex = 0;
+        const rotatingText = document.querySelector('.rotate-text span');
+        
+        function rotateWord() {
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            rotatingText.textContent = words[currentWordIndex];
+            rotatingText.style.transform = 'rotateX(90deg)';
+            
+            setTimeout(() => {
+                rotatingText.style.transform = 'rotateX(0deg)';
+            }, 300);
+        }
+        
+        setInterval(rotateWord, 2000);
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Service Card Animation
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.service-icon');
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.service-icon');
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

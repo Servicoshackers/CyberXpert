@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Fundos | CyberXpert</title>
+    <meta name="description" content="Serviço profissional para recuperar dinheiro perdido em golpes, fraudes ou contas bloqueadas. Especialistas em criptomoedas e bancos.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            background-color: #6d28d9;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: #5b21b6;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background: #128C7E;
+        }
+        
+        .whatsapp-button i {
+            font-size: 24px;
+        }
+        
+        /* Media queries para ajustar o posicionamento em telas menores */
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Estilos específicos para a página de detalhes */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            transform: rotate(5deg);
+        }
+        
+        .funds-gradient {
+            background: linear-gradient(45deg, #10B981, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .price-badge {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+        
+        .success-rate {
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.875rem;
+            display: inline-block;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #8B5CF6, #3B82F6);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.6rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8B5CF6;
+            border: 2px solid #3B82F6;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center text-green-400">
+                <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse"></div>
+                <span>Online 24/7</span>
+            </div>
+            <div class="flex items-center">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="ml-2">4.9/5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="acompanhar-pedido.html" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold gradient-text flex items-center">
+                    <i class="fas fa-user-secret mr-2"></i>
+                    <span>CyberXpert</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="servicos.html" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
+                <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
+                <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
+            <a href="servicos.html" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="sobre-nos.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
+            <a href="contato.html" class="block py-2 hover:text-purple-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- Service Details Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Service Overview -->
+                <div class="w-full">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gray-800 p-3 rounded-lg mr-4">
+                            <img id="service-icon" src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Ícone de Recuperação de Fundos" class="w-12 h-12">
+                        </div>
+                        <div>
+                            <h1 id="service-title" class="text-3xl font-bold funds-gradient">Recuperação de Fundos</h1>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-400 text-sm ml-2">(72 avaliações)</span>
+                                <span class="success-rate ml-3">87% de sucesso</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 mb-8 border border-gray-700">
+                        <h2 class="text-xl font-bold mb-4">Descrição do Serviço</h2>
+                        <p id="service-description" class="text-gray-300 mb-6">
+                            Nossa equipe especializada em recuperação de fundos atua para resgatar seu dinheiro perdido em golpes financeiros, fraudes online, contas bloqueadas ou transações não autorizadas. Com técnicas avançadas de rastreamento e anos de experiência no mercado financeiro e criptomoedas, conseguimos identificar os responsáveis e recuperar até 87% dos valores perdidos. Trabalhamos com casos envolvendo bancos tradicionais, corretoras de criptomoedas, esquemas de pirâmide e golpes de investimento.
+                        </p>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Casos que Atendemos:</h3>
+                        <ul class="feature-list text-gray-300 mb-6">
+                            <li>Fraudes em investimentos (pirâmides, esquemas Ponzi)</li>
+                            <li>Golpes em criptomoedas (rug pulls, scams, honeypots)</li>
+                            <li>Transações bancárias não autorizadas</li>
+                            <li>Contas bloqueadas por instituições financeiras</li>
+                            <li>Chargebacks e estornos indevidos</li>
+                            <li>Recuperação de carteiras de criptomoedas perdidas</li>
+                            <li>Golpes românticos (love scams) com perdas financeiras</li>
+                            <li>Fraudes em plataformas de trading e forex</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funciona o Processo:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p class="mb-4">Nosso método de recuperação é dividido em etapas claras e transparentes:</p>
+                            
+                            <div class="timeline mt-6">
+                                <div class="timeline-item">
+                                    <h4 class="font-bold text-lg mb-2">1. Análise do Caso</h4>
+                                    <p class="text-sm">Coletamos todas as informações sobre a transação fraudulenta, incluindo comprovantes, e-mails, prints e detalhes do ocorrido. Avaliamos a viabilidade de recuperação.</p>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <h4 class="font-bold text-lg mb-2">2. Rastreamento dos Fundos</h4>
+                                    <p class="text-sm">Utilizamos ferramentas especializadas para rastrear o caminho do dinheiro através do sistema financeiro ou blockchain.</p>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <h4 class="font-bold text-lg mb-2">3. Identificação dos Responsáveis</h4>
+                                    <p class="text-sm">Através de técnicas de investigação digital, identificamos contas, pessoas ou empresas envolvidas no esquema fraudulento.</p>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <h4 class="font-bold text-lg mb-2">4. Ação de Recuperação</h4>
+                                    <p class="text-sm">Dependendo do caso, podemos atuar através de:</p>
+                                    <ul class="feature-list text-sm mt-2">
+                                        <li>Ações judiciais e medidas cautelares</li>
+                                        <li>Contato direto com instituições financeiras</li>
+                                        <li>Negociação com os responsáveis</li>
+                                        <li>Bloqueio de contas receptoras</li>
+                                        <li>Recuperação técnica de carteiras de criptomoedas</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <h4 class="font-bold text-lg mb-2">5. Devolução dos Valores</h4>
+                                    <p class="text-sm">Assim que os fundos são recuperados, realizamos a transferência para sua conta de forma segura e documentada.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Taxa de Sucesso e Prazos:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>Nossa taxa média de sucesso varia conforme o tipo de caso:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                                <!-- Card 1 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-blue-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-blue-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-coins text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold">Fraudes Bancárias</h4>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
+                                        <span class="font-bold text-green-400">92%</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
+                                        <span class="font-bold">15-30 dias</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
+                                        <span class="font-bold">70-100%</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Card 2 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-purple-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-purple-600 p-2 rounded-full mr-3">
+                                            <i class="fab fa-bitcoin text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold">Criptomoedas</h4>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
+                                        <span class="font-bold text-green-400">78%</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
+                                        <span class="font-bold">30-90 dias</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
+                                        <span class="font-bold">40-80%</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Card 3 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-green-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-green-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-chart-line text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold">Investimentos Fraudulentos</h4>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
+                                        <span class="font-bold text-green-400">85%</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
+                                        <span class="font-bold">60-180 dias</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
+                                        <span class="font-bold">50-90%</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Card 4 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-yellow-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-yellow-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-heart text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold">Golpes Românticos</h4>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
+                                        <span class="font-bold text-green-400">65%</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
+                                        <span class="font-bold">90-365 dias</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
+                                        <span class="font-bold">30-70%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="mt-4 text-sm text-gray-400">* Os prazos e taxas podem variar conforme a complexidade do caso e a cooperação do cliente no fornecimento de informações.</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Modelos de Cobrança:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>Oferecemos três opções flexíveis de pagamento para melhor atender às suas necessidades:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                                <!-- Opção 1 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-purple-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-purple-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-money-bill-wave text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Taxa Fixa <span class="price-badge">15% do valor recuperado</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>Pagamento somente após sucesso</li>
+                                        <li>Taxa de 15% sobre o valor recuperado</li>
+                                        <li>Sem custos iniciais</li>
+                                        <li>Melhor para casos acima de R$ 50.000</li>
+                                        <li>Contrato formal com garantias</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Opção 2 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-blue-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-blue-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-percentage text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Taxa Variável <span class="price-badge">20-30% do valor</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>Pagamento somente após sucesso</li>
+                                        <li>Taxa de 20-30% conforme complexidade</li>
+                                        <li>Sem custos iniciais</li>
+                                        <li>Ideal para casos entre R$ 10.000-50.000</li>
+                                        <li>Contrato com cláusula de confidencialidade</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Opção 3 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-green-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-green-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-hand-holding-usd text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Honorários Adiantados <span class="price-badge">R$ 5.000 + 10%</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>Pagamento inicial de R$ 5.000</li>
+                                        <li>+ 10% sobre o valor recuperado</li>
+                                        <li>Para casos urgentes ou abaixo de R$ 10.000</li>
+                                        <li>Processo mais rápido</li>
+                                        <li>Desconto em casos subsequentes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-gray-900 p-4 rounded-lg border border-gray-700">
+                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-info-circle mr-2"></i> Documentação Necessária</h4>
+                                <p class="text-gray-300 text-sm mb-2">
+                                    Para iniciar o processo de recuperação, precisamos dos seguintes documentos:
+                                </p>
+                                <ol class="list-decimal pl-5 text-sm text-gray-300 space-y-1">
+                                    <li>Comprovantes de todas as transações envolvidas</li>
+                                    <li>Comunicações com os golpistas (e-mails, mensagens, prints)</li>
+                                    <li>Documentos de identificação do cliente</li>
+                                    <li>Comprovante de residência</li>
+                                    <li>Extratos bancários ou da corretora (quando aplicável)</li>
+                                    <li>Qualquer contrato ou documento relacionado ao investimento</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Garantias e Segurança:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <ul class="feature-list">
+                                <li><strong>Sigilo Absoluto:</strong> Seus dados e detalhes do caso são protegidos com criptografia de ponta a ponta</li>
+                                <li><strong>Sem Risco Financeiro:</strong> Na maioria dos modelos, você só paga se recuperarmos seu dinheiro</li>
+                                <li><strong>Equipe Qualificada:</strong> Nossos especialistas têm formação em direito, finanças e segurança digital</li>
+                                <li><strong>Atualizações Constantes:</strong> Relatórios periódicos sobre o andamento do seu caso</li>
+                                <li><strong>Suporte 24/7:</strong> Disponível para tirar dúvidas e receber novas informações</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-900 p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-shield-alt mr-2"></i> Política de Privacidade</h4>
+                            <p class="text-gray-300 text-sm">
+                                Todos os nossos serviços são realizados com total discrição e segurança. Não compartilhamos informações com terceiros sem autorização expressa. Utilizamos sistemas seguros com criptografia AES-256 para proteger seus dados. Após a conclusão do caso, todos os documentos sensíveis são destruídos digitalmente, mantendo apenas o necessário para fins legais.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                        <h2 class="text-xl font-bold mb-4">Perguntas Frequentes</h2>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Quais são minhas chances de recuperar o dinheiro?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Nossa taxa média de sucesso é de 87%, variando conforme o tipo de caso. Fraudes bancárias têm até 92% de chance, enquanto golpes com criptomoedas ficam em torno de 78%. Quanto mais rápido você agir após perceber o golpe, maiores são as chances de recuperação. Casos com documentação completa também têm probabilidades significativamente maiores.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Quanto tempo leva para recuperar meu dinheiro?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                O prazo varia conforme a complexidade: fraudes bancárias simples podem ser resolvidas em 15-30 dias, enquanto casos complexos de criptomoedas podem levar de 3 a 12 meses. Investimentos fraudulentos geralmente levam de 2 a 6 meses. Fatores como localização dos golpistas, valor envolvido e cooperação de instituições financeiras influenciam no prazo.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Preciso contratar um advogado separadamente?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Não, nossa equipe já inclui advogados especializados em direito digital e financeiro. Trabalhamos com uma rede de escritórios parceiros em vários países quando necessário. Caso seu caso exija ação judicial específica em sua localidade, podemos indicar profissionais de confiança sem custos adicionais de intermediação.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>E se não conseguirem recuperar meu dinheiro?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Nos modelos de taxa sobre sucesso, você não paga nada se não recuperarmos seus fundos. No modelo com honorários adiantados, oferecemos um relatório detalhado com todas as ações tomadas e, em alguns casos, podemos devolver parte do valor adiantado conforme o tempo investido. Também fornecemos orientações para evitar futuros golpes.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Como é feito o pagamento dos valores recuperados?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Os valores são transferidos diretamente para uma conta em seu nome, após deduzida nossa taxa de sucesso. Em casos judiciais, o dinheiro pode ser depositado em conta judicial primeiro. Para criptomoedas, podemos enviar para uma carteira de sua escolha ou converter para reais, conforme sua preferência. Todo o processo é documentado e transparente.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Vocês trabalham com casos internacionais?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Sim, temos experiência em casos envolvendo múltiplas jurisdições. Trabalhamos com uma rede de parceiros em mais de 30 países para rastrear e recuperar fundos internacionalmente. Casos internacionais geralmente levam mais tempo e podem ter taxas um pouco mais altas devido aos custos adicionais, mas já recuperamos valores de esquemas baseados na China, Nigéria, Rússia e outros países.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Button -->
+                    <div class="mt-8 text-center">
+                        <div class="mb-6 bg-gray-800 p-4 rounded-lg border border-gray-700 max-w-2xl mx-auto">
+                            <h4 class="font-bold text-purple-400 mb-3"><i class="fas fa-comments mr-2"></i> Como Contatar</h4>
+                            <p class="text-gray-300 text-sm mb-3">
+                                Para iniciar sua recuperação financeira, basta clicar no botão abaixo ou enviar uma mensagem diretamente para nosso WhatsApp. 
+                            </p>
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong>Preferimos que você já nos envie:</strong>
+                            </p>
+                            <ul class="feature-list text-sm text-gray-300 mb-4">
+                                <li>Breve descrição do ocorrido</li>
+                                <li>Valor aproximado perdido</li>
+                                <li>Método utilizado pelo golpista</li>
+                                <li>Quanto tempo passou desde o ocorrido</li>
+                            </ul>
+                            <p class="text-gray-300 text-sm">
+                                Isso agiliza nossa análise inicial e permite que nosso especialista já comece a te ajudar imediatamente. Caso envie apenas "Oi", responderemos rapidamente solicitando essas informações.
+                            </p>
+                        </div>
+                        
+                        <a href="contato.html" class="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
+                            <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista Agora
+                        </a>
+                        <p class="text-gray-400 mt-4">Nossa equipe está disponível 24 horas por dia para analisar seu caso e iniciar o processo de recuperação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text flex items-center">
+                        <i class="fas fa-user-secret mr-2"></i> CyberXpert
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://cyberxpert.com/instagram-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Instagram</a></li>
+                        <li><a href="https://cyberxpert.com/whatsapp-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
+                        <li><a href="https://cyberxpert.com/facebook-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
+                        <li><a href="https://cyberxpert.com/tiktok-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear TikTok</a></li>
+                        <li><a href="https://cyberxpert.com/funds-recovery" class="text-gray-400 hover:text-purple-400 transition">Recuperação de Fundos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="sobre-nos.html" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
+                        <li><a href="privacidade.html" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
+                        <li><a href="termos.html" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 CyberXpert. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>Português (BR)</option>
+                        <option>English</option>
+                        <option>Español</option>
+                    </select>
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>BRL (R$)</option>
+                        <option>USD ($)</option>
+                        <option>EUR (€)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- WhatsApp Button -->
+    <a href="contato.html" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Dynamic Service Details (can be customized for each service)
+        function loadServiceDetails() {
+            // This would normally come from URL parameters or database
+            // For demo purposes, we'll use Funds Recovery as default
+            const service = {
+                title: "Recuperação de Fundos",
+                icon: "https://cdn-icons-png.flaticon.com/512/3132/3132693.png",
+                description: "Nossa equipe especializada em recuperação de fundos atua para resgatar seu dinheiro perdido em golpes financeiros, fraudes online, contas bloqueadas ou transações não autorizadas. Com técnicas avançadas de rastreamento e anos de experiência no mercado financeiro e criptomoedas, conseguimos identificar os responsáveis e recuperar até 87% dos valores perdidos.",
+                price: "15%"
+            };
+            
+            document.getElementById('service-title').textContent = service.title;
+            document.getElementById('service-icon').src = service.icon;
+            document.getElementById('service-description').textContent = service.description;
+        }
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadServiceDetails();
+        });
+    </script>
+</body>
+</html>

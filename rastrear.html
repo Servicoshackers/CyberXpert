@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastrear Pessoa | CyberXpert</title>
+    <meta name="description" content="Serviço profissional para rastrear pessoas com precisão e discrição usando tecnologia avançada.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            background-color: #6d28d9;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: #5b21b6;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background: #128C7E;
+        }
+        
+        .whatsapp-button i {
+            font-size: 24px;
+        }
+        
+        /* Media queries para ajustar o posicionamento em telas menores */
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Estilos específicos para a página de detalhes */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            transform: rotate(5deg);
+        }
+        
+        .tracking-gradient {
+            background: linear-gradient(45deg, #3B82F6, #6366F1, #8B5CF6, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .price-badge {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+        
+        .map-container {
+            height: 400px;
+            width: 100%;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            background: linear-gradient(45deg, #1e293b, #334155);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .accuracy-meter {
+            height: 8px;
+            background: linear-gradient(90deg, #10B981, #3B82F6, #8B5CF6, #EC4899);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+        
+        .accuracy-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px solid #3B82F6;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center text-green-400">
+                <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse"></div>
+                <span>Online 24/7</span>
+            </div>
+            <div class="flex items-center">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="ml-2">4.9/5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="acompanhar-pedido.html" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold gradient-text flex items-center">
+                    <i class="fas fa-user-secret mr-2"></i>
+                    <span>CyberXpert</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="servicos.html" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
+                <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
+                <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
+            <a href="servicos.html" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="sobre-nos.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
+            <a href="contato.html" class="block py-2 hover:text-purple-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- Service Details Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Service Overview -->
+                <div class="w-full">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gray-800 p-3 rounded-lg mr-4">
+                            <img id="service-icon" src="https://cdn-icons-png.flaticon.com/512/535/535137.png" alt="Ícone de Rastreamento" class="w-12 h-12">
+                        </div>
+                        <div>
+                            <h1 id="service-title" class="text-3xl font-bold tracking-gradient">Rastrear Pessoa</h1>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-400 text-sm ml-2">(68 avaliações)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 mb-8 border border-gray-700">
+                        <h2 class="text-xl font-bold mb-4">Descrição do Serviço</h2>
+                        <p id="service-description" class="text-gray-300 mb-6">
+                            Nosso serviço de rastreamento de pessoas oferece localização precisa em tempo real utilizando tecnologia avançada de geolocalização. Podemos rastrear qualquer pessoa através do número de telefone, redes sociais ou outros métodos discretos. O serviço é 100% remoto e indetectável, garantindo que a pessoa alvo não saiba que está sendo monitorada.
+                        </p>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Recursos Incluídos:</h3>
+                        <ul class="feature-list text-gray-300 mb-6">
+                            <li>Localização em tempo real com precisão de 5-50 metros</li>
+                            <li>Histórico de rotas dos últimos 30 dias</li>
+                            <li>Alertas quando a pessoa entra/sai de locais específicos</li>
+                            <li>Monitoramento 24/7 durante o período contratado</li>
+                            <li>Acesso via painel web ou aplicativo móvel</li>
+                            <li>Relatórios diários de atividades</li>
+                            <li>Mapas detalhados com pontos de interesse</li>
+                            <li>Suporte técnico especializado</li>
+                        </ul>
+                        
+                        <!-- Map Visualization -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-bold mb-3 text-purple-400">Visualização do Rastreamento</h3>
+                            <div class="map-container mb-3">
+                                <div class="map-placeholder">
+                                    <div class="text-center">
+                                        <i class="fas fa-map-marked-alt text-4xl text-blue-400 mb-2"></i>
+                                        <p class="text-gray-300">Mapa de localização será exibido aqui</p>
+                                    </div>
+                                    <div class="accuracy-dot" style="left: 65%;"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-sm text-gray-400">
+                                <span>Precisão: 85%</span>
+                                <span>Atualizado: 2 minutos atrás</span>
+                            </div>
+                            <div class="accuracy-meter"></div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funciona o Rastreamento:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p class="mb-4">Nosso sistema de rastreamento utiliza uma combinação de tecnologias avançadas para garantir resultados precisos:</p>
+                            
+                            <ul class="feature-list mb-4">
+                                <li><strong>Triangulação de Celular:</strong> Localização através das torres de celular mais próximas</li>
+                                <li><strong>GPS Ativo/Passivo:</strong> Acesso direto ao GPS do dispositivo alvo quando possível</li>
+                                <li><strong>Wi-Fi Positioning:</strong> Localização baseada em redes Wi-Fi próximas</li>
+                                <li><strong>Análise de Dados:</strong> Cruzamento de dados de múltiplas fontes para maior precisão</li>
+                                <li><strong>IA de Localização:</strong> Algoritmos preditivos para antecipar movimentos</li>
+                            </ul>
+                            
+                            <p>Todo o processo é realizado de forma remota e segura, sem necessidade de instalar qualquer aplicativo no dispositivo alvo (embora isso aumente a precisão quando possível).</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Tempo de Execução:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>O tempo necessário varia conforme o método de rastreamento:</p>
+                            
+                            <ul class="feature-list mb-4">
+                                <li><strong>Rastreamento Básico:</strong> 1-2 horas após confirmação do pagamento</li>
+                                <li><strong>Rastreamento Avançado (GPS ativo):</strong> 4-6 horas</li>
+                                <li><strong>Rastreamento com Histórico Completo:</strong> 12-24 horas</li>
+                                <li><strong>Casos Internacionais:</strong> 24-48 horas (consultar valores)</li>
+                            </ul>
+                            
+                            <p>Nossa equipe trabalha 24/7 para garantir os melhores prazos possíveis. Você receberá atualizações em tempo real sobre o progresso.</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Opções de Pagamento:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>Oferecemos três opções flexíveis de pagamento para melhor atender às suas necessidades:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                                <!-- Opção 1 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-purple-500 card-hover">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-purple-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-money-bill-wave text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Pacote Básico <span class="price-badge">R$ 1.200,00</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>Rastreamento por 7 dias</li>
+                                        <li>Precisão de 50-100 metros</li>
+                                        <li>Histórico de 7 dias</li>
+                                        <li>Atualizações a cada 30 minutos</li>
+                                        <li>Acesso via painel web</li>
+                                        <li>Melhor custo-benefício</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Opção 2 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-blue-500 card-hover">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-blue-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-percentage text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Pacote Premium <span class="price-badge">R$ 2.500,00</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>Rastreamento por 30 dias</li>
+                                        <li>Precisão de 5-20 metros</li>
+                                        <li>Histórico de 30 dias</li>
+                                        <li>Atualizações em tempo real</li>
+                                        <li>Alertas de localização</li>
+                                        <li>Acesso via app móvel</li>
+                                        <li>Suporte prioritário</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Opção 3 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-green-500 card-hover">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-green-600 p-2 rounded-full mr-3">
+                                            <i class="fab fa-bitcoin text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Pacete Corporativo <span class="price-badge">R$ 4.800,00</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>Rastreamento por 90 dias</li>
+                                        <li>Precisão máxima (2-5 metros)</li>
+                                        <li>Histórico ilimitado</li>
+                                        <li>Monitoramento de múltiplos alvos</li>
+                                        <li>Relatórios analíticos</li>
+                                        <li>API para integração</li>
+                                        <li>Suporte 24/7 dedicado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-gray-900 p-4 rounded-lg border border-gray-700">
+                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-info-circle mr-2"></i> Informações Adicionais</h4>
+                                <p class="text-gray-300 text-sm mb-2">
+                                    Para rastreamentos internacionais ou casos específicos, entre em contato para um orçamento personalizado. Aceitamos pagamentos em criptomoedas (Bitcoin, Ethereum), PIX, transferências bancárias e cartões pré-pagos internacionais.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funcionam as Provas:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p class="mb-4">Para garantir transparência e confiança, oferecemos provas concretas antes de qualquer pagamento (exceto na opção de pagamento adiantado):</p>
+                            
+                            <ul class="feature-list mb-4">
+                                <li><strong>Prova de Localização:</strong> Print da localização atual com dados censurados</li>
+                                <li><strong>Prova em Vídeo:</strong> Gravação curta mostrando o sistema em funcionamento</li>
+                                <li><strong>Prova Personalizada:</strong> Você pode solicitar uma prova específica (ex: localização em um endereço conhecido)</li>
+                                <li><strong>Teste Gratuito:</strong> Em alguns casos, oferecemos 1 hora de rastreamento gratuito</li>
+                            </ul>
+                            
+                            <div class="bg-gray-900 p-4 rounded-lg border border-gray-700 mt-4">
+                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-shield-alt mr-2"></i> Política de Privacidade</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Todas as informações coletadas são tratadas com total sigilo. Não armazenamos dados sensíveis após o término do contrato. O serviço é encerrado automaticamente ao final do período contratado, sem rastros.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Requisitos Mínimos:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>Para iniciar o rastreamento, precisamos de pelo menos uma das seguintes informações:</p>
+                            
+                            <ul class="feature-list mb-4">
+                                <li>Número de telefone (com DDI se internacional)</li>
+                                <li>Perfil em rede social (Instagram, Facebook, etc.)</li>
+                                <li>Endereço de e-mail associado à pessoa</li>
+                                <li>Nome completo e data de nascimento (para casos mais complexos)</li>
+                                <li>Última localização conhecida (opcional, aumenta precisão)</li>
+                            </ul>
+                            
+                            <p class="text-sm text-gray-400">Quanto mais informações você puder fornecer, mais rápido e preciso será o rastreamento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                        <h2 class="text-xl font-bold mb-4">Perguntas Frequentes</h2>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>A pessoa vai saber que está sendo rastreada?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Não, nosso método é completamente indetectável. Não enviamos nenhum tipo de notificação ou mensagem para o dispositivo alvo. O rastreamento é feito de forma passiva, sem interferir no funcionamento normal do celular ou outros dispositivos.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Quão preciso é o rastreamento?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                A precisão varia conforme o método utilizado e a localização:
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li><strong>Áreas urbanas:</strong> 5-20 metros (com GPS ativo), 20-50 metros (sem GPS)</li>
+                                    <li><strong>Áreas rurais:</strong> 50-200 metros (dependendo da cobertura celular)</li>
+                                    <li><strong>Internacional:</strong> 100-500 metros (varia por país)</li>
+                                </ul>
+                                Nosso sistema indica sempre o nível de precisão estimado para cada localização.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Funciona se o celular estiver desligado?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Quando o dispositivo está desligado, podemos fornecer a última localização conhecida antes do desligamento. Assim que o aparelho for religado, o rastreamento é retomado automaticamente. Em alguns casos, podemos prever possíveis destinos com base em padrões de movimento anteriores.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Posso rastrear alguém em outro país?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Sim, oferecemos cobertura internacional na maioria dos países. No entanto, a precisão pode variar conforme a infraestrutura de telecomunicações local. Alguns países possuem restrições técnicas que podem limitar a precisão. Consulte-nos para informações específicas sobre o país de interesse.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Quanto tempo os dados ficam armazenados?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Os dados de localização são armazenados por até 30 dias após o término do contrato, após isso são automaticamente apagados de nossos sistemas. Você pode solicitar a exclusão antecipada a qualquer momento. Não mantemos backups dos dados após a exclusão.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>É possível rastrear sem número de telefone?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Sim, em alguns casos podemos realizar o rastreamento apenas com:
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Perfil ativo em rede social</li>
+                                    <li>Endereço de e-mail em uso</li>
+                                    <li>Nome completo e outras informações identificadoras</li>
+                                </ul>
+                                No entanto, a precisão será menor e o tempo de rastreamento pode ser maior. Consulte-nos para avaliar seu caso específico.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Button -->
+                    <div class="mt-8 text-center">
+                        <div class="mb-6 bg-gray-800 p-4 rounded-lg border border-gray-700 max-w-2xl mx-auto">
+                            <h4 class="font-bold text-purple-400 mb-3"><i class="fas fa-comments mr-2"></i> Como Contatar</h4>
+                            <p class="text-gray-300 text-sm mb-3">
+                                Para iniciar seu atendimento, basta clicar no botão abaixo ou enviar uma mensagem diretamente para nosso WhatsApp. 
+                            </p>
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong>Preferimos que você já nos envie:</strong>
+                            </p>
+                            <ul class="feature-list text-sm text-gray-300 mb-4">
+                                <li>O serviço que deseja contratar (Rastrear Pessoa)</li>
+                                <li>Informações que possui sobre a pessoa (número, rede social, etc.)</li>
+                                <li>Sua preferência de pacote e forma de pagamento</li>
+                            </ul>
+                            <p class="text-gray-300 text-sm">
+                                Isso agiliza o processo e permite que nosso especialista já comece a te ajudar imediatamente. Caso envie apenas "Oi", responderemos rapidamente solicitando essas informações.
+                            </p>
+                        </div>
+                        
+                        <a href="contato.html" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
+                            <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista Agora
+                        </a>
+                        <p class="text-gray-400 mt-4">Nossa equipe está disponível 24 horas por dia para tirar dúvidas e iniciar seu serviço.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text flex items-center">
+                        <i class="fas fa-user-secret mr-2"></i> CyberXpert
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://cyberxpert.com/instagram-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Instagram</a></li>
+                        <li><a href="https://cyberxpert.com/whatsapp-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
+                        <li><a href="https://cyberxpert.com/facebook-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
+                        <li><a href="https://cyberxpert.com/tiktok-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear TikTok</a></li>
+                        <li><a href="https://cyberxpert.com/tracking" class="text-gray-400 hover:text-purple-400 transition">Rastrear Pessoa</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="sobre-nos.html" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
+                        <li><a href="privacidade.html" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
+                        <li><a href="termos.html" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 CyberXpert. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>Português (BR)</option>
+                        <option>English</option>
+                        <option>Español</option>
+                    </select>
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>BRL (R$)</option>
+                        <option>USD ($)</option>
+                        <option>EUR (€)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- WhatsApp Button -->
+    <a href="contato.html" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Dynamic Service Details (can be customized for each service)
+        function loadServiceDetails() {
+            // This would normally come from URL parameters or database
+            // For demo purposes, we'll use Tracking as default
+            const service = {
+                title: "Rastrear Pessoa",
+                icon: "https://cdn-icons-png.flaticon.com/512/535/535137.png",
+                description: "Nosso serviço de rastreamento de pessoas oferece localização precisa em tempo real utilizando tecnologia avançada de geolocalização. Podemos rastrear qualquer pessoa através do número de telefone, redes sociais ou outros métodos discretos. O serviço é 100% remoto e indetectável, garantindo que a pessoa alvo não saiba que está sendo monitorada.",
+                price: "1.200"
+            };
+            
+            document.getElementById('service-title').textContent = service.title;
+            document.getElementById('service-icon').src = service.icon;
+            document.getElementById('service-description').textContent = service.description;
+        }
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadServiceDetails();
+            
+            // Simulate loading animation for the accuracy meter
+            setTimeout(() => {
+                const meter = document.querySelector('.accuracy-meter');
+                meter.style.width = '85%';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

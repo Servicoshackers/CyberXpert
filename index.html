@@ -175,6 +175,18 @@
             font-size: 24px;
         }
         
+        /* Header Moderno */
+        .header-modern {
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-modern .gradient-text {
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
         /* Media queries para ajustar o posicionamento em telas menores */
         @media (max-width: 640px) {
             .back-to-top {
@@ -217,8 +229,8 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+    <!-- Header Moderno -->
+    <header class="header-modern sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="" class="text-2xl font-bold gradient-text flex items-center">
@@ -483,7 +495,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Recuperação de Fundos</h3>
                         <p class="text-gray-400 mb-4">
-                            Recupere seu dinheiro perdido em golpes, fraudes ou contas bloqueadas. Especialistas em criptomoedas e bancos.
+                            Recupere seu dinheiro perdido em golpes, fraudes ou contas bloqueadas. Especialistas em criptomoedas and bancos.
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-purple-400 font-bold">10% do valor recuperado</span>
@@ -536,56 +548,115 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="py-16 px-4 bg-gray-800">
-        <div class="container mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Como Funciona</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Nosso processo é simples, seguro e discreto. Veja como podemos ajudá-lo em apenas 4 passos.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-white text-2xl font-bold">1</span>
+                
+                <!-- Remoção de Conteúdo -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3096/3096673.png" alt="Remoção de Conteúdo" class="h-24 service-icon">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Escolha o Serviço</h3>
-                    <p class="text-gray-400">
-                        Selecione entre nossos diversos serviços profissionais ou solicite uma solução personalizada.
-                    </p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Remoção de Conteúdo</h3>
+                        <p class="text-gray-400 mb-4">
+                            Remova conteúdo prejudicial, fotos ou vídeos privados da internet. Atuamos em redes sociais e sites diversos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 600</span>
+                            <a href="https://cyberxpert.com/content-removal" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-white text-2xl font-bold">2</span>
+                
+                <!-- Investigação Digital -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Profissional
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2913/2913108.png" alt="Investigação Digital" class="h-24 service-icon">
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Forneça Detalhes</h3>
-                    <p class="text-gray-400">
-                        Envie-nos as informações necessárias através de nosso canal seguro e criptografado.
-                    </p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Investigação Digital</h3>
+                        <p class="text-gray-400 mb-4">
+                            Análise forense completa de dispositivos digitais. Recupere dados apagados e descubra atividades ocultas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 1.200</span>
+                            <a href="https://cyberxpert.com/digital-investigation" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-white text-2xl font-bold">3</span>
+                
+                <!-- Proteção de Dados -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2342/2342114.png" alt="Proteção de Dados" class="h-24 service-icon">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Confirmação</h3>
-                    <p class="text-gray-400">
-                        Analisamos sua solicitação e confirmamos a viabilidade e prazo de execução.
-                    </p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Proteção de Dados</h3>
+                        <p class="text-gray-400 mb-4">
+                            Proteja suas contas e dispositivos contra invasões. Auditoria de segurança e blindagem contra hackers.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 900</span>
+                            <a href="https://cyberxpert.com/data-protection" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-white text-2xl font-bold">4</span>
+                
+                <!-- Novo Serviço 1: Recuperação de Contas -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Novo
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059518.png" alt="Recuperação de Contas" class="h-24 service-icon">
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Resultados</h3>
-                    <p class="text-gray-400">
-                        Receba os resultados completos dentro do prazo combinado, com garantia de satisfação.
-                    </p>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Recuperação de Contas</h3>
+                        <p class="text-gray-400 mb-4">
+                            Recupere acesso a contas perdidas ou roubadas em qualquer plataforma. E-mail, redes sociais e mais.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 450</span>
+                            <a href="https://cyberxpert.com/account-recovery" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Novo Serviço 2: Monitoramento Digital -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Destaque
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4260/4260892.png" alt="Monitoramento Digital" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Monitoramento Digital</h3>
+                        <p class="text-gray-400 mb-4">
+                            Monitoramento completo de atividades digitais em tempo real. Ideal para pais e empresas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 350/mês</span>
+                            <a href="https://cyberxpert.com/digital-monitoring" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -621,9 +692,6 @@
                         Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="" class="text-gray-400 hover:text-purple-400 transition">
-                            <i class="fab fa-telegram text-xl"></i>
-                        </a>
                         <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
                             <i class="fab fa-whatsapp text-xl"></i>
                         </a>
@@ -631,40 +699,6 @@
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
-                    <ul class="space-y-2">
-                        <li><a href="whatsapp.html" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
-                        <li><a href="celular.html" class="text-gray-400 hover:text-purple-400 transition">Hackear Celular</a></li>
-                        <li><a href="facebook.html" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
-                        <li><a href="tiktok.html" class="text-gray-400 hover:text-purple-400 transition">Hackear TikTok</a></li>
-                        <li><a href="rastrear.html" class="text-gray-400 hover:text-purple-400 transition">Rastrear Pessoa</a></li>
-                        <li><a href="descobrir.html" class="text-gray-400 hover:text-purple-400 transition">Descobrir um Fake</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
-                    <ul class="space-y-2">
-                        <li><a href="https://cyberxpert.com/about" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
-                        <li><a href="https://cyberxpert.com/faq" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
-                        <li><a href="https://cyberxpert.com/privacy" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
-                        <li><a href="https://cyberxpert.com/terms" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Contato</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
-                        </li>
-                    </ul>
                 </div>
             </div>
             

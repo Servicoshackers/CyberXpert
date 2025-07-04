@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberXpert - Perguntas Frequentes</title>
+    <meta name="description" content="Perguntas frequentes sobre nossos serviços de hackers profissionais. Encontre respostas para suas dúvidas.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            color: #a78bfa;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question {
+            color: #8b5cf6;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            background-color: #6d28d9;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: #5b21b6;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button i {
+            font-size: 24px;
+        }
+        
+        /* Header Moderno */
+        .header-modern {
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-modern .gradient-text {
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        /* Media queries para ajustar o posicionamento em telas menores */
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center text-green-400">
+                <div class="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                <span>Online 24/7</span>
+            </div>
+            <div class="flex items-center">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="ml-2">4.8/5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="https://cyberxpert.com/track-order" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+        </div>
+    </div>
+
+    <!-- Header Moderno -->
+    <header class="header-modern sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold gradient-text flex items-center">
+                    <i class="fas fa-user-secret mr-2"></i>
+                    <span>CyberXpert</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#services" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
+                <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
+                <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
+            <a href="index.html#services" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="sobre.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
+            <a href="contato.html" class="block py-2 hover:text-purple-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- FAQ Hero Section -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-800 py-16 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                <span class="gradient-text">Perguntas Frequentes</span>
+            </h1>
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                Encontre respostas para as dúvidas mais comuns sobre nossos serviços de hackers profissionais. Se não encontrar o que procura, entre em contato conosco.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-12 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Como posso ter certeza de que o serviço é legítimo?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Todos os nossos hackers são profissionais certificados em segurança cibernética. Trabalhamos com total transparência e oferecemos garantia em todos os nossos serviços. Você pode verificar nossos depoimentos de clientes e classificações antes de contratar.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Quanto tempo leva para concluir um serviço?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>O tempo varia de acordo com a complexidade do serviço. A maioria dos trabalhos simples (como hackear WhatsApp ou Instagram) são concluídos em 24-48 horas. Serviços mais complexos podem levar de 3 a 7 dias úteis. Sempre informamos o prazo estimado antes de iniciar qualquer trabalho.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Como é feito o pagamento?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Aceitamos diversas formas de pagamento seguro, incluindo criptomoedas (Bitcoin, Ethereum), transferência bancária e PIX. O pagamento é dividido em duas partes: 50% no início do trabalho e 50% após a conclusão e verificação por parte do cliente.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Vocês garantem sigilo absoluto?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Sim, a privacidade e segurança de nossos clientes são nossa prioridade máxima. Não armazenamos nenhum dado sensível após a conclusão do serviço e todas as comunicações são criptografadas. Também oferecemos a opção de comunicação anônima para clientes que desejam total discrição.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">E se o serviço não funcionar como prometido?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Oferecemos garantia total em todos os nossos serviços. Se por qualquer motivo o trabalho não atender às suas expectativas ou não funcionar conforme acordado, faremos os ajustes necessários sem custo adicional ou devolveremos seu dinheiro (exceto a parte já utilizada em custos operacionais).</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Posso rastrear o progresso do meu pedido?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Sim, fornecemos atualizações regulares sobre o status do seu pedido. Você receberá um código de acompanhamento único que pode ser usado em nossa página de rastreamento ou para consultar diretamente com nosso suporte via WhatsApp.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 7 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Vocês realizam serviços ilegais?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Não realizamos nenhum serviço que viole as leis locais ou internacionais. Todos os nossos trabalhos são feitos por hackers éticos e dentro dos limites legais. Antes de aceitar qualquer pedido, avaliamos cuidadosamente sua legitimidade e propósito.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 8 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Como posso entrar em contato em caso de dúvidas?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Nosso suporte está disponível 24/7 através do WhatsApp (botão no canto inferior direito), e-mail (suporte@cyberxpert.com) ou pelo formulário de contato em nosso site. Geralmente respondemos em até 1 hora durante o dia e em até 4 horas durante a noite.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Vocês oferecem suporte após a conclusão do serviço?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Sim, oferecemos suporte pós-serviço por 30 dias sem custo adicional. Caso precise de assistência após esse período, podemos oferecer planos de manutenção com valores especiais.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Qual é a política de reembolso?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Oferecemos reembolso total caso não consigamos entregar o serviço conforme combinado. Para cancelamentos solicitados antes do início do trabalho, devolvemos 100% do valor. Após o início, aplicamos uma taxa administrativa de 20% sobre o valor pago.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 11 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Vocês trabalham com empresas?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Sim, temos planos corporativos para empresas que necessitam de serviços recorrentes ou em larga escala. Oferecemos condições especiais e relatórios detalhados para casos empresariais.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 12 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Como posso ter certeza de que meus dados estão seguros?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Utilizamos criptografia de ponta a ponta em todas as comunicações e não armazenamos dados sensíveis após a conclusão do serviço. Todos os nossos profissionais assinam acordos de confidencialidade rígidos.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 13 -->
+                <div class="faq-item p-6 cursor-pointer">
+                    <div class="flex justify-between items-center">
+                        <h3 class="faq-question text-xl font-medium">Vocês oferecem serviços preventivos contra hackers?</h3>
+                        <span class="faq-toggle text-purple-500 transition-transform duration-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer mt-4 text-gray-400">
+                        <p>Sim, oferecemos serviços de proteção digital, incluindo auditorias de segurança, proteção contra invasões e treinamentos para equipes. Podemos ajudar a tornar seus sistemas e contas mais seguros contra ameaças externas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-4">Não encontrou o que procura?</h3>
+                <p class="text-gray-400 mb-6">Entre em contato conosco e nossa equipe terá prazer em responder suas perguntas pessoalmente.</p>
+                <a href="contato.html" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    <i class="fas fa-comment-dots mr-2"></i> Fale Conosco
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text flex items-center">
+                        <i class="fas fa-user-secret mr-2"></i> CyberXpert
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 CyberXpert. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>Português (BR)</option>
+                        <option>English</option>
+                        <option>Español</option>
+                    </select>
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>BRL (R$)</option>
+                        <option>USD ($)</option>
+                        <option>EUR (€)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- WhatsApp Button -->
+    <a href="contato.html" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const toggle = item.querySelector('.faq-toggle');
+            
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+            
+            toggle.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

@@ -88,7 +88,7 @@
         }
         
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 5000px; /* Increased to ensure all text shows */
         }
         
         .faq-item.active .faq-question {
@@ -164,6 +164,12 @@
             background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
         }
         
+        /* Improved FAQ answer styling */
+        .faq-answer p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
         /* Media queries para ajustar o posicionamento em telas menores */
         @media (max-width: 640px) {
             .back-to-top {
@@ -177,6 +183,15 @@
             .whatsapp-button {
                 width: 45px;
                 height: 45px;
+            }
+            
+            .faq-question {
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
+            
+            .faq-answer {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -214,21 +229,21 @@
                     <span>CyberXpert</span>
                 </a>
             </div>
-            
+                        
             <nav class="hidden md:flex space-x-8">
                 <a href="index.html#services" class="nav-link font-medium hover:text-purple-400">Serviços</a>
                 <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
                 <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
                 <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
             </nav>
-            
+                        
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-        
+                
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
             <a href="index.html#services" class="block py-2 hover:text-purple-400">Serviços</a>
@@ -263,21 +278,14 @@
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>A gente entende totalmente a sua dúvida. É normal ter receio de pagar e acabar caindo em um golpe — principalmente num meio onde tem muita gente prometendo tudo e não entregando nada.</p><br>
-                        <p>Mas existe um detalhe que pouca gente percebe:
-quem tenta convencer demais, oferecendo “provinha”, “demonstração” ou “garantia fácil”, quase sempre é justamente quem não vai entregar nada. Isso virou o truque mais usado por golpistas, porque sabem que as pessoas estão buscando alguém que pareça confiável. E aí o que parece segurança, vira armadilha.</p><br>
-<p>Nosso serviço é 100% garantido. Mas a verdade é que a maioria das pessoas que nos procuram acaba só fazendo teste, perdendo nosso tempo ou simplesmente não tem o dinheiro para fechar. Cada serviço envolve um custo real, além dos investimentos que fazemos para manter tudo seguro e funcionando.
-
-</p><br>
-<p>Por isso, preferimos ser transparentes e deixar claro que não ficamos provando o serviço. Compre apenas se realmente confiar — e tudo bem se ainda não for seu momento. Confiança é fundamental.
-
-</p><br>
-<p>Se você não tem certeza, não compre agora. Não insista pedindo só uma “provinha”. A gente entende seu receio, e, como vocês viram acima, quem busca “segurança demais” muitas vezes acaba caindo em golpes justamente por isso.
-
-</p>
+                        <p>A gente entende totalmente a sua dúvida. É normal ter receio de pagar e acabar caindo em um golpe — principalmente num meio onde tem muita gente prometendo tudo e não entregando nada.</p>
+                        <p>Mas existe um detalhe que pouca gente percebe: quem tenta convencer demais, oferecendo "provinha", "demonstração" ou "garantia fácil", quase sempre é justamente quem não vai entregar nada. Isso virou o truque mais usado por golpistas, porque sabem que as pessoas estão buscando alguém que pareça confiável. E aí o que parece segurança, vira armadilha.</p>
+                        <p>Nosso serviço é 100% garantido. Mas a verdade é que a maioria das pessoas que nos procuram acaba só fazendo teste, perdendo nosso tempo ou simplesmente não tem o dinheiro para fechar. Cada serviço envolve um custo real, além dos investimentos que fazemos para manter tudo seguro e funcionando.</p>
+                        <p>Por isso, preferimos ser transparentes e deixar claro que não ficamos provando o serviço. Compre apenas se realmente confiar — e tudo bem se ainda não for seu momento. Confiança é fundamental.</p>
+                        <p>Se você não tem certeza, não compre agora. Não insista pedindo só uma "provinha". A gente entende seu receio, e, como vocês viram acima, quem busca "segurança demais" muitas vezes acaba caindo em golpes justamente por isso.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 2 -->
                 <div class="faq-item p-6 cursor-pointer">
                     <div class="flex justify-between items-center">
@@ -287,20 +295,13 @@ quem tenta convencer demais, oferecendo “provinha”, “demonstração” ou 
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>Sabemos que essa é uma dúvida importante e queremos que você se sinta totalmente seguro. A grande maioria dos nossos serviços é 100% garantida e sempre entregue exatamente como combinado.
-</p><br>
-<p>Em alguns casos muito específicos, certos serviços podem ter limitações naturais e, por isso, não são 100% garantidos — mas sempre avisamos isso antes de qualquer contratação, para que você saiba exatamente o que esperar.
-
-</p><br>
-<p>Se algo sair diferente do combinado, nunca enrolamos nem inventamos desculpas. Deu problema? Devolvemos seu dinheiro na mesma hora, sem burocracia ou demora.
-
-</p><br>
-<p>Aqui, nossa prioridade é sua satisfação, confiança e transparência total. Se algo não funcionar, você não perde nada — é assim que mantemos nosso compromisso sério com cada cliente.
-
-</p>
+                        <p>Sabemos que essa é uma dúvida importante e queremos que você se sinta totalmente seguro. A grande maioria dos nossos serviços é 100% garantida e sempre entregue exatamente como combinado.</p>
+                        <p>Em alguns casos muito específicos, certos serviços podem ter limitações naturais e, por isso, não são 100% garantidos — mas sempre avisamos isso antes de qualquer contratação, para que você saiba exatamente o que esperar.</p>
+                        <p>Se algo sair diferente do combinado, nunca enrolamos nem inventamos desculpas. Deu problema? Devolvemos seu dinheiro na mesma hora, sem burocracia ou demora.</p>
+                        <p>Aqui, nossa prioridade é sua satisfação, confiança e transparência total. Se algo não funcionar, você não perde nada — é assim que mantemos nosso compromisso sério com cada cliente.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 3 -->
                 <div class="faq-item p-6 cursor-pointer">
                     <div class="flex justify-between items-center">
@@ -310,18 +311,12 @@ quem tenta convencer demais, oferecendo “provinha”, “demonstração” ou 
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>Essa é uma pergunta comum, e a gente entende o motivo. Com tanto golpe por aí, é normal querer ter certeza antes de confiar. Mas é justamente esse tipo de desconfiança que os golpistas usam como isca: eles prometem prova, mostram algo pronto da internet e depois somem.
-</p><br>
-<p>Aqui, a coisa funciona diferente.
-Não mostramos provas, amostras ou prévias de nada. Não porque o serviço não funcione — mas porque já aprendemos que quem pede “só pra ver” quase nunca tem intenção de contratar de verdade.</p><br>
-<p>A gente valoriza tempo, sigilo e compromisso.
-Se você confia, contrata e recebe exatamente o que foi prometido.
-Se ainda não confia, tudo bem — não insista. A decisão é sua, e a gente respeita.
-
-</p>
+                        <p>Essa é uma pergunta comum, e a gente entende o motivo. Com tanto golpe por aí, é normal querer ter certeza antes de confiar. Mas é justamente esse tipo de desconfiança que os golpistas usam como isca: eles prometem prova, mostram algo pronto da internet e depois somem.</p>
+                        <p>Aqui, a coisa funciona diferente. Não mostramos provas, amostras ou prévias de nada. Não porque o serviço não funcione — mas porque já aprendemos que quem pede "só pra ver" quase nunca tem intenção de contratar de verdade.</p>
+                        <p>A gente valoriza tempo, sigilo e compromisso. Se você confia, contrata e recebe exatamente o que foi prometido. Se ainda não confia, tudo bem — não insista. A decisão é sua, e a gente respeita.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 4 -->
                 <div class="faq-item p-6 cursor-pointer">
                     <div class="flex justify-between items-center">
@@ -334,7 +329,7 @@ Se ainda não confia, tudo bem — não insista. A decisão é sua, e a gente re
                         <p>Sim, a privacidade e segurança de nossos clientes são nossa prioridade máxima. Não armazenamos nenhum dado sensível após a conclusão do serviço e todas as comunicações são criptografadas. Também oferecemos a opção de comunicação anônima para clientes que desejam total discrição.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 5 -->
                 <div class="faq-item p-6 cursor-pointer">
                     <div class="flex justify-between items-center">
@@ -344,15 +339,11 @@ Se ainda não confia, tudo bem — não insista. A decisão é sua, e a gente re
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>Sim, realizamos praticamente qualquer tipo de serviço digital, desde que seja tecnicamente possível.
-Não perguntamos o motivo, a intenção ou a razão por trás do pedido. O foco aqui é simples: você informa o que precisa ser feito, nós avaliamos se é viável — e, se for, executamos com total descrição.</p><br>
-<p>Cada serviço é tratado com seriedade, sem julgamentos e sem questionamentos.
-Confiança e sigilo são prioridade em tudo o que fazemos.
-
-</p>
+                        <p>Sim, realizamos praticamente qualquer tipo de serviço digital, desde que seja tecnicamente possível. Não perguntamos o motivo, a intenção ou a razão por trás do pedido. O foco aqui é simples: você informa o que precisa ser feito, nós avaliamos se é viável — e, se for, executamos com total descrição.</p>
+                        <p>Cada serviço é tratado com seriedade, sem julgamentos e sem questionamentos. Confiança e sigilo são prioridade em tudo o que fazemos.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 6 -->
                 <div class="faq-item p-6 cursor-pointer">
                     <div class="flex justify-between items-center">
@@ -365,7 +356,7 @@ Confiança e sigilo são prioridade em tudo o que fazemos.
                         <p>Sim, fornecemos atualizações regulares sobre o status do seu pedido. Você receberá um código de acompanhamento único que pode ser usado em nossa página de rastreamento ou para consultar diretamente com nosso suporte via WhatsApp.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 7 -->
                 <div class="faq-item p-6 cursor-pointer">
                     <div class="flex justify-between items-center">
@@ -375,15 +366,12 @@ Confiança e sigilo são prioridade em tudo o que fazemos.
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>Sim. Trabalhamos com pessoas experientes, que realmente sabem o que estão fazendo — e não estamos aqui pra testar, aprender ou tentar dar sorte.
-</p><br>
-<p>A maioria dos serviços que oferecemos já foi realizada dezenas (ou centenas) de vezes, com resultado real, sem falhas e sem exposição.
-</p><br>
-<p>Sabemos o que funciona, o que não funciona, e como fazer do jeito certo — com segurança, descrição e entrega.
-Aqui não tem amadorismo. Se aceitamos o pedido, é porque sabemos exatamente como executar.</p>
+                        <p>Sim. Trabalhamos com pessoas experientes, que realmente sabem o que estão fazendo — e não estamos aqui pra testar, aprender ou tentar dar sorte.</p>
+                        <p>A maioria dos serviços que oferecemos já foi realizada dezenas (ou centenas) de vezes, com resultado real, sem falhas e sem exposição.</p>
+                        <p>Sabemos o que funciona, o que não funciona, e como fazer do jeito certo — com segurança, descrição e entrega. Aqui não tem amadorismo. Se aceitamos o pedido, é porque sabemos exatamente como executar.</p>
                     </div>
                 </div>
-                
+                                
                 <!-- FAQ Item 8 -->
                 <div class="faq-item p-6 cursor-pointer">
                     <div class="flex justify-between items-center">
@@ -393,18 +381,11 @@ Aqui não tem amadorismo. Se aceitamos o pedido, é porque sabemos exatamente co
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>Essa é uma dúvida totalmente compreensível — e, na verdade, é a mais comum de todas. A gente sabe que hoje em dia tem golpe em todo lugar, com gente prometendo demais, jurando que é “de confiança”, oferecendo provinha, e depois some assim que recebe.</p><br>
-                        <p>Se você tem medo de cair em algo assim, está certo em se proteger. Mas aqui vai um ponto importante que muita gente só percebe tarde demais:</p><br>
-                        <p>quem fica tentando demais provar que é real, oferecendo garantia fácil, mostrando prints ou demonstrando “só pra te convencer” — geralmente é justamente quem não vai entregar nada. Porque golpista precisa parecer seguro, já que não vai entregar nada depois.
-</p><br>
-<p>A gente faz o oposto.
-Não tentamos convencer ninguém com teatrinho. Preferimos ser transparentes desde o início: nosso foco não é provar, é entregar.
-A maioria dos nossos serviços é 100% garantida e feita com seriedade. E quando um serviço tem limitação ou risco, avisamos antes.</p><br>
-<p>Se acontecer algum imprevisto — o que é raro — você não sai no prejuízo. O reembolso é feito na mesma hora, sem enrolação, sem desculpa.
-
-O que sustenta nosso trabalho não é promessa. É resultado.
-E quem contrata, recebe exatamente o que foi combinado.
-</p>
+                        <p>Essa é uma dúvida totalmente compreensível — e, na verdade, é a mais comum de todas. A gente sabe que hoje em dia tem golpe em todo lugar, com gente prometendo demais, jurando que é "de confiança", oferecendo provinha, e depois some assim que recebe.</p>
+                        <p>Se você tem medo de cair em algo assim, está certo em se proteger. Mas aqui vai um ponto importante que muita gente só percebe tarde demais:</p>
+                        <p>quem fica tentando demais provar que é real, oferecendo garantia fácil, mostrando prints ou demonstrando "só pra te convencer" — geralmente é justamente quem não vai entregar nada. Porque golpista precisa parecer seguro, já que não vai entregar nada depois.</p>
+                        <p>A gente faz o oposto. Não tentamos convencer ninguém com teatrinho. Preferimos ser transparentes desde o início: nosso foco não é provar, é entregar. A maioria dos nossos serviços é 100% garantida e feita com seriedade. E quando um serviço tem limitação ou risco, avisamos antes.</p>
+                        <p>Se acontecer algum imprevisto — o que é raro — você não sai no prejuízo. O reembolso é feito na mesma hora, sem enrolação, sem desculpa. O que sustenta nosso trabalho não é promessa. É resultado. E quem contrata, recebe exatamente o que foi combinado.</p>
                     </div>
                 </div>
 
@@ -417,14 +398,9 @@ E quem contrata, recebe exatamente o que foi combinado.
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>Não. Nunca.
-
-Sigilo é uma das coisas mais importantes no nosso trabalho. Nenhuma informação que você passa é repassada, exposta ou vinculada ao serviço que será feito. Tudo é tratado com total descrição — do início ao fim.</p><br>
-<p>Não salvamos dados, não registramos conversas e não deixamos rastros. Você não precisa se identificar com documentos, redes sociais ou nada pessoal. Só pedimos o essencial pra executar o serviço, e nada além disso.</p><br>
-<p>Tudo o que fazemos é pensado pra manter você fora de qualquer risco.
-Seu nome, sua identidade e sua participação nunca aparecem em lugar nenhum.
-
-Pode ficar tranquilo: se tem uma coisa que a gente protege, é o cliente.</p>
+                        <p>Não. Nunca. Sigilo é uma das coisas mais importantes no nosso trabalho. Nenhuma informação que você passa é repassada, exposta ou vinculada ao serviço que será feito. Tudo é tratado com total descrição — do início ao fim.</p>
+                        <p>Não salvamos dados, não registramos conversas e não deixamos rastros. Você não precisa se identificar com documentos, redes sociais ou nada pessoal. Só pedimos o essencial pra executar o serviço, e nada além disso.</p>
+                        <p>Tudo o que fazemos é pensado pra manter você fora de qualquer risco. Seu nome, sua identidade e sua participação nunca aparecem em lugar nenhum. Pode ficar tranquilo: se tem uma coisa que a gente protege, é o cliente.</p>
                     </div>
                 </div>
 
@@ -450,14 +426,9 @@ Pode ficar tranquilo: se tem uma coisa que a gente protege, é o cliente.</p>
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>A gente entende totalmente essa dúvida — e é mais do que normal. Confiar em algo que você nunca viu, com alguém que não conhece, ainda mais nesse tipo de serviço, gera receio mesmo. E tá tudo certo com isso.</p><br>
-                        <p>É por isso que aqui a gente prefere ser direto e transparente.
-Não ficamos tentando convencer com promessas exageradas, nem criando um monte de prova pra parecer confiável. A gente só mostra como funciona, e deixa a decisão com você.</p><br>
-<p>Tem gente que só consegue confiar depois de muita conversa. Outros, sentem firmeza e fecham sem pensar duas vezes. Cada um tem seu tempo — e a gente respeita isso.
-
-Mas o que podemos garantir é o seguinte:
-quem confia, recebe.
-Com descrição, resultado e um atendimento de verdade, sem enrolação.</p><br>
+                        <p>A gente entende totalmente essa dúvida — e é mais do que normal. Confiar em algo que você nunca viu, com alguém que não conhece, ainda mais nesse tipo de serviço, gera receio mesmo. E tá tudo certo com isso.</p>
+                        <p>É por isso que aqui a gente prefere ser direto e transparente. Não ficamos tentando convencer com promessas exageradas, nem criando um monte de prova pra parecer confiável. A gente só mostra como funciona, e deixa a decisão com você.</p>
+                        <p>Tem gente que só consegue confiar depois de muita conversa. Outros, sentem firmeza e fecham sem pensar duas vezes. Cada um tem seu tempo — e a gente respeita isso. Mas o que podemos garantir é o seguinte: quem confia, recebe. Com descrição, resultado e um atendimento de verdade, sem enrolação.</p>
                     </div>
                 </div>
 
@@ -470,16 +441,10 @@ Com descrição, resultado e um atendimento de verdade, sem enrolação.</p><br>
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>A gente entende totalmente. Nem todo mundo tem condição de pagar alto, e sabemos que o salário no Brasil não é fácil. Muita gente que nunca contratou esse tipo de serviço costuma imaginar que vai encontrar algo bem acessível — e isso é normal.</p><br>
-                        <p>Mas a verdade é que, se fosse barato pra qualquer um, todo mundo estaria se hackeando o tempo todo.
-Pra manter a segurança, a qualidade e uma entrega rápida, existe um custo.
-Nosso valor não é o mais caro, nem o mais barato — é o preço justo pra algo que realmente funciona.</p><br>
-<p>Mesmo assim, a gente sabe que cada caso é um caso.
-Por isso, dependendo do serviço e do motivo, podemos sim avaliar um valor diferente.
-Você não precisa explicar tudo se não quiser — só dar uma noção geral já ajuda. Mas é bom saber que tem alguns serviços que realmente não valem a pena por um valor muito baixo, e aí não conseguimos reduzir.</p><br>
-<p>Só fique atento a uma coisa: quando o preço é barato demais, sem lógica, geralmente é golpe. E quem corre atrás só do mais barato costuma acabar perdendo o pouco que tem.
-
-Aqui, a ideia é simples: qualidade, descrição e um resultado real — com o melhor custo-benefício possível pra algo que funciona de verdade.</p>
+                        <p>A gente entende totalmente. Nem todo mundo tem condição de pagar alto, e sabemos que o salário no Brasil não é fácil. Muita gente que nunca contratou esse tipo de serviço costuma imaginar que vai encontrar algo bem acessível — e isso é normal.</p>
+                        <p>Mas a verdade é que, se fosse barato pra qualquer um, todo mundo estaria se hackeando o tempo todo. Pra manter a segurança, a qualidade e uma entrega rápida, existe um custo. Nosso valor não é o mais caro, nem o mais barato — é o preço justo pra algo que realmente funciona.</p>
+                        <p>Mesmo assim, a gente sabe que cada caso é um caso. Por isso, dependendo do serviço e do motivo, podemos sim avaliar um valor diferente. Você não precisa explicar tudo se não quiser — só dar uma noção geral já ajuda. Mas é bom saber que tem alguns serviços que realmente não valem a pena por um valor muito baixo, e aí não conseguimos reduzir.</p>
+                        <p>Só fique atento a uma coisa: quando o preço é barato demais, sem lógica, geralmente é golpe. E quem corre atrás só do mais barato costuma acabar perdendo o pouco que tem. Aqui, a ideia é simples: qualidade, descrição e um resultado real — com o melhor custo-benefício possível pra algo que funciona de verdade.</p>
                     </div>
                 </div>
 
@@ -492,21 +457,15 @@ Aqui, a ideia é simples: qualidade, descrição e um resultado real — com o m
                         </span>
                     </div>
                     <div class="faq-answer mt-4 text-gray-400">
-                        <p>Sabemos que, na hora de decidir, bate aquele medo: “E se não for real?”, “E se eu pagar e não receber?”, “E se eu for enganado? Essas dúvidas são normais. Com tantos golpes por aí, é natural desconfiar. Muita gente já passou por isso ou conhece quem já caiu.”</p><br>
-                        <p>O que pouca gente percebe é que os golpistas usam esse medo para parecer confiáveis. Eles falam com calma, prometem garantias exageradas, mostram prints que parecem reais e oferecem preços muito baixos. Tudo para você pensar que achou alguém seguro.</p><br>
-                        <p>Mas é aí que mora o problema: o que parecia segurança vira armadilha. E quando a pessoa percebe, já perdeu tempo e dinheiro.
-
-Quem realmente trabalha sério não perde tempo tentando parecer confiável. Serviços hackers são complexos, exigem tempo, foco e preparo. Já o golpista investe todo seu tempo apenas em parecer confiável, porque ele não precisa trabalhar de verdade.
-
-</p><br>
-<p>De 50 pessoas que nos procuram, 45 só enrolam, 4 querem prova, e só 1 realmente confia e contrata.
-
-Por isso, somos diretos: quem confia, recebe. Quem não confia, melhor não comprar.</p><br>
-<p>Tenha em mente que quem trabalha de verdade não perde horas tentando provar que o serviço funciona. Já os golpistas baixam muito o preço para você pensar que perder esse pouco dinheiro não faz diferença — e por isso aplicam vários golpes assim por dia. Essa estratégia acaba prejudicando quem realmente oferece um serviço sério e comprometido.</p>
+                        <p>Sabemos que, na hora de decidir, bate aquele medo: "E se não for real?", "E se eu pagar e não receber?", "E se eu for enganado? Essas dúvidas são normais. Com tantos golpes por aí, é natural desconfiar. Muita gente já passou por isso ou conhece quem já caiu."</p>
+                        <p>O que pouca gente percebe é que os golpistas usam esse medo para parecer confiáveis. Eles falam com calma, prometem garantias exageradas, mostram prints que parecem reais e oferecem preços muito baixos. Tudo para você pensar que achou alguém seguro.</p>
+                        <p>Mas é aí que mora o problema: o que parecia segurança vira armadilha. E quando a pessoa percebe, já perdeu tempo e dinheiro. Quem realmente trabalha sério não perde tempo tentando parecer confiável. Serviços hackers são complexos, exigem tempo, foco e preparo. Já o golpista investe todo seu tempo apenas em parecer confiável, porque ele não precisa trabalhar de verdade.</p>
+                        <p>De 50 pessoas que nos procuram, 45 só enrolam, 4 querem prova, e só 1 realmente confia e contrata. Por isso, somos diretos: quem confia, recebe. Quem não confia, melhor não comprar.</p>
+                        <p>Tenha em mente que quem trabalha de verdade não perde horas tentando provar que o serviço funciona. Já os golpistas baixam muito o preço para você pensar que perder esse pouco dinheiro não faz diferença — e por isso aplicam vários golpes assim por dia. Essa estratégia acaba prejudicando quem realmente oferece um serviço sério e comprometido.</p>
                     </div>
                 </div>
             </div>
-            
+                        
             <!-- CTA Section -->
             <div class="mt-16 text-center">
                 <h3 class="text-2xl font-bold mb-4">Não encontrou o que procura?</h3>
@@ -538,9 +497,9 @@ Por isso, somos diretos: quem confia, recebe. Quem não confia, melhor não comp
                         </a>
                     </div>
                 </div>
-                
+                            
             </div>
-            
+                        
             <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm mb-4 md:mb-0">
                     © 2025 CyberXpert. Todos os direitos reservados.
@@ -565,7 +524,7 @@ Por isso, somos diretos: quem confia, recebe. Quem não confia, melhor não comp
     <button id="back-to-top" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    
+        
     <!-- WhatsApp Button -->
     <a href="contato.html" class="whatsapp-button">
         <i class="fab fa-whatsapp"></i>
@@ -578,35 +537,35 @@ Por isso, somos diretos: quem confia, recebe. Quem não confia, melhor não comp
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
-        
+                
         // FAQ Accordion
         document.querySelectorAll('.faq-item').forEach(item => {
             const question = item.querySelector('.faq-question');
             const toggle = item.querySelector('.faq-toggle');
-            
+                        
             question.addEventListener('click', () => {
                 item.classList.toggle('active');
             });
-            
+                        
             toggle.addEventListener('click', () => {
                 item.classList.toggle('active');
             });
         });
-        
+                
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+                                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
-        
+                
         // Back to Top Button
         const backToTopButton = document.getElementById('back-to-top');
-        
+                
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.style.display = 'flex';
@@ -614,7 +573,7 @@ Por isso, somos diretos: quem confia, recebe. Quem não confia, melhor não comp
                 backToTopButton.style.display = 'none';
             }
         });
-        
+                
         backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({

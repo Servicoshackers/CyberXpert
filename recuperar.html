@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperação de Fundos | CyberXpert</title>
-    <meta name="description" content="Serviço profissional para recuperar dinheiro perdido em golpes, fraudes ou contas bloqueadas. Especialistas em criptomoedas e bancos.">
+    <title>CyberXpert - Serviços de Hackers Profissionais</title>
+    <meta name="description" content="Serviços de hackers profissionais disponíveis 24/7. Soluções discretas e eficientes para suas necessidades digitais.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -74,8 +74,24 @@
             width: 100%;
         }
         
+        .rotate-text {
+            display: inline-block;
+            perspective: 1000px;
+        }
+        
+        .rotate-text span {
+            display: inline-block;
+            transform-origin: 50% 50%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+        }
+        
         .service-icon {
             transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
         
         .floating {
@@ -138,7 +154,7 @@
             bottom: 20px;
             right: 20px;
             z-index: 99;
-            background: #25D366;
+            background-color: #25D366;
             color: white;
             width: 50px;
             height: 50px;
@@ -151,13 +167,24 @@
         }
         
         .whatsapp-button:hover {
+            background-color: #128C7E;
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            background: #128C7E;
         }
         
         .whatsapp-button i {
             font-size: 24px;
+        }
+        
+        /* Header Moderno */
+        .header-modern {
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-modern .gradient-text {
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
         }
         
         /* Media queries para ajustar o posicionamento em telas menores */
@@ -174,89 +201,6 @@
                 width: 45px;
                 height: 45px;
             }
-        }
-        
-        /* Estilos específicos para a página de detalhes */
-        .feature-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .feature-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            background-color: #8b5cf6;
-            border-radius: 50%;
-        }
-        
-        .price-tag {
-            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
-            transform: rotate(5deg);
-        }
-        
-        .funds-gradient {
-            background: linear-gradient(45deg, #10B981, #3B82F6, #8B5CF6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .price-badge {
-            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-weight: bold;
-            font-size: 0.875rem;
-            display: inline-block;
-            margin-left: 0.5rem;
-        }
-        
-        .success-rate {
-            background: linear-gradient(135deg, #10B981, #3B82F6);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-weight: bold;
-            font-size: 0.875rem;
-            display: inline-block;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #8B5CF6, #3B82F6);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.6rem;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #8B5CF6;
-            border: 2px solid #3B82F6;
         }
     </style>
 </head>
@@ -276,26 +220,26 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <span class="ml-2">4.9/5</span>
+                <span class="ml-2">4.8/5</span>
             </div>
         </div>
         <div class="flex items-center space-x-4">
-            <a href="acompanhar-pedido.html" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+            <a href="https://cyberxpert.com/track-order" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+    <!-- Header Moderno -->
+    <header class="header-modern sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <a href="index.html" class="text-2xl font-bold gradient-text flex items-center">
+                <a href="" class="text-2xl font-bold gradient-text flex items-center">
                     <i class="fas fa-user-secret mr-2"></i>
                     <span>CyberXpert</span>
                 </a>
             </div>
             
             <nav class="hidden md:flex space-x-8">
-                <a href="servicos.html" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="#services" class="nav-link font-medium hover:text-purple-400">Serviços</a>
                 <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
                 <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
                 <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
@@ -310,376 +254,502 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
-            <a href="servicos.html" class="block py-2 hover:text-purple-400">Serviços</a>
-            <a href="sobre-nos.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="#services" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="sobre.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
             <a href="faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
             <a href="contato.html" class="block py-2 hover:text-purple-400">Contato</a>
         </div>
     </header>
 
-    <!-- Service Details Section -->
-    <section class="py-16 px-4">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Serviços de Hackers</span><br>
+                    <span class="text-white">Profissionais & Discretos</span>
+                </h1>
+                <p class="text-lg text-gray-300 mb-8">
+                    Soluções digitais especializadas para suas necessidades mais complexas. 
+                    Nossa equipe de especialistas em segurança cibernética está disponível 24/7
+                    para ajudá-lo com qualquer desafio digital.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#services" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">
+                        <i class="fas fa-shield-alt mr-2"></i> Nossos Serviços
+                    </a>
+                    <a href="contato.html" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center">
+                        <i class="fas fa-comments mr-2"></i> Fale Conosco
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-purple-500 rounded-full opacity-20 blur-xl"></div>
+                    <img src="https://images.icon-icons.com/827/PNG/512/laptop_icon-icons.com_66540.png" alt="Hacker Illustration" class="relative z-10 w-full h-full object-contain floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 px-4 bg-gray-800">
         <div class="container mx-auto">
-            <div class="flex flex-col lg:flex-row gap-12">
-                <!-- Service Overview -->
-                <div class="w-full">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gray-800 p-3 rounded-lg mr-4">
-                            <img id="service-icon" src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Ícone de Recuperação de Fundos" class="w-12 h-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="text-purple-500 text-3xl mb-4">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100% Seguro</h3>
+                    <p class="text-gray-400">
+                        Todos os nossos serviços são realizados com total discrição e segurança, garantindo sua privacidade.
+                    </p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="text-green-500 text-3xl mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Rápido e Eficiente</h3>
+                    <p class="text-gray-400">
+                        Tempo médio de conclusão de 24-48 horas para a maioria dos serviços. Resultados garantidos.
+                    </p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="text-blue-500 text-3xl mb-4">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Profissionais Certificados</h3>
+                    <p class="text-gray-400">
+                        Equipe de hackers éticos com anos de experiência e certificações em segurança cibernética.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 px-4 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Nossos Serviços</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Oferecemos uma ampla gama de serviços de hackers profissionais para atender às suas necessidades específicas.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WhatsApp -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
                         </div>
-                        <div>
-                            <h1 id="service-title" class="text-3xl font-bold funds-gradient">Recuperação de Fundos</h1>
-                            <div class="flex items-center mt-1">
-                                <div class="flex text-yellow-400 text-sm">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="text-gray-400 text-sm ml-2">(72 avaliações)</span>
-                                <span class="success-rate ml-3">87% de sucesso</span>
-                            </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-24 service-icon">
                         </div>
                     </div>
-                    
-                    <div class="bg-gray-800 rounded-xl p-6 mb-8 border border-gray-700">
-                        <h2 class="text-xl font-bold mb-4">Descrição do Serviço</h2>
-                        <p id="service-description" class="text-gray-300 mb-6">
-                            Nossa equipe especializada em recuperação de fundos atua para resgatar seu dinheiro perdido em golpes financeiros, fraudes online, contas bloqueadas ou transações não autorizadas. Com técnicas avançadas de rastreamento e anos de experiência no mercado financeiro e criptomoedas, conseguimos identificar os responsáveis e recuperar até 87% dos valores perdidos. Trabalhamos com casos envolvendo bancos tradicionais, corretoras de criptomoedas, esquemas de pirâmide e golpes de investimento.
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear WhatsApp</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso completo a qualquer conta do WhatsApp. Leia mensagens, visualize mídias e muito mais, tudo de forma remota.
                         </p>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Casos que Atendemos:</h3>
-                        <ul class="feature-list text-gray-300 mb-6">
-                            <li>Fraudes em investimentos (pirâmides, esquemas Ponzi)</li>
-                            <li>Golpes em criptomoedas (rug pulls, scams, honeypots)</li>
-                            <li>Transações bancárias não autorizadas</li>
-                            <li>Contas bloqueadas por instituições financeiras</li>
-                            <li>Chargebacks e estornos indevidos</li>
-                            <li>Recuperação de carteiras de criptomoedas perdidas</li>
-                            <li>Golpes românticos (love scams) com perdas financeiras</li>
-                            <li>Fraudes em plataformas de trading e forex</li>
-                        </ul>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funciona o Processo:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p class="mb-4">Nosso método de recuperação é dividido em etapas claras e transparentes:</p>
-                            
-                            <div class="timeline mt-6">
-                                <div class="timeline-item">
-                                    <h4 class="font-bold text-lg mb-2">1. Análise do Caso</h4>
-                                    <p class="text-sm">Coletamos todas as informações sobre a transação fraudulenta, incluindo comprovantes, e-mails, prints e detalhes do ocorrido. Avaliamos a viabilidade de recuperação.</p>
-                                </div>
-                                
-                                <div class="timeline-item">
-                                    <h4 class="font-bold text-lg mb-2">2. Rastreamento dos Fundos</h4>
-                                    <p class="text-sm">Utilizamos ferramentas especializadas para rastrear o caminho do dinheiro através do sistema financeiro ou blockchain.</p>
-                                </div>
-                                
-                                <div class="timeline-item">
-                                    <h4 class="font-bold text-lg mb-2">3. Identificação dos Responsáveis</h4>
-                                    <p class="text-sm">Através de técnicas de investigação digital, identificamos contas, pessoas ou empresas envolvidas no esquema fraudulento.</p>
-                                </div>
-                                
-                                <div class="timeline-item">
-                                    <h4 class="font-bold text-lg mb-2">4. Ação de Recuperação</h4>
-                                    <p class="text-sm">Dependendo do caso, podemos atuar através de:</p>
-                                    <ul class="feature-list text-sm mt-2">
-                                        <li>Ações judiciais e medidas cautelares</li>
-                                        <li>Contato direto com instituições financeiras</li>
-                                        <li>Negociação com os responsáveis</li>
-                                        <li>Bloqueio de contas receptoras</li>
-                                        <li>Recuperação técnica de carteiras de criptomoedas</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="timeline-item">
-                                    <h4 class="font-bold text-lg mb-2">5. Devolução dos Valores</h4>
-                                    <p class="text-sm">Assim que os fundos são recuperados, realizamos a transferência para sua conta de forma segura e documentada.</p>
-                                </div>
-                            </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 500,00</span>
+                            <a href="whatsapp.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
                         </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Taxa de Sucesso e Prazos:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p>Nossa taxa média de sucesso varia conforme o tipo de caso:</p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                                <!-- Card 1 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-blue-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-blue-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-coins text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold">Fraudes Bancárias</h4>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
-                                        <span class="font-bold text-green-400">92%</span>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
-                                        <span class="font-bold">15-30 dias</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
-                                        <span class="font-bold">70-100%</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card 2 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-purple-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-purple-600 p-2 rounded-full mr-3">
-                                            <i class="fab fa-bitcoin text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold">Criptomoedas</h4>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
-                                        <span class="font-bold text-green-400">78%</span>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
-                                        <span class="font-bold">30-90 dias</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
-                                        <span class="font-bold">40-80%</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card 3 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-green-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-green-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-chart-line text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold">Investimentos Fraudulentos</h4>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
-                                        <span class="font-bold text-green-400">85%</span>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
-                                        <span class="font-bold">60-180 dias</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
-                                        <span class="font-bold">50-90%</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card 4 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-yellow-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-yellow-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-heart text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold">Golpes Românticos</h4>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Taxa de Sucesso:</span>
-                                        <span class="font-bold text-green-400">65%</span>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-gray-400">Prazo Médio:</span>
-                                        <span class="font-bold">90-365 dias</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-400">Valor Recuperado:</span>
-                                        <span class="font-bold">30-70%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <p class="mt-4 text-sm text-gray-400">* Os prazos e taxas podem variar conforme a complexidade do caso e a cooperação do cliente no fornecimento de informações.</p>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Modelos de Cobrança:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p>Oferecemos três opções flexíveis de pagamento para melhor atender às suas necessidades:</p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                                <!-- Opção 1 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-purple-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-purple-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-money-bill-wave text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold text-lg">Taxa Fixa <span class="price-badge">15% do valor recuperado</span></h4>
-                                    </div>
-                                    <ul class="feature-list text-sm">
-                                        <li>Pagamento somente após sucesso</li>
-                                        <li>Taxa de 15% sobre o valor recuperado</li>
-                                        <li>Sem custos iniciais</li>
-                                        <li>Melhor para casos acima de R$ 50.000</li>
-                                        <li>Contrato formal com garantias</li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Opção 2 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-blue-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-blue-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-percentage text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold text-lg">Taxa Variável <span class="price-badge">20-30% do valor</span></h4>
-                                    </div>
-                                    <ul class="feature-list text-sm">
-                                        <li>Pagamento somente após sucesso</li>
-                                        <li>Taxa de 20-30% conforme complexidade</li>
-                                        <li>Sem custos iniciais</li>
-                                        <li>Ideal para casos entre R$ 10.000-50.000</li>
-                                        <li>Contrato com cláusula de confidencialidade</li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Opção 3 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-green-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-green-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-hand-holding-usd text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold text-lg">Honorários Adiantados <span class="price-badge">R$ 5.000 + 10%</span></h4>
-                                    </div>
-                                    <ul class="feature-list text-sm">
-                                        <li>Pagamento inicial de R$ 5.000</li>
-                                        <li>+ 10% sobre o valor recuperado</li>
-                                        <li>Para casos urgentes ou abaixo de R$ 10.000</li>
-                                        <li>Processo mais rápido</li>
-                                        <li>Desconto em casos subsequentes</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-6 bg-gray-900 p-4 rounded-lg border border-gray-700">
-                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-info-circle mr-2"></i> Documentação Necessária</h4>
-                                <p class="text-gray-300 text-sm mb-2">
-                                    Para iniciar o processo de recuperação, precisamos dos seguintes documentos:
-                                </p>
-                                <ol class="list-decimal pl-5 text-sm text-gray-300 space-y-1">
-                                    <li>Comprovantes de todas as transações envolvidas</li>
-                                    <li>Comunicações com os golpistas (e-mails, mensagens, prints)</li>
-                                    <li>Documentos de identificação do cliente</li>
-                                    <li>Comprovante de residência</li>
-                                    <li>Extratos bancários ou da corretora (quando aplicável)</li>
-                                    <li>Qualquer contrato ou documento relacionado ao investimento</li>
-                                </ol>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Garantias e Segurança:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <ul class="feature-list">
-                                <li><strong>Sigilo Absoluto:</strong> Seus dados e detalhes do caso são protegidos com criptografia de ponta a ponta</li>
-                                <li><strong>Sem Risco Financeiro:</strong> Na maioria dos modelos, você só paga se recuperarmos seu dinheiro</li>
-                                <li><strong>Equipe Qualificada:</strong> Nossos especialistas têm formação em direito, finanças e segurança digital</li>
-                                <li><strong>Atualizações Constantes:</strong> Relatórios periódicos sobre o andamento do seu caso</li>
-                                <li><strong>Suporte 24/7:</strong> Disponível para tirar dúvidas e receber novas informações</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="bg-gray-900 p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-shield-alt mr-2"></i> Política de Privacidade</h4>
-                            <p class="text-gray-300 text-sm">
-                                Todos os nossos serviços são realizados com total discrição e segurança. Não compartilhamos informações com terceiros sem autorização expressa. Utilizamos sistemas seguros com criptografia AES-256 para proteger seus dados. Após a conclusão do caso, todos os documentos sensíveis são destruídos digitalmente, mantendo apenas o necessário para fins legais.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
-                        <h2 class="text-xl font-bold mb-4">Perguntas Frequentes</h2>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Quais são minhas chances de recuperar o dinheiro?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Nossa taxa média de sucesso é de 87%, variando conforme o tipo de caso. Fraudes bancárias têm até 92% de chance, enquanto golpes com criptomoedas ficam em torno de 78%. Quanto mais rápido você agir após perceber o golpe, maiores são as chances de recuperação. Casos com documentação completa também têm probabilidades significativamente maiores.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Quanto tempo leva para recuperar meu dinheiro?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                O prazo varia conforme a complexidade: fraudes bancárias simples podem ser resolvidas em 15-30 dias, enquanto casos complexos de criptomoedas podem levar de 3 a 12 meses. Investimentos fraudulentos geralmente levam de 2 a 6 meses. Fatores como localização dos golpistas, valor envolvido e cooperação de instituições financeiras influenciam no prazo.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Preciso contratar um advogado separadamente?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Não, nossa equipe já inclui advogados especializados em direito digital e financeiro. Trabalhamos com uma rede de escritórios parceiros em vários países quando necessário. Caso seu caso exija ação judicial específica em sua localidade, podemos indicar profissionais de confiança sem custos adicionais de intermediação.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>E se não conseguirem recuperar meu dinheiro?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Nos modelos de taxa sobre sucesso, você não paga nada se não recuperarmos seus fundos. No modelo com honorários adiantados, oferecemos um relatório detalhado com todas as ações tomadas e, em alguns casos, podemos devolver parte do valor adiantado conforme o tempo investido. Também fornecemos orientações para evitar futuros golpes.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Como é feito o pagamento dos valores recuperados?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Os valores são transferidos diretamente para uma conta em seu nome, após deduzida nossa taxa de sucesso. Em casos judiciais, o dinheiro pode ser depositado em conta judicial primeiro. Para criptomoedas, podemos enviar para uma carteira de sua escolha ou converter para reais, conforme sua preferência. Todo o processo é documentado e transparente.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Vocês trabalham com casos internacionais?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Sim, temos experiência em casos envolvendo múltiplas jurisdições. Trabalhamos com uma rede de parceiros em mais de 30 países para rastrear e recuperar fundos internacionalmente. Casos internacionais geralmente levam mais tempo e podem ter taxas um pouco mais altas devido aos custos adicionais, mas já recuperamos valores de esquemas baseados na China, Nigéria, Rússia e outros países.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Contact Button -->
-                    <div class="mt-8 text-center">
-                        <div class="mb-6 bg-gray-800 p-4 rounded-lg border border-gray-700 max-w-2xl mx-auto">
-                            <h4 class="font-bold text-purple-400 mb-3"><i class="fas fa-comments mr-2"></i> Como Contatar</h4>
-                            <p class="text-gray-300 text-sm mb-3">
-                                Para iniciar sua recuperação financeira, basta clicar no botão abaixo ou enviar uma mensagem diretamente para nosso WhatsApp. 
-                            </p>
-                            <p class="text-gray-300 text-sm mb-3">
-                                <strong>Preferimos que você já nos envie:</strong>
-                            </p>
-                            <ul class="feature-list text-sm text-gray-300 mb-4">
-                                <li>Breve descrição do ocorrido</li>
-                                <li>Valor aproximado perdido</li>
-                                <li>Método utilizado pelo golpista</li>
-                                <li>Quanto tempo passou desde o ocorrido</li>
-                            </ul>
-                            <p class="text-gray-300 text-sm">
-                                Isso agiliza nossa análise inicial e permite que nosso especialista já comece a te ajudar imediatamente. Caso envie apenas "Oi", responderemos rapidamente solicitando essas informações.
-                            </p>
-                        </div>
-                        
-                        <a href="contato.html" class="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
-                            <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista Agora
-                        </a>
-                        <p class="text-gray-400 mt-4">Nossa equipe está disponível 24 horas por dia para analisar seu caso e iniciar o processo de recuperação.</p>
                     </div>
                 </div>
+                
+                <!-- Celular -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Destaque
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Celular" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Celular</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso remoto completo a qualquer smartphone. Monitore atividades, mensagens, localização e aplicativos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 700,00</span>
+                            <a href="celular.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instagram -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Instagram</h3>
+                        <p class="text-gray-400 mb-4">
+                            Recupere contas perdidas ou acesse qualquer perfil do Instagram. Visualize mensagens diretas e posts privados.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 500</span>
+                            <a href="instagram.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Facebook -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Facebook</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso completo a qualquer conta do Facebook. Visualize mensagens privadas, posts ocultos e informações da conta.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 500</span>
+                            <a href="facebook.html" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear TikTok</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso completo a contas do TikTok. Visualize mensagens diretas, vídeos privados e informações da conta.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 400</span>
+                            <a href="https://cyberxpert.com/tiktok-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Faculdade -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="Faculdade" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Faculdade</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso a sistemas acadêmicos para alteração de notas, frequência ou obtenção de provas e materiais exclusivos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">Sob consulta</span>
+                            <a href="https://cyberxpert.com/school-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rastreamento -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/535/535137.png" alt="Rastreamento" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Rastrear Pessoa</h3>
+                        <p class="text-gray-400 mb-4">
+                            Localização em tempo real de qualquer pessoa através do celular. Histórico de locais visitados e rotas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 200</span>
+                            <a href="https://cyberxpert.com/tracking" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recuperação de Fundos -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://img.icons8.com/color/512/pix.png" alt="Recuperação de Fundos" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Recuperação de Fundos</h3>
+                        <p class="text-gray-400 mb-4">
+                            Recupere seu dinheiro perdido em golpes, fraudes ou contas bloqueadas. Especialistas em criptomoedas e bancos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">10% do valor recuperado</span>
+                            <a href="https://cyberxpert.com/fund-recovery" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Descobrir um Fake -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Novo
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/256/3391/3391090.png" alt="Descobrir Fake" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Descobrir um Fake</h3>
+                        <p class="text-gray-400 mb-4">
+                            Identifique perfis falsos, contas falsas e pessoas que se passam por outras. Verificação completa de identidade digital.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 200</span>
+                            <a href="https://cyberxpert.com/fake-detection" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Serviço Sob Medida -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1570/1570887.png" alt="Serviço Sob Medida" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Serviço Sob Medida</h3>
+                        <p class="text-gray-400 mb-4">
+                            Solução personalizada para suas necessidades específicas. Nossa equipe desenvolverá uma abordagem exclusiva para seu caso.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">Sob consulta</span>
+                            <a href="https://cyberxpert.com/custom-service" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Remoção de Conteúdo -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3096/3096673.png" alt="Remoção de Conteúdo" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Remoção de Conteúdo</h3>
+                        <p class="text-gray-400 mb-4">
+                            Remova conteúdo prejudicial, fotos ou vídeos privados da internet. Atuamos em redes sociais e sites diversos.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 200</span>
+                            <a href="https://cyberxpert.com/content-removal" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Investigação Digital -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Profissional
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.freepik.com/512/2322/2322972.png" alt="Investigação Digital" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Investigação Digital</h3>
+                        <p class="text-gray-400 mb-4">
+                            Descubra exatamente o que você quer: uma conversa, uma foto, uma senha ou uma mensagem apagada. Investigação digital focada, direta e sem rastros.
+
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 200</span>
+                            <a href="https://cyberxpert.com/digital-investigation" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proteção de Dados -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="h-48 bg-gray-900 flex items-center justify-center">
+                        <img src="https://www.freeiconspng.com/uploads/wifi-icon-png-0.png" alt="Proteção de Dados" class="h-24 service-icon">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Wifi</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso remoto a redes Wi-Fi protegidas, com análise e liberação de senha de forma rápida, discreta e sem vestígios. Serviço sigiloso, eficaz e sob demanda.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 90</span>
+                            <a href="https://cyberxpert.com/data-protection" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Novo Serviço 1: Recuperação de Contas -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Novo
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Recuperação de Contas" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear E-mail</h3>
+                        <p class="text-gray-400 mb-4">
+                            Serviço de invasão de e-mail com acesso total à conta, incluindo leitura, cópia de mensagens e rastreio de atividades. Operação feita de forma remota, discreta e sem alertas. Sigilo absoluto e execução precisa.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 450</span>
+                            <a href="https://cyberxpert.com/account-recovery" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Novo Serviço 2: Monitoramento Digital -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Destaque
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4260/4260892.png" alt="Monitoramento Digital" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Websites</h3>
+                        <p class="text-gray-400 mb-4">
+                            Acesso total a sites, painéis administrativos, bancos de dados ou arquivos internos. Invasão remota, silenciosa e sem rastros. Ideal para retirada de conteúdo, coleta de informações ou controle completo da estrutura.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 600</span>
+                            <a href="https://cyberxpert.com/digital-monitoring" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Novo Serviço 3: Hackear Telegram -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Novo
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" alt="Telegram" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Criação Ou Desenvolvimento</h3>
+                        <p class="text-gray-400 mb-4">
+                            Desenvolvimento sob medida para qualquer necessidade: sistemas personalizados, ferramentas ocultas, automações discretas ou acessos invisíveis. Entrega precisa, código limpo e funcionamento silencioso.
+
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">Sob consulta</span>
+                            <a href="https://cyberxpert.com/telegram-hack" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Novo Serviço 4: Clonar Cartão -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            VIP
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/036/895/728/small_2x/hacker-logo-or-hacker-in-black-hoodie-cyber-crime-with-laptop-free-png.png" alt="Cartão de Crédito" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Torne Se Um Hacker </h3>
+                        <p class="text-gray-400 mb-4">
+                            Aprenda técnicas reais de invasão, engenharia social, acesso remoto e manipulação de sistemas. Curso direto ao ponto, com foco prático, métodos atualizados e mentalidade ofensiva. Sem enrolação, só o que funciona.
+
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 100</span>
+                            <a href="https://cyberxpert.com/card-cloning" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Novo Serviço 5: Hackear Jogos -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover service-card">
+                    <div class="relative">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Popular
+                        </div>
+                        <div class="h-48 bg-gray-900 flex items-center justify-center">
+                            <img src="https://img.icons8.com/color/512/play-games.png" alt="Jogos" class="h-24 service-icon">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackear Jogos</h3>
+                        <p class="text-gray-400 mb-4">
+                            Modificação de contas em jogos online (Free Fire, LoL, COD, etc). Obtenha skins ilimitadas, moedas, ranks elevados e vantagens competitivas.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-400 font-bold">A partir de R$ 75</span>
+                            <a href="https://cyberxpert.com/game-hacking" class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                                <i class="fas fa-plus-circle mr-1"></i> Detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-4 bg-gradient-to-r from-purple-900 to-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Resolver Seu Problema?</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+                Nossa equipe está disponível 24 horas por dia, 7 dias por semana para ajudá-lo com qualquer desafio digital que você esteja enfrentando.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="contato.html" class="bg-white hover:bg-gray-100 text-purple-800 font-bold py-3 px-8 rounded-lg transition duration-300 text-center">
+                    <i class="fas fa-comment-dots mr-2"></i> Fale Conosco Agora
+                </a>
+                <a href="faq.html" class="bg-transparent hover:bg-purple-800 text-white font-bold py-3 px-8 rounded-lg border border-white transition duration-300 text-center">
+                    <i class="fas fa-question-circle mr-2"></i> Perguntas Frequentes
+                </a>
             </div>
         </div>
     </section>
@@ -699,40 +769,10 @@
                         <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
                             <i class="fab fa-whatsapp text-xl"></i>
                         </a>
+                        <a href="" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
                     </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
-                    <ul class="space-y-2">
-                        <li><a href="https://cyberxpert.com/instagram-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Instagram</a></li>
-                        <li><a href="https://cyberxpert.com/whatsapp-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
-                        <li><a href="https://cyberxpert.com/facebook-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
-                        <li><a href="https://cyberxpert.com/tiktok-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear TikTok</a></li>
-                        <li><a href="https://cyberxpert.com/funds-recovery" class="text-gray-400 hover:text-purple-400 transition">Recuperação de Fundos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
-                    <ul class="space-y-2">
-                        <li><a href="sobre-nos.html" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
-                        <li><a href="faq.html" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
-                        <li><a href="privacidade.html" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
-                        <li><a href="termos.html" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Contato</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
-                        </li>
-                    </ul>
                 </div>
             </div>
             
@@ -762,7 +802,7 @@
     </button>
     
     <!-- WhatsApp Button -->
-    <a href="contato.html" class="whatsapp-button">
+    <a href="https://wa.me/5511999999999" class="whatsapp-button">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -774,32 +814,48 @@
             menu.classList.toggle('hidden');
         });
         
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
+        // Rotating Text Animation
+        const words = ["confiáveis", "profissionais", "discretos", "eficientes"];
+        let currentWordIndex = 0;
+        const rotatingText = document.querySelector('.rotate-text span');
+        
+        function rotateWord() {
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            rotatingText.textContent = words[currentWordIndex];
+            rotatingText.style.transform = 'rotateX(90deg)';
+            
+            setTimeout(() => {
+                rotatingText.style.transform = 'rotateX(0deg)';
+            }, 300);
+        }
+        
+        setInterval(rotateWord, 2000);
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
                 
-                answer.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
         
-        // Dynamic Service Details (can be customized for each service)
-        function loadServiceDetails() {
-            // This would normally come from URL parameters or database
-            // For demo purposes, we'll use Funds Recovery as default
-            const service = {
-                title: "Recuperação de Fundos",
-                icon: "https://cdn-icons-png.flaticon.com/512/3132/3132693.png",
-                description: "Nossa equipe especializada em recuperação de fundos atua para resgatar seu dinheiro perdido em golpes financeiros, fraudes online, contas bloqueadas ou transações não autorizadas. Com técnicas avançadas de rastreamento e anos de experiência no mercado financeiro e criptomoedas, conseguimos identificar os responsáveis e recuperar até 87% dos valores perdidos.",
-                price: "15%"
-            };
+        // Service Card Animation
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.service-icon');
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            });
             
-            document.getElementById('service-title').textContent = service.title;
-            document.getElementById('service-icon').src = service.icon;
-            document.getElementById('service-description').textContent = service.description;
-        }
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.service-icon');
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
         
         // Back to Top Button
         const backToTopButton = document.getElementById('back-to-top');
@@ -818,11 +874,6 @@
                 top: 0,
                 behavior: 'smooth'
             });
-        });
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            loadServiceDetails();
         });
     </script>
 </body>

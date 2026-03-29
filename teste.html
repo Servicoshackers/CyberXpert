@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>CyberXpert | Soluções Digitais Avançadas</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #010208;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0c14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2d3b6e;
+      border-radius: 8px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(46, 125, 255, 0.2);
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e6;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+    .track-btn {
+      background: rgba(59, 130, 246, 0.12);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      font-weight: 600;
+      color: #3b82f6;
+      transition: 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .track-btn i {
+      margin-right: 6px;
+    }
+    .track-btn:hover {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      padding: 3rem 0 4rem;
+    }
+    .hero-left {
+      flex: 1.2;
+    }
+    .badge-247 {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.1);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      margin-bottom: 1.5rem;
+    }
+    .badge-247 i {
+      color: #22c55e;
+      font-size: 0.7rem;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #f0f4ff, #90b4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1rem 0 1rem;
+    }
+    .stars {
+      color: #fbbf24;
+      letter-spacing: 2px;
+    }
+    .rating span {
+      font-weight: 600;
+    }
+    .hero-desc {
+      color: #9ca3cf;
+      margin: 1.2rem 0 1.8rem;
+      font-size: 1.05rem;
+      max-width: 550px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #3b82f6;
+      padding: 0.9rem 2rem;
+      border-radius: 48px;
+      font-weight: 600;
+      border: none;
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+    .btn-outline-light {
+      background: transparent;
+      border: 1px solid #3b82f6;
+      padding: 0.9rem 2rem;
+      border-radius: 48px;
+      font-weight: 500;
+      color: #eef2ff;
+      transition: 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-light:hover {
+      background: rgba(59,130,246,0.1);
+      border-color: #90b4ff;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin: 3rem 0 4rem;
+    }
+    .feature-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      flex: 1;
+      border: 1px solid rgba(59,130,246,0.2);
+      transition: 0.25s;
+    }
+    .feature-card i {
+      font-size: 2.2rem;
+      color: #3b82f6;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      color: #a0a9ce;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 3rem 0 1rem;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: #9ca3cf;
+      margin-bottom: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0 3rem;
+    }
+    .service-card {
+      background: #0a0f1c;
+      border-radius: 28px;
+      padding: 1.6rem;
+      transition: all 0.25s ease;
+      border: 1px solid #1e293b;
+      position: relative;
+    }
+    .service-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-5px);
+      background: #0c1122;
+      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.5);
+    }
+    .badge-popular, .badge-destaque, .badge-vip, .badge-novo, .badge-prof, .badge-permanente {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 0.7rem;
+      background: #1e2a4a;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-weight: 600;
+      color: #90b4ff;
+    }
+    .badge-destaque { background: #3b2a1f; color: #fbbf24; }
+    .badge-vip { background: #2d1f3a; color: #c084fc; }
+    .badge-novo { background: #1f3a2a; color: #4ade80; }
+    .badge-permanente { background: #4a1f2a; color: #f87171; }
+    .service-icon {
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .service-desc {
+      font-size: 0.85rem;
+      color: #b9c3e6;
+      margin: 0.6rem 0;
+      line-height: 1.4;
+    }
+    .price {
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin: 0.8rem 0;
+      color: #eef2ff;
+    }
+    .btn-detail {
+      background: transparent;
+      border: 1px solid #2d3b6e;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #cbd5e6;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-detail:hover {
+      background: #3b82f6;
+      border-color: #3b82f6;
+      color: white;
+    }
+
+    .cta-section {
+      background: linear-gradient(145deg, #071127, #010208);
+      margin: 3rem 0;
+      padding: 3rem 2rem;
+      border-radius: 48px;
+      text-align: center;
+      border: 1px solid rgba(59,130,246,0.3);
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: #b9c3e6;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+    }
+    .faq-item {
+      background: #0a0f1c;
+      border-radius: 24px;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid #1f2a3e;
+      transition: 0.2s;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #9ca3cf;
+      margin-top: 0.5rem;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(59,130,246,0.2);
+      padding: 2.5rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-links a {
+      color: #a0a9ce;
+      text-decoration: none;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #5b6b9e;
+    }
+
+    @media (max-width: 800px) {
+      .hero h1 { font-size: 2.3rem; }
+      .navbar { flex-direction: column; }
+      .nav-links { justify-content: center; }
+      .container { padding: 0 1.2rem; }
+      .hero { padding: 2rem 0 3rem; }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* BOLINHA FLUTUANTE DO WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+    }
+    .whatsapp-float i {
+      font-size: 2.8rem;
+      color: white;
+    }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+    @media (max-width: 600px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+      }
+      .whatsapp-float i {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="navbar">
+    <a href="/CyberXpert/" class="logo" style="text-decoration: none;">CYBER<span>XPERT</span></a>
+    <div class="nav-links">
+      <a href="/CyberXpert/servicos">Serviços</a>
+      <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+      <a href="/CyberXpert/faq">FAQ</a>
+      <a href="/CyberXpert/contato">Contato</a>
+      <a href="/CyberXpert/acompanhar-pedido" class="track-btn"><i class="fas fa-map-marker-alt"></i> Acompanhar Pedido</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-left">
+      <div class="badge-247"><i class="fas fa-circle"></i> Online 24/7 • Suporte ativo</div>
+      <h1>Serviços de Hackers<br>Profissionais & Discretos</h1>
+      <div class="rating">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>4.8/5</span> <span style="font-size:0.8rem;">(890+ avaliações)</span>
+      </div>
+      <p class="hero-desc">Soluções digitais especializadas para suas necessidades mais complexas. Nossa equipe de especialistas em segurança cibernética está disponível 24/7 para ajudá-lo com qualquer desafio digital.</p>
+      <div class="hero-buttons">
+        <a href="/CyberXpert/contato" class="btn-primary">Fale Conosco</a>
+        <a href="/CyberXpert/servicos" class="btn-outline-light">Nossos Serviços</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature-card"><i class="fas fa-lock"></i><h3>100% Seguro</h3><p>Total discrição e segurança, garantindo sua privacidade absoluta.</p></div>
+    <div class="feature-card"><i class="fas fa-bolt"></i><h3>Rápido e Eficiente</h3><p>Tempo médio de 24-48 horas para a maioria dos serviços. Resultados garantidos.</p></div>
+    <div class="feature-card"><i class="fas fa-certificate"></i><h3>Profissionais Certificados</h3><p>Equipe de hackers éticos com anos de experiência e certificações.</p></div>
+  </div>
+
+  <h2 class="section-title">Nossos Serviços</h2>
+  <p class="section-sub">Oferecemos uma ampla gama de soluções profissionais sob demanda</p>
+  <div class="services-grid" id="servicesContainer"></div>
+
+  <div class="cta-section">
+    <h2>Pronto para Resolver Seu Problema?</h2>
+    <p>Nossa equipe está disponível 24 horas por dia, 7 dias por semana para ajudá-lo com qualquer desafio digital que você esteja enfrentando.</p>
+    <a href="/CyberXpert/contato" class="btn-primary">Fale Conosco Agora</a>
+  </div>
+
+  <h2 class="section-title">Perguntas Frequentes</h2>
+  <div class="faq-grid" id="faqContainer">
+    <div class="faq-item"><div class="faq-question">Os serviços são realmente discretos? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Sim, todos os procedimentos são realizados com criptografia e sem deixar vestígios. Sua privacidade é nossa prioridade máxima.</div></div>
+    <div class="faq-item"><div class="faq-question">Qual o tempo médio de entrega? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">A maioria dos serviços é concluída entre 24h e 48h. Projetos complexos podem levar até 5 dias úteis.</div></div>
+    <div class="faq-item"><div class="faq-question">Como funciona a garantia? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Garantia de resultado ou reembolso parcial de acordo com o contrato digital. Nossa equipe oferece suporte pós-serviço.</div></div>
+    <div class="faq-item"><div class="faq-question">É necessário instalar algum software? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Na maioria dos casos, não. Nossos métodos são 100% remotos e sem necessidade de acesso físico ao dispositivo.</div></div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CyberXpert</div>
+      <div class="footer-links">
+        <a href="/CyberXpert/servicos">Serviços</a>
+        <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+        <a href="/CyberXpert/faq">FAQ</a>
+        <a href="/CyberXpert/contato">Contato</a>
+      </div>
+      <div><i class="fas fa-globe"></i> Português (BR) | BRL (R$)</div>
+    </div>
+    <div class="copyright">© 2026 CyberXpert. Todos os direitos reservados. Soluções digitais com excelência e discrição.</div>
+  </footer>
+</div>
+
+<!-- BOLINHA FLUTUANTE DO WHATSAPP -->
+<a href="/CyberXpert/contato" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  // Lista de serviços atualizada com /CyberXpert em todos os links
+  const servicesList = [
+    { name: "WhatsApp", desc: "Acesso completo a qualquer conta do WhatsApp. Leia mensagens, visualize mídias e muito mais, tudo de forma remota.", price: "A partir de R$ 500,00", icon: "fab fa-whatsapp", badge: "Popular", link: "/CyberXpert/whatsapp" },
+    { name: "Celular", desc: "Acesso remoto completo a qualquer smartphone. Monitore atividades, mensagens, localização e aplicativos.", price: "A partir de R$ 700,00", icon: "fas fa-mobile-alt", badge: "Destaque", link: "/CyberXpert/celular" },
+    { name: "Instagram", desc: "Recupere contas perdidas ou acesse qualquer perfil do Instagram. Visualize mensagens diretas e posts privados.", price: "A partir de R$ 500", icon: "fab fa-instagram", badge: "", link: "/CyberXpert/instagram" },
+    { name: "Facebook", desc: "Acesso completo a qualquer conta do Facebook. Visualize mensagens privadas, posts ocultos.", price: "A partir de R$ 500", icon: "fab fa-facebook", badge: "", link: "/CyberXpert/facebook" },
+    { name: "TikTok", desc: "Acesso completo a contas do TikTok. Visualize mensagens diretas, vídeos privados.", price: "A partir de R$ 400", icon: "fab fa-tiktok", badge: "", link: "/CyberXpert/tiktok" },
+    { name: "Faculdade", desc: "Acesso a sistemas acadêmicos para alteração de notas, frequência ou materiais exclusivos.", price: "Sob consulta", icon: "fas fa-graduation-cap", badge: "", link: "/CyberXpert/faculdade" },
+    { name: "Rastrear Pessoa", desc: "Localização em tempo real de qualquer pessoa através do celular. Histórico de locais.", price: "A partir de R$ 200", icon: "fas fa-map-marked-alt", badge: "Popular", link: "/CyberXpert/rastrear-pessoa" },
+    { name: "Recuperação de Fundos", desc: "Recupere seu dinheiro perdido em golpes, fraudes ou contas bloqueadas.", price: "10% do valor recuperado", icon: "fas fa-coins", badge: "", link: "/CyberXpert/recuperacao-fundos" },
+    { name: "Descobrir um Fake", desc: "Identifique perfis falsos, contas falsas e pessoas que se passam por outras.", price: "A partir de R$ 200", icon: "fas fa-user-secret", badge: "Novo", link: "/CyberXpert/descobrir-um-fake" },
+    { name: "Derrubar uma Conta", desc: "Remoção permanente de qualquer perfil em redes sociais. Ação definitiva e discreta com alta taxa de sucesso. A conta é derrubada sem possibilidade de recuperação.", price: "A partir de R$ 200,00", icon: "fas fa-ban", badge: "Permanente", link: "/CyberXpert/derrubar-conta" },
+    { name: "Puxar Dados", desc: "Acesso completo a todos os dados pessoais de um indivíduo, incluindo documentos, endereços, telefones, histórico e informações detalhadas da família. Investigação completa e sigilosa.", price: "A partir de R$ 200,00", icon: "fas fa-database", badge: "Novo", link: "/CyberXpert/puxar-dados" },
+    { name: "Cancelar CPF", desc: "Colocamos o CPF em óbito nos sistemas governamentais e bloqueamos TODAS as contas bancárias, financeiras e digitais vinculadas ao documento. Efeito irreversível e completo.", price: "A partir de R$ 250,00", icon: "fas fa-id-card", badge: "Destaque", link: "/CyberXpert/cancelar-cpf" },
+    { name: "Serviço Sob Medida", desc: "Solução personalizada para suas necessidades específicas. Nossa equipe desenvolverá uma abordagem exclusiva para seu caso.", price: "Sob consulta", icon: "fas fa-cogs", badge: "", link: "/CyberXpert/servico-sob-medida" },
+    { name: "Remoção de Conteúdo", desc: "Remova conteúdo prejudicial, fotos ou vídeos privados da internet.", price: "A partir de R$ 200", icon: "fas fa-trash-alt", badge: "", link: "/CyberXpert/remocao-conteudo" },
+    { name: "Investigação Digital", desc: "Descubra exatamente o que você quer: conversa, foto, senha ou mensagem apagada.", price: "A partir de R$ 200", icon: "fas fa-search", badge: "Profissional", link: "/CyberXpert/investigacao-digital" },
+    { name: "Hackear Wifi", desc: "Acesso remoto a redes Wi-Fi protegidas, com análise e liberação de senha.", price: "A partir de R$ 90", icon: "fas fa-wifi", badge: "", link: "/CyberXpert/hackear-wifi" },
+    { name: "Hackear E-mail", desc: "Invasão de e-mail com acesso total à conta, leitura e rastreio de atividades.", price: "A partir de R$ 450", icon: "fas fa-envelope", badge: "Novo", link: "/CyberXpert/hackear-email" },
+    { name: "Hackear Websites", desc: "Acesso total a sites, painéis administrativos, bancos de dados internos.", price: "A partir de R$ 600", icon: "fas fa-code", badge: "Destaque", link: "/CyberXpert/hackear-websites" },
+    { name: "Criação ou Desenvolvimento", desc: "Desenvolvimento sob medida: sistemas personalizados, ferramentas ocultas, automações.", price: "Sob consulta", icon: "fas fa-laptop-code", badge: "Novo", link: "/CyberXpert/desenvolvimento" },
+    { name: "Torne Se Um Hacker", desc: "Aprenda técnicas reais de invasão, engenharia social, acesso remoto. Curso direto.", price: "A partir de R$ 100", icon: "fas fa-graduation-cap", badge: "VIP", link: "/CyberXpert/torne-se-hacker" },
+    { name: "Hackear Jogos", desc: "Modificação de contas em jogos online (Free Fire, LoL, COD etc). Skins, moedas e ranks.", price: "A partir de R$ 75", icon: "fas fa-gamepad", badge: "Popular", link: "/CyberXpert/hackear-jogos" }
+  ];
+
+  function renderServices() {
+    const container = document.getElementById('servicesContainer');
+    container.innerHTML = '';
+    servicesList.forEach(service => {
+      const card = document.createElement('div');
+      card.className = 'service-card';
+      let badgeHtml = '';
+      if (service.badge) {
+        let badgeClass = '';
+        if (service.badge === 'Popular') badgeClass = 'badge-popular';
+        else if (service.badge === 'Destaque') badgeClass = 'badge-destaque';
+        else if (service.badge === 'VIP') badgeClass = 'badge-vip';
+        else if (service.badge === 'Novo') badgeClass = 'badge-novo';
+        else if (service.badge === 'Profissional') badgeClass = 'badge-prof';
+        else if (service.badge === 'Permanente') badgeClass = 'badge-permanente';
+        else badgeClass = 'badge-popular';
+        badgeHtml = `<span class="${badgeClass}">${service.badge}</span>`;
+      }
+      card.innerHTML = `
+        ${badgeHtml}
+        <div class="service-icon"><i class="${service.icon}"></i></div>
+        <h3>${service.name}</h3>
+        <div class="service-desc">${service.desc}</div>
+        <div class="price">${service.price}</div>
+        <a href="${service.link}" class="btn-detail">Detalhes</a>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function initFaq() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      const questionDiv = item.querySelector('.faq-question');
+      questionDiv.addEventListener('click', () => {
+        item.classList.toggle('active');
+        const icon = questionDiv.querySelector('i');
+        if(item.classList.contains('active')) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        else icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+      });
+    });
+  }
+
+  renderServices();
+  initFaq();
+</script>
+</body>
+</html>

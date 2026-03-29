@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Hackear Celular Android / iOS | CyberXpert</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #010208;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0c14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2d3b6e;
+      border-radius: 8px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(46, 125, 255, 0.2);
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e6;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+    .track-btn {
+      background: rgba(59, 130, 246, 0.12);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      font-weight: 600;
+      color: #3b82f6;
+      transition: 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .track-btn i {
+      margin-right: 6px;
+    }
+    .track-btn:hover {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+
+    .service-hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem 0 2rem;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+      margin-bottom: 2rem;
+    }
+    .service-icon-large {
+      background: linear-gradient(135deg, #1e2a4a, #0a0f1c);
+      width: 100px;
+      height: 100px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(59,130,246,0.4);
+    }
+    .service-icon-large i {
+      font-size: 3.5rem;
+      color: #3b82f6;
+    }
+    .service-header {
+      flex: 1;
+    }
+    .service-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #f0f4ff, #90b4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+    .stars {
+      color: #fbbf24;
+      letter-spacing: 2px;
+    }
+    .rating-badge span {
+      color: #9ca3cf;
+      font-size: 0.9rem;
+    }
+    .os-badges {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .os-badge {
+      background: rgba(59, 130, 246, 0.15);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .os-badge i {
+      margin-right: 0.4rem;
+    }
+
+    .info-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .info-card {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 1.2rem;
+      flex: 1;
+      min-width: 180px;
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    .info-card i {
+      font-size: 1.8rem;
+      color: #3b82f6;
+      margin-bottom: 0.8rem;
+    }
+    .info-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .info-card p {
+      font-size: 0.85rem;
+      color: #9ca3cf;
+    }
+
+    .section-block {
+      margin: 2.5rem 0;
+    }
+    .section-block h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      border-left: 3px solid #3b82f6;
+      padding-left: 1rem;
+    }
+    .section-block h3 {
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+      color: #cbd5e6;
+    }
+    .section-block p {
+      color: #b0b8d4;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .section-block ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    .section-block ul li {
+      margin-bottom: 0.7rem;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #b0b8d4;
+    }
+    .section-block ul li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .platform-card {
+      background: #0a0f1c;
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid #1e293b;
+    }
+    .platform-card h3 {
+      color: #3b82f6;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .timeline-item {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.2rem;
+      border: 1px solid #1e293b;
+      transition: 0.2s;
+    }
+    .timeline-item:hover {
+      border-color: #3b82f6;
+    }
+    .timeline-item .time-title {
+      font-weight: 700;
+      color: #3b82f6;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .timeline-item .time-desc {
+      color: #eef2ff;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .timeline-item .time-note {
+      color: #7e8bb6;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .payment-card {
+      background: #0a0f1c;
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid #2d3b6e;
+      transition: 0.2s;
+    }
+    .payment-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-3px);
+    }
+    .payment-card .price {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #eef2ff;
+      margin: 0.5rem 0;
+    }
+    .badge-payment {
+      display: inline-block;
+      background: #1e2a4a;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #90b4ff;
+      margin-bottom: 0.8rem;
+    }
+
+    .bitcoin-box {
+      background: linear-gradient(135deg, #1a1f2e, #0a0f1c);
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(247, 147, 26, 0.2);
+    }
+    .bitcoin-box h4 {
+      color: #f7931a;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-servico {
+      margin: 2rem 0;
+    }
+    .faq-servico-item {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+      border: 1px solid #1f2a3e;
+    }
+    .faq-servico-question {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      color: #eef2ff;
+    }
+    .faq-servico-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #9ca3cf;
+      padding-top: 0;
+    }
+    .faq-servico-item.active .faq-servico-answer {
+      max-height: 400px;
+      padding-top: 0.8rem;
+    }
+
+    .cta-whatsapp {
+      background: linear-gradient(145deg, #071127, #010208);
+      margin: 2.5rem 0;
+      padding: 2.5rem;
+      border-radius: 32px;
+      text-align: center;
+      border: 1px solid rgba(59,130,246,0.3);
+    }
+    .cta-whatsapp h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .cta-whatsapp .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      padding: 1rem 2.5rem;
+      border-radius: 48px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      transition: 0.2s;
+      color: white;
+      text-decoration: none;
+    }
+    .cta-whatsapp .btn-whatsapp:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+    }
+    .info-contact {
+      background: #0a0f1c;
+      padding: 1rem;
+      border-radius: 16px;
+      display: inline-block;
+      margin: 0.8rem auto;
+      font-size: 0.9rem;
+      color: #cbd5e6;
+      text-align: left;
+    }
+    .info-contact p {
+      margin: 0.3rem 0;
+    }
+
+    footer {
+      border-top: 1px solid rgba(59,130,246,0.2);
+      padding: 2.5rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: center;
+    }
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #a0a9ce;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover {
+      color: #3b82f6;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #5b6b9e;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp-float i {
+      font-size: 2.8rem;
+      color: white;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    @media (max-width: 600px) {
+      .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 2.2rem; }
+      .container { padding: 0 1.2rem; }
+      .service-header h1 { font-size: 1.8rem; }
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="navbar">
+    <a href="/CyberXpert/" class="logo" style="text-decoration: none;">CYBER<span>XPERT</span></a>
+    <div class="nav-links">
+      <a href="/CyberXpert/servicos">Serviços</a>
+      <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+      <a href="/CyberXpert/faq">FAQ</a>
+      <a href="/CyberXpert/contato">Contato</a>
+      <a href="/CyberXpert/acompanhar-pedido" class="track-btn"><i class="fas fa-map-marker-alt"></i> Acompanhar Pedido</a>
+    </div>
+  </div>
+
+  <div class="service-hero">
+    <div class="service-icon-large">
+      <i class="fas fa-mobile-alt"></i>
+    </div>
+    <div class="service-header">
+      <h1>Hackear Celular Android / iOS</h1>
+      <div class="rating-badge">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>87 avaliações • 4.9/5</span>
+      </div>
+      <div class="os-badges">
+        <span class="os-badge"><i class="fab fa-android"></i> Android</span>
+        <span class="os-badge"><i class="fab fa-apple"></i> iOS</span>
+      </div>
+      <p style="margin-top: 0.8rem; color: #b0b8d4;">Acesso completo e remoto a qualquer smartphone Android ou iPhone, com total discrição e monitoramento em tempo real.</p>
+    </div>
+  </div>
+
+  <div class="info-cards">
+    <div class="info-card"><i class="fas fa-clock"></i><h4>Entrega Rápida</h4><p>6-48 horas dependendo do sistema</p></div>
+    <div class="info-card"><i class="fas fa-shield-alt"></i><h4>100% Indetectável</h4><p>Sem rastros ou notificações</p></div>
+    <div class="info-card"><i class="fas fa-headset"></i><h4>Suporte 24/7</h4><p>Acompanhamento em tempo real</p></div>
+    <div class="info-card"><i class="fas fa-globe"></i><h4>Funciona no Mundo Todo</h4><p>Qualquer país, qualquer operadora</p></div>
+  </div>
+
+  <div class="section-block">
+    <h2>Descrição do Serviço</h2>
+    <p>Nosso serviço premium de hacking de smartphones oferece acesso completo e remoto a qualquer dispositivo Android ou iPhone, permitindo que você monitore todas as atividades, mensagens, chamadas, localização e muito mais, sem que o proprietário saiba. Utilizamos métodos avançados que exploram vulnerabilidades específicas de cada sistema operacional para garantir total discrição e eficácia.</p>
+    
+    <h3>Recursos Incluídos</h3>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <h3><i class="fas fa-check-circle"></i> Ambos Sistemas</h3>
+        <ul>
+          <li>Monitoramento de mensagens (SMS, WhatsApp, Telegram, Signal)</li>
+          <li>Acesso a chamadas (registro e gravação)</li>
+          <li>Rastreamento de localização em tempo real</li>
+          <li>Acesso a fotos, vídeos e arquivos</li>
+          <li>Keylogger (registro de tudo digitado)</li>
+          <li>Monitoramento de redes sociais</li>
+          <li>Histórico de navegação e favoritos</li>
+          <li>Notificações em tempo real</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <h3><i class="fab fa-android"></i> Exclusivo Android</h3>
+        <ul>
+          <li>Acesso remoto via tela espelhada</li>
+          <li>Ativação de câmera e microfone remotamente</li>
+          <li>Root remoto sem intervenção física</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <h3><i class="fab fa-apple"></i> Exclusivo iOS</h3>
+        <ul>
+          <li>Bypass do iCloud e bloqueios</li>
+          <li>Extração de dados de dispositivos bloqueados</li>
+          <li>Exploração de Jailbreak via vulnerabilidades</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>Como Funciona o Acesso</h2>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <h3><i class="fab fa-android"></i> Para Android</h3>
+        <ul>
+          <li>Exploração de Vulnerabilidades do sistema</li>
+          <li>APK Personalizado com instalação remota</li>
+          <li>Root Remoto sem intervenção física</li>
+          <li>Injeção de Processos e interceptação</li>
+          <li>Phishing Avançado para contornar proteções</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <h3><i class="fab fa-apple"></i> Para iPhone</h3>
+        <ul>
+          <li>Exploração de Jailbreak via vulnerabilidades</li>
+          <li>iCloud Bypass sem senha do Apple ID</li>
+          <li>Extração de dados via backup</li>
+          <li>Injeção de Certificados de monitoramento</li>
+          <li>Man-in-the-Middle em comunicações</li>
+        </ul>
+      </div>
+    </div>
+    <p>Todo o processo é realizado sem deixar rastros e sem notificar o proprietário do dispositivo. O acesso é mantido através de nossos servidores seguros.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>Tempo de Execução</h2>
+    <div class="timeline-grid">
+      <div class="timeline-item"><div class="time-title">ANDROID 8-10</div><div class="time-desc">6 a 12 horas</div></div>
+      <div class="timeline-item"><div class="time-title">ANDROID 11-12</div><div class="time-desc">12 a 24 horas</div></div>
+      <div class="timeline-item"><div class="time-title">ANDROID 13+</div><div class="time-desc">24 a 48 horas</div></div>
+      <div class="timeline-item"><div class="time-title">SAMSUNG</div><div class="time-desc">+12 horas</div><div class="time-note">Proteções adicionais</div></div>
+      <div class="timeline-item"><div class="time-title">iOS 12-14</div><div class="time-desc">12 a 24 horas</div></div>
+      <div class="timeline-item"><div class="time-title">iOS 15</div><div class="time-desc">24 a 48 horas</div></div>
+      <div class="timeline-item"><div class="time-title">iOS 16+</div><div class="time-desc">24 a 48 horas</div><div class="time-note">Consultar valores</div></div>
+      <div class="timeline-item"><div class="time-title">IPHONE A15+</div><div class="time-desc">24 a 48 horas</div><div class="time-note">Até 2 dias</div></div>
+    </div>
+    <p>Nossa equipe trabalha 24/7 para garantir os melhores prazos possíveis. Você receberá atualizações em tempo real sobre o progresso.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>Formas de Pagamento</h2>
+    <div class="payment-options">
+      <div class="payment-card">
+        <div class="badge-payment">ANTECIPADO</div>
+        <div class="price">R$ 700,00</div>
+        <p><strong>Pagamento Adiantado</strong></p>
+        <ul>
+          <li>100% do valor pago antecipadamente</li>
+          <li>Desconto de 20% no valor total</li>
+          <li>Processo iniciado imediatamente</li>
+          <li>Garantia de 30 dias</li>
+        </ul>
+      </div>
+      <div class="payment-card">
+        <div class="badge-payment">EQUILÍBRIO</div>
+        <div class="price">R$ 850,00</div>
+        <p><strong>Pagamento Parcial</strong></p>
+        <ul>
+          <li>50% no início e 50% na conclusão</li>
+          <li>Processo iniciado após primeiro pagamento</li>
+          <li>Garantia de 15 dias</li>
+        </ul>
+      </div>
+      <div class="payment-card">
+        <div class="badge-payment">APÓS PROVAS</div>
+        <div class="price">R$ 900,00</div>
+        <p><strong>Pagamento Após Provas</strong></p>
+        <ul>
+          <li>100% do valor pago somente após verificação</li>
+          <li>Exclusivamente em Bitcoin (BTC)</li>
+          <li>Requer comprovação de fundos antes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bitcoin-box">
+    <h4><i class="fab fa-bitcoin"></i> Pagamento em Bitcoin</h4>
+    <p>Para pagamentos em Bitcoin (opção após provas), siga os passos: cadastre-se em uma corretora, compre o valor equivalente em BTC, transfira para sua carteira pessoal e envie o comprovante. Caso não saiba como fazer, entre em contato que estaremos te ajudando.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>Política de Provas</h2>
+    <p>As provas são fornecidas exclusivamente para comprovar que o serviço foi concluído com sucesso, não para expor conteúdos privados. Enviamos uma captura de tela mostrando o acesso inicial ao dispositivo e um vídeo curto demonstrando o acesso funcional a uma rede social ou sistema da pessoa.</p>
+    <p><strong>Atenção:</strong> Não fornecemos provas sob demanda, leitura de mensagens específicas ou qualquer conteúdo que viole a privacidade. Nenhum dado privado é compartilhado, lido ou entregue em nenhuma etapa.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>Garantias</h2>
+    <ul>
+      <li><strong>Garantia de Satisfação:</strong> Se não conseguirmos acessar o dispositivo, devolvemos 100% do valor pago</li>
+      <li><strong>Sigilo Absoluto:</strong> Seus dados e o propósito do serviço são mantidos em total sigilo</li>
+      <li><strong>Suporte Contínuo:</strong> Assistência durante todo o período contratado</li>
+      <li><strong>Atualizações Gratuitas:</strong> Manutenção do acesso mesmo após atualizações do sistema</li>
+      <li><strong>Remoção Completa:</strong> Remoção de todos os rastros após o término do serviço</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-servico">
+      <div class="faq-servico-item"><div class="faq-servico-question">O dono do celular vai saber que foi hackeado? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Não, nosso método é completamente indetectável. Não deixamos nenhum rastro ou notificação que possa alertar o proprietário do dispositivo.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Preciso ter acesso físico ao celular? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Todo o acesso é feito 100% à distância, sem precisar encostar no celular da pessoa em nenhum momento. Só precisamos de um dado básico como e-mail ou número de telefone.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Funciona em celulares bloqueados? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Sim, para iPhones temos extração de dados mesmo de dispositivos bloqueados. Para Android, funciona em dispositivos desbloqueados ou com vulnerabilidades específicas.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Como recebo os resultados? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Você receberá acesso a um painel de controle seguro onde poderá visualizar todas as atividades do dispositivo em tempo real, ou relatórios diários enviados para um email seguro.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">O serviço funciona em redes WiFi públicas? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Sim, funciona em qualquer tipo de conexão, incluindo redes WiFi públicas e redes móveis 3G/4G/5G.</div></div>
+    </div>
+  </div>
+
+  <div class="cta-whatsapp">
+    <h2>Pronto para começar?</h2>
+    <p>Para iniciar seu atendimento, clique no botão abaixo. Preferimos que você já nos envie:</p>
+    <div class="info-contact">
+      <p>Serviço que deseja contratar: Hackear Celular</p>
+      <p>Modelo e versão do sistema do dispositivo alvo</p>
+      <p>Sua preferência de forma de pagamento</p>
+    </div>
+    <a href="/CyberXpert/contato" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Falar com Especialista Agora</a>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CyberXpert</div>
+      <div class="footer-links">
+        <a href="/CyberXpert/servicos">Serviços</a>
+        <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+        <a href="/CyberXpert/faq">FAQ</a>
+        <a href="/CyberXpert/contato">Contato</a>
+      </div>
+      <div><i class="fas fa-globe"></i> Português (BR) | BRL (R$)</div>
+    </div>
+    <div class="copyright">© 2026 CyberXpert. Todos os direitos reservados. Soluções digitais com excelência e discrição.</div>
+  </footer>
+</div>
+
+<a href="/CyberXpert/contato" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-servico-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-servico-question');
+    question.addEventListener('click', () => {
+      item.classList.toggle('active');
+      const icon = question.querySelector('i');
+      if(item.classList.contains('active')) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+      else icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+    });
+  });
+</script>
+</body>
+</html>

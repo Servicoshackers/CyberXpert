@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackear TikTok | CyberXpert</title>
+    <meta name="description" content="Serviço profissional para hackear contas do TikTok de forma remota e indetectável.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .font-mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 99;
+            background-color: #6d28d9;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .back-to-top:hover {
+            background-color: #5b21b6;
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background: #128C7E;
+        }
+        
+        .whatsapp-button i {
+            font-size: 24px;
+        }
+        
+        /* Media queries para ajustar o posicionamento em telas menores */
+        @media (max-width: 640px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+            }
+            
+            .whatsapp-button {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        /* Estilos específicos para a página de detalhes */
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: #8b5cf6;
+            border-radius: 50%;
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            transform: rotate(5deg);
+        }
+        
+        .tiktok-gradient {
+            background: linear-gradient(45deg, #25F4EE, #000000, #FE2C55);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .price-badge {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Top Bar -->
+    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center text-green-400">
+                <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse"></div>
+                <span>Online 24/7</span>
+            </div>
+            <div class="flex items-center">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="ml-2">4.9/5</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="acompanhar-pedido.html" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html" class="text-2xl font-bold gradient-text flex items-center">
+                    <i class="fas fa-user-secret mr-2"></i>
+                    <span>CyberXpert</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="servicos.html" class="nav-link font-medium hover:text-purple-400">Serviços</a>
+                <a href="sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
+                <a href="faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
+                <a href="contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
+            <a href="servicos.html" class="block py-2 hover:text-purple-400">Serviços</a>
+            <a href="sobre-nos.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
+            <a href="faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
+            <a href="contato.html" class="block py-2 hover:text-purple-400">Contato</a>
+        </div>
+    </header>
+
+    <!-- Service Details Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Service Overview -->
+                <div class="w-full">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gray-800 p-3 rounded-lg mr-4">
+                            <img id="service-icon" src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="Ícone do TikTok" class="w-12 h-12">
+                        </div>
+                        <div>
+                            <h1 id="service-title" class="text-3xl font-bold tiktok-gradient">Hackear TikTok</h1>
+                            <div class="flex items-center mt-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-400 text-sm ml-2">(48 avaliações)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 mb-8 border border-gray-700">
+                        <h2 class="text-xl font-bold mb-4">Descrição do Serviço</h2>
+                        <p id="service-description" class="text-gray-300 mb-6">
+                            Nosso serviço premium de hacking do TikTok oferece acesso completo e remoto a qualquer conta da plataforma, permitindo que você visualize todos os vídeos privados, mensagens diretas, informações de perfil, seguidores, curtidas e muito mais, sem que o proprietário da conta saiba. Utilizamos métodos avançados que exploram vulnerabilidades específicas do TikTok para garantir total discrição e eficácia.
+                        </p>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Recursos Incluídos:</h3>
+                        <ul class="feature-list text-gray-300 mb-6">
+                            <li>Acesso completo às mensagens diretas (incluindo excluídas)</li>
+                            <li>Visualização de todos os vídeos (incluindo privados e excluídos)</li>
+                            <li>Monitoramento de atividades em tempo real</li>
+                            <li>Acesso à lista de seguidores/seguindo</li>
+                            <li>Visualização de vídeos curtidos e favoritados</li>
+                            <li>Download de todos os vídeos e mídias compartilhadas</li>
+                            <li>Notificações de novas postagens e interações</li>
+                            <li>Suporte 24/7 durante todo o período contratado</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funciona o Acesso:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p class="mb-4">Nosso método de acesso ao TikTok é 100% remoto e indetectável. Utilizamos uma combinação de técnicas avançadas incluindo:</p>
+                            
+                            <ul class="feature-list mb-4">
+                                <li><strong>Exploração de API:</strong> Acesso direto aos endpoints da API do TikTok</li>
+                                <li><strong>Token Manipulation:</strong> Geração de tokens de acesso válidos</li>
+                                <li><strong>Phishing Avançado:</strong> Técnicas especializadas para contornar 2FA</li>
+                                <li><strong>Session Hijacking:</strong> Captura de sessões ativas</li>
+                                <li><strong>Backend Access:</strong> Conexão direta com os servidores do TikTok</li>
+                            </ul>
+                            
+                            <p>Todo o processo é realizado sem deixar rastros e sem notificar o proprietário da conta. O acesso é mantido através de nossos servidores seguros, garantindo sua privacidade.</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Tempo de Execução:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>O tempo necessário varia conforme a complexidade do caso:</p>
+                            
+                            <ul class="feature-list mb-4">
+                                <li><strong>Contas padrão:</strong> 12-24 horas após confirmação do pagamento</li>
+                                <li><strong>Contas com verificação em duas etapas:</strong> Até 48 horas</li>
+                                <li><strong>Contas verificadas (com selo azul):</strong> 3-5 dias (consultar valores)</li>
+                                <li><strong>Contas de criadores populares:</strong> 5-7 dias (consultar valores)</li>
+                            </ul>
+                            
+                            <p>Nossa equipe trabalha 24/7 para garantir os melhores prazos possíveis. Você receberá atualizações em tempo real sobre o progresso.</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funciona o Pagamento:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>Oferecemos três opções flexíveis de pagamento para melhor atender às suas necessidades:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                                <!-- Opção 1 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-purple-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-purple-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-money-bill-wave text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Pagamento Adiantado <span class="price-badge">R$ 1.800,00</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>100% do valor pago antecipadamente</li>
+                                        <li>Desconto de 15% no valor total</li>
+                                        <li>Processo iniciado imediatamente</li>
+                                        <li>Aceitamos todas as formas de pagamento</li>
+                                        <li>Melhor custo-benefício</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Opção 2 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-blue-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-blue-600 p-2 rounded-full mr-3">
+                                            <i class="fas fa-percentage text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Pagamento Parcial <span class="price-badge">R$ 1.950,00</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>50% no início e 50% na conclusão</li>
+                                        <li>Taxa adicional de 10% sobre o valor total</li>
+                                        <li>Processo iniciado após primeiro pagamento</li>
+                                        <li>Aceitamos criptomoedas e PIX</li>
+                                        <li>Bom equilíbrio entre risco e custo</li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Opção 3 -->
+                                <div class="bg-gray-900 p-6 rounded-lg border border-green-500">
+                                    <div class="flex items-center mb-4">
+                                        <div class="bg-green-600 p-2 rounded-full mr-3">
+                                            <i class="fab fa-bitcoin text-white"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg">Pagamento Após Provas <span class="price-badge">R$ 2.100,00</span></h4>
+                                    </div>
+                                    <ul class="feature-list text-sm">
+                                        <li>100% do valor pago somente após verificação</li>
+                                        <li>Taxa adicional de 20% sobre o valor total</li>
+                                        <li>Exclusivamente em Bitcoin (BTC)</li>
+                                        <li>Requer comprovação de fundos antes</li>
+                                        <li>Você precisa comprar BTC em uma corretora</li>
+                                        <li>Enviar print da carteira com saldo</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-gray-900 p-4 rounded-lg border border-gray-700">
+                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-info-circle mr-2"></i> Instruções para Pagamento em Bitcoin</h4>
+                                <p class="text-gray-300 text-sm mb-2">
+                                    Para pagamentos em Bitcoin (opção após provas), siga estes passos:
+                                </p>
+                                <ol class="list-decimal pl-5 text-sm text-gray-300 space-y-1">
+                                    <li>Cadastre-se em uma corretora confiável (Binance, Mercado Bitcoin, Foxbit)</li>
+                                    <li>Realize a compra do valor equivalente em BTC</li>
+                                    <li>Transfira os BTC para sua carteira pessoal (ex: Trust Wallet, Exodus)</li>
+                                    <li>Envie-nos um print da carteira mostrando o saldo disponível</li>
+                                    <li>Após verificação, iniciaremos o serviço imediatamente</li>
+                                    <li>O pagamento será solicitado apenas após você confirmar as provas</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funcionam as Provas:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p class="mb-4">Para garantir transparência e confiança, oferecemos provas concretas antes de qualquer pagamento (exceto na opção de pagamento adiantado):</p>
+                            
+                            <ul class="feature-list mb-4">
+                                <li><strong>Prova Parcial:</strong> Enviamos uma captura de tela mostrando o acesso inicial à conta</li>
+                                <li><strong>Prova em Vídeo:</strong> Gravação curta mostrando o acesso funcional ao perfil</li>
+                                <li><strong>Prova Personalizada:</strong> Você pode solicitar uma prova específica (ex: visualizar um vídeo privado)</li>
+                                <li><strong>Prova em Tempo Real:</strong> Em alguns casos, podemos mostrar o acesso via chamada de vídeo</li>
+                            </ul>
+                            
+                            <div class="bg-gray-900 p-4 rounded-lg border border-gray-700 mt-4">
+                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-shield-alt mr-2"></i> Política de Provas</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Todas as provas são fornecidas com marca d'água e informações sensíveis são censuradas para proteger a privacidade de ambas as partes. As provas são válidas por 24 horas após o envio. Após a confirmação das provas, o serviço is iniciado imediatamente.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Formas de Pagamento:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <p>Aceitamos diversas formas de pagamento para sua comodidade:</p>
+                            
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                                <div class="bg-gray-900 p-3 rounded-lg border border-gray-700 text-center">
+                                    <i class="fab fa-bitcoin text-2xl text-orange-500 mb-2"></i>
+                                    <p class="text-sm">Criptomoedas</p>
+                                    <p class="text-xs text-gray-500 mt-1">(Bitcoin, Ethereum, USDT)</p>
+                                </div>
+                                <div class="bg-gray-900 p-3 rounded-lg border border-gray-700 text-center">
+                                    <i class="fas fa-money-bill-wave text-2xl text-green-500 mb-2"></i>
+                                    <p class="text-sm">PIX</p>
+                                    <p class="text-xs text-gray-500 mt-1">(Transferência imediata)</p>
+                                </div>
+                                <div class="bg-gray-900 p-3 rounded-lg border border-gray-700 text-center">
+                                    <i class="fas fa-exchange-alt text-2xl text-purple-500 mb-2"></i>
+                                    <p class="text-sm">Transferência</p>
+                                    <p class="text-xs text-gray-500 mt-1">(Bancária ou Western Union)</p>
+                                </div>
+                            </div>
+                            
+                            <p class="mt-4 text-sm text-gray-400">Todos os pagamentos são processados de forma segura e anônima. Não armazenamos dados financeiros.</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-3 text-purple-400">Garantias:</h3>
+                        <div class="text-gray-300 mb-6">
+                            <ul class="feature-list">
+                                <li><strong>Garantia de Satisfação:</strong> Se não conseguirmos acessar a conta, devolvemos 100% do valor pago</li>
+                                <li><strong>Sigilo Absoluto:</strong> Seus dados e o propósito do serviço são mantidos em total sigilo</li>
+                                <li><strong>Suporte Contínuo:</strong> Assistência durante todo o período contratado</li>
+                                <li><strong>Atualizações Gratuitas:</strong> Manutenção do acesso mesmo após atualizações do TikTok</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-900 p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-shield-alt mr-2"></i> Garantia de Privacidade</h4>
+                            <p class="text-gray-300 text-sm">
+                                Todos os nossos serviços são realizados com total discrição e segurança. Não armazenamos nenhum dado sensível após a conclusão do serviço e utilizamos criptografia de ponta a ponta em todas as comunicações. Após o término do contrato, todos os acessos são encerrados automaticamente.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                        <h2 class="text-xl font-bold mb-4">Perguntas Frequentes</h2>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>O dono da conta vai saber que foi hackeada?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Não, nosso método é completamente indetectável. Não deixamos nenhum rastro ou notificação que possa alertar o proprietário da conta. O acesso é feito através de nossos servidores intermediários, sem interferir diretamente no dispositivo alvo. O TikTok não envia nenhum alerta sobre o acesso.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Quanto tempo leva para hackear uma conta?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                O tempo médio é de 12-24 horas após o recebimento de todas as informações necessárias e confirmação do pagamento. Contas com verificação em duas etapas ativa podem levar até 48 horas. Contas verificadas (com selo azul) ou de criadores populares podem levar de 3-7 dias. Você receberá atualizações regulares sobre o progresso.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Preciso ter acesso físico ao celular?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Não, nosso método é 100% remoto. Apenas o nome de usuário (ou e-mail associado) é necessário. Não há necessidade de instalar qualquer aplicativo ou ter acesso físico ao dispositivo alvo. Todo o processo é realizado através de nossos sistemas especializados que exploram vulnerabilidades específicas do TikTok.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Como é feito o pagamento?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Aceitamos diversas formas de pagamento seguro: criptomoedas (Bitcoin, Ethereum, USDT), PIX, cartões pré-pago internacionais ou transferências bancárias. O pagamento pode ser feito de três formas: 100% adiantado (com desconto), 50% no início e 50% na conclusão, ou 100% após verificação das provas (apenas em Bitcoin). Forneceremos instruções detalhadas via WhatsApp após a confirmação do pedido.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>Como recebo os resultados?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Você receberá acesso a um painel de controle seguro onde poderá visualizar todos os vídeos, mensagens e atividades em tempo real. Alternativamente, podemos configurar relatórios diários enviados para um email seguro de sua escolha. Todo o acesso é protegido por criptografia e autenticação de dois fatores. Também oferecemos a opção de acesso via aplicativo móvel exclusivo.
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
+                                <span>O serviço funciona em contas privadas?</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
+                                Sim, nosso serviço funciona igualmente bem em contas privadas. O status de privacidade da conta não afeta nossa capacidade de acesso. Podemos visualizar todo o conteúdo privado, incluindo vídeos e mensagens diretas que normalmente estariam restritas apenas aos seguidores aprovados.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Button -->
+                    <div class="mt-8 text-center">
+                        <div class="mb-6 bg-gray-800 p-4 rounded-lg border border-gray-700 max-w-2xl mx-auto">
+                            <h4 class="font-bold text-purple-400 mb-3"><i class="fas fa-comments mr-2"></i> Como Contatar</h4>
+                            <p class="text-gray-300 text-sm mb-3">
+                                Para iniciar seu atendimento, basta clicar no botão abaixo ou enviar uma mensagem diretamente para nosso WhatsApp. 
+                            </p>
+                            <p class="text-gray-300 text-sm mb-3">
+                                <strong>Preferimos que você já nos envie:</strong>
+                            </p>
+                            <ul class="feature-list text-sm text-gray-300 mb-4">
+                                <li>O serviço que deseja contratar (Hackear TikTok)</li>
+                                <li>Nome de usuário ou e-mail da conta alvo</li>
+                                <li>Sua preferência de forma de pagamento</li>
+                            </ul>
+                            <p class="text-gray-300 text-sm">
+                                Isso agiliza o processo e permite que nosso especialista já comece a te ajudar imediatamente. Caso envie apenas "Oi", responderemos rapidamente solicitando essas informações.
+                            </p>
+                        </div>
+                        
+                        <a href="contato.html" class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
+                            <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista Agora
+                        </a>
+                        <p class="text-gray-400 mt-4">Nossa equipe está disponível 24 horas por dia para tirar dúvidas e iniciar seu serviço.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text flex items-center">
+                        <i class="fas fa-user-secret mr-2"></i> CyberXpert
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="contato.html" class="text-gray-400 hover:text-purple-400 transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://cyberxpert.com/instagram-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Instagram</a></li>
+                        <li><a href="https://cyberxpert.com/whatsapp-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
+                        <li><a href="https://cyberxpert.com/facebook-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
+                        <li><a href="https://cyberxpert.com/tiktok-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear TikTok</a></li>
+                        <li><a href="https://cyberxpert.com/tracking" class="text-gray-400 hover:text-purple-400 transition">Rastrear Pessoa</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2">
+                        <li><a href="sobre-nos.html" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
+                        <li><a href="privacidade.html" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
+                        <li><a href="termos.html" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 CyberXpert. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>Português (BR)</option>
+                        <option>English</option>
+                        <option>Español</option>
+                    </select>
+                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
+                        <option>BRL (R$)</option>
+                        <option>USD ($)</option>
+                        <option>EUR (€)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- WhatsApp Button -->
+    <a href="contato.html" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Dynamic Service Details (can be customized for each service)
+        function loadServiceDetails() {
+            // This would normally come from URL parameters or database
+            // For demo purposes, we'll use TikTok as default
+            const service = {
+                title: "Hackear TikTok",
+                icon: "https://cdn-icons-png.flaticon.com/512/3046/3046126.png",
+                description: "Nosso serviço premium de hacking do TikTok oferece acesso completo e remoto a qualquer conta da plataforma, permitindo que você visualize todos os vídeos privados, mensagens diretas, informações de perfil, seguidores, curtidas e muito mais, sem que o proprietário da conta saiba. Utilizamos métodos avançados que exploram vulnerabilidades específicas do TikTok para garantir total discrição e eficácia.",
+                price: "1.800"
+            };
+            
+            document.getElementById('service-title').textContent = service.title;
+            document.getElementById('service-icon').src = service.icon;
+            document.getElementById('service-description').textContent = service.description;
+        }
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadServiceDetails();
+        });
+    </script>
+</body>
+</html>

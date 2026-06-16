@@ -1,855 +1,674 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackear Sistema de Faculdade | CyberXpert</title>
-    <meta name="description" content="Serviço profissional para hackear sistemas acadêmicos com acesso completo a notas, registros e painel administrativo.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary: #6d28d9;
-            --primary-dark: #5b21b6;
-            --secondary: #10b981;
-            --dark: #1e293b;
-            --light: #f8fafc;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            scroll-behavior: smooth;
-        }
-        
-        .font-mono {
-            font-family: 'Space Mono', monospace;
-        }
-        
-        .gradient-text {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            background-image: linear-gradient(90deg, #8b5cf6, #ec4899);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .service-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-        }
-        
-        .back-to-top {
-            display: none;
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 99;
-            background-color: #6d28d9;
-            color: white;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .back-to-top:hover {
-            background-color: #5b21b6;
-            transform: translateY(-3px);
-        }
-        
-        .back-to-top i {
-            transition: transform 0.3s ease;
-        }
-        
-        .back-to-top:hover i {
-            transform: translateY(-3px);
-        }
-        
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 99;
-            background: #25D366;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .whatsapp-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            background: #128C7E;
-        }
-        
-        .whatsapp-button i {
-            font-size: 24px;
-        }
-        
-        /* Media queries para ajustar o posicionamento em telas menores */
-        @media (max-width: 640px) {
-            .back-to-top {
-                bottom: 80px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 16px;
-            }
-            
-            .whatsapp-button {
-                width: 45px;
-                height: 45px;
-            }
-        }
-        
-        /* Estilos específicos para a página de detalhes */
-        .feature-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .feature-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            background-color: #8b5cf6;
-            border-radius: 50%;
-        }
-        
-        .price-tag {
-            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
-            transform: rotate(5deg);
-        }
-        
-        .university-gradient {
-            background: linear-gradient(45deg, #1e3a8a, #3b82f6, #10b981, #f59e0b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .price-badge {
-            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-weight: bold;
-            font-size: 0.875rem;
-            display: inline-block;
-            margin-left: 0.5rem;
-        }
-        
-        .hacking-method {
-            background: rgba(30, 58, 138, 0.2);
-            border-left: 4px solid #3b82f6;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .hacking-method h4 {
-            color: #3b82f6;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .admin-panel {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px dashed #10b981;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .admin-panel h4 {
-            color: #10b981;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .data-flow {
-            position: relative;
-            padding-left: 2rem;
-            margin: 1.5rem 0;
-        }
-        
-        .data-flow::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #8b5cf6, #ec4899);
-            border-radius: 2px;
-        }
-        
-        .data-flow-step {
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-        
-        .data-flow-step:last-child {
-            padding-bottom: 0;
-        }
-        
-        .data-flow-step::before {
-            content: '';
-            position: absolute;
-            left: -2.2rem;
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background: #8b5cf6;
-            border: 3px solid #3b82f6;
-        }
-        
-        .timeline-badge {
-            background: #1e293b;
-            color: #f8fafc;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            display: inline-block;
-            margin-right: 0.5rem;
-            border: 1px solid #3b82f6;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Hackear Sistema de Faculdade | CyberXpert</title>
+  <meta name="description" content="Serviço profissional para hackear sistemas acadêmicos com acesso completo a notas, registros e painel administrativo.">
+  
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #010208;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0c14; }
+    ::-webkit-scrollbar-thumb { background: #2d3b6e; border-radius: 8px; }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(46, 125, 255, 0.2);
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e6;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: #3b82f6; }
+    .track-btn {
+      background: rgba(59, 130, 246, 0.12);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      font-weight: 600;
+      color: #3b82f6;
+      transition: 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .track-btn i { margin-right: 6px; }
+    .track-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+    .service-hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem 0 2rem;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+      margin-bottom: 2rem;
+    }
+    .service-icon-large {
+      background: linear-gradient(135deg, #1e2a4a, #0a0f1c);
+      width: 100px;
+      height: 100px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(59,130,246,0.4);
+      font-size: 3.5rem;
+      color: #3b82f6;
+    }
+    .service-icon-large img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+    .service-header { flex: 1; }
+    .service-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #f0f4ff, #90b4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+    .stars { color: #fbbf24; letter-spacing: 2px; }
+    .rating-badge span { color: #9ca3cf; font-size: 0.9rem; }
+
+    .info-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .info-card {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 1.2rem;
+      flex: 1;
+      min-width: 180px;
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    .info-card i { font-size: 1.8rem; color: #3b82f6; margin-bottom: 0.8rem; }
+    .info-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .info-card p { font-size: 0.85rem; color: #9ca3cf; }
+
+    .section-block { margin: 2.5rem 0; }
+    .section-block h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      border-left: 3px solid #3b82f6;
+      padding-left: 1rem;
+    }
+    .section-block h3 { font-size: 1.2rem; margin: 1rem 0 0.5rem; color: #cbd5e6; }
+    .section-block p { color: #b0b8d4; line-height: 1.6; margin-bottom: 1rem; }
+    .section-block ul { list-style: none; margin: 1rem 0; }
+    .section-block ul li {
+      margin-bottom: 0.7rem;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #b0b8d4;
+    }
+    .section-block ul li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .timeline-item {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.2rem;
+      border: 1px solid #1e293b;
+      transition: 0.2s;
+    }
+    .timeline-item:hover { border-color: #3b82f6; }
+    .timeline-item .time-title { font-weight: 700; color: #3b82f6; font-size: 1rem; margin-bottom: 0.5rem; }
+    .timeline-item .time-desc { color: #eef2ff; font-size: 1.1rem; font-weight: 500; }
+    .timeline-item .time-note { color: #7e8bb6; font-size: 0.8rem; margin-top: 0.3rem; }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .payment-card {
+      background: #0a0f1c;
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid #2d3b6e;
+      transition: 0.2s;
+    }
+    .payment-card:hover { border-color: #3b82f6; transform: translateY(-3px); }
+    .payment-card .price { font-size: 1.8rem; font-weight: 800; color: #eef2ff; margin: 0.5rem 0; }
+    .badge-payment {
+      display: inline-block;
+      background: #1e2a4a;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #90b4ff;
+      margin-bottom: 0.8rem;
+    }
+
+    .bitcoin-box {
+      background: linear-gradient(135deg, #1a1f2e, #0a0f1c);
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(247, 147, 26, 0.2);
+    }
+    .bitcoin-box h4 { color: #f7931a; margin-bottom: 0.8rem; }
+
+    .method-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .method-item {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.2rem;
+      border: 1px solid #1e293b;
+      border-left: 4px solid #3b82f6;
+    }
+    .method-item h4 { color: #3b82f6; margin-bottom: 0.5rem; }
+    .method-item p { color: #b0b8d4; font-size: 0.95rem; }
+    .method-sub {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px dashed rgba(16, 185, 129, 0.3);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 0.8rem;
+    }
+    .method-sub h4 { color: #10b981; margin-bottom: 0.5rem; }
+
+    .flow-steps {
+      position: relative;
+      padding-left: 2rem;
+      margin: 1.5rem 0;
+    }
+    .flow-steps::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+      border-radius: 2px;
+    }
+    .flow-step {
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+    .flow-step:last-child { padding-bottom: 0; }
+    .flow-step::before {
+      content: '';
+      position: absolute;
+      left: -2.15rem;
+      top: 0.25rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3b82f6;
+      border: 2px solid #8b5cf6;
+    }
+    .step-badge {
+      display: inline-block;
+      background: #1e2a4a;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #90b4ff;
+      margin-right: 0.5rem;
+      border: 1px solid #3b82f6;
+    }
+
+    .faq-servico { margin: 2rem 0; }
+    .faq-servico-item {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+      border: 1px solid #1f2a3e;
+    }
+    .faq-servico-question {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      color: #eef2ff;
+    }
+    .faq-servico-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #9ca3cf;
+      padding-top: 0;
+    }
+    .faq-servico-item.active .faq-servico-answer {
+      max-height: 500px;
+      padding-top: 0.8rem;
+    }
+
+    .cta-whatsapp {
+      background: linear-gradient(145deg, #071127, #010208);
+      margin: 2.5rem 0;
+      padding: 2.5rem;
+      border-radius: 32px;
+      text-align: center;
+      border: 1px solid rgba(59,130,246,0.3);
+    }
+    .cta-whatsapp h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .cta-whatsapp .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      padding: 1rem 2.5rem;
+      border-radius: 48px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      transition: 0.2s;
+      color: white;
+      text-decoration: none;
+    }
+    .cta-whatsapp .btn-whatsapp:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+    }
+    .info-contact {
+      background: #0a0f1c;
+      padding: 1rem;
+      border-radius: 16px;
+      display: inline-block;
+      margin: 0.8rem auto;
+      font-size: 0.9rem;
+      color: #cbd5e6;
+      text-align: left;
+    }
+    .info-contact p { margin: 0.3rem 0; }
+
+    footer {
+      border-top: 1px solid rgba(59,130,246,0.2);
+      padding: 2.5rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: center;
+    }
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #a0a9ce; text-decoration: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: #3b82f6; }
+    .copyright { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5b6b9e; }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float i { font-size: 2.8rem; color: white; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 2.2rem; }
+      .container { padding: 0 1.2rem; }
+      .service-header h1 { font-size: 1.8rem; }
+    }
+    a { text-decoration: none; }
+  </style>
 </head>
-<body class="bg-gray-900 text-gray-100">
-    <!-- Top Bar -->
-    <div class="bg-gray-800 py-2 px-4 flex justify-between items-center text-sm">
-        <div class="flex items-center space-x-4">
-            <div class="flex items-center text-green-400">
-                <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse"></div>
-                <span>Online 24/7</span>
-            </div>
-            <div class="flex items-center">
-                <div class="flex text-yellow-400">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span class="ml-2">4.9/5</span>
-            </div>
-        </div>
-        <div class="flex items-center space-x-4">
-            <a href="/CyberXpert/acompanhar-pedido.html" class="hover:text-purple-400 transition"><i class="fas fa-user-shield mr-1"></i> Acompanhar Pedido</a>
-        </div>
+<body>
+
+<div class="container">
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/CyberXpert/" class="logo">CYBER<span>XPERT</span></a>
+    <div class="nav-links">
+      <a href="/CyberXpert/servicos">Serviços</a>
+      <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+      <a href="/CyberXpert/faq">FAQ</a>
+      <a href="/CyberXpert/contato">Contato</a>
+      <a href="/CyberXpert/acompanhar-pedido" class="track-btn"><i class="fas fa-map-marker-alt"></i> Acompanhar Pedido</a>
     </div>
+  </div>
 
-    <!-- Header -->
-    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <a href="/CyberXpert/index.html" class="text-2xl font-bold gradient-text flex items-center">
-                    <i class="fas fa-user-secret mr-2"></i>
-                    <span>CyberXpert</span>
-                </a>
-            </div>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="/CyberXpert/servicos.html" class="nav-link font-medium hover:text-purple-400">Serviços</a>
-                <a href="/CyberXpert/sobre.html" class="nav-link font-medium hover:text-purple-400">Sobre Nós</a>
-                <a href="/CyberXpert/faq.html" class="nav-link font-medium hover:text-purple-400">FAQ</a>
-                <a href="/CyberXpert/contato.html" class="nav-link font-medium hover:text-purple-400">Contato</a>
-            </nav>
-            
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 px-4 py-2">
-            <a href="/CyberXpert/servicos.html" class="block py-2 hover:text-purple-400">Serviços</a>
-            <a href="/CyberXpert/sobre-nos.html" class="block py-2 hover:text-purple-400">Sobre Nós</a>
-            <a href="/CyberXpert/faq.html" class="block py-2 hover:text-purple-400">FAQ</a>
-            <a href="/CyberXpert/contato.html" class="block py-2 hover:text-purple-400">Contato</a>
-        </div>
-    </header>
+  <!-- Hero -->
+  <div class="service-hero">
+    <div class="service-icon-large">
+      <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="Ícone de Faculdade">
+    </div>
+    <div class="service-header">
+      <h1>Hackear Sistema de Faculdade</h1>
+      <div class="rating-badge">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <span>37 avaliações • 5.0/5</span>
+      </div>
+      <p style="margin-top: 0.8rem; color: #b0b8d4;">Acesso completo a sistemas acadêmicos com modificação de notas, histórico, frequência e documentos oficiais.</p>
+    </div>
+  </div>
 
-    <!-- Service Details Section -->
-    <section class="py-16 px-4">
-        <div class="container mx-auto">
-            <div class="flex flex-col lg:flex-row gap-12">
-                <!-- Service Overview -->
-                <div class="w-full">
-                    <div class="flex items-center mb-6">
-                        <div class="bg-gray-800 p-3 rounded-lg mr-4">
-                            <img id="service-icon" src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" alt="Ícone de Faculdade" class="w-12 h-12">
-                        </div>
-                        <div>
-                            <h1 id="service-title" class="text-3xl font-bold university-gradient">Hackear Sistema de Faculdade</h1>
-                            <div class="flex items-center mt-1">
-                                <div class="flex text-yellow-400 text-sm">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="text-gray-400 text-sm ml-2">(37 avaliações)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-800 rounded-xl p-6 mb-8 border border-gray-700">
-                        <h2 class="text-xl font-bold mb-4">Descrição do Serviço</h2>
-                        <p id="service-description" class="text-gray-300 mb-6">
-                            Nosso serviço especializado em hacking de sistemas acadêmicos oferece acesso completo aos bancos de dados de faculdades e universidades, permitindo modificar notas, histórico acadêmico, frequência, documentos oficiais e muito mais. Utilizamos métodos avançados que exploram vulnerabilidades específicas dos sistemas acadêmicos (como Moodle, SIGAA, SAP, entre outros) para garantir acesso administrativo total sem deixar rastros.
-                        </p>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Recursos Incluídos:</h3>
-                        <ul class="feature-list text-gray-300 mb-6">
-                            <li>Acesso completo ao painel administrativo da faculdade</li>
-                            <li>Modificação de notas e histórico acadêmico</li>
-                            <li>Alteração de frequência e registros disciplinares</li>
-                            <li>Emissão de documentos oficiais (históricos, declarações)</li>
-                            <li>Acesso a banco de dados de alunos e professores</li>
-                            <li>Visualização de provas e trabalhos antes da aplicação</li>
-                            <li>Modificação de prazos de matrícula e entrega de trabalhos</li>
-                            <li>Suporte 24/7 durante todo o período contratado</li>
-                        </ul>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Métodos de Acesso:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p class="mb-4">Existem várias maneiras de obter acesso aos sistemas acadêmicos, dependendo da infraestrutura da instituição:</p>
-                            
-                            <div class="hacking-method">
-                                <h4>1. Acesso ao Painel Administrativo</h4>
-                                <p>O método mais eficaz para alterações em larga escala. Envolve localizar e explorar vulnerabilidades no sistema de administração da faculdade para obter credenciais de alto nível.</p>
-                                <div class="admin-panel mt-3">
-                                    <h4>O que podemos fazer com acesso administrativo:</h4>
-                                    <ul class="feature-list text-sm">
-                                        <li>Modificar qualquer registro acadêmico</li>
-                                        <li>Criar usuários com privilégios elevados</li>
-                                        <li>Emitir documentos oficiais</li>
-                                        <li>Alterar configurações do sistema</li>
-                                        <li>Acessar backups completos</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="hacking-method">
-                                <h4>2. Exploração de Vulnerabilidades no Sistema</h4>
-                                <p>Identificamos e exploramos falhas de segurança nos sistemas acadêmicos (SQL injection, XSS, CSRF, etc.) para obter acesso não autorizado aos bancos de dados.</p>
-                            </div>
-                            
-                            <div class="hacking-method">
-                                <h4>3. Acesso via Credenciais de Professores</h4>
-                                <p>Obtenção de credenciais de professores através de phishing direcionado ou engenharia social, permitindo acesso limitado mas suficiente para alterar notas e frequência.</p>
-                            </div>
-                            
-                            <div class="hacking-method">
-                                <h4>4. Acesso Físico aos Servidores</h4>
-                                <p>Em casos específicos, podemos coordenar acesso físico aos servidores da instituição para instalar backdoors ou extrair dados diretamente.</p>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Fluxo de Trabalho:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <div class="data-flow">
-                                <div class="data-flow-step">
-                                    <span class="timeline-badge">Passo 1</span>
-                                    <strong>Reconhecimento</strong>
-                                    <p class="text-sm text-gray-400 mt-1">Identificamos o sistema acadêmico utilizado, versão, plugins e possíveis vulnerabilidades.</p>
-                                </div>
-                                
-                                <div class="data-flow-step">
-                                    <span class="timeline-badge">Passo 2</span>
-                                    <strong>Exploração</strong>
-                                    <p class="text-sm text-gray-400 mt-1">Testamos todas as possíveis vulnerabilidades para obter acesso inicial ao sistema.</p>
-                                </div>
-                                
-                                <div class="data-flow-step">
-                                    <span class="timeline-badge">Passo 3</span>
-                                    <strong>Escalação de Privilégios</strong>
-                                    <p class="text-sm text-gray-400 mt-1">Uma vez dentro, buscamos elevar nossos privilégios para acesso administrativo total.</p>
-                                </div>
-                                
-                                <div class="data-flow-step">
-                                    <span class="timeline-badge">Passo 4</span>
-                                    <strong>Persistência</strong>
-                                    <p class="text-sm text-gray-400 mt-1">Configuramos acessos permanentes para garantir que não percamos o acesso após atualizações.</p>
-                                </div>
-                                
-                                <div class="data-flow-step">
-                                    <span class="timeline-badge">Passo 5</span>
-                                    <strong>Limpeza de Rastros</strong>
-                                    <p class="text-sm text-gray-400 mt-1">Removemos todos os logs e evidências de nossa atividade no sistema.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Tempo de Execução:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p>O tempo necessário varia conforme a complexidade do sistema alvo:</p>
-                            
-                            <ul class="feature-list mb-4">
-                                <li><strong>Sistemas comuns (Moodle, SIGAA):</strong> 24-48 horas após confirmação do pagamento</li>
-                                <li><strong>Sistemas corporativos (SAP, Oracle):</strong> 3-5 dias</li>
-                                <li><strong>Sistemas personalizados:</strong> 5-7 dias (consultar valores)</li>
-                                <li><strong>Acesso físico necessário:</strong> 7-14 dias (consultar valores)</li>
-                            </ul>
-                            
-                            <p>Nossa equipe trabalha 24/7 para garantir os melhores prazos possíveis. Você receberá atualizações em tempo real sobre o progresso.</p>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funciona o Pagamento:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p>Oferecemos três opções flexíveis de pagamento para melhor atender às suas necessidades:</p>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                                <!-- Opção 1 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-purple-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-purple-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-money-bill-wave text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold text-lg">Pagamento Adiantado <span class="price-badge">R$ 5.000,00</span></h4>
-                                    </div>
-                                    <ul class="feature-list text-sm">
-                                        <li>100% do valor pago antecipadamente</li>
-                                        <li>Desconto de 15% no valor total</li>
-                                        <li>Processo iniciado imediatamente</li>
-                                        <li>Aceitamos todas as formas de pagamento</li>
-                                        <li>Melhor custo-benefício</li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Opção 2 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-blue-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-blue-600 p-2 rounded-full mr-3">
-                                            <i class="fas fa-percentage text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold text-lg">Pagamento Parcial <span class="price-badge">R$ 5.500,00</span></h4>
-                                    </div>
-                                    <ul class="feature-list text-sm">
-                                        <li>50% no início e 50% na conclusão</li>
-                                        <li>Taxa adicional de 10% sobre o valor total</li>
-                                        <li>Processo iniciado após primeiro pagamento</li>
-                                        <li>Aceitamos criptomoedas e PIX</li>
-                                        <li>Bom equilíbrio entre risco e custo</li>
-                                    </ul>
-                                </div>
-                                
-                                <!-- Opção 3 -->
-                                <div class="bg-gray-900 p-6 rounded-lg border border-green-500">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-green-600 p-2 rounded-full mr-3">
-                                            <i class="fab fa-bitcoin text-white"></i>
-                                        </div>
-                                        <h4 class="font-bold text-lg">Pagamento Após Provas <span class="price-badge">R$ 6.000,00</span></h4>
-                                    </div>
-                                    <ul class="feature-list text-sm">
-                                        <li>100% do valor pago somente após verificação</li>
-                                        <li>Taxa adicional de 20% sobre o valor total</li>
-                                        <li>Exclusivamente em Bitcoin (BTC)</li>
-                                        <li>Requer comprovação de fundos antes</li>
-                                        <li>Você precisa comprar BTC em uma corretora</li>
-                                        <li>Enviar print da carteira com saldo</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-6 bg-gray-900 p-4 rounded-lg border border-gray-700">
-                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-info-circle mr-2"></i> Instruções para Pagamento em Bitcoin</h4>
-                                <p class="text-gray-300 text-sm mb-2">
-                                    Para pagamentos em Bitcoin (opção após provas), siga estes passos:
-                                </p>
-                                <ol class="list-decimal pl-5 text-sm text-gray-300 space-y-1">
-                                    <li>Cadastre-se em uma corretora confiável (Binance, Mercado Bitcoin, Foxbit)</li>
-                                    <li>Realize a compra do valor equivalente em BTC</li>
-                                    <li>Transfira os BTC para sua carteira pessoal (ex: Trust Wallet, Exodus)</li>
-                                    <li>Envie-nos um print da carteira mostrando o saldo disponível</li>
-                                    <li>Após verificação, iniciaremos o serviço imediatamente</li>
-                                    <li>O pagamento será solicitado apenas após você confirmar as provas</li>
-                                </ol>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Como Funcionam as Provas:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p class="mb-4">Para garantir transparência e confiança, oferecemos provas concretas antes de qualquer pagamento (exceto na opção de pagamento adiantado):</p>
-                            
-                            <ul class="feature-list mb-4">
-                                <li><strong>Prova Parcial:</strong> Enviamos uma captura de tela mostrando o acesso inicial ao sistema</li>
-                                <li><strong>Prova em Vídeo:</strong> Gravação curta mostrando o acesso funcional ao painel administrativo</li>
-                                <li><strong>Prova Personalizada:</strong> Você pode solicitar uma prova específica (ex: visualizar suas notas atuais)</li>
-                                <li><strong>Prova em Tempo Real:</strong> Em alguns casos, podemos mostrar o acesso via chamada de vídeo</li>
-                            </ul>
-                            
-                            <div class="bg-gray-900 p-4 rounded-lg border border-gray-700 mt-4">
-                                <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-shield-alt mr-2"></i> Política de Provas</h4>
-                                <p class="text-gray-300 text-sm">
-                                    Todas as provas são fornecidas com marca d'água e informações sensíveis são censuradas para proteger a privacidade de ambas as partes. As provas são válidas por 24 horas após o envio. Após a confirmação das provas, o serviço é iniciado imediatamente.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Formas de Pagamento:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <p>Aceitamos diversas formas de pagamento para sua comodidade:</p>
-                            
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                                <div class="bg-gray-900 p-3 rounded-lg border border-gray-700 text-center">
-                                    <i class="fab fa-bitcoin text-2xl text-orange-500 mb-2"></i>
-                                    <p class="text-sm">Criptomoedas</p>
-                                    <p class="text-xs text-gray-500 mt-1">(Bitcoin, Ethereum, USDT)</p>
-                                </div>
-                                <div class="bg-gray-900 p-3 rounded-lg border border-gray-700 text-center">
-                                    <i class="fas fa-money-bill-wave text-2xl text-green-500 mb-2"></i>
-                                    <p class="text-sm">PIX</p>
-                                    <p class="text-xs text-gray-500 mt-1">(Transferência imediata)</p>
-                                </div>
-                                <div class="bg-gray-900 p-3 rounded-lg border border-gray-700 text-center">
-                                    <i class="fas fa-exchange-alt text-2xl text-purple-500 mb-2"></i>
-                                    <p class="text-sm">Transferência</p>
-                                    <p class="text-xs text-gray-500 mt-1">(Bancária ou Western Union)</p>
-                                </div>
-                            </div>
-                            
-                            <p class="mt-4 text-sm text-gray-400">Todos os pagamentos são processados de forma segura e anônima. Não armazenamos dados financeiros.</p>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold mb-3 text-purple-400">Garantias:</h3>
-                        <div class="text-gray-300 mb-6">
-                            <ul class="feature-list">
-                                <li><strong>Garantia de Satisfação:</strong> Se não conseguirmos acessar o sistema, devolvemos 100% do valor pago</li>
-                                <li><strong>Sigilo Absoluto:</strong> Seus dados e o propósito do serviço são mantidos em total sigilo</li>
-                                <li><strong>Suporte Contínuo:</strong> Assistência durante todo o período contratado</li>
-                                <li><strong>Atualizações Gratuitas:</strong> Manutenção do acesso mesmo após atualizações do sistema</li>
-                                <li><strong>Limpeza de Rastros:</strong> Garantimos a remoção de todos os logs de acesso</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="bg-gray-900 p-4 rounded-lg border border-gray-700">
-                            <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-shield-alt mr-2"></i> Garantia de Privacidade</h4>
-                            <p class="text-gray-300 text-sm">
-                                Todos os nossos serviços são realizados com total discrição e segurança. Não armazenamos nenhum dado sensível após a conclusão do serviço e utilizamos criptografia de ponta a ponta em todas as comunicações. Após o término do contrato, todos os acessos são encerrados automaticamente.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
-                        <h2 class="text-xl font-bold mb-4">Perguntas Frequentes</h2>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Como vocês garantem que não serei pego?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Utilizamos técnicas avançadas de limpeza de logs e acesso indetectável. Todas as alterações são feitas de forma que pareçam ter sido realizadas por um administrador legítimo. Além disso, nunca modificamos dados de forma óbvia (como mudar todas as notas para 10), o que poderia levantar suspeitas. Recomendamos sempre alterações sutis e realistas.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Quanto tempo leva para hackear o sistema da faculdade?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                O tempo médio é de 24-48 horas para sistemas comuns como Moodle ou SIGAA. Sistemas mais complexos como SAP ou Oracle podem levar de 3-5 dias. Casos que requerem acesso físico aos servidores podem levar até 2 semanas. Você receberá atualizações regulares sobre o progresso.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Preciso fornecer alguma informação específica?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Necessitamos apenas do nome da instituição e, se possível, o sistema acadêmico utilizado (Moodle, SIGAA, etc.). Quanto mais informações você puder fornecer sobre a infraestrutura da faculdade, mais rápido será o processo. Não é necessário fornecer seus dados pessoais de estudante até a fase de modificação.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Como é feito o pagamento?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Aceitamos diversas formas de pagamento seguro: criptomoedas (Bitcoin, Ethereum, USDT), PIX, cartões pré-pago internacionais ou transferências bancárias. O pagamento pode ser feito de três formas: 100% adiantado (com desconto), 50% no início e 50% na conclusão, ou 100% após verificação das provas (apenas em Bitcoin). Forneceremos instruções detalhadas via WhatsApp após a confirmação do pedido.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>Posso alterar qualquer informação no sistema?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Sim, com acesso administrativo completo você pode modificar qualquer dado no sistema acadêmico, incluindo notas, frequência, histórico, documentos oficiais e até configurações do sistema. No entanto, recomendamos cautela para não fazer alterações que possam chamar atenção desnecessária.
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-300 hover:text-purple-400 transition">
-                                <span>E se a faculdade descobrir e reverter as alterações?</span>
-                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
-                            </button>
-                            <div class="faq-answer hidden mt-2 text-gray-400 pl-2">
-                                Nossos métodos incluem a criação de backups falsos e modificação de logs para que qualquer tentativa de reversão seja ineficaz. Além disso, mantemos acesso persistente ao sistema por 30 dias após a modificação para garantir que as alterações permaneçam. Caso algo seja revertido, faremos as correções necessárias sem custo adicional.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Contact Button -->
-                    <div class="mt-8 text-center">
-                        <div class="mb-6 bg-gray-800 p-4 rounded-lg border border-gray-700 max-w-2xl mx-auto">
-                            <h4 class="font-bold text-purple-400 mb-3"><i class="fas fa-comments mr-2"></i> Como Contatar</h4>
-                            <p class="text-gray-300 text-sm mb-3">
-                                Para iniciar seu atendimento, basta clicar no botão abaixo ou enviar uma mensagem diretamente para nosso WhatsApp. 
-                            </p>
-                            <p class="text-gray-300 text-sm mb-3">
-                                <strong>Preferimos que você já nos envie:</strong>
-                            </p>
-                            <ul class="feature-list text-sm text-gray-300 mb-4">
-                                <li>O serviço que deseja contratar (Hackear Sistema de Faculdade)</li>
-                                <li>Nome da instituição e sistema acadêmico utilizado (se souber)</li>
-                                <li>Sua preferência de forma de pagamento</li>
-                            </ul>
-                            <p class="text-gray-300 text-sm">
-                                Isso agiliza o processo e permite que nosso especialista já comece a te ajudar imediatamente. Caso envie apenas "Oi", responderemos rapidamente solicitando essas informações.
-                            </p>
-                        </div>
-                        
-                        <a href="/CyberXpert/contato.html" class="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
-                            <i class="fab fa-whatsapp mr-2"></i> Falar com Especialista Agora
-                        </a>
-                        <p class="text-gray-400 mt-4">Nossa equipe está disponível 24 horas por dia para tirar dúvidas e iniciar seu serviço.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Info Cards -->
+  <div class="info-cards">
+    <div class="info-card"><i class="fas fa-clock"></i><h4>Entrega Rápida</h4><p>24-48h sistemas comuns</p></div>
+    <div class="info-card"><i class="fas fa-shield-alt"></i><h4>Indetectável</h4><p>Limpeza total de logs</p></div>
+    <div class="info-card"><i class="fas fa-headset"></i><h4>Suporte 24/7</h4><p>Acompanhamento em tempo real</p></div>
+    <div class="info-card"><i class="fas fa-database"></i><h4>Acesso Admin</h4><p>Moodle, SIGAA, SAP e mais</p></div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-12 px-4 border-t border-gray-800">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4 gradient-text flex items-center">
-                        <i class="fas fa-user-secret mr-2"></i> CyberXpert
-                    </h3>
-                    <p class="text-gray-400 mb-4">
-                        Serviços profissionais de hackers éticos para ajudar você a resolver problemas digitais complexos com discrição e eficiência.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="/CyberXpert/contato.html" class="text-gray-400 hover:text-purple-400 transition">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
-                    <ul class="space-y-2">
-                        <li><a href="https://cyberxpert.com/faculdade-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Faculdade</a></li>
-                        <li><a href="https://cyberxpert.com/instagram-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Instagram</a></li>
-                        <li><a href="https://cyberxpert.com/whatsapp-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear WhatsApp</a></li>
-                        <li><a href="https://cyberxpert.com/facebook-hack" class="text-gray-400 hover:text-purple-400 transition">Hackear Facebook</a></li>
-                        <li><a href="https://cyberxpert.com/tracking" class="text-gray-400 hover:text-purple-400 transition">Rastrear Pessoa</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Links Úteis</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/CyberXpert/sobre-nos.html" class="text-gray-400 hover:text-purple-400 transition">Sobre Nós</a></li>
-                        <li><a href="/CyberXpert/faq.html" class="text-gray-400 hover:text-purple-400 transition">FAQ</a></li>
-                        <li><a href="/CyberXpert/privacidade.html" class="text-gray-400 hover:text-purple-400 transition">Política de Privacidade</a></li>
-                        <li><a href="/CyberXpert/termos.html" class="text-gray-400 hover:text-purple-400 transition">Termos de Serviço</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Contato</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-2"></i> contato@cyberxpert.com
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-headset mr-2"></i> Suporte 24/7
-                        </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm mb-4 md:mb-0">
-                    © 2025 CyberXpert. Todos os direitos reservados.
-                </p>
-                <div class="flex items-center space-x-4">
-                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
-                        <option>Português (BR)</option>
-                        <option>English</option>
-                        <option>Español</option>
-                    </select>
-                    <select class="bg-gray-800 text-gray-300 px-3 py-2 rounded-lg text-sm">
-                        <option>BRL (R$)</option>
-                        <option>USD ($)</option>
-                        <option>EUR (€)</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <!-- Descrição -->
+  <div class="section-block">
+    <h2>Descrição do Serviço</h2>
+    <p>Nosso serviço especializado em hacking de sistemas acadêmicos oferece acesso completo aos bancos de dados de faculdades e universidades, permitindo modificar notas, histórico acadêmico, frequência, documentos oficiais e muito mais. Utilizamos métodos avançados que exploram vulnerabilidades específicas dos sistemas acadêmicos (como Moodle, SIGAA, SAP, entre outros) para garantir acesso administrativo total sem deixar rastros.</p>
     
-    <!-- WhatsApp Button -->
-    <a href="/CyberXpert/contato.html" class="whatsapp-button">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <h3>Recursos Incluídos</h3>
+    <ul>
+      <li>Acesso completo ao painel administrativo da faculdade</li>
+      <li>Modificação de notas e histórico acadêmico</li>
+      <li>Alteração de frequência e registros disciplinares</li>
+      <li>Emissão de documentos oficiais (históricos, declarações)</li>
+      <li>Acesso a banco de dados de alunos e professores</li>
+      <li>Visualização de provas e trabalhos antes da aplicação</li>
+      <li>Modificação de prazos de matrícula e entrega de trabalhos</li>
+      <li>Suporte 24/7 durante todo o período contratado</li>
+    </ul>
+  </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-        
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                answer.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
-            });
-        });
-        
-        // Dynamic Service Details (can be customized for each service)
-        function loadServiceDetails() {
-            // This would normally come from URL parameters or database
-            // For demo purposes, we'll use default values
-            const service = {
-                title: "Hackear Sistema de Faculdade",
-                icon: "https://cdn-icons-png.flaticon.com/512/2889/2889676.png",
-                description: "Nosso serviço especializado em hacking de sistemas acadêmicos oferece acesso completo aos bancos de dados de faculdades e universidades, permitindo modificar notas, histórico acadêmico, frequência, documentos oficiais e muito mais. Utilizamos métodos avançados que exploram vulnerabilidades específicas dos sistemas acadêmicos (como Moodle, SIGAA, SAP, entre outros) para garantir acesso administrativo total sem deixar rastros.",
-                price: "5.000"
-            };
-            
-            document.getElementById('service-title').textContent = service.title;
-            document.getElementById('service-icon').src = service.icon;
-            document.getElementById('service-description').textContent = service.description;
-        }
-        
-        // Back to Top Button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.display = 'flex';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-        
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            loadServiceDetails();
-        });
-    </script>
+  <!-- Métodos de Acesso -->
+  <div class="section-block">
+    <h2>Métodos de Acesso</h2>
+    <p>Existem várias maneiras de obter acesso aos sistemas acadêmicos, dependendo da infraestrutura da instituição:</p>
+    
+    <div class="method-list">
+      <div class="method-item">
+        <h4>1. Acesso ao Painel Administrativo</h4>
+        <p>O método mais eficaz para alterações em larga escala. Envolve localizar e explorar vulnerabilidades no sistema de administração da faculdade para obter credenciais de alto nível.</p>
+        <div class="method-sub">
+          <h4>O que podemos fazer com acesso administrativo:</h4>
+          <ul>
+            <li>Modificar qualquer registro acadêmico</li>
+            <li>Criar usuários com privilégios elevados</li>
+            <li>Emitir documentos oficiais</li>
+            <li>Alterar configurações do sistema</li>
+            <li>Acessar backups completos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="method-item">
+        <h4>2. Exploração de Vulnerabilidades no Sistema</h4>
+        <p>Identificamos e exploramos falhas de segurança nos sistemas acadêmicos (SQL injection, XSS, CSRF, etc.) para obter acesso não autorizado aos bancos de dados.</p>
+      </div>
+      <div class="method-item">
+        <h4>3. Acesso via Credenciais de Professores</h4>
+        <p>Obtenção de credenciais de professores através de phishing direcionado ou engenharia social, permitindo acesso limitado mas suficiente para alterar notas e frequência.</p>
+      </div>
+      <div class="method-item">
+        <h4>4. Acesso Físico aos Servidores</h4>
+        <p>Em casos específicos, podemos coordenar acesso físico aos servidores da instituição para instalar backdoors ou extrair dados diretamente.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fluxo de Trabalho -->
+  <div class="section-block">
+    <h2>Fluxo de Trabalho</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <span class="step-badge">Passo 1</span>
+        <strong>Reconhecimento</strong>
+        <p style="color: #7e8bb6; font-size: 0.9rem; margin-top: 0.3rem;">Identificamos o sistema acadêmico utilizado, versão, plugins e possíveis vulnerabilidades.</p>
+      </div>
+      <div class="flow-step">
+        <span class="step-badge">Passo 2</span>
+        <strong>Exploração</strong>
+        <p style="color: #7e8bb6; font-size: 0.9rem; margin-top: 0.3rem;">Testamos todas as possíveis vulnerabilidades para obter acesso inicial ao sistema.</p>
+      </div>
+      <div class="flow-step">
+        <span class="step-badge">Passo 3</span>
+        <strong>Escalação de Privilégios</strong>
+        <p style="color: #7e8bb6; font-size: 0.9rem; margin-top: 0.3rem;">Uma vez dentro, buscamos elevar nossos privilégios para acesso administrativo total.</p>
+      </div>
+      <div class="flow-step">
+        <span class="step-badge">Passo 4</span>
+        <strong>Persistência</strong>
+        <p style="color: #7e8bb6; font-size: 0.9rem; margin-top: 0.3rem;">Configuramos acessos permanentes para garantir que não percamos o acesso após atualizações.</p>
+      </div>
+      <div class="flow-step">
+        <span class="step-badge">Passo 5</span>
+        <strong>Limpeza de Rastros</strong>
+        <p style="color: #7e8bb6; font-size: 0.9rem; margin-top: 0.3rem;">Removemos todos os logs e evidências de nossa atividade no sistema.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tempo de Execução -->
+  <div class="section-block">
+    <h2>Tempo de Execução</h2>
+    <div class="timeline-grid">
+      <div class="timeline-item"><div class="time-title">MOODLE / SIGAA</div><div class="time-desc">24-48 horas</div><div class="time-note">Sistemas acadêmicos comuns</div></div>
+      <div class="timeline-item"><div class="time-title">SAP / ORACLE</div><div class="time-desc">3-5 dias</div><div class="time-note">Sistemas corporativos</div></div>
+      <div class="timeline-item"><div class="time-title">SISTEMAS PERSONALIZADOS</div><div class="time-desc">5-7 dias</div><div class="time-note">Sob consulta de valores</div></div>
+      <div class="timeline-item"><div class="time-title">ACESSO FÍSICO</div><div class="time-desc">7-14 dias</div><div class="time-note">Casos especiais</div></div>
+    </div>
+    <p>Nossa equipe trabalha 24/7 para garantir os melhores prazos possíveis. Você receberá atualizações em tempo real sobre o progresso.</p>
+  </div>
+
+  <!-- Pagamento -->
+  <div class="section-block">
+    <h2>Formas de Pagamento</h2>
+    <div class="payment-options">
+      <div class="payment-card">
+        <div class="badge-payment">ANTECIPADO</div>
+        <div class="price">R$ 5.000,00</div>
+        <p><strong>Pagamento Adiantado</strong></p>
+        <ul>
+          <li>100% do valor pago antecipadamente</li>
+          <li>Desconto de 15% no valor total</li>
+          <li>Processo iniciado imediatamente</li>
+          <li>Aceita PIX, transferência e cripto</li>
+        </ul>
+      </div>
+      <div class="payment-card">
+        <div class="badge-payment">EQUILÍBRIO</div>
+        <div class="price">R$ 5.500,00</div>
+        <p><strong>Pagamento Parcial</strong></p>
+        <ul>
+          <li>50% no início e 50% na conclusão</li>
+          <li>Processo iniciado após primeiro pagamento</li>
+          <li>Aceita PIX e criptomoedas</li>
+        </ul>
+      </div>
+      <div class="payment-card">
+        <div class="badge-payment">APÓS PROVAS</div>
+        <div class="price">R$ 6.000,00</div>
+        <p><strong>Pagamento Após Provas</strong></p>
+        <ul>
+          <li>100% do valor pago somente após verificação</li>
+          <li>Exclusivamente em Bitcoin (BTC)</li>
+          <li>Requer comprovação de fundos antes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bitcoin Box -->
+  <div class="bitcoin-box">
+    <h4><i class="fab fa-bitcoin"></i> Pagamento em Bitcoin</h4>
+    <p>Para pagamentos em Bitcoin (opção após provas): cadastre-se em uma corretora, compre o valor equivalente em BTC, transfira para sua carteira pessoal e envie o comprovante. Caso não saiba como fazer, entre em contato que estaremos te ajudando.</p>
+  </div>
+
+  <!-- Provas -->
+  <div class="section-block">
+    <h2>Política de Provas</h2>
+    <p>As provas são fornecidas exclusivamente para comprovar que o serviço foi concluído com sucesso, não para expor conteúdos privados ou sensíveis. Oferecemos prova parcial (captura de tela do acesso inicial), prova em vídeo ou prova personalizada.</p>
+    <p><strong>Atenção:</strong> Não fornecemos provas sob demanda que violem a privacidade de terceiros. Se você insistir em solicitar mais provas além do padrão estabelecido, o atendimento será encerrado.</p>
+  </div>
+
+  <!-- Garantias -->
+  <div class="section-block">
+    <h2>Garantias</h2>
+    <ul>
+      <li><strong>Garantia de Satisfação:</strong> Se não conseguirmos acessar o sistema, devolvemos 100% do valor pago</li>
+      <li><strong>Sigilo Absoluto:</strong> Seus dados e o propósito do serviço são mantidos em total sigilo</li>
+      <li><strong>Suporte Contínuo:</strong> Assistência durante todo o período contratado</li>
+      <li><strong>Atualizações Gratuitas:</strong> Manutenção do acesso mesmo após atualizações do sistema</li>
+      <li><strong>Limpeza de Rastros:</strong> Garantimos a remoção de todos os logs de acesso</li>
+    </ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-block">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-servico">
+      <div class="faq-servico-item"><div class="faq-servico-question">Como vocês garantem que não serei pego? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Utilizamos técnicas avançadas de limpeza de logs e acesso indetectável. Todas as alterações são feitas de forma que pareçam ter sido realizadas por um administrador legítimo. Recomendamos sempre alterações sutis e realistas.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Quanto tempo leva para hackear o sistema? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">O tempo médio é de 24-48 horas para sistemas comuns como Moodle ou SIGAA. Sistemas mais complexos como SAP ou Oracle podem levar de 3-5 dias. Casos com acesso físico podem levar até 2 semanas.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Preciso fornecer alguma informação específica? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Necessitamos apenas do nome da instituição e, se possível, o sistema acadêmico utilizado. Não é necessário fornecer seus dados pessoais de estudante até a fase de modificação.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Como é feito o pagamento? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Aceitamos PIX, criptomoedas e transferências bancárias. Oferecemos três modalidades: adiantado (com desconto), parcial (50/50) ou após provas (somente BTC).</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Posso alterar qualquer informação no sistema? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Sim, com acesso administrativo completo você pode modificar qualquer dado. No entanto, recomendamos cautela para não fazer alterações que possam chamar atenção desnecessária.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">E se a faculdade descobrir e reverter? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Nossos métodos incluem backups falsos e modificação de logs para evitar reversão. Mantemos acesso persistente por 30 dias após a modificação. Caso algo seja revertido, faremos as correções sem custo adicional.</div></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-whatsapp">
+    <h2>Pronto para começar?</h2>
+    <p>Para iniciar seu atendimento, clique no botão abaixo. Preferimos que você já nos envie:</p>
+    <div class="info-contact">
+      <p>Serviço que deseja contratar: Hackear Sistema de Faculdade</p>
+      <p>Nome da instituição e sistema acadêmico utilizado (se souber)</p>
+      <p>Sua preferência de forma de pagamento</p>
+    </div>
+    <a href="/CyberXpert/contato" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Falar com Especialista Agora</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CyberXpert</div>
+      <div class="footer-links">
+        <a href="/CyberXpert/servicos">Serviços</a>
+        <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+        <a href="/CyberXpert/faq">FAQ</a>
+        <a href="/CyberXpert/contato">Contato</a>
+      </div>
+      <div><i class="fas fa-globe"></i> Português (BR) | BRL (R$)</div>
+    </div>
+    <div class="copyright">© 2026 CyberXpert. Todos os direitos reservados. Soluções digitais com excelência e discrição.</div>
+  </footer>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="/CyberXpert/contato" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-servico-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-servico-question');
+    question.addEventListener('click', () => {
+      item.classList.toggle('active');
+      const icon = question.querySelector('i');
+      if(item.classList.contains('active')) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+      else icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+    });
+  });
+</script>
 </body>
 </html>

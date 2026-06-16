@@ -102,11 +102,6 @@
       font-size: 3.5rem;
       color: #3b82f6;
     }
-    .service-icon-large img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-    }
     .service-header { flex: 1; }
     .service-header h1 {
       font-size: 2.5rem;
@@ -125,6 +120,42 @@
     }
     .stars { color: #fbbf24; letter-spacing: 2px; }
     .rating-badge span { color: #9ca3cf; font-size: 0.9rem; }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .btn-primary {
+      background: #3b82f6;
+      padding: 0.9rem 2rem;
+      border-radius: 48px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      padding: 0.9rem 2rem;
+      border-radius: 48px;
+      font-weight: 600;
+      color: #3b82f6;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+      font-size: 1rem;
+      border: 1px solid #3b82f6;
+    }
+    .btn-outline:hover { background: rgba(59,130,246,0.1); transform: translateY(-2px); }
 
     .info-cards {
       display: flex;
@@ -169,6 +200,47 @@
       color: #3b82f6;
     }
 
+    .highlight-link {
+      color: #3b82f6;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .highlight-link:hover { color: #60a5fa; }
+
+    .explainer-box {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      border-left: 4px solid #3b82f6;
+    }
+    .explainer-box h4 { color: #3b82f6; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .explainer-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+    .warning-box {
+      background: rgba(251, 191, 36, 0.05);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-left: 4px solid #fbbf24;
+    }
+    .warning-box h4 { color: #fbbf24; margin-bottom: 0.8rem; }
+    .warning-box p { color: #b0b8d4; font-size: 0.95rem; }
+
+    .trust-box {
+      background: rgba(16, 185, 129, 0.05);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-left: 4px solid #10b981;
+    }
+    .trust-box h4 { color: #10b981; margin-bottom: 0.8rem; }
+    .trust-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.8rem; }
+
     .timeline-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -202,6 +274,8 @@
     }
     .payment-card:hover { border-color: #3b82f6; transform: translateY(-3px); }
     .payment-card .price { font-size: 1.8rem; font-weight: 800; color: #eef2ff; margin: 0.5rem 0; }
+    .payment-card ul { margin: 1rem 0; }
+    .payment-card ul li { font-size: 0.85rem; margin-bottom: 0.5rem; padding-left: 1.2rem; }
     .badge-payment {
       display: inline-block;
       background: #1e2a4a;
@@ -221,6 +295,7 @@
       border: 1px solid rgba(247, 147, 26, 0.2);
     }
     .bitcoin-box h4 { color: #f7931a; margin-bottom: 0.8rem; }
+    .bitcoin-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.5rem; }
 
     .faq-servico { margin: 2rem 0; }
     .faq-servico-item {
@@ -245,7 +320,7 @@
       padding-top: 0;
     }
     .faq-servico-item.active .faq-servico-answer {
-      max-height: 400px;
+      max-height: 500px;
       padding-top: 0.8rem;
     }
 
@@ -272,10 +347,7 @@
       color: white;
       text-decoration: none;
     }
-    .cta-whatsapp .btn-whatsapp:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 30px rgba(37,211,102,0.3);
-    }
+    .cta-whatsapp .btn-whatsapp:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(37,211,102,0.3); }
     .info-contact {
       background: #0a0f1c;
       padding: 1rem;
@@ -379,6 +451,15 @@
     }
     .method-card h4 { margin-bottom: 0.5rem; }
 
+    .resource-category {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #1e293b;
+    }
+    .resource-category h3 { color: #3b82f6; margin-bottom: 1rem; font-size: 1.1rem; }
+
     @media (max-width: 600px) {
       .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
       .whatsapp-float i { font-size: 2.2rem; }
@@ -406,7 +487,7 @@
   <!-- Hero -->
   <div class="service-hero">
     <div class="service-icon-large">
-      <img src="https://cdn-icons-png.flaticon.com/512/2965/2965300.png" alt="Ícone de Smartphone">
+      <i class="fas fa-mobile-alt"></i>
     </div>
     <div class="service-header">
       <h1>Hackear Celular Android / iOS</h1>
@@ -414,7 +495,11 @@
         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <span>87 avaliações • 5.0/5</span>
       </div>
-      <p style="margin-top: 0.8rem; color: #b0b8d4;">Acesso completo e remoto a qualquer smartphone Android ou iPhone, com monitoramento total e discrição absoluta.</p>
+      <p style="margin-top: 0.8rem; color: #b0b8d4;">Acesso completo e remoto a qualquer smartphone Android ou iPhone, com controle total do dispositivo e monitoramento absoluto.</p>
+      <div class="hero-buttons">
+        <a href="/CyberXpert/contato" class="btn-primary"><i class="fab fa-whatsapp"></i> Falar com Especialista</a>
+        <a href="/CyberXpert/como-funciona" class="btn-outline"><i class="fas fa-book-open"></i> Quero Entender Como Funciona</a>
+      </div>
     </div>
   </div>
 
@@ -435,55 +520,107 @@
   <!-- Descrição -->
   <div class="section-block">
     <h2>Descrição do Serviço</h2>
-    <p>Nosso serviço premium de hacking de smartphones oferece acesso completo e remoto a qualquer dispositivo Android ou iPhone, permitindo que você monitore todas as atividades, mensagens, chamadas, localização e muito mais, sem que o proprietário saiba. Utilizamos métodos avançados que exploram vulnerabilidades específicas de cada sistema operacional para garantir total discrição e eficácia.</p>
+    <p>Nosso serviço premium de hacking de smartphones oferece acesso completo e remoto a qualquer dispositivo Android ou iPhone. Uma vez obtido o acesso, você terá <strong>controle total sobre o aparelho</strong> — podendo ver, ouvir, rastrear e até controlar o dispositivo à distância, sem que o proprietário perceba. Utilizamos métodos avançados que exploram vulnerabilidades específicas de cada sistema operacional para garantir total discrição e eficácia.</p>
     
-    <h3>Recursos Incluídos</h3>
-    <ul>
-      <li><span class="feature-badge badge-both">Ambos</span> Monitoramento de mensagens (SMS, WhatsApp, Telegram, Signal)</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Acesso a chamadas (registro e gravação)</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Rastreamento de localização em tempo real</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Acesso a fotos, vídeos e arquivos</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Keylogger (registro de tudo digitado)</li>
-      <li><span class="feature-badge badge-android">Android</span> Acesso remoto via tela espelhada</li>
-      <li><span class="feature-badge badge-android">Android</span> Ativação de câmera e microfone remotamente</li>
-      <li><span class="feature-badge badge-ios">iOS</span> Bypass do iCloud e bloqueios</li>
-      <li><span class="feature-badge badge-ios">iOS</span> Extração de dados de dispositivos bloqueados</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Monitoramento de redes sociais</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Histórico de navegação e favoritos</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Acesso a contatos e agenda</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Notificações em tempo real</li>
-      <li><span class="feature-badge badge-both">Ambos</span> Suporte 24/7 durante todo o período contratado</li>
-    </ul>
+    <h3>O Que Você Pode Ver e Fazer com o Acesso</h3>
+
+    <!-- Mensagens e Comunicação -->
+    <div class="resource-category">
+      <h3><i class="fas fa-comments mr-2"></i> Mensagens e Comunicação</h3>
+      <ul>
+        <li><strong>WhatsApp, Telegram, Signal e SMS:</strong> Leia todas as mensagens recebidas e enviadas — inclusive as que foram apagadas. Veja fotos, vídeos, áudios e documentos trocados em qualquer conversa.</li>
+        <li><strong>Chamadas de voz e vídeo:</strong> Registro completo de todas as chamadas realizadas e recebidas, com data, hora e duração. Em dispositivos Android, é possível <strong>gravar chamadas</strong> em tempo real.</li>
+        <li><strong>Redes sociais:</strong> Acesse conversas do Instagram Direct, Facebook Messenger, Snapchat, TikTok e outras redes sociais instaladas no aparelho.</li>
+      </ul>
+    </div>
+
+    <!-- Galeria e Arquivos -->
+    <div class="resource-category">
+      <h3><i class="fas fa-images mr-2"></i> Galeria, Fotos e Arquivos</h3>
+      <ul>
+        <li><strong>Galeria completa:</strong> Visualize todas as fotos e vídeos armazenados no dispositivo, incluindo os que estão em pastas ocultas ou protegidas por senha.</li>
+        <li><strong>Download de mídias:</strong> Baixe qualquer foto, vídeo ou arquivo do celular para o seu próprio dispositivo.</li>
+        <li><strong>Documentos e downloads:</strong> Acesse PDFs, planilhas, arquivos de texto e qualquer documento salvo no aparelho.</li>
+      </ul>
+    </div>
+
+    <!-- Localização e Rastreamento -->
+    <div class="resource-category">
+      <h3><i class="fas fa-map-marker-alt mr-2"></i> Localização e Rastreamento</h3>
+      <ul>
+        <li><strong>Localização em tempo real:</strong> Veja exatamente onde a pessoa está agora, com atualização constante no mapa.</li>
+        <li><strong>Histórico de rotas:</strong> Saiba por onde a pessoa andou nos últimos dias — locais visitados, horários de entrada e saída.</li>
+        <li><strong>Alertas de localização:</strong> Configure zonas no mapa e receba um alerta sempre que a pessoa entrar ou sair daquele perímetro.</li>
+      </ul>
+    </div>
+
+    <!-- Controle do Dispositivo -->
+    <div class="resource-category">
+      <h3><i class="fas fa-gamepad mr-2"></i> Controle Remoto do Aparelho</h3>
+      <ul>
+        <li><strong><span class="feature-badge badge-android">Android</span> Tela espelhada:</strong> Veja e controle a tela do celular em tempo real, como se estivesse com o aparelho nas mãos.</li>
+        <li><strong><span class="feature-badge badge-android">Android</span> Ativação de câmera e microfone:</strong> Ligue a câmera ou o microfone do dispositivo remotamente para ver e ouvir o que está acontecendo ao redor da pessoa.</li>
+        <li><strong>Instalação e remoção de aplicativos:</strong> Instale ou remova qualquer app no celular sem precisar encostar nele.</li>
+        <li><strong>Bloqueio permanente do aparelho:</strong> Caso queira, pode <strong>bloquear o celular permanentemente</strong>, tornando-o inutilizável — seja por segurança ou por qualquer outro motivo.</li>
+        <li><strong>Formatação remota:</strong> Apague todos os dados do dispositivo à distância.</li>
+      </ul>
+    </div>
+
+    <!-- Monitoramento e Keylogger -->
+    <div class="resource-category">
+      <h3><i class="fas fa-keyboard mr-2"></i> Monitoramento e Registro</h3>
+      <ul>
+        <li><strong>Keylogger (tudo que é digitado):</strong> Tudo o que a pessoa digitar no celular — senhas, mensagens, pesquisas — fica registrado e você pode acessar.</li>
+        <li><strong>Histórico de navegação:</strong> Veja todos os sites visitados, favoritos salvos e pesquisas feitas no navegador.</li>
+        <li><strong>Contatos e agenda:</strong> Acesse a lista completa de contatos salvos, eventos da agenda e compromissos.</li>
+        <li><strong>Notificações em tempo real:</strong> Receba um alerta sempre que algo novo acontecer no dispositivo — uma mensagem recebida, uma chamada, um novo app instalado.</li>
+      </ul>
+    </div>
+
+    <!-- Específico iOS -->
+    <div class="resource-category">
+      <h3><i class="fab fa-apple mr-2"></i> Recursos Exclusivos para iPhone (iOS)</h3>
+      <ul>
+        <li><strong><span class="feature-badge badge-ios">iOS</span> Bypass do iCloud:</strong> Acesse o dispositivo sem precisar da senha do Apple ID vinculado a ele.</li>
+        <li><strong><span class="feature-badge badge-ios">iOS</span> Extração de dados bloqueados:</strong> Mesmo que o iPhone esteja bloqueado com senha, conseguimos extrair fotos, mensagens e outros dados armazenados.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 1.5rem;"><strong>Em resumo:</strong> Uma vez obtido o acesso, você tem o celular da pessoa na palma da sua mão. Pode ver tudo, ouvir tudo, rastrear, controlar e até inutilizar o aparelho se quiser. Tudo remotamente, sem que a pessoa saiba.</p>
   </div>
 
   <!-- Como Funciona -->
   <div class="section-block">
     <h2>Como Funciona o Acesso</h2>
-    <p>Nosso método de acesso a smartphones é 100% remoto e indetectável. Utilizamos uma combinação de técnicas avançadas:</p>
+    <p>Nosso método de acesso a smartphones é 100% remoto e indetectável. Utilizamos uma combinação de técnicas avançadas específicas para cada sistema:</p>
     
     <div class="method-grid">
       <div class="method-card" style="border-left: 3px solid #3DDC84;">
         <h4 style="color: #3DDC84;"><i class="fab fa-android mr-2"></i> Para Android</h4>
         <ul>
-          <li><strong>Exploração de Vulnerabilidades:</strong> Falhas específicas do sistema</li>
-          <li><strong>APK Personalizado:</strong> Instalação remota de app espião</li>
-          <li><strong>Root Remoto:</strong> Acesso privilegiado sem intervenção física</li>
-          <li><strong>Injeção de Processos:</strong> Interceptação de comunicações</li>
-          <li><strong>Phishing Avançado:</strong> Técnicas para contornar proteções</li>
+          <li><strong>Exploração de Vulnerabilidades:</strong> Aproveitamos falhas específicas do sistema operacional</li>
+          <li><strong>APK Personalizado:</strong> Instalação remota de aplicativo de monitoramento</li>
+          <li><strong>Root Remoto:</strong> Acesso privilegiado total sem intervenção física</li>
+          <li><strong>Injeção de Processos:</strong> Interceptação de comunicações em tempo real</li>
+          <li><strong>Phishing Avançado:</strong> Técnicas para contornar proteções e autenticações</li>
         </ul>
       </div>
       <div class="method-card" style="border-left: 3px solid #007AFF;">
         <h4 style="color: #007AFF;"><i class="fab fa-apple mr-2"></i> Para iPhone</h4>
         <ul>
-          <li><strong>Exploração de Jailbreak:</strong> Acesso root via vulnerabilidades</li>
-          <li><strong>iCloud Bypass:</strong> Acesso sem senha do Apple ID</li>
-          <li><strong>Exploração de Backup:</strong> Extração de dados via iCloud</li>
-          <li><strong>Injeção de Certificados:</strong> Perfis de monitoramento</li>
-          <li><strong>Man-in-the-Middle:</strong> Interceptação criptografada</li>
+          <li><strong>Exploração de Jailbreak:</strong> Acesso root via vulnerabilidades não corrigidas</li>
+          <li><strong>iCloud Bypass:</strong> Acesso total sem precisar da senha do Apple ID</li>
+          <li><strong>Exploração de Backup:</strong> Extração completa de dados via iCloud</li>
+          <li><strong>Injeção de Certificados:</strong> Instalação de perfis de monitoramento oculto</li>
+          <li><strong>Man-in-the-Middle:</strong> Interceptação de comunicações criptografadas</li>
         </ul>
       </div>
     </div>
-    <p>Todo o processo é realizado sem deixar rastros e sem notificar o proprietário do dispositivo.</p>
+    <p>Todo o processo é realizado sem deixar rastros e sem notificar o proprietário do dispositivo. O acesso é mantido através de nossos servidores seguros, garantindo sua privacidade.</p>
+
+    <p style="margin-top: 1rem;">
+      <a href="/CyberXpert/como-funciona" class="highlight-link">📖 Leia o guia completo do processo aqui →</a>
+    </p>
   </div>
 
   <!-- Tempo de Execução -->
@@ -536,17 +673,67 @@
     </div>
   </div>
 
-  <!-- Bitcoin Box -->
-  <div class="bitcoin-box">
-    <h4><i class="fab fa-bitcoin"></i> Pagamento em Bitcoin</h4>
-    <p>Para pagamentos em Bitcoin (opção após provas): cadastre-se em uma corretora, compre o valor equivalente em BTC, transfira para sua carteira pessoal e envie o comprovante. Caso não saiba como fazer, entre em contato que estaremos te ajudando.</p>
+  <!-- Como Funcionam as Provas (Adaptado para Celular) -->
+  <div class="section-block">
+    <h2>Como Funcionam as Provas (Hackear Celular)</h2>
+    <p>Disponível exclusivamente na opção de <strong>Pagamento Após Provas</strong>. Entendemos que hackear um celular tem um <strong>custo altíssimo</strong> para nós — é o serviço mais complexo, demorado e caro que oferecemos. Por isso, o processo de provas para celular funciona de forma diferente dos outros serviços.</p>
+    
+    <div class="explainer-box">
+      <h4><i class="fas fa-shield-alt mr-2"></i> Como funciona a prova para Hackear Celular</h4>
+      <p>Devido ao custo e à complexidade de invadir um smartphone completo, <strong>não hackeamos o celular inteiro logo de cara</strong>. Em vez disso, seguimos este processo:</p>
+      <ul>
+        <li><strong>Primeiro, hackeamos uma rede social da pessoa</strong> (Instagram, WhatsApp ou Facebook — você escolhe qual). Isso serve como <strong>prova de que somos reais, confiáveis e temos capacidade técnica</strong> para acessar os dados da pessoa.</li>
+        <li>Enviamos o vídeo de prova mostrando o login bem-sucedido na rede social escolhida, no site oficial, com data e hora visíveis.</li>
+        <li><strong>Depois que você confirmar a prova da rede social, você efetua o pagamento em Bitcoin.</strong></li>
+        <li>Com o pagamento confirmado, <strong>iniciamos o hackeamento completo do celular</strong> — com todos os recursos descritos nesta página.</li>
+      </ul>
+      <p style="margin-top: 0.8rem;">Esse método protege ambas as partes: você tem uma prova concreta de que somos legítimos antes de pagar, e nós temos a segurança de receber por um serviço que tem custo operacional altíssimo.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4><i class="fas fa-exclamation-triangle mr-2"></i> Importante</h4>
+      <p>O custo para hackear um celular é extremamente elevado — envolve exploração de vulnerabilidades específicas do modelo e versão do sistema, horas de trabalho técnico especializado e manutenção do acesso. Por isso, <strong>não realizamos o serviço completo sem a confirmação de pagamento</strong>. A prova inicial (rede social) já demonstra nossa capacidade e seriedade.</p>
+    </div>
   </div>
 
-  <!-- Provas -->
+  <!-- Pagamento em Bitcoin Explicado -->
   <div class="section-block">
-    <h2>Política de Provas</h2>
-    <p>As provas são fornecidas exclusivamente para comprovar que o serviço foi concluído com sucesso, não para expor conteúdos privados ou sensíveis. Oferecemos prova parcial (captura de tela do acesso inicial) ou prova em vídeo curto demonstrando o acesso funcional.</p>
-    <p><strong>Atenção:</strong> Não fornecemos provas sob demanda, leitura de mensagens específicas ou qualquer conteúdo que viole a privacidade. Se você insistir em solicitar mais provas além do padrão estabelecido, o atendimento será encerrado.</p>
+    <h2>Pagamento em Bitcoin — Como Funciona</h2>
+    
+    <div class="bitcoin-box">
+      <h4><i class="fab fa-bitcoin"></i> Por que Bitcoin na opção Após Provas?</h4>
+      <p>A opção de <strong>Pagamento Após Provas</strong> exige pagamento exclusivamente em Bitcoin (BTC). Não aceitamos PIX, transferência ou qualquer outro meio para essa modalidade específica.</p>
+      <p>O motivo é simples: essa é a opção para quem realmente precisa de segurança máxima. Infelizmente, há muitos golpes na internet — pessoas que recebem o serviço e somem sem pagar, ou que tentam manipular comprovantes falsos. Por isso, para quem preza por segurança e quer ver o resultado antes de pagar, oferecemos essa modalidade com um valor um pouco maior e pagamento em Bitcoin, que é irreversível e rastreável, protegendo ambas as partes.</p>
+      <p>Essa modalidade é para quem valoriza confiança e transparência. Cobramos mais caro porque entregamos mais: provas reais, processo seguro e a tranquilidade de pagar apenas depois de ver o resultado.</p>
+    </div>
+
+    <div class="explainer-box">
+      <h4><i class="fas fa-shopping-cart mr-2"></i> Como comprar Bitcoin (mesmo sendo iniciante)</h4>
+      <p>Comprar Bitcoin é mais simples do que parece. Siga este passo a passo:</p>
+      <ol style="color: #b0b8d4; padding-left: 1.2rem; margin: 1rem 0; line-height: 2;">
+        <li><strong>Crie uma conta em uma corretora confiável.</strong> As mais usadas no Brasil são:
+          <ul>
+            <li><strong>Binance</strong> (a maior do mundo, aceita PIX)</li>
+            <li><strong>Mercado Bitcoin</strong> (brasileira, interface simples)</li>
+            <li><strong>Foxbit</strong> (boa para iniciantes)</li>
+          </ul>
+        </li>
+        <li><strong>Compre Bitcoin com PIX.</strong> Todas essas corretoras aceitam PIX. Você transfere o valor em reais e recebe os Bitcoins na sua conta da corretora. É instantâneo.</li>
+        <li><strong>Transfira para sua carteira pessoal.</strong> Recomendamos carteiras como Trust Wallet ou Exodus (são aplicativos gratuitos). Transfira os BTC da corretora para sua carteira.</li>
+        <li><strong>Envie um print da sua carteira com o saldo.</strong> Isso serve apenas para comprovar que você tem os fundos disponíveis. <strong>Você não precisa nos transferir nada antes das provas.</strong></li>
+        <li><strong>Após receber as provas, você faz o pagamento.</strong> Só depois de assistir ao vídeo de acesso e confirmar que está tudo certo, você transfere os Bitcoins para nossa carteira.</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4><i class="fas fa-exclamation-triangle mr-2"></i> Importante: Nos contate antes de comprar</h4>
+      <p><strong>Recomendamos que você nos contate antes de iniciar a compra de Bitcoin.</strong> Explicaremos tudo em detalhes e te guiaremos no passo a passo correto. Alguns clientes, na hora de transferir para a carteira pessoal, acabam enviando para o lugar errado por falta de atenção. Não compre sem nos questionar antes ou sem pesquisar — assista a vídeos no YouTube sobre como comprar Bitcoin e transferir para uma carteira. Se tiver qualquer dúvida, fale conosco primeiro. É mais seguro e evita perda de dinheiro.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4><i class="fas fa-hand-holding-usd mr-2"></i> Resumo importante</h4>
+      <p>Você não precisa transferir nenhum valor antecipadamente. Basta comprar os Bitcoins, deixá-los na sua carteira e nos enviar um print comprovando que tem o saldo. O pagamento só acontece depois que você receber e aprovar as provas. Se tiver qualquer dúvida sobre como comprar Bitcoin, fale conosco no WhatsApp — orientamos você em cada passo.</p>
+    </div>
   </div>
 
   <!-- Garantias -->
@@ -562,6 +749,29 @@
     </ul>
   </div>
 
+  <!-- Está com medo? Leia isso -->
+  <div class="section-block">
+    <h2>Está com medo de comprar e não receber o que espera?</h2>
+    
+    <div class="trust-box">
+      <h4><i class="fas fa-heart mr-2"></i> Entendemos perfeitamente</h4>
+      <p>Sabemos que a internet está cheia de promessas falsas. É normal sentir receio. Você não é o primeiro a se sentir assim — e não será o último. Recebemos dezenas de clientes por mês, e cerca de 90% deles chegam com as mesmas perguntas:</p>
+      <p style="color: #fbbf24; font-style: italic;">"Mas eu posso pagar depois?"<br>
+      "Mas eu posso ver primeiro?"<br>
+      "Mas eu posso entrar no celular antes de pagar?"<br>
+      "Deixa eu só ver isso aqui antes..."<br>
+      "Me mostra só essa conversa que eu pago..."</p>
+      <p>Serviços hackers são caros, complexos e demorados. Infelizmente, 70% das pessoas que nos chamam apenas fazem perguntas ou tentam conseguir o serviço de graça, insistindo em coisas como "deixa eu entrar primeiro que pago a mais" ou "me fala só isso" ou "me mostra só aquilo".</p>
+      <p>Lidamos com esse tipo de situação todos os dias — e ainda assim, temos que manter o foco no serviço, que é técnico, delicado e consome horas da nossa equipe.</p>
+      <p>Por isso, criamos a <strong>opção de Pagamento Após Provas por R$ 900 em Bitcoin</strong>: para quem quer segurança máxima e prioridade no atendimento. Nela, primeiro hackeamos uma rede social da pessoa como prova de capacidade, e só depois de você aprovar iniciamos o serviço completo.</p>
+      <p>Caso ainda tenha dúvidas, temos seções inteiras dedicadas a respondê-las:</p>
+      <p style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+        <a href="/CyberXpert/como-funciona" class="highlight-link">🔧 Ver todo o processo de hackeamento detalhado →</a>
+        <a href="/CyberXpert/faq" class="highlight-link">📖 Ver todas as Perguntas Frequentes (FAQ) →</a>
+      </p>
+    </div>
+  </div>
+
   <!-- FAQ -->
   <div class="section-block">
     <h2>Perguntas Frequentes</h2>
@@ -570,8 +780,8 @@
       <div class="faq-servico-item"><div class="faq-servico-question">Preciso ter acesso físico ao celular? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Não. Todo o acesso é feito 100% à distância, sem precisar encostar no celular da pessoa. Só precisamos de um dado básico como e-mail, número de telefone ou perfil em rede social.</div></div>
       <div class="faq-servico-item"><div class="faq-servico-question">Funciona em celulares bloqueados? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Sim, conseguimos acessar dados mesmo em dispositivos bloqueados. Para Android, desbloqueamos a maioria dos modelos. Para iPhone, extraímos dados mesmo bloqueado, com algumas limitações por versão do iOS.</div></div>
       <div class="faq-servico-item"><div class="faq-servico-question">Como é feito o pagamento? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Aceitamos PIX, criptomoedas (Bitcoin, Ethereum, USDT) e transferências bancárias. Oferecemos três modalidades: adiantado (com desconto), parcial (50/50) ou após provas (somente BTC).</div></div>
-      <div class="faq-servico-item"><div class="faq-servico-question">Como recebo os resultados? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Você receberá acesso a um painel de controle seguro onde poderá visualizar todas as atividades do dispositivo em tempo real: mensagens, chamadas, localização, fotos e muito mais.</div></div>
-      <div class="faq-servico-item"><div class="faq-servico-question">O serviço funciona em redes WiFi públicas? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Sim, funciona em qualquer tipo de conexão: WiFi, redes móveis (3G/4G/5G) e até em modo avião com limitações.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Como recebo os resultados? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Você receberá acesso a um painel de controle seguro onde poderá visualizar todas as atividades do dispositivo em tempo real: mensagens, chamadas, localização, fotos, e muito mais. Também pode controlar o aparelho remotamente.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Posso bloquear o celular da pessoa permanentemente? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Sim. Com o acesso obtido, você pode bloquear o aparelho permanentemente, tornando-o inutilizável. Também é possível formatar o dispositivo remotamente, apagando todos os dados.</div></div>
     </div>
   </div>
 
@@ -609,7 +819,6 @@
 </a>
 
 <script>
-  // FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-servico-item');
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-servico-question');
@@ -621,7 +830,6 @@
     });
   });
 
-  // Device Tabs
   document.querySelectorAll('.device-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.device-tab').forEach(t => t.classList.remove('active'));

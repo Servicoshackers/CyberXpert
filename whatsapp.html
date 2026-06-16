@@ -28,16 +28,9 @@
       padding: 0 2rem;
     }
 
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0a0c14;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #2d3b6e;
-      border-radius: 8px;
-    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0c14; }
+    ::-webkit-scrollbar-thumb { background: #2d3b6e; border-radius: 8px; }
 
     /* Header */
     .navbar {
@@ -71,9 +64,7 @@
       transition: 0.2s;
       font-size: 0.95rem;
     }
-    .nav-links a:hover {
-      color: #3b82f6;
-    }
+    .nav-links a:hover { color: #3b82f6; }
     .track-btn {
       background: rgba(59, 130, 246, 0.12);
       padding: 0.6rem 1.2rem;
@@ -86,14 +77,8 @@
       text-decoration: none;
       display: inline-block;
     }
-    .track-btn i {
-      margin-right: 6px;
-    }
-    .track-btn:hover {
-      background: #3b82f6;
-      color: white;
-      border-color: #3b82f6;
-    }
+    .track-btn i { margin-right: 6px; }
+    .track-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
 
     /* Hero Section do Serviço */
     .service-hero {
@@ -118,9 +103,7 @@
       font-size: 3.5rem;
       color: #3b82f6;
     }
-    .service-header {
-      flex: 1;
-    }
+    .service-header { flex: 1; }
     .service-header h1 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -136,14 +119,45 @@
       gap: 0.8rem;
       margin-top: 0.5rem;
     }
-    .stars {
-      color: #fbbf24;
-      letter-spacing: 2px;
+    .stars { color: #fbbf24; letter-spacing: 2px; }
+    .rating-badge span { color: #9ca3cf; font-size: 0.9rem; }
+
+    /* Botões do Hero */
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
     }
-    .rating-badge span {
-      color: #9ca3cf;
-      font-size: 0.9rem;
+    .btn-primary {
+      background: #3b82f6;
+      padding: 0.9rem 2rem;
+      border-radius: 48px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+      font-size: 1rem;
     }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      padding: 0.9rem 2rem;
+      border-radius: 48px;
+      font-weight: 600;
+      color: #3b82f6;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.2s;
+      font-size: 1rem;
+      border: 1px solid #3b82f6;
+    }
+    .btn-outline:hover { background: rgba(59,130,246,0.1); transform: translateY(-2px); }
 
     /* Cards de informações */
     .info-cards {
@@ -161,24 +175,12 @@
       min-width: 180px;
       border: 1px solid rgba(59,130,246,0.2);
     }
-    .info-card i {
-      font-size: 1.8rem;
-      color: #3b82f6;
-      margin-bottom: 0.8rem;
-    }
-    .info-card h4 {
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-    }
-    .info-card p {
-      font-size: 0.85rem;
-      color: #9ca3cf;
-    }
+    .info-card i { font-size: 1.8rem; color: #3b82f6; margin-bottom: 0.8rem; }
+    .info-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .info-card p { font-size: 0.85rem; color: #9ca3cf; }
 
     /* Seções de conteúdo */
-    .section-block {
-      margin: 2.5rem 0;
-    }
+    .section-block { margin: 2.5rem 0; }
     .section-block h2 {
       font-size: 1.6rem;
       margin-bottom: 1.2rem;
@@ -213,6 +215,59 @@
       color: #3b82f6;
     }
 
+    /* Link destacado */
+    .highlight-link {
+      color: #3b82f6;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .highlight-link:hover { color: #60a5fa; }
+
+    /* Box explicativo */
+    .explainer-box {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      border-left: 4px solid #3b82f6;
+    }
+    .explainer-box h4 {
+      color: #3b82f6;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+    .explainer-box p {
+      color: #b0b8d4;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Box de aviso */
+    .warning-box {
+      background: rgba(251, 191, 36, 0.05);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-left: 4px solid #fbbf24;
+    }
+    .warning-box h4 { color: #fbbf24; margin-bottom: 0.8rem; }
+    .warning-box p { color: #b0b8d4; font-size: 0.95rem; }
+
+    /* Box de confiança/medo */
+    .trust-box {
+      background: rgba(16, 185, 129, 0.05);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-left: 4px solid #10b981;
+    }
+    .trust-box h4 { color: #10b981; margin-bottom: 0.8rem; }
+    .trust-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.8rem; }
+
     /* Timeline prazos */
     .timeline-grid {
       display: grid;
@@ -227,15 +282,12 @@
       border: 1px solid #1e293b;
       transition: 0.2s;
     }
-    .timeline-item:hover {
-      border-color: #3b82f6;
-    }
+    .timeline-item:hover { border-color: #3b82f6; }
     .timeline-item .time-title {
       font-weight: 700;
       color: #3b82f6;
       font-size: 1rem;
       margin-bottom: 0.5rem;
-      letter-spacing: 0.3px;
     }
     .timeline-item .time-desc {
       color: #eef2ff;
@@ -262,24 +314,14 @@
       border: 1px solid #2d3b6e;
       transition: 0.2s;
     }
-    .payment-card:hover {
-      border-color: #3b82f6;
-      transform: translateY(-3px);
-    }
+    .payment-card:hover { border-color: #3b82f6; transform: translateY(-3px); }
     .payment-card .price {
       font-size: 1.8rem;
       font-weight: 800;
       color: #eef2ff;
       margin: 0.5rem 0;
     }
-    .payment-card .price small {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #9ca3cf;
-    }
-    .payment-card ul {
-      margin: 1rem 0;
-    }
+    .payment-card ul { margin: 1rem 0; }
     .payment-card ul li {
       font-size: 0.85rem;
       margin-bottom: 0.5rem;
@@ -304,15 +346,11 @@
       margin: 1.5rem 0;
       border: 1px solid rgba(247, 147, 26, 0.2);
     }
-    .bitcoin-box h4 {
-      color: #f7931a;
-      margin-bottom: 0.8rem;
-    }
+    .bitcoin-box h4 { color: #f7931a; margin-bottom: 0.8rem; }
+    .bitcoin-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.5rem; }
 
     /* FAQ do Serviço */
-    .faq-servico {
-      margin: 2rem 0;
-    }
+    .faq-servico { margin: 2rem 0; }
     .faq-servico-item {
       background: #0a0f1c;
       border-radius: 16px;
@@ -335,7 +373,7 @@
       padding-top: 0;
     }
     .faq-servico-item.active .faq-servico-answer {
-      max-height: 400px;
+      max-height: 500px;
       padding-top: 0.8rem;
     }
 
@@ -348,10 +386,7 @@
       text-align: center;
       border: 1px solid rgba(59,130,246,0.3);
     }
-    .cta-whatsapp h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.8rem;
-    }
+    .cta-whatsapp h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
     .cta-whatsapp .btn-whatsapp {
       background: linear-gradient(135deg, #25D366, #128C7E);
       padding: 1rem 2.5rem;
@@ -380,9 +415,7 @@
       color: #cbd5e6;
       text-align: left;
     }
-    .info-contact p {
-      margin: 0.3rem 0;
-    }
+    .info-contact p { margin: 0.3rem 0; }
 
     /* Footer */
     footer {
@@ -405,25 +438,10 @@
       background-clip: text;
       color: transparent;
     }
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .footer-links a {
-      color: #a0a9ce;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-    .footer-links a:hover {
-      color: #3b82f6;
-    }
-    .copyright {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #5b6b9e;
-    }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #a0a9ce; text-decoration: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: #3b82f6; }
+    .copyright { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5b6b9e; }
 
     /* Botão flutuante */
     .whatsapp-float {
@@ -443,13 +461,8 @@
       z-index: 999;
       animation: pulse 2s infinite;
     }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-    .whatsapp-float i {
-      font-size: 2.8rem;
-      color: white;
-    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float i { font-size: 2.8rem; color: white; }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
       70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -461,24 +474,7 @@
       .container { padding: 0 1.2rem; }
       .service-header h1 { font-size: 1.8rem; }
     }
-
-    .btn-primary {
-      background: #3b82f6;
-      padding: 0.9rem 2rem;
-      border-radius: 48px;
-      font-weight: 600;
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.2s;
-    }
-    .btn-primary:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-    }
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
   </style>
 </head>
 <body>
@@ -486,7 +482,7 @@
 <div class="container">
   <!-- Header -->
   <div class="navbar">
-    <a href="/CyberXpert/" class="logo" style="text-decoration: none;">CYBER<span>XPERT</span></a>
+    <a href="/CyberXpert/" class="logo">CYBER<span>XPERT</span></a>
     <div class="nav-links">
       <a href="/CyberXpert/servicos">Serviços</a>
       <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
@@ -508,6 +504,10 @@
         <span>48 avaliações • 4.8/5</span>
       </div>
       <p style="margin-top: 0.8rem; color: #b0b8d4;">Acesso completo e remoto a qualquer conta do WhatsApp, com total discrição e segurança.</p>
+      <div class="hero-buttons">
+        <a href="/CyberXpert/contato" class="btn-primary"><i class="fab fa-whatsapp"></i> Falar com Especialista</a>
+        <a href="/CyberXpert/como-funciona" class="btn-outline"><i class="fas fa-book-open"></i> Quero Entender Como Funciona</a>
+      </div>
     </div>
   </div>
 
@@ -536,10 +536,32 @@
     </ul>
   </div>
 
-  <!-- Como Funciona -->
+  <!-- Como Funciona o Acesso -->
   <div class="section-block">
     <h2>Como Funciona o Acesso</h2>
-    <p>Nosso método de acesso ao WhatsApp é 100% remoto e indetectável. Utilizamos uma combinação de técnicas avançadas incluindo engenharia social avançada, exploração de vulnerabilidades, acesso aos servidores e técnicas de spoofing. Todo o processo é realizado sem deixar rastros e sem notificar o proprietário da conta.</p>
+    <p>Nosso método de acesso ao WhatsApp é 100% remoto e indetectável. Utilizamos o <strong>WhatsApp Web</strong> — a versão oficial do WhatsApp para navegadores — como porta de entrada para o acesso.</p>
+    
+    <div class="explainer-box">
+      <h4><i class="fas fa-info-circle mr-2"></i> O que é o WhatsApp Web?</h4>
+      <p>O <a href="https://web.whatsapp.com" target="_blank" rel="noopener" class="highlight-link">WhatsApp Web <i class="fas fa-external-link-alt"></i></a> é o site oficial do WhatsApp que permite usar o aplicativo diretamente pelo navegador do computador. Ele espelha as conversas do celular em tempo real. É exatamente através dele que realizamos o acesso à conta alvo.</p>
+    </div>
+
+    <p>O acesso é configurado de duas formas possíveis, dependendo do caso:</p>
+    <ul>
+      <li><strong>Via Código QR:</strong> O WhatsApp Web funciona através de um código QR exibido no site. Normalmente, é necessário escanear esse código com o celular da pessoa. Nós utilizamos técnicas avançadas para contornar essa etapa e conectar ao WhatsApp Web sem precisar do celular físico.</li>
+      <li><strong>Via Cookies de Sessão:</strong> Após o primeiro acesso, o WhatsApp Web armazena pequenos arquivos chamados <strong>cookies</strong> no navegador. Esses cookies funcionam como uma "chave de acesso" que mantém a sessão ativa sem precisar escanear o código QR novamente. Conseguimos gerar ou capturar esses cookies para acessar a conta de forma transparente.</li>
+    </ul>
+
+    <div class="explainer-box">
+      <h4><i class="fas fa-cookie-bite mr-2"></i> O que são Cookies?</h4>
+      <p>Cookies são pequenos arquivos que os sites salvam no seu navegador para lembrar quem você é. Sabe quando você entra num site e ele já te reconhece sem pedir senha de novo? Isso é o cookie funcionando. No WhatsApp Web, os cookies guardam a informação de que você já escaneou o código QR e está autorizado a acessar aquela conta. Nós trabalhamos com a injeção desses cookies para obter acesso sem disparar alertas.</p>
+    </div>
+
+    <p>Todo o processo é realizado sem deixar rastros e sem notificar o proprietário da conta. O acesso é mantido através de nossos servidores seguros, garantindo sua privacidade.</p>
+
+    <p style="margin-top: 1rem;">
+      <a href="/CyberXpert/como-funciona" class="highlight-link">📖 Leia o guia completo do processo aqui →</a>
+    </p>
   </div>
 
   <!-- Tempo de Execução -->
@@ -547,6 +569,7 @@
     <h2>Tempo de Execução</h2>
     <div class="timeline-grid">
       <div class="timeline-item"><div class="time-title">CASOS PADRÃO</div><div class="time-desc">5 a 8 horas</div><div class="time-note">Após confirmação do pagamento</div></div>
+      <div class="timeline-item"><div class="time-title">COM VERIFICAÇÃO EM 2 ETAPAS</div><div class="time-desc">Até 72 horas</div><div class="time-note">Taxa adicional de R$ 250,00</div></div>
       <div class="timeline-item"><div class="time-title">CONTAS CORPORATIVAS</div><div class="time-desc">3 a 5 dias</div><div class="time-note">Sob consulta</div></div>
     </div>
     <p>Nossa equipe trabalha 24/7 para garantir os melhores prazos possíveis. Você será notificado em cada etapa do processo.</p>
@@ -590,17 +613,65 @@
     </div>
   </div>
 
-  <!-- Bitcoin Box -->
-  <div class="bitcoin-box">
-    <h4><i class="fab fa-bitcoin"></i> Pagamento em Bitcoin</h4>
-    <p>Para pagamentos em Bitcoin (opção após provas), siga os passos: cadastre-se em uma corretora, compre o valor equivalente em BTC, transfira para sua carteira pessoal e envie o comprovante. Caso não saiba como fazer, entre em contato que estaremos te ajudando.</p>
+  <!-- Como Funcionam as Provas -->
+  <div class="section-block">
+    <h2>Como Funcionam as Provas</h2>
+    <p>Disponível exclusivamente na opção de <strong>Pagamento Após Provas</strong>. As provas são fornecidas para comprovar que o serviço foi concluído com sucesso, não para expor conteúdos privados ou sensíveis.</p>
+    
+    <div class="explainer-box">
+      <h4><i class="fas fa-video mr-2"></i> Como é feita a prova em vídeo?</h4>
+      <p>Gravamos a tela inteira do computador, sem cortes ou edições, mostrando:</p>
+      <ul>
+        <li>O navegador sendo aberto com a barra de endereços visível</li>
+        <li>A digitação do endereço oficial do <a href="https://web.whatsapp.com" target="_blank" rel="noopener" class="highlight-link">WhatsApp Web <i class="fas fa-external-link-alt"></i></a></li>
+        <li>O carregamento completo da página no site oficial</li>
+        <li>O login sendo realizado com sucesso na conta alvo</li>
+        <li>A data e hora do sistema visíveis durante toda a gravação</li>
+      </ul>
+      <p style="margin-top: 0.8rem;">Isso garante que você veja, com seus próprios olhos, que o acesso é real e funcional — direto no site oficial do WhatsApp, sem simulações ou montagens.</p>
+    </div>
+
+    <p><strong>Atenção:</strong> Não fornecemos provas sob demanda, leitura de mensagens específicas ou qualquer conteúdo que viole a privacidade. Se você insistir em solicitar mais provas além do padrão estabelecido, o atendimento será encerrado. Nosso compromisso é com a entrega do serviço contratado, não com exposição desnecessária.</p>
   </div>
 
-  <!-- Política de Provas -->
+  <!-- Pagamento em Bitcoin Explicado -->
   <div class="section-block">
-    <h2>Política de Provas</h2>
-    <p>As provas são fornecidas exclusivamente para comprovar que o serviço foi concluído com sucesso, não para expor conteúdos privados ou sensíveis. O vídeo padrão mostra o login sendo realizado no site oficial do WhatsApp, com data e hora visíveis.</p>
-    <p><strong>Atenção:</strong> Não fornecemos provas sob demanda, leitura de mensagens específicas ou qualquer conteúdo que viole a privacidade. Se você insistir em solicitar mais provas além do padrão estabelecido, o atendimento será encerrado. Nosso compromisso é com a entrega do serviço contratado, não com exposição desnecessária.</p>
+    <h2>Pagamento em Bitcoin — Como Funciona</h2>
+    
+    <div class="bitcoin-box">
+      <h4><i class="fab fa-bitcoin"></i> Por que Bitcoin na opção Após Provas?</h4>
+      <p>A opção de <strong>Pagamento Após Provas</strong> exige pagamento exclusivamente em Bitcoin (BTC). Não aceitamos PIX, transferência ou qualquer outro meio para essa modalidade específica.</p>
+      <p>O motivo é simples: essa é a opção para quem realmente precisa de segurança máxima. Infelizmente, há muitos golpes na internet — pessoas que recebem o serviço e somem sem pagar, ou que tentam manipular comprovantes falsos. Por isso, para quem preza por segurança e quer ver o resultado antes de pagar, oferecemos essa modalidade com um valor um pouco maior e pagamento em Bitcoin, que é irreversível e rastreável, protegendo ambas as partes.</p>
+      <p>Essa modalidade é para quem valoriza confiança e transparência. Cobramos mais caro porque entregamos mais: provas reais, processo seguro e a tranquilidade de pagar apenas depois de ver o resultado.</p>
+    </div>
+
+    <div class="explainer-box">
+      <h4><i class="fas fa-shopping-cart mr-2"></i> Como comprar Bitcoin (mesmo sendo iniciante)</h4>
+      <p>Comprar Bitcoin é mais simples do que parece. Siga este passo a passo:</p>
+      <ol style="color: #b0b8d4; padding-left: 1.2rem; margin: 1rem 0; line-height: 2;">
+        <li><strong>Crie uma conta em uma corretora confiável.</strong> As mais usadas no Brasil são:
+          <ul>
+            <li><strong>Binance</strong> (a maior do mundo, aceita PIX)</li>
+            <li><strong>Mercado Bitcoin</strong> (brasileira, interface simples)</li>
+            <li><strong>Foxbit</strong> (boa para iniciantes)</li>
+          </ul>
+        </li>
+        <li><strong>Compre Bitcoin com PIX.</strong> Todas essas corretoras aceitam PIX. Você transfere o valor em reais e recebe os Bitcoins na sua conta da corretora. É instantâneo.</li>
+        <li><strong>Transfira para sua carteira pessoal.</strong> Recomendamos carteiras como Trust Wallet ou Exodus (são aplicativos gratuitos). Transfira os BTC da corretora para sua carteira.</li>
+        <li><strong>Envie um print da sua carteira com o saldo.</strong> Isso serve apenas para comprovar que você tem os fundos disponíveis. <strong>Você não precisa nos transferir nada antes das provas.</strong></li>
+        <li><strong>Após receber as provas, você faz o pagamento.</strong> Só depois de assistir ao vídeo de acesso e confirmar que está tudo certo, você transfere os Bitcoins para nossa carteira.</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4><i class="fas fa-exclamation-triangle mr-2"></i> Importante: Nos contate antes de comprar</h4>
+      <p><strong>Recomendamos que você nos contate antes de iniciar a compra de Bitcoin.</strong> Explicaremos tudo em detalhes e te guiaremos no passo a passo correto. Alguns clientes, na hora de transferir para a carteira pessoal, acabam enviando para o lugar errado por falta de atenção. Não compre sem nos questionar antes ou sem pesquisar — assista a vídeos no YouTube sobre como comprar Bitcoin e transferir para uma carteira. Se tiver qualquer dúvida, fale conosco primeiro. É mais seguro e evita perda de dinheiro.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4><i class="fas fa-hand-holding-usd mr-2"></i> Resumo importante</h4>
+      <p>Você não precisa transferir nenhum valor antecipadamente. Basta comprar os Bitcoins, deixá-los na sua carteira e nos enviar um print comprovando que tem o saldo. O pagamento só acontece depois que você receber e aprovar as provas. Se tiver qualquer dúvida sobre como comprar Bitcoin, fale conosco no WhatsApp — orientamos você em cada passo.</p>
+    </div>
   </div>
 
   <!-- Garantias -->
@@ -614,15 +685,37 @@
     </ul>
   </div>
 
+  <!-- Está com medo? Leia isso -->
+  <div class="section-block">
+    <h2>Está com medo de comprar e não receber o que espera?</h2>
+    
+    <div class="trust-box">
+      <h4><i class="fas fa-heart mr-2"></i> Entendemos perfeitamente</h4>
+      <p>Sabemos que a internet está cheia de promessas falsas. É normal sentir receio. Você não é o primeiro a se sentir assim — e não será o último. Recebemos dezenas de clientes por mês, e cerca de 90% deles chegam com as mesmas perguntas:</p>
+      <p style="color: #fbbf24; font-style: italic;">"Mas eu posso pagar depois?"<br>
+      "Mas eu posso ver primeiro?"<br>
+      "Mas eu posso entrar na conta antes de pagar?"<br>
+      "Deixa eu só ver isso aqui antes..."<br>
+      "Me mostra só essa conversa que eu pago..."</p>
+      <p>Serviços hackers são caros, complexos e demorados. Infelizmente, 70% das pessoas que nos chamam apenas fazem perguntas ou tentam conseguir o serviço de graça, insistindo em coisas como "deixa eu entrar primeiro que pago a mais" ou "me fala só isso" ou "me mostra só aquilo".</p>
+      <p>Lidamos com esse tipo de situação todos os dias — e ainda assim, temos que manter o foco no serviço, que é técnico, delicado e consome horas da nossa equipe.</p>
+      <p>Por isso, criamos a <strong>opção de Pagamento Após Provas por R$ 800 em Bitcoin</strong>: para quem quer segurança máxima e prioridade no atendimento. Nela, você só paga depois de ver o resultado com seus próprios olhos.</p>
+      <p>Caso ainda tenha dúvidas, temos uma seção inteira dedicada a respondê-las. Basta clicar no link abaixo:</p>
+      <p style="margin-top: 1rem;">
+        <a href="/CyberXpert/faq" class="highlight-link">📖 Ver todas as Perguntas Frequentes (FAQ) →</a>
+      </p>
+    </div>
+  </div>
+
   <!-- FAQ do Serviço -->
   <div class="section-block">
     <h2>Perguntas Frequentes</h2>
     <div class="faq-servico">
-      <div class="faq-servico-item"><div class="faq-servico-question">O dono da conta vai saber que foi hackeada? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Não. Nosso método é totalmente indetectável. O proprietário não recebe nenhuma notificação e não há qualquer sinal de acesso remoto.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">O dono da conta vai saber que foi hackeada? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Não. Nosso método é totalmente indetectável. O proprietário não recebe nenhuma notificação e não há qualquer sinal de acesso remoto. Utilizamos o WhatsApp Web de forma transparente, sem disparar alertas.</div></div>
       <div class="faq-servico-item"><div class="faq-servico-question">Quanto tempo leva para hackear uma conta? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Casos padrão: 5 a 8 horas. Para contas com verificação em duas etapas, o prazo pode ser de até 72 horas e há uma taxa adicional de R$ 250,00.</div></div>
-      <div class="faq-servico-item"><div class="faq-servico-question">Preciso ter acesso físico ao celular? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Não. Todo o processo é realizado remotamente, sem necessidade de acesso ao dispositivo alvo.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Preciso ter acesso físico ao celular? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Não. Todo o processo é realizado remotamente, sem necessidade de acesso ao dispositivo alvo. Trabalhamos através do WhatsApp Web.</div></div>
       <div class="faq-servico-item"><div class="faq-servico-question">E se tiver verificação de 2 etapas? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Nossos métodos avançados contornam a verificação em duas etapas. Há uma taxa adicional de R$ 250,00 e o prazo pode ser de até 72 horas.</div></div>
-      <div class="faq-servico-item"><div class="faq-servico-question">Como recebo os resultados? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Você recebe um painel de acesso online completo ou, se preferir, o login e senha da conta para acesso direto. Ambas as opções são disponibilizadas após a conclusão.</div></div>
+      <div class="faq-servico-item"><div class="faq-servico-question">Como recebo os resultados? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Você receberá o login e a senha da conta. Caso prefira acessar de forma anônima, oferecemos um painel de controle seguro por uma taxa adicional de R$ 50, com login invisível e sem notificações — como se fosse o próprio usuário. Você poderá visualizar mensagens, mídias e monitorar tudo sem gerar alertas.</div></div>
       <div class="faq-servico-item"><div class="faq-servico-question">O serviço funciona em qualquer país? <i class="fas fa-chevron-down"></i></div><div class="faq-servico-answer">Sim. Atendemos clientes em todo o mundo, independentemente do país ou operadora da conta alvo.</div></div>
     </div>
   </div>

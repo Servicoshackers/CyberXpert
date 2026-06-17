@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Como Funciona Por Dentro | CyberXpert</title>
+  <meta name="description" content="Entenda como realmente funciona o hackeamento de redes sociais — dos métodos mais simples aos mais avançados, explicados de forma clara.">
+  
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #010208;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0c14; }
+    ::-webkit-scrollbar-thumb { background: #2d3b6e; border-radius: 8px; }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(46, 125, 255, 0.2);
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e6;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: #3b82f6; }
+    .track-btn {
+      background: rgba(59, 130, 246, 0.12);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      font-weight: 600;
+      color: #3b82f6;
+      transition: 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .track-btn i { margin-right: 6px; }
+    .track-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+    /* Hero */
+    .page-hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+      margin-bottom: 2rem;
+    }
+    .page-hero .subtitle {
+      color: #fbbf24;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .page-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #f0f4ff, #90b4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .page-hero p {
+      color: #9ca3cf;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Seções */
+    .section-block { margin: 3.5rem 0; }
+    .section-block h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      border-left: 3px solid #3b82f6;
+      padding-left: 1rem;
+      color: #eef2ff;
+    }
+    .section-block h3 {
+      font-size: 1.15rem;
+      margin: 1.5rem 0 0.5rem;
+      color: #cbd5e6;
+    }
+    .section-block p {
+      color: #b0b8d4;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .section-block ul, .section-block ol {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    .section-block ul li, .section-block ol li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #b0b8d4;
+    }
+    .section-block ul li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+    }
+    .section-block ol {
+      counter-reset: step-counter;
+    }
+    .section-block ol li {
+      counter-increment: step-counter;
+      padding-left: 2rem;
+    }
+    .section-block ol li:before {
+      content: counter(step-counter) ".";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-weight: 700;
+    }
+
+    /* Boxes */
+    .img-box {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #1f2a3e;
+      text-align: center;
+    }
+    .img-placeholder {
+      background: linear-gradient(135deg, #1a1f2e, #0a0f1c);
+      width: 100%;
+      min-height: 180px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5b6b9e;
+      font-size: 0.9rem;
+      border: 1px dashed #2d3b6e;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .img-placeholder i { font-size: 2.5rem; color: #3b82f6; }
+    .img-caption {
+      font-size: 0.8rem;
+      color: #7e8bb6;
+      margin-top: 0.8rem;
+      font-style: italic;
+    }
+
+    .highlight-box {
+      background: rgba(59, 130, 246, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      border-left: 4px solid #3b82f6;
+    }
+    .highlight-box h4 { color: #3b82f6; margin-bottom: 0.5rem; font-size: 1rem; }
+    .highlight-box p { color: #b0b8d4; font-size: 0.95rem; }
+
+    .warning-inline {
+      background: rgba(251, 191, 36, 0.06);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-left: 4px solid #fbbf24;
+    }
+    .warning-inline p { color: #fcd34d; font-size: 0.9rem; }
+
+    .green-box {
+      background: rgba(16, 185, 129, 0.06);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-left: 4px solid #10b981;
+    }
+    .green-box p { color: #6ee7b7; font-size: 0.9rem; }
+
+    /* Chain visual */
+    .chain-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 2rem 0;
+    }
+    .chain-box {
+      background: #0a0f1c;
+      border: 1px solid #2d3b6e;
+      border-radius: 12px;
+      padding: 0.8rem 1.5rem;
+      text-align: center;
+      color: #eef2ff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    .chain-box.start { border-color: #3b82f6; }
+    .chain-box.end { border-color: #10b981; background: rgba(16,185,129,0.08); }
+    .chain-arrow {
+      color: #3b82f6;
+      font-size: 1.5rem;
+    }
+
+    /* Diagrama visual */
+    .flow-diagram {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #1f2a3e;
+      text-align: center;
+    }
+    .flow-diagram h4 { margin-bottom: 1rem; }
+    .flow-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .flow-node {
+      background: #1a1f2e;
+      border: 1px solid #2d3b6e;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      color: #eef2ff;
+    }
+    .flow-node.api { border-color: #f7931a; color: #f7931a; font-weight: 600; }
+    .flow-node.tool { border-color: #3b82f6; color: #3b82f6; font-weight: 600; }
+    .flow-node.computers { border-color: #8b5cf6; color: #8b5cf6; }
+    .flow-node.success { border-color: #10b981; color: #10b981; font-weight: 700; }
+    .flow-node.fail { border-color: #ef4444; color: #ef4444; font-weight: 700; }
+    .flow-node.blocked { border-color: #ef4444; color: #ef4444; font-weight: 700; }
+    .flow-arrow { color: #3b82f6; }
+    .flow-label { color: #7e8bb6; font-size: 0.8rem; margin-top: 0.3rem; }
+    .flow-computers {
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .flow-pc {
+      background: #1a1f2e;
+      border: 1px solid #8b5cf6;
+      border-radius: 6px;
+      padding: 0.3rem 0.6rem;
+      color: #8b5cf6;
+      font-size: 0.8rem;
+    }
+    .flow-diagram-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .flow-diagram-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Method cards */
+    .method-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .method-card {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid #1f2a3e;
+      transition: 0.2s;
+    }
+    .method-card:hover { border-color: #3b82f6; }
+    .method-card i {
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 0.8rem;
+    }
+    .method-card h4 { color: #eef2ff; margin-bottom: 0.5rem; font-size: 1rem; }
+    .method-card p { color: #9ca3cf; font-size: 0.85rem; }
+
+    .big-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #3b82f6;
+      display: block;
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    /* Tabela */
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    .price-table th {
+      background: #0a0f1c;
+      padding: 0.8rem;
+      text-align: left;
+      color: #3b82f6;
+      border-bottom: 1px solid #1f2a3e;
+    }
+    .price-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid rgba(31,42,62,0.5);
+      color: #b0b8d4;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(59,130,246,0.2);
+      padding: 2.5rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      align-items: center;
+    }
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #a0a9ce; text-decoration: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: #3b82f6; }
+    .copyright { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5b6b9e; }
+
+    /* Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float i { font-size: 2.8rem; color: white; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 2.2rem; }
+      .container { padding: 0 1.2rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+    }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/CyberXpert/" class="logo">CYBER<span>XPERT</span></a>
+    <div class="nav-links">
+      <a href="/CyberXpert/servicos">Serviços</a>
+      <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+      <a href="/CyberXpert/faq">FAQ</a>
+      <a href="/CyberXpert/contato">Contato</a>
+      <a href="/CyberXpert/acompanhar-pedido" class="track-btn"><i class="fas fa-map-marker-alt"></i> Acompanhar Pedido</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <p class="subtitle">📌 Leia esta página caso tenha curiosidade sobre como realmente funciona</p>
+    <h1>Como Funciona Por Dentro</h1>
+    <p>Hackear uma conta não é mágica. É um processo — e existem vários caminhos. Aqui você vai entender todos eles, do mais simples ao mais avançado.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- INTRODUÇÃO: NÃO É MÁGICA -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>Hackear não é como nos filmes</h2>
+    <p>Antes de tudo, esqueça a imagem do hacker de capuz digitando freneticamente numa tela preta e invadindo sistemas em segundos. Isso é Hollywood. Na vida real, <strong>hackear é um processo de coleta de informações</strong>.</p>
+    
+    <p>Pense assim: você quer entrar numa casa. Você pode:</p>
+    <ul>
+      <li><strong>Arrombar a porta</strong> (força bruta) — barulhento, arriscado, demorado.</li>
+      <li><strong>Encontrar a chave escondida embaixo do tapete</strong> (dados vazados) — silencioso, rápido, elegante.</li>
+      <li><strong>Convencer alguém a te dar a chave</strong> (engenharia social) — requer habilidade, mas é eficaz.</li>
+      <li><strong>Entrar por uma janela aberta</strong> (vulnerabilidade) — ninguém percebe, você já está dentro.</li>
+    </ul>
+
+    <p>No mundo digital, esses "caminhos" existem de verdade. E o melhor hacker não é o que digita mais rápido — é o que <strong>encontra o melhor caminho</strong>.</p>
+
+    <div class="green-box">
+      <p><strong>💡 Em outras palavras:</strong> Hackear raramente é um ataque direto. Geralmente, é um processo indireto — você descobre uma informação, que leva a outra, que leva a outra... até chegar onde quer.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- OS VÁRIOS CAMINHOS -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>Os vários caminhos para hackear uma conta</h2>
+    <p>Existem <strong>várias formas</strong> de conseguir acesso a uma conta de rede social. Nenhuma é "a melhor" — depende do caso, das informações disponíveis e do objetivo. Vamos ver cada uma.</p>
+
+    <div class="method-cards">
+      <div class="method-card">
+        <i class="fas fa-database"></i>
+        <h4>Dados Vazados</h4>
+        <p>Bilhões de senhas vazam todo dia. Se a pessoa reutiliza senhas, você já tem a chave.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-envelope"></i>
+        <h4>Phishing</h4>
+        <p>Uma página falsa idêntica à original. A pessoa digita a senha e você recebe.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-bug"></i>
+        <h4>Vírus / Malware</h4>
+        <p>Um clique e o dispositivo entrega tudo: senhas, cookies, arquivos salvos.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-wifi"></i>
+        <h4>Rede Wi-Fi</h4>
+        <p>Mesma rede, roteador vulnerável, acesso remoto — tudo explicado abaixo.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h4>Falha no Dispositivo</h4>
+        <p>Celulares têm vulnerabilidades. Uma falha no sistema = porta aberta.</p>
+      </div>
+      <div class="method-card">
+        <i class="fas fa-key"></i>
+        <h4>Força Bruta Avançada</h4>
+        <p>Ferramentas profissionais que testam senhas sem serem detectadas. Explicamos abaixo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- DADOS VAZADOS -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>1. Dados Vazados — a forma mais silenciosa</h2>
+    <p>Por incrível que pareça, <strong>bilhões de dados pessoais vazam todos os dias</strong>. Empresas são hackeadas, bancos de dados são roubados e revendidos, e essas informações circulam pela internet — muitas vezes de graça.</p>
+
+    <div class="img-box">
+      <div class="img-placeholder">
+        <i class="fas fa-cloud-download-alt"></i>
+        <span>[Imagem: Representação de vazamento de dados]</span>
+      </div>
+      <p class="img-caption">Todos os dias, bilhões de registros vazam de empresas ao redor do mundo.</p>
+    </div>
+
+    <p>O que isso significa na prática? Vamos ver uma cadeia real:</p>
+
+    <!-- Cadeia visual -->
+    <div class="chain-visual">
+      <div class="chain-box start">
+        <i class="fab fa-instagram"></i> @nomedapessoa
+        <br><small style="color:#9ca3cf;">Nome de usuário do Instagram</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-search"></i> Consulta em bancos vazados
+        <br><small style="color:#9ca3cf;">Descobre e-mail vinculado ao @</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-envelope"></i> email@pessoa.com
+        <br><small style="color:#9ca3cf;">Com o e-mail, busca por CPF e dados</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-id-card"></i> CPF + Nome completo
+        <br><small style="color:#9ca3cf;">Com o CPF, acha TODAS as contas vinculadas</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-lock-open"></i> Senha encontrada em vazamento antigo
+        <br><small style="color:#9ca3cf;">Se a pessoa reutiliza senhas...</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box end">
+        <i class="fas fa-check-circle"></i> <strong>Acesso concedido</strong>
+        <br><small style="color:#6ee7b7;">Login bem-sucedido</small>
+      </div>
+    </div>
+
+    <p>Veja como funciona: começamos com <strong>apenas um @ do Instagram</strong>. A partir dele, usando bancos de dados vazados (que são públicos na deep web), conseguimos descobrir o e-mail vinculado. Com o e-mail, chegamos ao CPF. Com o CPF, encontramos <strong>todas as contas que essa pessoa já criou na internet</strong> — e em algum desses vazamentos, pode estar a senha que ela reutiliza.</p>
+
+    <div class="highlight-box">
+      <h4><i class="fas fa-lightbulb mr-2"></i> Por que isso funciona tanto?</h4>
+      <p>A maioria das pessoas usa a <strong>mesma senha em vários lugares</strong>. Se a senha vazou do site da farmácia onde ela comprou remédio em 2019, e ela usa essa mesma senha no Instagram... pronto. A porta está aberta.</p>
+    </div>
+
+    <div class="warning-inline">
+      <p><strong>⚠️ Esse método não funciona sempre.</strong> Depende de a pessoa ter sido vítima de vazamento e de reutilizar senhas. Mas estima-se que <strong>mais de 60% das pessoas reutilizam senhas</strong> — então é um caminho muito comum.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- PHISHING -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>2. Phishing — a arte da página falsa</h2>
+    <p>Outro caminho muito usado é o <strong>phishing</strong>. A palavra vem de "fishing" (pescaria, em inglês) — e a ideia é exatamente essa: você lança uma isca e espera o peixe morder.</p>
+
+    <p>Na prática, funciona assim:</p>
+    <ol>
+      <li><strong>Criação da página falsa:</strong> Construímos uma página <strong>visualmente idêntica</strong> à página de login do Instagram (ou qualquer rede social). Mesmo layout, mesmas cores, mesmo logotipo. É impossível distinguir a olho nu.</li>
+      <li><strong>Hospedagem:</strong> Essa página é hospedada em um domínio parecido — por exemplo, "instagrarn.com" (com R e N no lugar do M) ou "instagram-verificar.com". Algo que engane numa olhada rápida.</li>
+      <li><strong>Envio da isca:</strong> A vítima recebe um link com uma mensagem convincente. Exemplos reais:
+        <ul>
+          <li>"Ei, você apareceu nesse vídeo! É você?"</li>
+          <li>"Sua conta será desativada por violação dos termos. Clique aqui para recorrer."</li>
+          <li>"Parabéns! Você foi sorteado. Faça login para resgatar."</li>
+          <li>"Detectamos um login suspeito na sua conta. Verifique aqui."</li>
+        </ul>
+      </li>
+      <li><strong>A vítima digita a senha:</strong> Quando ela faz o login na página falsa, o e-mail e a senha são <strong>enviados diretamente para nós</strong>. A vítima é redirecionada para o Instagram real e nem percebe o que aconteceu.</li>
+    </ol>
+
+    <div class="img-box">
+      <div class="img-placeholder">
+        <i class="fas fa-clone"></i>
+        <span>[Imagem: Comparação lado a lado — página real do Instagram vs página falsa de phishing]</span>
+      </div>
+      <p class="img-caption">A página falsa (direita) é visualmente idêntica à original (esquerda). A única diferença está na URL — mas quase ninguém verifica.</p>
+    </div>
+
+    <p>O phishing funciona porque explora <strong>dois fatores humanos</strong>: confiança e pressa. A pessoa vê uma mensagem urgente ("sua conta será desativada!") ou curiosa ("você apareceu nesse vídeo!") e age sem pensar. Em segundos, entrega a senha voluntariamente.</p>
+
+    <div class="warning-inline">
+      <p><strong>⚠️ Limitação:</strong> O phishing <strong>não funciona</strong> se a vítima tiver <strong>verificação em duas etapas (2FA)</strong> ativada. Mesmo com a senha em mãos, o Instagram vai pedir um código extra enviado por SMS ou aplicativo autenticador. Nesse caso, precisamos de métodos mais avançados — como força bruta com API e VPS.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- VÍRUS -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>3. Vírus e Malware — um clique e já era</h2>
+    <p>Outro método é o uso de <strong>malware</strong> (software malicioso). Um vírus bem programado, quando executado no dispositivo da pessoa, pode fazer coisas como:</p>
+    <ul>
+      <li><strong>Roubar senhas salvas</strong> no navegador.</li>
+      <li><strong>Capturar cookies de sessão</strong> — aqueles arquivos que mantêm você logado.</li>
+      <li><strong>Registrar tudo que é digitado</strong> (keylogger).</li>
+      <li><strong>Acessar a câmera e o microfone</strong> do dispositivo.</li>
+    </ul>
+
+    <p>O vírus pode chegar por e-mail, por mensagem no WhatsApp, por um link malicioso ou até por um aplicativo aparentemente inofensivo. <strong>Basta um clique.</strong></p>
+
+    <div class="highlight-box">
+      <h4><i class="fas fa-lightbulb mr-2"></i> Cookies de sessão — o atalho perfeito</h4>
+      <p>Quando você faz login no Instagram e marca "Lembrar-me", o site salva um <strong>cookie de sessão</strong> no seu navegador. Esse cookie é como um crachá: ele diz ao site "sou eu, já fiz login". Se um vírus rouba esse cookie, o hacker <strong>entra na sua conta sem precisar de senha nenhuma</strong> — porque o site já reconhece aquele cookie como legítimo.</p>
+    </div>
+
+    <p>O malware também pode dar acesso a <strong>outros dispositivos conectados na mesma rede Wi-Fi</strong>, abrindo ainda mais caminhos.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- REDES WI-FI -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>4. Redes Wi-Fi — a porta de entrada que ninguém vê</h2>
+    <p>Redes Wi-Fi são um dos pontos mais vulneráveis de qualquer pessoa — e quase ninguém presta atenção nisso.</p>
+
+    <h3>Mesma rede — interceptação direta</h3>
+    <p>Se você está na <strong>mesma rede Wi-Fi</strong> que a vítima (seja em casa, no trabalho ou numa cafeteria), é possível interceptar dados que trafegam por essa rede. Ferramentas como o Wireshark permitem "escutar" tudo que passa pelo ar — incluindo senhas enviadas sem criptografia, cookies de sessão e dados de navegação.</p>
+
+    <div class="img-box">
+      <div class="img-placeholder">
+        <i class="fas fa-wifi"></i>
+        <span>[Imagem: Diagrama — dois dispositivos na mesma rede, um interceptando dados do outro]</span>
+      </div>
+      <p class="img-caption">Na mesma rede Wi-Fi, é possível interceptar dados que trafegam entre os dispositivos e o roteador.</p>
+    </div>
+
+    <h3>Roteador vulnerável — acesso remoto</h3>
+    <p>Muita gente não sabe, mas o roteador de casa tem um <strong>painel de administração</strong> que pode ser acessado pelo navegador (geralmente pelo IP 192.168.0.1 ou 192.168.1.1). Se esse painel está com a senha padrão de fábrica (tipo "admin/admin"), qualquer pessoa na mesma rede — ou até mesmo remotamente, se o acesso remoto estiver habilitado — pode:</p>
+    <ul>
+      <li>Ver todos os dispositivos conectados.</li>
+      <li>Redirecionar o tráfego para sites falsos (phishing em massa).</li>
+      <li>Instalar um firmware malicioso que rouba dados automaticamente.</li>
+      <li>Liberar acesso externo para invadir a rede de qualquer lugar do mundo.</li>
+    </ul>
+
+    <p>Com acesso ao roteador, um hacker pode <strong>se conectar remotamente</strong> à rede da vítima sempre que quiser — sem precisar estar fisicamente perto. É como ter uma porta dos fundos permanentemente aberta.</p>
+
+    <div class="warning-inline">
+      <p><strong>⚠️ Isso é mais comum do que parece.</strong> Milhões de roteadores no mundo usam senhas padrão de fábrica. E muitos provedores de internet deixam o acesso remoto habilitado por padrão — sem avisar o cliente.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- EXISTEM MUITAS OUTRAS FORMAS -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>5. Existem muitas outras formas</h2>
+    <p>Os métodos que mostramos aqui — dados vazados, phishing, malware, redes Wi-Fi, falhas de dispositivo e força bruta avançada — são <strong>apenas alguns dos mais usados</strong>. O mundo do hacking é vasto e está em constante evolução.</p>
+
+    <p>Existem dezenas de outras técnicas: ataques de SIM swap (clonagem de chip), exploração de falhas em aplicativos de terceiros conectados à conta, engenharia social por telefone, interceptação de SMS, exploração de APIs públicas mal configuradas, entre muitas outras.</p>
+
+    <p>O importante é entender que <strong>não existe um único caminho</strong>. Cada caso é diferente, e o hacker experiente sabe escolher a melhor rota com base nas informações disponíveis e no objetivo final.</p>
+
+    <div class="green-box">
+      <p><strong>💡 Lembre-se:</strong> Hackear não é seguir uma receita pronta. É um processo criativo de resolver problemas. Cada alvo é um quebra-cabeça diferente — e a graça está em encontrar a peça que falta.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- NOSSO MÉTODO FAVORITO - INTRO -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>6. Força Bruta Avançada — nosso método principal</h2>
+    <p>Agora chegamos ao método que <strong>nós mais usamos</strong> aqui na CyberXpert. Mas calma — não é força bruta comum (aquela de ficar chutando senhas e sendo bloqueado). É algo muito mais inteligente.</p>
+
+    <p>Antes de explicar a técnica, precisamos entender: <strong>por que a força bruta comum não funciona?</strong></p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- POR QUE FORÇA BRUTA COMUM NÃO FUNCIONA -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>7. Por que a força bruta comum não funciona?</h2>
+    
+    <p>Imagine que você está tentando abrir um cadeado de 4 dígitos (0000 a 9999). São 10 mil combinações. Se você tentar uma por uma, manualmente, vai levar horas — mas <strong>vai conseguir</strong>. Agora, e se o cadeado <strong>travar por 30 minutos a cada 3 tentativas erradas?</strong> Aí o processo fica impossível.</p>
+
+    <p>Com senhas de internet, o problema é muito pior:</p>
+    <ul>
+      <li>Uma senha de 8 caracteres (letras + números) tem <strong>218 trilhões de combinações</strong>.</li>
+      <li>Mesmo um computador testando 1 milhão de senhas por segundo levaria <strong>quase 7 anos</strong>.</li>
+      <li>O Instagram <strong>bloqueia após 5 ou 10 tentativas erradas</strong>.</li>
+      <li>Existe <strong>CAPTCHA</strong> — "prove que você não é um robô".</li>
+      <li>O sistema detecta padrões de ataque e bloqueia o IP.</li>
+    </ul>
+
+    <div class="img-box">
+      <div class="img-placeholder">
+        <i class="fas fa-shield-alt"></i>
+        <span>[Imagem: Força bruta comum sendo bloqueada]</span>
+      </div>
+      <p class="img-caption">Força bruta tradicional: bloqueada em segundos pelos sistemas de defesa.</p>
+    </div>
+
+    <p>Em resumo: <strong>força bruta comum não funciona</strong> contra plataformas sérias como Instagram, Facebook ou WhatsApp. É como tentar arrombar uma porta de aço com um martelo de brinquedo.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- COMPARAÇÃO VISUAL -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>8. Força Bruta Normal vs Força Bruta com API/VPS/Proxy</h2>
+    <p>Para você entender visualmente a diferença, veja esta comparação lado a lado:</p>
+
+    <div class="flow-diagram-grid">
+      <!-- FORÇA BRUTA NORMAL -->
+      <div class="flow-diagram" style="border-color: #ef4444;">
+        <h4 style="color:#ef4444;"><i class="fas fa-times-circle"></i> Força Bruta Comum</h4>
+        <div class="flow-row">
+          <div class="flow-node">🖥️ Seu Computador</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node">🔑 Tenta senha 1</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node">🔑 Tenta senha 2</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node">🔑 Tenta senha 3</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node">🔑 Tenta senha 4...</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node blocked">🚫 BLOQUEADO no 5º erro</div>
+          <div class="flow-label">~15 senhas por segundo • 1 IP • Sem proxy</div>
+          <div style="color:#ef4444; font-weight:700; margin-top:0.5rem;">RESULTADO: FRACASSO</div>
+        </div>
+      </div>
+
+      <!-- FORÇA BRUTA AVANÇADA -->
+      <div class="flow-diagram" style="border-color: #10b981;">
+        <h4 style="color:#10b981;"><i class="fas fa-check-circle"></i> Força Bruta com API + VPS + Proxy</h4>
+        <div class="flow-row">
+          <div class="flow-node api">📦 Código API (recebido dos grupos)</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node tool">🛠️ Nossa Ferramenta</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-computers">
+            <span class="flow-pc">🖥️ PC 1</span>
+            <span class="flow-pc">🖥️ PC 2</span>
+            <span class="flow-pc">🖥️ PC 3</span>
+            <span class="flow-pc">...</span>
+            <span class="flow-pc">🖥️ PC 10.000</span>
+          </div>
+          <div class="flow-label">Cada PC com IP diferente (Proxy rotativo)</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node tool">⚡ Burp Suite processa tudo</div>
+          <div class="flow-arrow">⬇️</div>
+          <div class="flow-node success">🔓 Milhões de senhas/segundo • Zero bloqueios</div>
+          <div class="flow-label">10.000+ IPs • Proxy rotativo • Invisível</div>
+          <div style="color:#10b981; font-weight:700; margin-top:0.5rem;">RESULTADO: SENHA DESCOBERTA</div>
+        </div>
+      </div>
+    </div>
+
+    <p>A diferença é absurda, não é? De um lado, um computador sozinho sendo bloqueado na quinta tentativa. Do outro, <strong>10.000 computadores</strong>, cada um com um IP diferente (proxy), cada um testando uma senha, todos burlando a detecção. Isso só é possível por causa de três coisas: <strong>API, VPS e Proxy</strong>.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- API + PROXY + VPS -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>9. API, Proxy e VPS — Como tudo se conecta</h2>
+    <p>Você pode estar pensando: "Ok, mas como vocês controlam 10.000 computadores ao mesmo tempo?" A resposta é: <strong>nós não controlamos diretamente</strong>. Nós recebemos uma <strong>API</strong>.</p>
+
+    <h3>O que é uma API?</h3>
+    <p>API (Interface de Programação de Aplicações) é como um <strong>código de acesso</strong>. Pense nela como uma chave que você insere na sua ferramenta e que automaticamente conecta você a uma rede gigantesca de computadores espalhados pelo mundo.</p>
+
+    <p>Nós não precisamos gerenciar 10.000 computadores. Nós só precisamos <strong>implementar a API na nossa ferramenta</strong>. A API faz todo o trabalho pesado de conectar, distribuir as senhas, rotacionar os IPs e burlar as proteções.</p>
+
+    <div class="flow-diagram">
+      <p style="color:#9ca3cf; font-size:0.8rem; margin-bottom:1rem;">Diagrama: Como a API conecta tudo</p>
+      <div class="flow-row">
+        <div class="flow-node api"><i class="fas fa-code"></i> Código API<br><small>Recebemos dos grupos</small></div>
+        <div class="flow-arrow">⬇️</div>
+        <div class="flow-node tool"><i class="fas fa-tools"></i> Nossa Ferramenta<br><small>Implementamos a API</small></div>
+        <div class="flow-arrow">⬇️</div>
+        <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap; justify-content:center;">
+          <div class="flow-node computers"><i class="fas fa-globe"></i> VPS + Proxy<br><small>10.000+ computadores</small></div>
+          <span style="color:#3b82f6;">→</span>
+          <div class="flow-node tool"><i class="fas fa-plug"></i> Burp Suite<br><small>Burla a detecção</small></div>
+        </div>
+        <div class="flow-arrow">⬇️</div>
+        <div class="flow-node success"><i class="fas fa-bullseye"></i> Milhões de senhas/s<br><small>Sem bloqueios</small></div>
+      </div>
+    </div>
+
+    <h3>O que é um Proxy?</h3>
+    <p>Proxy é um <strong>intermediário</strong> entre você e a internet. Quando você usa um proxy, o site que você acessa não vê o seu IP real — vê o IP do proxy. Isso serve para:</p>
+    <ul>
+      <li><strong>Esconder sua identidade:</strong> O Instagram vê o IP do proxy, não o seu.</li>
+      <li><strong>Rotacionar IPs:</strong> A cada tentativa de senha, podemos usar um IP diferente. Assim, o Instagram nunca percebe que é o mesmo atacante — para ele, são 10.000 pessoas diferentes tentando fazer login, cada uma uma única vez.</li>
+      <li><strong>Burlar bloqueios regionais:</strong> Podemos usar IPs do mesmo país ou região da vítima, tornando o ataque ainda mais invisível.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h4><i class="fas fa-lightbulb mr-2"></i> A mágica da combinação</h4>
+      <p>API + VPS + Proxy + Burp Suite = <strong>um exército de 10.000 computadores</strong>, cada um com um IP diferente, cada um testando uma senha, todos burlando a detecção do Instagram. Isso transforma um ataque que levaria séculos em um ataque que leva <strong>minutos ou horas</strong>.</p>
+    </div>
+
+    <p>E o melhor: <strong>tudo isso é vendido junto</strong>. Quando alugamos o acesso, recebemos o pacote completo: a API para conectar, as VPS para processar, os proxies para rotacionar os IPs. Nós só implementamos o código na nossa ferramenta e configuramos o Burp Suite para trabalhar com essa rede.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- DE ONDE VEM -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>10. De onde vem essa ferramenta?</h2>
+    <p>O Burp Suite modificado, as VPS e os proxies que usamos <strong>não são a versão comercial</strong> que você encontra no Google. São versões altamente modificadas, com capacidades que vão muito além da original.</p>
+
+    <p>Essas modificações não foram feitas por nós. Foram criadas por <strong>grupos hackers extremamente grandes e ricos</strong> — organizações financiadas por países, governos ou estados paralelos. Estamos falando de grupos com:</p>
+    <ul>
+      <li>Orçamentos <strong>milionários</strong></li>
+      <li>Equipes de <strong>desenvolvedores, engenheiros reversos e especialistas em segurança</strong></li>
+      <li>Acesso a <strong>vulnerabilidades que nunca foram divulgadas publicamente</strong></li>
+      <li>Infraestrutura de <strong>VPS e proxies espalhados pelo mundo todo</strong></li>
+    </ul>
+
+    <p>Esses grupos ganham dinheiro com roubos milionários, ransomware, financiamento estatal e venda de dados. Mas eles têm um problema: <strong>como gastar tanto dinheiro sujo sem levantar suspeitas?</strong></p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- LAVAGEM -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>11. Lavagem de dinheiro — por que o preço é tão baixo</h2>
+    <p>A resposta está na <strong>lavagem de dinheiro</strong>. Uma das formas mais eficientes de transformar dinheiro sujo em dinheiro limpo é <strong>revender ferramentas, APIs, VPS e proxies a preços baixíssimos</strong>.</p>
+
+    <p>Veja os preços reais na deep web:</p>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Recurso</th>
+          <th>Preço de Aluguel (aproximado)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>API + VPS que roda 1 milhão de senhas/segundo</td>
+          <td>US$ 100</td>
+        </tr>
+        <tr>
+          <td>API + VPS que roda 10 milhões de senhas/segundo</td>
+          <td>US$ 110</td>
+        </tr>
+        <tr>
+          <td>API + VPS que roda 50 milhões de senhas/segundo</td>
+          <td>US$ 130</td>
+        </tr>
+        <tr>
+          <td>Proxy rotativo (milhares de IPs)</td>
+          <td>US$ 10-30</td>
+        </tr>
+        <tr>
+          <td>Derrubar um site por 1 hora (DDoS)</td>
+          <td>Centavos de dólar</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Percebeu? <strong>Quanto mais poder, mais barato proporcionalmente.</strong> Isso não faz sentido econômico — a não ser que o objetivo <strong>não seja lucrar com a venda</strong>, e sim <strong>justificar a entrada de dinheiro limpo</strong>.</p>
+
+    <p>Esses grupos vendem acesso para <strong>milhares de compradores</strong>. Se cada um paga US$ 100, e são 10.000 compradores, isso gera <strong>US$ 1.000.000 em dinheiro limpo</strong> — que pode ser gasto sem levantar suspeitas.</p>
+
+    <div class="highlight-box">
+      <h4><i class="fas fa-recycle mr-2"></i> A engrenagem completa</h4>
+      <p>Os grupos hackers roubam milhões → investem em ferramentas, APIs, VPS e proxies → vendem acesso barato para revendedores na deep web → os revendedores vendem para prestadores de serviço como nós → nós entregamos o serviço ao cliente final. <strong>Todo mundo ganha — e o dinheiro sujo vira dinheiro limpo.</strong></p>
+    </div>
+
+    <div class="warning-inline">
+      <p><strong>⚠️ Esses acordos acontecem exclusivamente na deep web.</strong> Não é algo que você encontra no Google. Existem "revendedores autorizados" que fazem a ponte entre os grupos e o mercado. Nós compramos acesso a essas ferramentas e as usamos para realizar os serviços que oferecemos.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- POR QUE NÃO HACKEIAM FAMOSOS -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>12. Por que hackers não hackeiam famosos e ficam ricos?</h2>
+    <p>Essa é uma pergunta que muita gente faz. Se é possível hackear contas, por que os hackers não vão atrás de celebridades, políticos ou bilionários e ficam milionários com chantagem ou vendendo informações?</p>
+
+    <p>A resposta é mais complexa do que parece — e envolve <strong>risco, complexidade técnica e consequências</strong>.</p>
+
+    <div class="img-box">
+      <div class="img-placeholder">
+        <i class="fas fa-user-shield"></i>
+        <span>[Imagem: Celebridade com escudo de segurança]</span>
+      </div>
+      <p class="img-caption">Famosos têm camadas extras de proteção que tornam o ataque extremamente difícil.</p>
+    </div>
+
+    <h3>O problema da verificação em duas etapas (2FA)</h3>
+    <p>A maioria das pessoas famosas tem <strong>verificação em duas etapas</strong> ativada. Isso significa que, mesmo que você descubra a senha, ainda precisa de um <strong>código enviado por SMS ou aplicativo</strong> para completar o login.</p>
+
+    <p>Na real, estima-se que <strong>mais de 10.000 hackers já sabem a senha de vários famosos</strong>. O problema não é a senha — é o <strong>segundo fator</strong>. O número de telefone e o e-mail de recuperação dessas pessoas são <strong>praticamente impossíveis de encontrar</strong>. São protegidos por equipes de segurança, assessores e sistemas blindados.</p>
+
+    <h3>Quando um famoso é hackeado, o que aconteceu?</h3>
+    <p>Geralmente, <strong>houve uma falha ou um erro humano</strong>. Por exemplo:</p>
+    <ul>
+      <li>Alguém da equipe vazou o número sem querer.</li>
+      <li>O famoso trocou de celular e o número antigo foi reciclado pela operadora.</li>
+      <li>Uma brecha temporária no sistema foi descoberta e explorada rapidamente.</li>
+    </ul>
+
+    <p>Quando essa falha aparece, o ataque acontece <strong>em minutos</strong> — antes que a brecha seja fechada. Mas essas oportunidades são <strong>raríssimas</strong>.</p>
+
+    <h3>O verdadeiro motivo: risco vs retorno</h3>
+    <p>Hackear uma pessoa comum é um evento pequeno. A vítima diz "fui hackeado", cria uma conta nova e a vida segue. A polícia não investiga. A mídia não noticia. Ninguém se importa.</p>
+
+    <p>Mas hackear um famoso ou uma figura pública é <strong>totalmente diferente</strong>:</p>
+    <ul>
+      <li><strong>Prejuízos milionários:</strong> Empresas perdem contratos, a imagem da celebridade é manchada, processos judiciais são abertos.</li>
+      <li><strong>Investigação pesada:</strong> Agências de segurança são acionadas. Equipes forenses rastreiam o ataque. O hacker vira <strong>prioridade</strong>.</li>
+      <li><strong>Mídia mundial:</strong> O caso vira notícia em todo canto. A pressão para encontrar o responsável é enorme.</li>
+      <li><strong>Infraestrutura em risco:</strong> Quando um famoso é atacado, as autoridades vão atrás de <strong>toda a cadeia</strong> — ferramentas, VPS, proxies, revendedores. Isso coloca em risco toda a infraestrutura que mantém o mercado funcionando.</li>
+    </ul>
+
+    <div class="warning-inline">
+      <p><strong>⚠️ Por isso, hackers sérios evitam alvos de alto perfil.</strong> Não vale a pena. O lucro seria alto, sim — mas o risco de destruir toda a operação e ser caçado internacionalmente é infinitamente maior. É como assaltar um banco: o prêmio é grande, mas as consequências são catastróficas.</p>
+    </div>
+
+    <h3>E a polícia? Não investiga?</h3>
+    <p>Para pessoas comuns, <strong>raramente</strong>. O que acontece na internet é geralmente tratado como "erro da vítima". Se você foi hackeado, é porque estava vulnerável — reutilizava senhas, não tinha 2FA, clicou em links suspeitos. A culpa, aos olhos da lei, é majoritariamente sua.</p>
+
+    <p>Apenas países que <strong>priorizam cibersegurança</strong> (como EUA, Alemanha, Japão) realmente colocam recursos pesados para investigar crimes digitais contra cidadãos comuns. Na maioria dos lugares, a polícia simplesmente <strong>não tem estrutura nem conhecimento</strong> para lidar com isso.</p>
+
+    <div class="highlight-box">
+      <h4><i class="fas fa-balance-scale mr-2"></i> Em resumo</h4>
+      <p>Hackear um famoso é tecnicamente possível — mas extremamente difícil, arriscado e com consequências desproporcionais. Já hackear pessoas comuns é um evento pequeno, sem investigação, sem mídia, sem risco real. Por isso o mercado existe e funciona como funciona.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- INSTAGRAM SABE -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>13. O Instagram sabe disso?</h2>
+    <p>Sim, e muito.</p>
+
+    <p>O Instagram — e a Meta como um todo — <strong>sabe perfeitamente</strong> que essas vulnerabilidades existem. Estima-se que <strong>80% a 90% das contas</strong> são vulneráveis a esses métodos.</p>
+
+    <p>E não é incompetência. É <strong>intencional</strong>.</p>
+
+    <div class="img-box">
+      <div class="img-placeholder">
+        <i class="fas fa-building"></i>
+        <span>[Imagem: Sede da Meta / Instagram]</span>
+      </div>
+      <p class="img-caption">A Meta sabe das falhas — e as mantém abertas por motivos estratégicos.</p>
+    </div>
+
+    <h3>Por que o Instagram permite essas falhas?</h3>
+    <ul>
+      <li><strong>Lucro discreto:</strong> Contas hackeadas continuam ativas na plataforma — gerando anúncios, engajamento e dados valiosos para vender a anunciantes.</li>
+      <li><strong>Coleta de inteligência:</strong> Cada ataque revela padrões que a Meta pode usar para "melhorar a segurança" — ou vender como inteligência de mercado.</li>
+      <li><strong>Relação com governos:</strong> Manter vulnerabilidades abertas é útil para agências de inteligência que precisam acessar contas específicas.</li>
+      <li><strong>Custo-benefício:</strong> Corrigir todas as falhas custaria bilhões. É mais barato — e mais lucrativo — deixar como está.</li>
+    </ul>
+
+    <div class="warning-inline">
+      <p><strong>Em outras palavras:</strong> A insegurança do Instagram não é um erro — é um modelo de negócio paralelo. As falhas geram dinheiro de formas que o público nunca vê.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- NOSSO PROCESSO - CAMINHO COMPLETO -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>14. Nosso processo: o caminho até a senha</h2>
+    <p>Agora que você entendeu todas as peças, vamos ver como elas se encaixam no nosso <strong>método favorito</strong> — o que usamos na maioria dos serviços.</p>
+
+    <p>Imagine uma conta do Instagram como se fosse uma casa. Nosso trabalho é entrar nela sem ser notado. O caminho que seguimos:</p>
+
+    <div class="chain-visual">
+      <div class="chain-box start">
+        <i class="fab fa-instagram"></i> @alvo
+        <br><small style="color:#9ca3cf;">Começamos com o @ do Instagram</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-database"></i> Bancos de dados vazados
+        <br><small style="color:#9ca3cf;">Descobrimos e-mail, nome, CPF</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-search"></i> Cruzamento de informações
+        <br><small style="color:#9ca3cf;">Achamos contas vinculadas, vazamentos antigos</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-key"></i> Possível senha reutilizada?
+        <br><small style="color:#9ca3cf;">Se sim, acesso imediato. Se não...</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-code"></i> API + VPS + Proxy
+        <br><small style="color:#9ca3cf;">Conectamos a rede de 10.000 computadores</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box">
+        <i class="fas fa-network-wired"></i> Burp Suite
+        <br><small style="color:#9ca3cf;">Configuramos com a API e os proxies</small>
+      </div>
+      <div class="chain-arrow">⬇️</div>
+      <div class="chain-box end">
+        <i class="fas fa-check-circle"></i> <strong>Acesso garantido</strong>
+        <br><small style="color:#6ee7b7;">Milhões de senhas testadas, sem bloqueios</small>
+      </div>
+    </div>
+
+    <p>Veja como é um <strong>processo indireto</strong>. Não vamos direto na senha. Vamos coletando informações — uma leva a outra, que leva a outra — até termos o suficiente para entrar.</p>
+
+    <div class="green-box">
+      <p><strong>💡 Esta é a essência do hacking real:</strong> Não é um ataque frontal. É um processo de coleta de inteligência. Cada informação é uma peça do quebra-cabeça. Quando todas se encaixam, a porta se abre.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- CONCLUSÃO -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <h2>Conclusão: Por que nossos preços são justos</h2>
+    <p>Agora você entende o cenário completo:</p>
+    <ul>
+      <li>✅ Hackear não é mágica — é um <strong>processo</strong> que envolve coleta de dados, ferramentas especializadas e infraestrutura pesada.</li>
+      <li>✅ Existem <strong>vários caminhos</strong> — dados vazados, phishing, malware, falhas de sistema, redes Wi-Fi e força bruta avançada.</li>
+      <li>✅ Nosso método principal usa <strong>API + VPS + Proxy + Burp Suite</strong> — uma rede de 10.000+ computadores burlando todas as proteções.</li>
+      <li>✅ Essas ferramentas são criadas por <strong>grupos hackers financiados por países</strong> e revendidas a preços baixos por causa de <strong>lavagem de dinheiro</strong>.</li>
+      <li>✅ Hackear famosos <strong>não vale a pena</strong> — o risco para toda a infraestrutura é enorme, e a investigação é pesada.</li>
+      <li>✅ O Instagram <strong>sabe disso</strong> e mantém as vulnerabilidades abertas porque <strong>também lucra com elas</strong>.</li>
+    </ul>
+
+    <p>O preço que cobrimos não é só pelo "serviço de hackear". É pelo <strong>acesso a toda essa cadeia</strong>: ferramentas, API, VPS, proxies, conhecimento técnico, bancos de dados, e o risco que assumimos ao operar nesse mercado.</p>
+
+    <div class="highlight-box">
+      <h4><i class="fas fa-arrow-right mr-2"></i> Pronto para contratar?</h4>
+      <p>Agora que você entendeu como as coisas realmente funcionam, fica mais fácil confiar no processo. Não somos amadores. Temos acesso ao que há de mais avançado no mercado — e entregamos resultados reais.<br><br>
+      <a href="/CyberXpert/servicos" style="color: #3b82f6; font-weight: 600;">Ver serviços disponíveis →</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CyberXpert</div>
+      <div class="footer-links">
+        <a href="/CyberXpert/servicos">Serviços</a>
+        <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+        <a href="/CyberXpert/faq">FAQ</a>
+        <a href="/CyberXpert/contato">Contato</a>
+      </div>
+      <div><i class="fas fa-globe"></i> Português (BR) | BRL (R$)</div>
+    </div>
+    <div class="copyright">© 2026 CyberXpert. Todos os direitos reservados. Soluções digitais com excelência e discrição.</div>
+  </footer>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="/CyberXpert/contato" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

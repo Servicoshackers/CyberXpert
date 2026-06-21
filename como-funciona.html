@@ -31,7 +31,6 @@
     ::-webkit-scrollbar-track { background: #0a0c14; }
     ::-webkit-scrollbar-thumb { background: #2d3b6e; border-radius: 8px; }
 
-    /* Navbar */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -68,7 +67,6 @@
     .track-btn i { margin-right: 6px; }
     .track-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
 
-    /* Hero */
     .page-hero {
       text-align: center;
       padding: 3rem 0 2rem;
@@ -87,7 +85,6 @@
     }
     .page-hero p { color: #9ca3cf; font-size: 1rem; max-width: 650px; margin: 0 auto; }
 
-    /* Seções */
     .section-block { margin: 3.5rem 0; }
     .section-block h2 {
       font-size: 1.5rem;
@@ -109,15 +106,8 @@
     .section-block ul li:before { content: "▹"; position: absolute; left: 0; color: #3b82f6; }
     .section-block ol { counter-reset: step-counter; }
     .section-block ol li { counter-increment: step-counter; padding-left: 2rem; }
-    .section-block ol li:before {
-      content: counter(step-counter) ".";
-      position: absolute;
-      left: 0;
-      color: #3b82f6;
-      font-weight: 700;
-    }
+    .section-block ol li:before { content: counter(step-counter) "."; position: absolute; left: 0; color: #3b82f6; font-weight: 700; }
 
-    /* Boxes */
     .highlight-box {
       background: rgba(59, 130, 246, 0.08);
       border-radius: 16px;
@@ -149,7 +139,6 @@
     }
     .green-box p { color: #6ee7b7; font-size: 0.9rem; }
 
-    /* Chain visual */
     .chain-visual {
       display: flex;
       flex-direction: column;
@@ -173,8 +162,6 @@
     .chain-box.end { border-color: #10b981; background: rgba(16,185,129,0.08); }
     .chain-arrow { color: #3b82f6; font-size: 1.5rem; }
 
-    /* ========== DIAGRAMAS VISUAIS ========== */
-    
     .visual-diagram {
       background: #0a0f1c;
       border-radius: 16px;
@@ -353,6 +340,16 @@
   </div>
 
   <!-- ============================================ -->
+  <!-- AVISO IMPORTANTE -->
+  <!-- ============================================ -->
+  <div class="section-block">
+    <div class="highlight-box">
+      <h4><i class="fas fa-info-circle mr-2"></i> Antes de começar</h4>
+      <p>Para tornar a explicação mais clara e fácil de acompanhar, <strong>todos os exemplos desta página usam o Instagram</strong> como referência. Mas os mesmos métodos, ferramentas e princípios se aplicam a qualquer rede social — WhatsApp, Facebook, TikTok, Twitter, e praticamente qualquer plataforma que exija login e senha. O Instagram é só o exemplo mais didático.</p>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
   <!-- INTRODUÇÃO -->
   <!-- ============================================ -->
   <div class="section-block">
@@ -384,7 +381,7 @@
 
     <p>Cookies são pequenos arquivos que os sites salvam no seu navegador. Eles servem para o site "lembrar" de você. Sabe quando você entra no Instagram, marca "Lembrar-me" e na próxima vez já aparece logado? Isso é o cookie funcionando. Ele é como um <strong>crachá de visitante</strong>: em vez de você mostrar seu RG toda vez que entra no prédio, o crachá já diz "pode entrar, já foi identificado".</p>
 
-    <p>No mundo do hacking, cookies são extremamente valiosos. Se alguém consegue roubar o cookie de sessão do Instagram de uma vítima — aquele arquivo que diz "essa pessoa já fez login" — o hacker pode simplesmente <strong>usar esse cookie no próprio navegador</strong> e entrar na conta. Sem precisar de senha. Sem precisar de verificação de duas etapas. O site olha o cookie e pensa: "Ah, é você! Pode entrar."</p>
+    <p>No mundo do hacking, cookies são extremamente valiosos. Se alguém consegue roubar o cookie de sessão do Instagram de uma conta — aquele arquivo que diz "essa pessoa já fez login" — o hacker pode simplesmente <strong>usar esse cookie no próprio navegador</strong> e entrar na conta. Sem precisar de senha. Sem precisar de verificação de duas etapas. O site olha o cookie e pensa: "Ah, é você! Pode entrar."</p>
 
     <div class="visual-diagram">
       <div class="diagram-title">Como funciona um Cookie de Sessão</div>
@@ -470,20 +467,20 @@
       <li><strong>Criação da página falsa:</strong> Uma página visualmente idêntica ao Instagram, mesmo layout, cores e logotipo.</li>
       <li><strong>Hospedagem:</strong> Em um domínio parecido — como "instagrarn.com" ou "instagram-verificar.com".</li>
       <li><strong>Envio da isca:</strong> Mensagens como "Sua conta será desativada, clique aqui", "Você apareceu nesse vídeo!" ou "Detectamos um login suspeito".</li>
-      <li><strong>Captura:</strong> A vítima digita a senha na página falsa, e os dados vão direto para o hacker.</li>
+      <li><strong>Captura:</strong> A pessoa digita a senha na página falsa, e os dados vão direto para o hacker.</li>
     </ol>
 
     <div class="visual-diagram">
       <div class="diagram-title">Como funciona o Phishing</div>
       <div class="phish-flow">
-        <div class="phish-phone"><i class="fas fa-mobile-alt" style="font-size:1.5rem; color:#3b82f6;"></i><div style="font-size:0.7rem; color:#9ca3cf;">Vítima</div><div class="phish-screen"><div class="phish-input">📩 "Sua conta será desativada!"</div><div class="phish-input">🔗 instagrarn.com/login</div><div class="phish-input" style="color:#10b981;">📧 Email: _____</div><div class="phish-input" style="color:#10b981;">🔑 Senha: _____</div></div></div>
+        <div class="phish-phone"><i class="fas fa-mobile-alt" style="font-size:1.5rem; color:#3b82f6;"></i><div style="font-size:0.7rem; color:#9ca3cf;">Pessoa</div><div class="phish-screen"><div class="phish-input">📩 "Sua conta será desativada!"</div><div class="phish-input">🔗 instagrarn.com/login</div><div class="phish-input" style="color:#10b981;">📧 Email: _____</div><div class="phish-input" style="color:#10b981;">🔑 Senha: _____</div></div></div>
         <div class="phish-arrow">→</div>
-        <div class="phish-hacker"><i class="fas fa-laptop" style="font-size:1.5rem; color:#10b981;"></i><div style="font-size:0.7rem; color:#9ca3cf;">Hacker</div><div class="phish-data" style="margin-top:0.5rem;">📧 email_vitima@gmail.com</div><div class="phish-data">🔑 senha123</div><div style="color:#10b981; font-weight:700; margin-top:0.5rem;">✅ Senha capturada!</div></div>
+        <div class="phish-hacker"><i class="fas fa-laptop" style="font-size:1.5rem; color:#10b981;"></i><div style="font-size:0.7rem; color:#9ca3cf;">Hacker</div><div class="phish-data" style="margin-top:0.5rem;">📧 email_pessoa@gmail.com</div><div class="phish-data">🔑 senha123</div><div style="color:#10b981; font-weight:700; margin-top:0.5rem;">✅ Senha capturada!</div></div>
       </div>
     </div>
 
     <p>O phishing explora <strong>confiança e urgência</strong>. A pessoa lê "sua conta será desativada" e age sem pensar. Em segundos, entrega a senha.</p>
-    <div class="warning-inline"><p><strong>⚠️ Limitação:</strong> Se a vítima tiver <strong>verificação em duas etapas (2FA)</strong>, mesmo com a senha em mãos, o Instagram pedirá um código extra. Aí precisamos de métodos mais avançados.</p></div>
+    <div class="warning-inline"><p><strong>⚠️ Limitação:</strong> Se a conta tiver <strong>verificação em duas etapas (2FA)</strong>, mesmo com a senha em mãos, o Instagram pedirá um código extra. Aí precisamos de métodos mais avançados.</p></div>
   </div>
 
   <!-- ============================================ -->
@@ -491,7 +488,7 @@
   <!-- ============================================ -->
   <div class="section-block">
     <h2>3. Vírus e Malware — um clique e já era</h2>
-    <p>Um malware (software malicioso) instalado no dispositivo da vítima pode:</p>
+    <p>Um malware (software malicioso) instalado no dispositivo da pessoa pode:</p>
     <ul>
       <li><strong>Roubar senhas salvas</strong> no navegador.</li>
       <li><strong>Capturar cookies de sessão</strong> (lembra do crachá?).</li>
@@ -520,7 +517,7 @@
     <h2>4. Redes Wi-Fi — a porta de entrada que ninguém vê</h2>
     <p>Redes Wi-Fi são um dos pontos mais vulneráveis de qualquer pessoa — e quase ninguém presta atenção.</p>
     <h3>Mesma rede — interceptação direta</h3>
-    <p>Se você está na <strong>mesma rede Wi-Fi</strong> que a vítima, ferramentas como Wireshark permitem "escutar" tudo que passa pelo ar — senhas sem criptografia, cookies de sessão, dados de navegação.</p>
+    <p>Se você está na <strong>mesma rede Wi-Fi</strong> que a pessoa, ferramentas como Wireshark permitem "escutar" tudo que passa pelo ar — senhas sem criptografia, cookies de sessão, dados de navegação.</p>
 
     <div class="visual-diagram">
       <div class="diagram-title">Interceptação na mesma rede Wi-Fi</div>
@@ -528,7 +525,7 @@
         <div class="wifi-router"><i class="fas fa-wifi"></i></div>
         <div style="display:flex; gap:0.3rem; color:#3b82f6; font-size:1.5rem;"><span>))</span><span>))</span><span>))</span></div>
         <div class="wifi-devices">
-          <div class="wifi-device"><i class="fas fa-mobile-alt"></i><div style="font-size:0.7rem;">Vítima</div></div>
+          <div class="wifi-device"><i class="fas fa-mobile-alt"></i><div style="font-size:0.7rem;">Pessoa</div></div>
           <div class="wifi-device sniffer"><i class="fas fa-laptop"></i><div style="font-size:0.7rem;">Hacker</div><div style="font-size:0.6rem; color:#ef4444;">Capturando</div></div>
           <div class="wifi-device"><i class="fas fa-desktop"></i><div style="font-size:0.7rem;">Outro</div></div>
         </div>
@@ -587,7 +584,7 @@
   <!-- COMPARAÇÃO VISUAL -->
   <!-- ============================================ -->
   <div class="section-block">
-    <h2>8. Força Bruta Normal vs com API/VPS/Proxy</h2>
+    <h2>8. Força Bruta Normal vs com API/Rede de Computadores/Proxy</h2>
     <div class="diagram-compare">
       <div class="visual-diagram" style="border-color: #ef4444;">
         <div class="diagram-title" style="color:#ef4444;">❌ Força Bruta Comum</div>
@@ -604,7 +601,7 @@
         <div class="diagram-result" style="color:#ef4444;">FRACASSO</div>
       </div>
       <div class="visual-diagram" style="border-color: #10b981;">
-        <div class="diagram-title" style="color:#10b981;">✅ Com API + VPS + Proxy</div>
+        <div class="diagram-title" style="color:#10b981;">✅ Com API + Rede + Proxy</div>
         <div class="diagram-row"><div class="diagram-node warning">📦 API</div></div>
         <div class="diagram-arrow-down">⬇️</div>
         <div class="diagram-row"><div class="diagram-node highlight">🛠️ Ferramenta</div></div>
@@ -621,10 +618,10 @@
   </div>
 
   <!-- ============================================ -->
-  <!-- API + PROXY + VPS + BURP SUITE (COMPLETO) -->
+  <!-- API + PROXY + REDE DE COMPUTADORES + BURP SUITE (COMPLETO) -->
   <!-- ============================================ -->
   <div class="section-block">
-    <h2>9. API, Proxy, VPS e Burp Suite — Como tudo funciona</h2>
+    <h2>9. API, Proxy, Rede de Computadores e Burp Suite — Como tudo funciona</h2>
     
     <h3>O que é uma API?</h3>
     <p>API é como um <strong>código de acesso</strong> que conecta nossa ferramenta a uma rede de 10.000+ computadores espalhados pelo mundo. Não controlamos esses computadores diretamente — só implementamos a API. É como receber uma chave que liga o carro: você não precisa entender o motor, só virar a chave.</p>
@@ -636,7 +633,7 @@
       <div class="diagram-row"><div class="diagram-node highlight"><i class="fas fa-tools"></i> Nossa Ferramenta<br><small>Implementamos a API</small></div></div>
       <div class="diagram-arrow-down">⬇️</div>
       <div class="diagram-row">
-        <div class="diagram-node purple"><i class="fas fa-globe"></i> VPS + Proxy<br><small>10.000+ computadores</small></div>
+        <div class="diagram-node purple"><i class="fas fa-globe"></i> Rede de Computadores + Proxy<br><small>10.000+ máquinas</small></div>
         <span class="diagram-arrow-right">→</span>
         <div class="diagram-node highlight"><i class="fas fa-plug"></i> Burp Suite<br><small>Burla a detecção</small></div>
       </div>
@@ -646,6 +643,118 @@
 
     <h3>O que é um Proxy?</h3>
     <p>Proxy é um intermediário: o Instagram vê o IP do proxy, não o seu. Cada tentativa de senha usa um IP diferente — para o Instagram, são 10.000 pessoas diferentes tentando logar, cada uma uma única vez. Por isso não bloqueia.</p>
+
+    <h3>A rede de computadores e as Botnets</h3>
+    <p>De onde vêm esses 10.000 computadores? Existem duas formas principais:</p>
+
+    <p><strong>Botnet:</strong> É uma rede de dispositivos infectados — celulares, computadores, roteadores — que foram hackeados e transformados em "zumbis". O dono real do dispositivo não faz ideia de que o aparelho dele está sendo usado para isso. Cada dispositivo zumbi roda um <strong>processo em segundo plano</strong> — um programinha escondido que consome pouquíssimos recursos e fica lá, silencioso, esperando ordens. A pessoa pode estar usando o celular normalmente — e o processo zumbi está lá, invisível.</p>
+
+    <p>Quando o hacker controlador quer atacar, ele envia <strong>um único comando</strong> para todos os dispositivos ao mesmo tempo. E todos obedecem instantaneamente.</p>
+
+    <!-- VISUAL: Botnet -->
+    <div class="visual-diagram">
+      <div class="diagram-title">Como funciona uma Botnet / Rede de Computadores</div>
+      <div class="diagram-row">
+        <div class="diagram-node danger">👑 Controlador</div>
+      </div>
+      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-row">
+        <div class="diagram-node warning">📤 Envia 1 comando<br><small>"Testem esta senha: gato123"</small></div>
+      </div>
+      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-grid">
+        <span class="diagram-mini">📱 Dispositivo 1<br><small>Celular Samsung</small></span>
+        <span class="diagram-mini">💻 Dispositivo 2<br><small>Notebook Dell</small></span>
+        <span class="diagram-mini">🖥️ Dispositivo 3<br><small>PC de mesa</small></span>
+        <span class="diagram-mini">📡 Dispositivo 4<br><small>Roteador</small></span>
+        <span class="diagram-mini">📱 Dispositivo 5<br><small>Celular iPhone</small></span>
+        <span class="diagram-mini">...até 10.000+</span>
+      </div>
+      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-row">
+        <div class="diagram-node success">⚡ Todos executam ao mesmo tempo<br><small>Cada um com seu próprio IP real</small></div>
+      </div>
+      <div class="diagram-label" style="margin-top:1rem;">Um comando é enviado e milhares de dispositivos obedecem — cada um com um IP real de uma casa ou empresa.</div>
+    </div>
+
+    <p>Para o Instagram, um ataque vindo de data centers é detectável — os IPs são de servidores, e o Instagram sabe que servidores não são pessoas comuns tentando logar. Já um ataque vindo de uma botnet é <strong>quase impossível de detectar</strong> — porque os IPs são de pessoas reais: uma casa, um celular, o notebook de uma empresa.</p>
+
+    <div class="warning-inline">
+      <p><strong>⚠️ Importante:</strong> Criar e controlar uma botnet é crime em qualquer país — você está infectando dispositivos de terceiros sem autorização. <strong>Nós não criamos nem operamos botnets.</strong> Nosso método usa acesso a redes de computadores alugados de grupos que revendem. Esta explicação existe para você entender como o ecossistema funciona.</p>
+    </div>
+
+    <h3>De onde vêm essas redes de computadores?</h3>
+    <p>Seja uma botnet (dispositivos infectados) ou uma rede de servidores alugados (VPS), tudo isso é criado e controlado por <strong>grupos hackers extremamente organizados</strong>. Não são pessoas trabalhando em porões — são organizações com estrutura empresarial, financiadas de várias formas diferentes.</p>
+
+    <p>As principais fontes de dinheiro desses grupos são:</p>
+    <ul>
+      <li><strong>Roubos e ataques diretos:</strong> Invadem bancos, exchanges de criptomoedas, grandes empresas. Um único ataque bem-sucedido pode render dezenas de milhões de dólares.</li>
+      <li><strong>Ransomware:</strong> Sequestram dados de empresas e cobram resgate. Hospitais, fábricas e até governos já pagaram milhões para recuperar seus sistemas.</li>
+      <li><strong>Financiamento estatal:</strong> Alguns países mantêm grupos hackers como parte de sua estratégia de defesa e ataque cibernético. Esses grupos recebem dinheiro do governo para existir e operar.</li>
+      <li><strong>Venda de dados roubados:</strong> Bilhões de registros pessoais são vendidos para quem quiser comprar — outros hackers, empresas de marketing, ou qualquer um.</li>
+      <li><strong>Revenda de acesso:</strong> E aqui entra a parte que nos interessa. Esses grupos vendem acesso à sua infraestrutura (botnets, VPS, ferramentas) para outros hackers. E vendem por preços extremamente baixos.</li>
+    </ul>
+
+    <p>Com todo esse dinheiro entrando, esses grupos investem pesado em:</p>
+    <ul>
+      <li><strong>Criação de botnets:</strong> Desenvolvem malwares avançados que infectam milhares de dispositivos ao redor do mundo.</li>
+      <li><strong>Compra de VPS em massa:</strong> Alugam centenas de servidores em data centers — muitas vezes em países que fazem vista grossa ou até incentivam esse tipo de atividade, porque o dinheiro que esses grupos movimentam é enorme e alimenta a economia local.</li>
+      <li><strong>Desenvolvimento de ferramentas:</strong> Modificam softwares como o Burp Suite para uso em ataques, criam painéis de controle, sistemas de distribuição de comandos.</li>
+      <li><strong>Pesquisa de vulnerabilidades:</strong> Mantêm equipes dedicadas a descobrir falhas em sistemas que ninguém mais conhece — falhas que valem fortunas no mercado certo.</li>
+    </ul>
+
+    <p>Agora, sobre a revenda de acesso: por que eles cobram tão barato? US$ 100 por uma rede que custa milhares de dólares para manter?</p>
+
+    <p>Os motivos são vários:</p>
+    <ul>
+      <li><strong>Escala:</strong> Eles não vendem para 10 pessoas. Vendem para milhares. Se 10.000 compradores pagam US$ 100 cada, são US$ 1.000.000 entrando. Multiplique isso por vários serviços diferentes (botnet, VPS, DDoS, ferramentas) e o lucro é massivo.</li>
+      <li><strong>Lavagem de dinheiro:</strong> Sim, isso também acontece. Dinheiro de roubos e resgates precisa ser "limpo" para poder ser gasto. Vender acesso barato para milhares de pessoas é uma forma eficiente de transformar dinheiro sujo em dinheiro limpo. Mas é apenas UMA das estratégias — não a principal.</li>
+      <li><strong>Domínio de mercado:</strong> Se você vende barato, você domina o mercado. Nenhum concorrente consegue competir. E uma vez que todos os hackers do mundo dependem da sua infraestrutura, você tem poder sobre eles.</li>
+      <li><strong>Modelo de negócio legítimo (para eles):</strong> Para esses grupos, vender acesso é um negócio como qualquer outro. Eles têm custos (servidores, desenvolvedores, pesquisa) e têm receita (venda de acessos). O fato de ser ilegal não muda a lógica: é oferta e demanda.</li>
+    </ul>
+
+    <p>E os data centers? Muitos estão em países onde as leis de cibersegurança são frouxas ou inexistentes. Em alguns casos, os próprios governos locais são coniventes — porque o dinheiro que esses grupos injetam na economia é significativo. Em outros casos, os data centers simplesmente "não perguntam" o que você vai fazer com o servidor. Você paga, eles entregam.</p>
+
+    <p>Nós compramos acesso a essas redes através de intermediários — pessoas que fazem a ponte entre os grandes grupos e os hackers independentes. E é por isso que podemos oferecer o serviço por um preço acessível. Sem essa cadeia, o custo real de um ataque desses seria de dezenas de milhares de dólares.</p>
+
+    <h3>Como controlamos esses computadores?</h3>
+    <p>Seja via botnet ou rede alugada, o princípio é o mesmo: <strong>nós não acessamos cada computador manualmente</strong>. Isso seria impossível — ninguém consegue gerenciar 10.000 máquinas uma por uma.</p>
+
+    <p>O que fazemos é: <strong>enviamos um comando</strong> através da API que recebemos. Esse comando é distribuído para todos os computadores da rede ao mesmo tempo. Cada computador recebe a ordem, executa sua tarefa (testar uma senha contra o servidor do Instagram) e devolve o resultado.</p>
+
+    <!-- VISUAL: Como controlamos -->
+    <div class="visual-diagram">
+      <div class="diagram-title">Como controlamos a rede de computadores</div>
+      <div class="diagram-row">
+        <div class="diagram-node highlight">🛠️ Nossa Ferramenta<br><small>+ Burp Suite</small></div>
+      </div>
+      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-row">
+        <div class="diagram-node warning">📤 Enviamos 1 comando via API<br><small>"Testem senha: gato123 contra @alvo"</small></div>
+      </div>
+      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-row">
+        <div class="diagram-node purple">🌐 A API distribui para<br><small>10.000 computadores</small></div>
+      </div>
+      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-grid">
+        <span class="diagram-mini">PC 1: testa</span>
+        <span class="diagram-mini">PC 2: testa</span>
+        <span class="diagram-mini">PC 3: testa</span>
+        <span class="diagram-mini">PC 4: testa</span>
+        <span class="diagram-mini">PC 5: testa</span>
+        <span class="diagram-mini">...PC 10.000: testa</span>
+      </div>
+      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-row">
+        <div class="diagram-node">📥 Resultados voltam<br><small>Todos "senha errada" — próximo comando</small></div>
+        <span class="diagram-arrow-right">→</span>
+        <div class="diagram-node success">🔄 Próxima senha<br><small>O ciclo recomeça</small></div>
+      </div>
+      <div class="diagram-label" style="margin-top:1rem;">Nós só enviamos o comando. A API distribui, os computadores executam, o Burp Suite analisa as respostas.</div>
+    </div>
+
+    <p>É como um maestro regendo uma orquestra: ele não toca todos os instrumentos — ele dá o comando, e cada músico executa sua parte. Nós damos o comando ("testem essa senha"), e cada computador na rede executa sua parte ("testei, deu errado" ou "testei, deu certo").</p>
 
     <h3>O que é o Burp Suite?</h3>
     <p>O Burp Suite é a <strong>principal plataforma do mercado para testes de segurança em aplicações web</strong> — o que os profissionais chamam de "pentest" (teste de penetração). Ele foi criado por uma empresa chamada PortSwigger e é usado mundialmente por empresas sérias, consultorias de segurança e até governos.</p>
@@ -682,12 +791,12 @@
     <h3>Limitações do Burp Suite original</h3>
     <p>Mas o Burp Suite que você compra no site oficial <strong>não é uma ferramenta de ataque</strong>. Ele tem limitações importantes:</p>
     <ul>
-      <li><strong>Não foi feito para testar senhas em massa</strong> — ele processa uma requisição por vez, manualmente. Você não pode automatizar 10.000 tentativas de senha com ele.</li>
+      <li><strong>Não foi feito para testar senhas em massa</strong> — ele processa uma requisição por vez, manualmente.</li>
       <li><strong>Não tem rotação de IP</strong> — se você tentar várias senhas seguidas, o Instagram vai ver o mesmo IP e bloquear.</li>
       <li><strong>Não burla CAPTCHA</strong> — ele não foi projetado para isso.</li>
-      <li><strong>Não se conecta a VPS externas</strong> — ele roda só no seu computador, com o poder de processamento do seu computador.</li>
-      <li><strong>É limitado em velocidade</strong> — ele foi feito para análises manuais, não para processamento em massa.</li>
-      <li><strong>Não tem autonomia</strong> — precisa de um operador humano o tempo todo. Não opera sozinho.</li>
+      <li><strong>Não se conecta a redes externas</strong> — ele roda só no seu computador.</li>
+      <li><strong>É limitado em velocidade</strong> — feito para análises manuais, não para processamento em massa.</li>
+      <li><strong>Não tem autonomia</strong> — precisa de um operador humano o tempo todo.</li>
     </ul>
 
     <p>Em outras palavras: o Burp Suite original é como um <strong>estetoscópio</strong> — você escuta o coração do paciente e faz um diagnóstico. Mas você não pode operar o paciente com ele. Para isso, precisa de instrumentos cirúrgicos.</p>
@@ -704,7 +813,7 @@
         <tr><td><strong>Processamento</strong></td><td>Uma requisição por vez, manual</td><td>Milhões de requisições por segundo, automatizado</td></tr>
         <tr><td><strong>Rotação de IP</strong></td><td>Não tem — usa seu IP real</td><td>Proxy rotativo integrado — cada tentativa é um IP diferente</td></tr>
         <tr><td><strong>Burlar CAPTCHA</strong></td><td>Não burla</td><td>Sistema anti-CAPTCHA integrado</td></tr>
-        <tr><td><strong>Conexão com VPS</strong></td><td>Roda só no seu computador</td><td>Conectado a 10.000+ servidores via API</td></tr>
+        <tr><td><strong>Conexão externa</strong></td><td>Roda só no seu computador</td><td>Conectado a 10.000+ computadores via API</td></tr>
         <tr><td><strong>Disfarce</strong></td><td>Não se disfarça — é transparente</td><td>Simula dispositivo, navegador e localização diferentes a cada tentativa</td></tr>
         <tr><td><strong>Preço</strong></td><td>US$ 449/ano (versão Pro)</td><td>US$ 100-130 (aluguel por uso)</td></tr>
         <tr><td><strong>Autonomia</strong></td><td>Limitada — precisa de um operador humano</td><td>Total — opera sozinho 24h com filas de senhas</td></tr>
@@ -712,43 +821,98 @@
     </table>
 
     <h3>Como a nossa versão funciona na prática?</h3>
-    <p>O Burp Suite modificado <strong>não fica logando na conta</strong> como uma pessoa faria. Ele trabalha de forma muito mais esperta:</p>
+    <p>O Burp Suite modificado <strong>não fica logando na conta</strong> como uma pessoa faria. Ele trabalha de forma muito mais esperta: <strong>ele só entra no meio da conversa e escuta</strong> o que o servidor está dizendo.</p>
+
+    <p>Pense assim: quando alguém tenta fazer login no Instagram, o navegador manda uma mensagem para o servidor: "Quero entrar, a senha é 'gato123'". O servidor responde de duas formas possíveis:</p>
+    <ul>
+      <li><strong>Senha errada:</strong> "Senha incorreta. Tente novamente."</li>
+      <li><strong>Senha certa:</strong> "Login bem-sucedido. Redirecionando..." (e envia os cookies de sessão)</li>
+    </ul>
+
+    <p>O Burp Suite <strong>não precisa completar o login</strong>. Ele só precisa ouvir a resposta do servidor. Se a resposta for do tipo A ("senha incorreta"), ele sabe que errou e passa para a próxima senha. Se a resposta for do tipo B ("login bem-sucedido" + cookies), ele sabe que acertou — e nossa ferramenta imediatamente sinaliza: <strong>"Senha descoberta!"</strong>.</p>
 
     <div class="visual-diagram">
-      <div class="diagram-title">Como o Burp Suite modificado burla a segurança</div>
+      <div class="diagram-title">Como o Burp Suite descobre a senha sem fazer login</div>
       <div class="diagram-row">
-        <div class="diagram-node highlight">🛠️ Burp Suite Modificado</div>
-        <span class="diagram-arrow-right">→</span>
-        <div class="diagram-node">📤 Envia solicitação de login<br><small>(email + tentativa de senha)<br>Disfarçado de celular Samsung, IP dos EUA</small></div>
-        <span class="diagram-arrow-right">→</span>
-        <div class="diagram-node warning">🏢 Servidor do Instagram</div>
+        <div class="diagram-node highlight">🛠️ Burp Suite<br><small>No meio da conversa</small></div>
       </div>
       <div class="diagram-arrow-down">⬇️</div>
       <div class="diagram-row">
-        <div class="diagram-node">📥 Recebe a resposta do servidor<br><small>"Senha incorreta" = tipo A<br>"Código enviado" = tipo B</small></div>
+        <div class="diagram-node">📤 Envia: "Senha = gato123"<br><small>Disfarçado de celular Samsung</small></div>
         <span class="diagram-arrow-right">→</span>
-        <div class="diagram-node success">✅ Tipo A = próxima senha<br>🔓 Tipo B = SENHA ENCONTRADA!</div>
+        <div class="diagram-node warning">🏢 Servidor</div>
+        <span class="diagram-arrow-right">→</span>
+        <div class="diagram-node">📥 Responde: "Senha incorreta"</div>
       </div>
-      <div class="diagram-arrow-down">⬇️</div>
+      <div class="diagram-row" style="margin-top:0.5rem;">
+        <div class="diagram-node success">🔄 Burp Suite: "Errou. Próxima."</div>
+      </div>
+      <div class="diagram-arrow-down" style="margin:0.8rem 0;">... após milhares de tentativas ...</div>
       <div class="diagram-row">
-        <div class="diagram-node highlight">🔄 Próxima tentativa</div>
+        <div class="diagram-node">📤 Envia: "Senha = amor2024"<br><small>Disfarçado de iPhone, IP da Alemanha</small></div>
         <span class="diagram-arrow-right">→</span>
-        <div class="diagram-node">📤 Nova solicitação<br><small>Disfarçado de iPhone, IP da Alemanha</small></div>
+        <div class="diagram-node warning">🏢 Servidor</div>
         <span class="diagram-arrow-right">→</span>
-        <div class="diagram-node warning">🏢 Instagram vê outra pessoa</div>
+        <div class="diagram-node success">📥 Responde: "Login OK" + 🍪 Cookies!</div>
       </div>
+      <div class="diagram-row" style="margin-top:0.5rem;">
+        <div class="diagram-node success" style="font-size:1rem;">🔓 NOSSA FERRAMENTA:<br><strong>SENHA DESCOBERTA!</strong></div>
+      </div>
+      <div class="diagram-label" style="margin-top:1rem;">O Burp Suite só ouve a resposta. Quando a resposta muda, ele sabe que a senha é a certa. E já captura os cookies.</div>
     </div>
 
-    <p>Perceba: o Burp Suite <strong>não precisa completar o login</strong> para saber se a senha está certa. Ele só precisa ler a <strong>resposta do servidor</strong>. É como se você perguntasse para o segurança na porta da balada: "Fulano está aí dentro?" Se o segurança fizer uma cara de "não", você sabe que não está. Se ele fizer uma cara de "sim", você descobriu. Você não precisa entrar na balada para saber — só precisa observar a reação.</p>
+    <h3>Cookies — a chave que abre a porta sem fazer barulho</h3>
+    <p>Quando o servidor responde "Login bem-sucedido", ele também envia os <strong>cookies de sessão</strong> — aqueles arquivos que são o crachá de acesso (lembra da explicação no início da página?). O Burp Suite <strong>intercepta esses cookies</strong> no momento exato em que o servidor os entrega.</p>
+
+    <p>Agora acontece a mágica: com esses cookies em mãos, nós <strong>montamos o dispositivo da pessoa no nosso navegador</strong>.</p>
+
+    <p>É como se você pegasse os dados de identificação do seu navegador e os substituísse pelos dados do navegador da pessoa. Exemplos do que é "trocado":</p>
+
+    <div class="visual-diagram">
+      <div class="diagram-title">O que significa "trocar os cookies"</div>
+      <div class="diagram-row">
+        <div class="diagram-node">🖥️ Seu Navegador<br><small>Antes dos cookies</small></div>
+        <span class="diagram-arrow-right">→</span>
+        <div class="diagram-node success">🍪 Cookies da conta alvo<br><small>são injetados</small></div>
+        <span class="diagram-arrow-right">→</span>
+        <div class="diagram-node highlight">🖥️ Seu Navegador<br><small>Agora "é" o da pessoa</small></div>
+      </div>
+      <div class="diagram-grid" style="margin-top:1rem;">
+        <span class="diagram-mini">📱 Dispositivo: iPhone 15</span>
+        <span class="diagram-mini">🌐 IP: Residencial</span>
+        <span class="diagram-mini">📍 Local: São Paulo</span>
+        <span class="diagram-mini">🔑 Sessão: Ativa</span>
+      </div>
+      <div class="diagram-label" style="margin-top:1rem;">Com os cookies da conta, o Instagram acha que você é o dono — e não pergunta nada.</div>
+    </div>
+
+    <p>Na prática, é como se você trocasse o chip do seu celular pelo chip de outra pessoa. Quando você liga o celular, a operadora acha que é ela. Com os cookies é a mesma coisa: você troca os "dados de identificação" do seu navegador pelos dados da conta alvo. Quando você acessa o Instagram, ele olha os cookies e pensa: "Ah, é você! Já fez login antes, pode entrar."</p>
+
+    <p><strong>Sem pedir senha. Sem pedir código de verificação. Sem enviar notificação.</strong> Você entra como um dispositivo autorizado — porque, para o Instagram, você É aquele dispositivo.</p>
+
+    <div class="highlight-box">
+      <h4><i class="fas fa-lightbulb mr-2"></i> A sequência completa do ataque</h4>
+      <p>
+        <strong>1.</strong> Nossa ferramenta envia um comando via API.<br>
+        <strong>2.</strong> A rede de 10.000 computadores testa uma senha cada.<br>
+        <strong>3.</strong> O Burp Suite escuta as respostas do servidor.<br>
+        <strong>4.</strong> Quando a resposta muda, nossa ferramenta detecta: "Senha descoberta!"<br>
+        <strong>5.</strong> O Burp Suite intercepta os cookies que o servidor enviou.<br>
+        <strong>6.</strong> Injeta esses cookies no nosso navegador.<br>
+        <strong>7.</strong> Nosso navegador agora é "o dispositivo autorizado".<br>
+        <strong>8.</strong> Acessamos a conta sem senha, sem 2FA, sem notificações.<br>
+        <strong>9.</strong> O dono da conta não sabe de nada.
+      </p>
+    </div>
 
     <p>E o mais importante: a cada tentativa, o Burp Suite modificado <strong>se disfarça de um dispositivo completamente diferente</strong> — muda o modelo do celular, o sistema operacional, o navegador, o IP, a localização, o horário. Para o Instagram, não é um robô tentando 10.000 senhas. São <strong>10.000 pessoas diferentes, em 10.000 lugares diferentes, cada uma tentando fazer login uma única vez</strong>. Impossível de detectar como ataque.</p>
 
     <div class="highlight-box">
       <h4><i class="fas fa-lightbulb mr-2"></i> A mágica da combinação</h4>
-      <p>API + VPS + Proxy + Burp Suite modificado = <strong>um exército invisível de 10.000 computadores</strong>, cada um com identidade diferente, testando senhas em paralelo sem que o Instagram perceba. Um ataque que levaria séculos agora leva <strong>minutos ou horas</strong>.</p>
+      <p>API + Rede de Computadores + Proxy + Burp Suite modificado = <strong>um exército invisível de 10.000 máquinas</strong>, cada uma com identidade diferente, testando senhas em paralelo sem que o Instagram perceba. Quando a senha certa é encontrada, os cookies são interceptados e injetados no nosso navegador — e nós entramos na conta como se fôssemos o dono. Um ataque que levaria séculos agora leva <strong>minutos ou horas</strong>.</p>
     </div>
 
-    <p>E o melhor: <strong>tudo isso é vendido junto</strong>. Quando alugamos o acesso, recebemos o pacote completo: a API para conectar, as VPS para processar, os proxies para rotacionar os IPs. Nós só implementamos o código na nossa ferramenta e configuramos o Burp Suite para trabalhar com essa rede.</p>
+    <p>E o melhor: <strong>tudo isso é vendido junto</strong>. Quando alugamos o acesso, recebemos o pacote completo: a API para conectar, a rede de computadores para processar, os proxies para rotacionar os IPs. Nós só implementamos o código na nossa ferramenta e configuramos o Burp Suite para trabalhar com essa rede.</p>
   </div>
 
   <!-- ============================================ -->
@@ -756,14 +920,15 @@
   <!-- ============================================ -->
   <div class="section-block">
     <h2>10. De onde vem essa ferramenta?</h2>
-    <p>O Burp Suite modificado, as VPS e os proxies que usamos <strong>não são a versão comercial</strong> que você encontra no Google. São versões altamente modificadas, com capacidades que vão muito além da original.</p>
+    <p>O Burp Suite modificado, as botnets e as VPS que usamos <strong>não são a versão comercial</strong> que você encontra no Google. São versões altamente modificadas, com capacidades que vão muito além da original.</p>
     <p>Essas modificações não foram feitas por nós. Foram criadas por <strong>grupos hackers extremamente grandes e ricos</strong> — organizações financiadas por países, governos ou estados paralelos. Estamos falando de grupos com:</p>
     <ul>
       <li>Orçamentos <strong>milionários</strong></li>
       <li>Equipes de <strong>desenvolvedores, engenheiros reversos e especialistas em segurança</strong></li>
       <li>Acesso a <strong>vulnerabilidades que nunca foram divulgadas publicamente</strong></li>
-      <li>Infraestrutura de <strong>VPS e proxies espalhados pelo mundo todo</strong></li>
+      <li>Infraestrutura própria de <strong>botnets (dispositivos infectados), VPS (servidores alugados) e proxies espalhados pelo mundo todo</strong></li>
     </ul>
+    <p>Esses grupos criam e controlam tanto botnets quanto redes de VPS. Eles infectam dispositivos para criar botnets, e também alugam servidores em data centers. Tudo isso é empacotado e revendido para intermediários — que por sua vez vendem para prestadores de serviço como nós. E o preço é baixo porque o objetivo não é lucrar com a venda, e sim <strong>lavar dinheiro</strong>.</p>
     <p>Esses grupos ganham dinheiro com roubos milionários, ransomware, financiamento estatal e venda de dados. Mas eles têm um problema: <strong>como gastar tanto dinheiro sujo sem levantar suspeitas?</strong></p>
   </div>
 
@@ -772,14 +937,14 @@
   <!-- ============================================ -->
   <div class="section-block">
     <h2>11. Lavagem de dinheiro — por que o preço é tão baixo</h2>
-    <p>A resposta está na <strong>lavagem de dinheiro</strong>. Uma das formas mais eficientes de transformar dinheiro sujo em dinheiro limpo é <strong>revender ferramentas, APIs, VPS e proxies a preços baixíssimos</strong>.</p>
+    <p>A resposta está na <strong>lavagem de dinheiro</strong>. Uma das formas mais eficientes de transformar dinheiro sujo em dinheiro limpo é <strong>revender ferramentas, APIs, botnets, VPS e proxies a preços baixíssimos</strong>.</p>
 
     <table class="price-table">
       <thead><tr><th>Recurso</th><th>Preço de Aluguel (aproximado)</th></tr></thead>
       <tbody>
-        <tr><td>API + VPS que roda 1 milhão de senhas/segundo</td><td>US$ 100</td></tr>
-        <tr><td>API + VPS que roda 10 milhões de senhas/segundo</td><td>US$ 110</td></tr>
-        <tr><td>API + VPS que roda 50 milhões de senhas/segundo</td><td>US$ 130</td></tr>
+        <tr><td>API + Botnet/VPS que roda 1 milhão de senhas/segundo</td><td>US$ 100</td></tr>
+        <tr><td>API + Botnet/VPS que roda 10 milhões de senhas/segundo</td><td>US$ 110</td></tr>
+        <tr><td>API + Botnet/VPS que roda 50 milhões de senhas/segundo</td><td>US$ 130</td></tr>
         <tr><td>Proxy rotativo (milhares de IPs)</td><td>US$ 10-30</td></tr>
         <tr><td>Derrubar um site por 1 hora (DDoS)</td><td>Centavos de dólar</td></tr>
       </tbody>
@@ -790,7 +955,7 @@
 
     <div class="highlight-box">
       <h4><i class="fas fa-recycle mr-2"></i> A engrenagem completa</h4>
-      <p>Os grupos hackers roubam milhões → investem em ferramentas, APIs, VPS e proxies → vendem acesso barato para revendedores na deep web → os revendedores vendem para prestadores de serviço como nós → nós entregamos o serviço ao cliente final. <strong>Todo mundo ganha — e o dinheiro sujo vira dinheiro limpo.</strong></p>
+      <p>Os grupos hackers roubam milhões → investem em ferramentas, APIs, botnets, VPS e proxies → vendem acesso barato para revendedores na deep web → os revendedores vendem para prestadores de serviço como nós → nós entregamos o serviço ao cliente final. <strong>Todo mundo ganha — e o dinheiro sujo vira dinheiro limpo.</strong></p>
     </div>
 
     <div class="warning-inline"><p><strong>⚠️ Esses acordos acontecem exclusivamente na deep web.</strong> Não é algo que você encontra no Google. Existem "revendedores autorizados" que fazem a ponte entre os grupos e o mercado. Nós compramos acesso a essas ferramentas e as usamos para realizar os serviços que oferecemos.</p></div>
@@ -822,18 +987,18 @@
     <p>A maioria das pessoas famosas tem <strong>verificação em duas etapas</strong> ativada. Isso significa que, mesmo que você descubra a senha, ainda precisa de um <strong>código enviado por SMS ou aplicativo</strong> para completar o login. O número de telefone e o e-mail de recuperação dessas pessoas são <strong>praticamente impossíveis de encontrar</strong>.</p>
 
     <h3>O verdadeiro motivo: risco vs retorno</h3>
-    <p>Hackear uma pessoa comum é um evento pequeno. A vítima diz "fui hackeado", cria uma conta nova e a vida segue. A polícia não investiga. Mas hackear um famoso é <strong>totalmente diferente</strong>:</p>
+    <p>Hackear uma pessoa comum é um evento pequeno. A pessoa diz "fui hackeado", cria uma conta nova e a vida segue. A polícia não investiga. Mas hackear um famoso é <strong>totalmente diferente</strong>:</p>
     <ul>
       <li><strong>Prejuízos milionários:</strong> Empresas perdem contratos, processos são abertos.</li>
       <li><strong>Investigação pesada:</strong> Agências de segurança são acionadas. O hacker vira <strong>prioridade</strong>.</li>
       <li><strong>Mídia mundial:</strong> O caso vira notícia em todo canto.</li>
-      <li><strong>Infraestrutura em risco:</strong> As autoridades vão atrás de toda a cadeia — ferramentas, VPS, proxies, revendedores.</li>
+      <li><strong>Infraestrutura em risco:</strong> As autoridades vão atrás de toda a cadeia — ferramentas, redes, proxies, revendedores.</li>
     </ul>
 
     <div class="warning-inline"><p><strong>⚠️ Por isso, hackers sérios evitam alvos de alto perfil.</strong> Não vale a pena. O lucro seria alto, mas o risco de destruir toda a operação é infinitamente maior.</p></div>
 
     <h3>E a polícia? Não investiga?</h3>
-    <p>Para pessoas comuns, <strong>raramente</strong>. O que acontece na internet é geralmente tratado como "erro da vítima". Apenas países que <strong>priorizam cibersegurança</strong> realmente investigam. Na maioria dos lugares, a polícia simplesmente <strong>não tem estrutura nem conhecimento</strong> para lidar com isso.</p>
+    <p>Para pessoas comuns, <strong>raramente</strong>. O que acontece na internet é geralmente tratado como "erro da pessoa". Apenas países que <strong>priorizam cibersegurança</strong> realmente investigam. Na maioria dos lugares, a polícia simplesmente <strong>não tem estrutura nem conhecimento</strong> para lidar com isso.</p>
   </div>
 
   <!-- ============================================ -->
@@ -935,7 +1100,7 @@
 
     <p>Esse tipo de serviço é <strong>quase ilimitado</strong>. Enquanto o funcionário estiver lá dentro e não for descoberto, ele pode vender quantos acessos quiser. E como os valores são altíssimos, mesmo vendendo poucos acessos por mês, o lucro é enorme.</p>
 
-    <div class="warning-inline"><p><strong>⚠️ Importante:</strong> Esse tipo de acesso <strong>não é o que oferecemos aqui na CyberXpert</strong>. Nosso método é 100% técnico (força bruta avançada com API, VPS e proxy). Não temos funcionários infiltrados, não subornamos ninguém. Esta seção existe apenas para você entender o ecossistema completo — e saber que existem níveis de acesso que vão muito além do que oferecemos (e custam muito mais caro).</p></div>
+    <div class="warning-inline"><p><strong>⚠️ Importante:</strong> Esse tipo de acesso <strong>não é o que oferecemos aqui na CyberXpert</strong>. Nosso método é 100% técnico (força bruta avançada com API, rede de computadores e proxy). Não temos funcionários infiltrados, não subornamos ninguém. Esta seção existe apenas para você entender o ecossistema completo — e saber que existem níveis de acesso que vão muito além do que oferecemos (e custam muito mais caro).</p></div>
 
     <div class="green-box"><p><strong>💡 Resumindo:</strong> O método mais eficaz de hackear uma conta é através de alguém de dentro. Mas também é o mais caro (US$ 10.000 a US$ 50.000+), o mais difícil de conseguir e o mais arriscado para quem faz. É um mercado que existe, movimenta milhões, mas é extremamente fechado. Para a maioria das pessoas — e para a maioria dos casos — a força bruta avançada continua sendo o melhor equilíbrio entre eficácia, preço e segurança.</p></div>
   </div>
@@ -956,7 +1121,7 @@
       <div class="chain-arrow">⬇️</div>
       <div class="chain-box"><i class="fas fa-key"></i> Senha reutilizada?<br><small style="color:#9ca3cf;">Se sim, acesso. Se não...</small></div>
       <div class="chain-arrow">⬇️</div>
-      <div class="chain-box"><i class="fas fa-code"></i> API + VPS + Proxy<br><small style="color:#9ca3cf;">10.000 computadores</small></div>
+      <div class="chain-box"><i class="fas fa-code"></i> API + Rede + Proxy<br><small style="color:#9ca3cf;">10.000 computadores</small></div>
       <div class="chain-arrow">⬇️</div>
       <div class="chain-box"><i class="fas fa-network-wired"></i> Burp Suite<br><small style="color:#9ca3cf;">Burla a detecção</small></div>
       <div class="chain-arrow">⬇️</div>
@@ -975,7 +1140,7 @@
     <ul>
       <li>✅ Hackear é um <strong>processo</strong>, não um passe de mágica.</li>
       <li>✅ Existem <strong>vários caminhos</strong> — e usamos o melhor para cada caso.</li>
-      <li>✅ Nosso método principal: <strong>API + VPS + Proxy + Burp Suite modificado</strong>.</li>
+      <li>✅ Nosso método principal: <strong>API + Rede de Computadores + Proxy + Burp Suite modificado</strong>.</li>
       <li>✅ Essas ferramentas vêm de <strong>grupos financiados por países</strong> e são acessíveis por <strong>lavagem de dinheiro</strong>.</li>
       <li>✅ Hackear famosos <strong>não vale o risco</strong>.</li>
       <li>✅ O Instagram <strong>sabe e lucra</strong> com as vulnerabilidades.</li>

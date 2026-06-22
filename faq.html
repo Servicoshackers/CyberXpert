@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>FAQ — Dúvidas Frequentes | CyberXpert</title>
+  <meta name="description" content="Tire todas as suas dúvidas sobre nossos serviços. Respostas diretas, sem enrolação.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #010208;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0c14; }
+    ::-webkit-scrollbar-thumb { background: #2d3b6e; border-radius: 8px; }
+
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 0; flex-wrap: wrap; gap: 1rem;
+      border-bottom: 1px solid rgba(46, 125, 255, 0.2);
+    }
+    .logo {
+      font-size: 1.8rem; font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: #cbd5e6; font-weight: 500; transition: 0.2s; font-size: 0.95rem; }
+    .nav-links a:hover { color: #3b82f6; }
+    .track-btn {
+      background: rgba(59, 130, 246, 0.12); padding: 0.6rem 1.2rem; border-radius: 40px;
+      border: 1px solid rgba(59, 130, 246, 0.5); font-weight: 600; color: #3b82f6;
+      transition: 0.2s; cursor: pointer; text-decoration: none; display: inline-block;
+    }
+    .track-btn i { margin-right: 6px; }
+    .track-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+    .page-hero {
+      text-align: center; padding: 3rem 0 2rem;
+      border-bottom: 1px solid rgba(59,130,246,0.2); margin-bottom: 2rem;
+    }
+    .page-hero h1 {
+      font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;
+      background: linear-gradient(to right, #f0f4ff, #90b4ff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .page-hero p { color: #9ca3cf; font-size: 1rem; max-width: 650px; margin: 0 auto; }
+
+    .section-block { margin: 3rem 0; }
+
+    .intro-green-box {
+      background: rgba(16, 185, 129, 0.05); border-radius: 16px; padding: 2rem 2rem;
+      margin-bottom: 2.5rem; border: 1px solid rgba(16, 185, 129, 0.25); border-left: 4px solid #10b981;
+    }
+    .intro-green-box p { color: #b0b8d4; line-height: 1.8; margin-bottom: 0.8rem; }
+    .intro-green-box p strong { color: #eef2ff; }
+
+    .main-text h2 {
+      font-size: 1.4rem; margin: 2.5rem 0 1rem; font-weight: 600;
+      border-left: 3px solid #3b82f6; padding-left: 1rem; color: #eef2ff;
+    }
+    .main-text h3 {
+      font-size: 1.15rem; margin: 1.8rem 0 0.8rem; color: #cbd5e6;
+    }
+    .main-text p { color: #b0b8d4; line-height: 1.8; margin-bottom: 1.2rem; }
+    .main-text ul { list-style: none; margin: 1rem 0; }
+    .main-text ul li {
+      margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative; color: #b0b8d4;
+    }
+    .main-text ul li:before { content: "▹"; position: absolute; left: 0; color: #3b82f6; }
+    .main-text .highlight { color: #fbbf24; font-weight: 600; }
+    .main-text .highlight-blue { color: #3b82f6; font-weight: 600; }
+
+    .pix-warning-box {
+      background: rgba(251, 191, 36, 0.05);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-left: 4px solid #fbbf24;
+    }
+    .pix-warning-box p { color: #fcd34d; font-size: 0.9rem; line-height: 1.6; }
+
+    .transition-note {
+      color: #5b6b9e;
+      font-style: italic;
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      border-left: 2px solid #2d3b6e;
+    }
+
+    footer { border-top: 1px solid rgba(59,130,246,0.2); padding: 2.5rem 0 1.5rem; margin-top: 2rem; }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: center; }
+    .footer-logo { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #fff, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #a0a9ce; text-decoration: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: #3b82f6; }
+    .copyright { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5b6b9e; }
+
+    .whatsapp-float {
+      position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float i { font-size: 2.8rem; color: white; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 2.2rem; }
+      .container { padding: 0 1.2rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+    }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="navbar">
+    <a href="/CyberXpert/" class="logo">CYBER<span>XPERT</span></a>
+    <div class="nav-links">
+      <a href="/CyberXpert/servicos">Serviços</a>
+      <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+      <a href="/CyberXpert/faq">FAQ</a>
+      <a href="/CyberXpert/contato">Contato</a>
+      <a href="/CyberXpert/acompanhar-pedido" class="track-btn"><i class="fas fa-map-marker-alt"></i> Acompanhar Pedido</a>
+    </div>
+  </div>
+
+  <div class="page-hero">
+    <h1>Dúvidas Frequentes</h1>
+    <p>Abaixo, explicamos tudo o que você precisa saber antes de contratar nossos serviços.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="intro-green-box">
+      <p><strong>Entendemos perfeitamente como você se sente.</strong></p>
+      <p>Sabemos que comprar algo assim gera desconfiança. A internet está cheia de pessoas que prometem e não cumprem. Nosso objetivo aqui não é te convencer com palavras — é te explicar como as coisas realmente funcionam, para que você entenda e tome a melhor decisão.</p>
+      <p><strong>Recomendamos fortemente que você leia esta página até o final.</strong> Cada seção foi escrita para esclarecer um ponto específico — e todas se conectam. Se você parar no meio, pode acabar com mais dúvidas do que tinha antes. E pior: pode acabar caindo em um golpe por não entender como o mercado realmente funciona.</p>
+      <p>Não espere que você confie na gente de cara. Mas espere que depois de ler, você entenda.</p>
+    </div>
+  </div>
+
+  <div class="main-text">
+
+    <h2>1. Primeiramente, entenda que você não é o primeiro cliente que atendemos</h2>
+    <p>A maioria das pessoas que veem nosso serviço e pensam em comprar já chegam com duas frases prontas:</p>
+    <ul>
+      <li>"Só compro se tiver garantia."</li>
+      <li>"Só compro se tiver provas."</li>
+    </ul>
+    <p>Para a maioria, tudo se resume a isso. E nós entendemos o receio. Sabemos que a internet está cheia de gente que promete e não cumpre.</p>
+    <p>Sim, nós oferecemos provas e garantia. Mas antes de falar sobre isso, continue lendo para entender de forma completa como as coisas funcionam.</p>
+
+    <h2>2. O mercado de hacking não é como você imagina</h2>
+    <p>Muita gente acha que hackear é simples: digita um e-mail, um @ do Instagram ou um número de telefone em um painel mágico e em 15 segundos a senha aparece.</p>
+    <p>A realidade é diferente. <span class="highlight">O painel mágico existe.</span> Mas o que ninguém vê é a estrutura complexa e cara que mantém ele funcionando. Só para você ter uma ideia, manter uma rede de servidores capaz de processar milhões de senhas por segundo custa centenas de dólares por mês. Cada serviço que fazemos consome uma parte desse recurso. Não são 15 segundos — são 15 horas. E chegar até aqui levou anos de estudo.</p>
+    <p>A maioria das pessoas nunca teve contato com esse mercado. Não conhece como funciona por dentro. Quando precisam hackear algo, o pensamento é sempre o mesmo: "quero saber se funciona antes de pagar". E nós entendemos isso. Tanto que oferecemos garantia para a maioria dos serviços — exceto os que são irreversíveis.</p>
+    <p>Mas antes de falar de garantia, precisamos falar sobre os golpes. Porque é ali que a maioria das pessoas se perde.</p>
+    <p class="transition-note">Se você já caiu em algum golpe, esta próxima seção pode doer um pouco. Mas é importante ler.</p>
+
+    <h2>3. O golpe mais comum — e por que ele funciona</h2>
+    <p>A pessoa vê um anúncio: <span class="highlight">"Hackeio qualquer Instagram em 10 minutos por R$ 50."</span></p>
+    <p>Ela pensa: "Vou receber a senha de qualquer Instagram em 10 minutos por apenas 50 reais?" Isso é obviamente um golpe. Mas ela compra mesmo assim. Porque 10 minutos é rápido. Porque 50 reais não faz diferença.</p>
+    <p>O resultado: ela paga, não recebe nada, procura outro, paga de novo, some de novo. Depois de 3, 4, 5 tentativas, já perdeu R$ 300, R$ 500 ou mais. E continua sem o serviço.</p>
+    <p>Isso não é raro. Acontece o tempo todo. A pessoa não pensou sobre a estrutura por trás daquilo — só viu o preço baixo e a promessa rápida.</p>
+    <p>Agora, preste atenção nisso: <span class="highlight">é óbvio que você não deve comprar nada sem prova e sem garantia.</span> Isso é o certo. O problema é outro. Muitas pessoas não estão realmente interessadas em comprar — elas só querem saber se aquilo funciona mesmo. E depois de cair em um golpe de R$ 50, o que acontece? Elas encontram outro anúncio por R$ 60, que parece um pouco mais realista, e pensam: "agora vai". E caem de novo.</p>
+    <p><span class="highlight-blue">Diferente de vários outros serviços por aí, nós oferecemos garantia e enviamos provas sim.</span> Mas a pessoa que já passou por diversos golpes olha para o nosso preço, olha para o nosso prazo, e aplica o mesmo pensamento: "só compro se tiver provas". E tudo bem — isso não é o problema. O problema é quando ela tenta aplicar essa mesma lógica em um serviço que promete hackear qualquer Instagram em minutos por um valor extremamente baixo. Isso não é garantia — é isca.</p>
+    <p>Quando essa pessoa finalmente chega até nós, ela já está cansada, desconfiada e frustrada. E isso é completamente compreensível. Mas muitas vezes ela ainda não percebeu a diferença entre um serviço real e uma promessa falsa.</p>
+
+    <h2>4. A realidade de quem trabalha com isso</h2>
+    <p>Algumas pessoas chegam desconfiadas — e isso é normal. Mas outras já chegam agressivas, simplesmente porque não saímos distribuindo provas de graça. E isso acontece com frequência.</p>
+    <p>A verdade é que a maioria de quem nos contata não está realmente interessada em comprar. Está com curiosidade. Ou com medo. E fica horas no WhatsApp fazendo perguntas, tentando nos forçar a mostrar algo de graça: "mas você não pode nem mostrar isso?", "só aquilo?", "só mais essa coisa?".</p>
+    <p>Só que para mostrar qualquer dado de uma conta — um e-mail, uma rede social — <span class="highlight">primeiro precisamos acessar ela.</span> Não tem como "mostrar um pedaço" sem ter feito o serviço inteiro. E é aí que a conversa trava: a pessoa não quer entender o processo, só quer a prova.</p>
+    <p>Enquanto isso, do nosso lado, cada serviço tem um custo real. Não dá para fazer "de graça" como amostra. Se fizéssemos isso para todo mundo que pede, o preço do serviço teria que ser muito mais alto para cobrir o prejuízo de quem só pede prova e some.</p>
+    <p>E é exatamente por isso que criamos o sistema de garantia com Bitcoin. Para proteger você sem destruir a gente.</p>
+
+    <h2>5. Como funciona a nossa garantia — e por que não usamos mais o PIX comum</h2>
+    <p>Nós também precisamos de uma garantia de que você realmente quer comprar. E a forma que encontramos para proteger os dois lados é esta:</p>
+    <p>Você abre uma conta em uma corretora de criptomoedas, compra o valor do serviço em Bitcoin, transfere para sua carteira pessoal e nos envia um print. <span class="highlight-blue">Você não envia dinheiro nenhum antes. Não precisa transferir nada. Não precisa passar nenhum dado pessoal.</span> O print serve apenas para mostrar que você tem os fundos e está falando sério. Depois que o serviço é concluído e você recebe a prova em vídeo, aí sim você faz o pagamento.</p>
+    <p>Oferecemos isso porque entendemos o medo de ser enganado. Mas ainda assim, alguns clientes insistem: "eu quero provas antes mesmo de mostrar que tenho o dinheiro". E nesse ponto, infelizmente, a conversa não vai pra frente. Não porque não queremos — mas porque não há garantia que satisfaça alguém que não confia nem no próprio dinheiro. E acabamos perdendo esse cliente.</p>
+
+    <div class="pix-warning-box">
+      <p><strong>⚠️ Por que não usamos mais o PIX comum?</strong></p>
+      <p>Estamos tendo um problema gravíssimo com o PIX em nome pessoal. Como nosso serviço é à distância e geralmente estamos em outra cidade, uma grande parte das pessoas faz o seguinte: compram o serviço, pagam adiantado, recebem o que precisam — e depois pedem reembolso pelo mecanismo MED do PIX. Isso é algo que não tem como evitarmos. O número de pessoas que fazem isso é extremamente alto.</p>
+      <p>O resultado? Nossas contas pessoas acabam bloqueadas. E quando outro cliente tenta fazer uma transferência, aparece um alerta de fraude — o que faz com que muitos desistam da compra na hora. Se você já viu esse alerta ao tentar pagar alguém, agora sabe o motivo.</p>
+      <p>Para contornar isso, <strong>ainda aceitamos PIX, mas apenas por meio de contas empresariais e fintechs</strong> — que têm mecanismos diferentes e não sofrem o mesmo problema. E para a opção de pagamento após provas, usamos exclusivamente Bitcoin. É a única forma que encontramos de manter o serviço funcionando sem ser sabotado por quem age de má-fé.</p>
+    </div>
+
+    <h2>6. Por que simplesmente não provamos o serviço para todo mundo?</h2>
+    <p>Essa é a nossa forma de garantir segurança para os dois lados. Mas muita gente ainda pergunta: "por que vocês simplesmente não provam o serviço antes para todo mundo?"</p>
+    <p>Se a gente provasse o serviço de graça para cada pessoa que pede, sim — teríamos muito mais clientes. Isso é óbvio. Mas também teríamos um problema muito maior.</p>
+    <p>Cada serviço que fazemos tem um custo real: ferramentas, servidores, horas de trabalho. Se a gente saísse fazendo prova gratuita para todo mundo, <span class="highlight">o custo do serviço explodiria</span>. Para cobrir o prejuízo de quem só pede prova e some, o preço para os clientes sérios teria que subir muito. E isso tornaria o serviço inacessível para a maioria.</p>
+    <p>É por isso que, às vezes, <span class="highlight-blue">perder um cliente acaba sendo necessário — e até lucrativo</span>. Porque manter o serviço com um preço justo e acessível depende de não desperdiçar recursos com quem não tem intenção real de comprar.</p>
+    <p>Depois de anos nesse mercado, identificamos três perfis de pessoas que nos contatam:</p>
+    <ul>
+      <li><strong>O cliente sério (20%):</strong> sabe o que quer, já leu o site, escolhe o pagamento e fecha rápido.</li>
+      <li><strong>O curioso (50%):</strong> não sabe se quer, fica horas conversando e some.</li>
+      <li><strong>O golpista (30%):</strong> tenta dar golpe em nós — pede prova grátis, promete pagar depois e desaparece. Ou paga e depois pede reembolso.</li>
+    </ul>
+    <p><span class="highlight">80% das pessoas que nos chamam não fecham nada.</span> Essa porcentagem, comparada ao número de pessoas que nos chamam por dia, é extremamente alta. E mesmo assim estamos aqui. Porque os 20% que fecham merecem toda a nossa dedicação. E é por eles que mantemos o serviço funcionando com qualidade e preço justo.</p>
+
+    <h2>7. Como funcionam as provas e as formas de pagamento</h2>
+    
+    <h3>Sobre as provas</h3>
+    <p>Antes de explicar como funcionam os pagamentos, você precisa entender por que nossas provas são do jeito que são.</p>
+    <p>Já temos um histórico enorme de tentativas de golpe contra nós. E algumas são extremamente criativas. Vou te dar um exemplo real:</p>
+    <p>Um cliente nos procurou dizendo que foi traído pela esposa. Ele pediu: "hackeia a conta da minha esposa e me envia um print da conversa entre ela e eu". Ele passou o @ da esposa e disse: "o meu Instagram é @X — quero ver o print da conversa entre esse @ e ela". Nós fizemos o serviço, acessamos a conta da esposa, e enviamos o print da conversa. O que aconteceu? <span class="highlight">Fomos bloqueados em seguida.</span></p>
+    <p>Sabe qual era o golpe? O @X que ele disse ser o Instagram dele não era dele. Era o Instagram do amante. O marido suspeitava que a esposa estava conversando com alguém, mas não sabia com quem. Então ele nos passou o @ do suspeito como se fosse o dele, pediu o print da "conversa entre ele e a esposa", e quando recebeu — confirmou que a esposa e o amante realmente se falavam. Ele conseguiu a prova que queria. E nós, sem saber, entregamos. Depois sumiu e nos bloqueou.</p>
+    <p>Esse é só um exemplo. Já recebemos tentativas de golpe de todos os tipos. Pessoas se passando por outras, pessoas tentando manipular prints, pessoas pedindo "só mais essa prova" e depois somem. É por isso que <span class="highlight-blue">nossas provas são padronizadas</span>: elas mostram que conseguimos realizar o serviço — o login na conta, o acesso obtido — mas não expõem dados sensíveis nem atendem a pedidos personalizados. Não é por falta de vontade. É por proteção.</p>
+
+    <h3>Sobre as formas de pagamento</h3>
+    <p>Cada pessoa chega até nós com um nível diferente de confiança. Por isso, oferecemos três opções:</p>
+    <ul>
+      <li><strong>Pagamento Adiantado:</strong> o mais barato e mais rápido. Para quem já confia ou já é cliente. Você paga, nós fazemos.</li>
+      <li><strong>Pagamento Parcial:</strong> o mais usado. Divide o risco — metade no início, metade na entrega. Você tem a segurança de que só paga o restante depois de ver o resultado.</li>
+      <li><strong>Pagamento Após Provas:</strong> você só paga depois de ver o resultado. Exclusivo em Bitcoin, com valor mais alto — porque aqui, nós assumimos todo o risco sozinhos.</li>
+    </ul>
+    <p>Nenhum golpista oferece três formas de pagamento. Nenhum golpista tem uma página inteira explicando como tudo funciona. Nenhum golpista devolve o dinheiro se não conseguir entregar.</p>
+
+  </div>
+
+  <div class="section-block" style="text-align: center;">
+    <div style="background: linear-gradient(145deg, #071127, #010208); border-radius: 24px; padding: 2.5rem; border: 1px solid rgba(59,130,246,0.3);">
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Pronto para conversar?</h3>
+      <p style="color: #b0b8d4; margin-bottom: 1.5rem;">Fale conosco. Respondemos rápido, sem enrolação.</p>
+      <a href="/CyberXpert/contato" style="background: linear-gradient(135deg, #25D366, #128C7E); padding: 1rem 2.5rem; border-radius: 48px; font-weight: 700; font-size: 1.1rem; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CyberXpert</div>
+      <div class="footer-links">
+        <a href="/CyberXpert/servicos">Serviços</a>
+        <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+        <a href="/CyberXpert/faq">FAQ</a>
+        <a href="/CyberXpert/contato">Contato</a>
+      </div>
+      <div><i class="fas fa-globe"></i> Português (BR) | BRL (R$)</div>
+    </div>
+    <div class="copyright">© 2026 CyberXpert. Todos os direitos reservados.</div>
+  </footer>
+</div>
+
+<a href="/CyberXpert/contato" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

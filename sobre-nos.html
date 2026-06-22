@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Sobre Nós | CyberXpert</title>
+  <meta name="description" content="Saiba mais sobre a CyberXpert — quem somos, nossa experiência e o que nos diferencia.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #010208;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0c14; }
+    ::-webkit-scrollbar-thumb { background: #2d3b6e; border-radius: 8px; }
+
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 0; flex-wrap: wrap; gap: 1rem;
+      border-bottom: 1px solid rgba(46, 125, 255, 0.2);
+    }
+    .logo {
+      font-size: 1.8rem; font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: #cbd5e6; font-weight: 500; transition: 0.2s; font-size: 0.95rem; }
+    .nav-links a:hover { color: #3b82f6; }
+    .track-btn {
+      background: rgba(59, 130, 246, 0.12); padding: 0.6rem 1.2rem; border-radius: 40px;
+      border: 1px solid rgba(59, 130, 246, 0.5); font-weight: 600; color: #3b82f6;
+      transition: 0.2s; cursor: pointer; text-decoration: none; display: inline-block;
+    }
+    .track-btn i { margin-right: 6px; }
+    .track-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+    .page-hero {
+      text-align: center; padding: 3rem 0 2rem;
+      border-bottom: 1px solid rgba(59,130,246,0.2); margin-bottom: 2rem;
+    }
+    .page-hero h1 {
+      font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;
+      background: linear-gradient(to right, #f0f4ff, #90b4ff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .page-hero p { color: #9ca3cf; font-size: 1rem; max-width: 650px; margin: 0 auto; }
+
+    .section-block { margin: 3rem 0; }
+
+    .main-text h2 {
+      font-size: 1.4rem; margin: 2.5rem 0 1rem; font-weight: 600;
+      border-left: 3px solid #3b82f6; padding-left: 1rem; color: #eef2ff;
+    }
+    .main-text p { color: #b0b8d4; line-height: 1.8; margin-bottom: 1.2rem; }
+    .main-text ul { list-style: none; margin: 1rem 0; }
+    .main-text ul li {
+      margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative; color: #b0b8d4;
+    }
+    .main-text ul li:before { content: "▹"; position: absolute; left: 0; color: #3b82f6; }
+    .main-text .highlight { color: #fbbf24; font-weight: 600; }
+    .main-text .highlight-blue { color: #3b82f6; font-weight: 600; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .value-card {
+      background: #0a0f1c;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid #1f2a3e;
+      transition: 0.2s;
+    }
+    .value-card:hover { border-color: #3b82f6; }
+    .value-card i { font-size: 1.8rem; color: #3b82f6; margin-bottom: 0.8rem; }
+    .value-card h4 { color: #eef2ff; margin-bottom: 0.5rem; font-size: 1rem; }
+    .value-card p { color: #9ca3cf; font-size: 0.9rem; }
+
+    footer { border-top: 1px solid rgba(59,130,246,0.2); padding: 2.5rem 0 1.5rem; margin-top: 2rem; }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: center; }
+    .footer-logo { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #fff, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #a0a9ce; text-decoration: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: #3b82f6; }
+    .copyright { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5b6b9e; }
+
+    .whatsapp-float {
+      position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float i { font-size: 2.8rem; color: white; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 2.2rem; }
+      .container { padding: 0 1.2rem; }
+      .page-hero h1 { font-size: 1.8rem; }
+    }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="navbar">
+    <a href="/CyberXpert/" class="logo">CYBER<span>XPERT</span></a>
+    <div class="nav-links">
+      <a href="/CyberXpert/servicos">Serviços</a>
+      <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+      <a href="/CyberXpert/faq">FAQ</a>
+      <a href="/CyberXpert/contato">Contato</a>
+      <a href="/CyberXpert/acompanhar-pedido" class="track-btn"><i class="fas fa-map-marker-alt"></i> Acompanhar Pedido</a>
+    </div>
+  </div>
+
+  <div class="page-hero">
+    <h1>Sobre Nós</h1>
+    <p>Quem somos, o que fazemos e por que somos diferentes.</p>
+  </div>
+
+  <div class="main-text">
+
+    <h2>Quem somos</h2>
+    <p>Somos uma equipe de hackers especializados. Pessoas que escolheram dedicar anos da vida a entender profundamente como sistemas, redes e plataformas funcionam — e como podem ser acessados.</p>
+    <p>Não surgimos do dia pra noite. <span class="highlight">Estamos nesse mercado há mais de 8 anos.</span> Começamos como todo mundo: curiosos, testando limites, aprendendo com erros e acertos. Com o tempo, o que era curiosidade virou profissão. O que era amador virou método. Hoje, cada serviço que realizamos é baseado em conhecimento sólido e ferramentas que dominamos completamente.</p>
+    <p>Ao longo dessa trajetória, acumulamos experiência em áreas como <span class="highlight-blue">programação, desenvolvimento de sistemas, criação de ferramentas próprias, segurança da informação e, claro, invasão de contas e dispositivos.</span> Esse conjunto de habilidades é o que nos permite entregar resultados onde a maioria falha.</p>
+    <p>Muita gente pergunta se temos CNPJ, sede física ou se aparecemos em algum lugar "oficial". A resposta é simples: <span class="highlight">não.</span> E há um bom motivo para isso. Trabalhamos com serviços que transitam entre o legal e zonas mais cinzentas — e esse tipo de atividade não comporta um modelo tradicional de empresa. Você não vai nos ver anunciando em televisão, não vai encontrar nosso nome na Junta Comercial, e não emitimos nota fiscal. Nosso compromisso não é com a burocracia — é com a entrega. É com o resultado. É com a sua satisfação.</p>
+
+    <h2>O que fazemos</h2>
+    <p>Realizamos serviços de acesso a contas de redes sociais, WhatsApp, celulares e sistemas diversos. Mas não somos apenas "hackers de Instagram". Nosso conhecimento vai muito além disso.</p>
+    <p>Trabalhamos com programação avançada para adaptar ferramentas existentes e criar soluções próprias. Desenvolvemos painéis de controle internos que permitem gerenciar operações complexas com eficiência. Estudamos constantemente novas vulnerabilidades e métodos — porque a tecnologia muda rápido, e quem não acompanha fica obsoleto.</p>
+    <p>Cada serviço que chega até nós é tratado com seriedade. Não existe "sorte" ou "tentativa aleatória" — existe técnica, ferramenta certa e execução precisa.</p>
+
+    <h2>O que nos diferencia</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h4>Três formas de pagamento</h4>
+        <p>Adiantado, parcial e após provas. Cada pessoa tem um nível de confiança diferente — e nós respeitamos isso.</p>
+      </div>
+      <div class="value-card">
+        <i class="fas fa-file-alt"></i>
+        <h4>Transparência total</h4>
+        <p>Temos páginas inteiras explicando como funcionam as provas, a garantia e o processo técnico. Nada escondido.</p>
+      </div>
+      <div class="value-card">
+        <i class="fas fa-undo-alt"></i>
+        <h4>Garantia real</h4>
+        <p>Se não conseguirmos acessar a conta, devolvemos 100% do valor pago. Sem discussão.</p>
+      </div>
+      <div class="value-card">
+        <i class="fas fa-comments"></i>
+        <h4>Atendimento direto</h4>
+        <p>Sem robôs, sem formulários. Você fala diretamente com quem faz o serviço.</p>
+      </div>
+    </div>
+
+    <h2>Quer saber mais?</h2>
+    <p>Se quiser entender melhor como trabalhamos, temos páginas dedicadas a cada aspecto do que fazemos:</p>
+    <p>
+      <a href="/CyberXpert/provas-garantia" style="color: #3b82f6; text-decoration: underline;">Provas e Garantia</a> — como funcionam nossas provas e por que você pode ficar tranquilo.<br>
+      <a href="/CyberXpert/como-funciona" style="color: #3b82f6; text-decoration: underline;">Como Funciona Por Dentro</a> — o processo técnico explicado em detalhes.<br>
+      <a href="/CyberXpert/faq" style="color: #3b82f6; text-decoration: underline;">FAQ</a> — respostas para as dúvidas mais comuns.
+    </p>
+
+  </div>
+
+  <div class="section-block" style="text-align: center;">
+    <div style="background: linear-gradient(145deg, #071127, #010208); border-radius: 24px; padding: 2.5rem; border: 1px solid rgba(59,130,246,0.3);">
+      <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Quer falar com a gente?</h3>
+      <p style="color: #b0b8d4; margin-bottom: 1.5rem;">Respondemos rápido, sem enrolação.</p>
+      <a href="/CyberXpert/contato" style="background: linear-gradient(135deg, #25D366, #128C7E); padding: 1rem 2.5rem; border-radius: 48px; font-weight: 700; font-size: 1.1rem; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CyberXpert</div>
+      <div class="footer-links">
+        <a href="/CyberXpert/servicos">Serviços</a>
+        <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+        <a href="/CyberXpert/faq">FAQ</a>
+        <a href="/CyberXpert/contato">Contato</a>
+      </div>
+      <div><i class="fas fa-globe"></i> Português (BR) | BRL (R$)</div>
+    </div>
+    <div class="copyright">© 2026 CyberXpert. Todos os direitos reservados.</div>
+  </footer>
+</div>
+
+<a href="/CyberXpert/contato" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Hackear E-mail | CyberXpert</title>
+  <meta name="description" content="Serviço profissional para hackear contas de e-mail de forma remota e indetectável. Gmail, Outlook, Yahoo e corporativos.">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #010208;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0c14; }
+    ::-webkit-scrollbar-thumb { background: #2d3b6e; border-radius: 8px; }
+
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 0; flex-wrap: wrap; gap: 1rem;
+      border-bottom: 1px solid rgba(46, 125, 255, 0.2);
+    }
+    .logo {
+      font-size: 1.8rem; font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: #cbd5e6; font-weight: 500; transition: 0.2s; font-size: 0.95rem; }
+    .nav-links a:hover { color: #3b82f6; }
+    .track-btn {
+      background: rgba(59, 130, 246, 0.12); padding: 0.6rem 1.2rem; border-radius: 40px;
+      border: 1px solid rgba(59, 130, 246, 0.5); font-weight: 600; color: #3b82f6;
+      transition: 0.2s; cursor: pointer; text-decoration: none; display: inline-block;
+    }
+    .track-btn i { margin-right: 6px; }
+    .track-btn:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
+
+    /* Hero */
+    .service-hero {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      padding: 2rem 0 2rem;
+      border-bottom: 1px solid rgba(59,130,246,0.2); margin-bottom: 2rem;
+    }
+    .service-icon-large {
+      background: linear-gradient(135deg, #1e2a4a, #0a0f1c);
+      width: 100px; height: 100px; border-radius: 28px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(59,130,246,0.4);
+      font-size: 3.5rem; color: #3b82f6;
+    }
+    .service-header { flex: 1; }
+    .service-header h1 {
+      font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #f0f4ff, #90b4ff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .rating-badge { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.5rem; }
+    .stars { color: #fbbf24; letter-spacing: 2px; }
+    .rating-badge span { color: #9ca3cf; font-size: 0.9rem; }
+
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .btn-primary {
+      background: #3b82f6; padding: 0.9rem 2rem; border-radius: 48px;
+      font-weight: 600; color: white; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.2s; font-size: 1rem;
+    }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; padding: 0.9rem 2rem; border-radius: 48px;
+      font-weight: 600; color: #3b82f6; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.2s; font-size: 1rem;
+      border: 1px solid #3b82f6;
+    }
+    .btn-outline:hover { background: rgba(59,130,246,0.1); transform: translateY(-2px); }
+
+    /* Info Cards */
+    .info-cards { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2rem 0; }
+    .info-card {
+      background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(4px);
+      border-radius: 20px; padding: 1.2rem; flex: 1; min-width: 180px;
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    .info-card i { font-size: 1.8rem; color: #3b82f6; margin-bottom: 0.8rem; }
+    .info-card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .info-card p { font-size: 0.85rem; color: #9ca3cf; }
+
+    /* Seções */
+    .section-block { margin: 2.5rem 0; }
+    .section-block h2 {
+      font-size: 1.5rem; margin-bottom: 1.2rem; font-weight: 600;
+      border-left: 3px solid #3b82f6; padding-left: 1rem; color: #eef2ff;
+    }
+    .section-block h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; color: #cbd5e6; }
+    .section-block p { color: #b0b8d4; line-height: 1.8; margin-bottom: 1rem; }
+    .section-block ul { list-style: none; margin: 1rem 0; }
+    .section-block ul li {
+      margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative; color: #b0b8d4;
+    }
+    .section-block ul li:before { content: "▹"; position: absolute; left: 0; color: #3b82f6; }
+
+    .highlight { color: #fbbf24; font-weight: 600; }
+    .highlight-blue { color: #3b82f6; font-weight: 600; }
+    .highlight-link {
+      color: #3b82f6; text-decoration: underline; font-weight: 600; transition: 0.2s;
+    }
+    .highlight-link:hover { color: #60a5fa; }
+
+    /* Timeline */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin: 1.5rem 0;
+    }
+    .timeline-item {
+      background: #0a0f1c; border-radius: 16px; padding: 1.2rem;
+      border: 1px solid #1e293b; transition: 0.2s;
+    }
+    .timeline-item:hover { border-color: #3b82f6; }
+    .timeline-item .time-title { font-weight: 700; color: #3b82f6; font-size: 1rem; margin-bottom: 0.5rem; }
+    .timeline-item .time-desc { color: #eef2ff; font-size: 1.1rem; font-weight: 500; }
+    .timeline-item .time-note { color: #7e8bb6; font-size: 0.8rem; margin-top: 0.3rem; }
+
+    /* Payment */
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem; margin: 1.5rem 0;
+    }
+    .payment-card {
+      background: #0a0f1c; border-radius: 24px; padding: 1.5rem;
+      border: 1px solid #2d3b6e; transition: 0.2s;
+    }
+    .payment-card:hover { border-color: #3b82f6; transform: translateY(-3px); }
+    .payment-card .price { font-size: 1.8rem; font-weight: 800; color: #eef2ff; margin: 0.5rem 0; }
+    .payment-card ul { margin: 1rem 0; }
+    .payment-card ul li { font-size: 0.85rem; margin-bottom: 0.5rem; padding-left: 1.2rem; }
+    .badge-payment {
+      display: inline-block; background: #1e2a4a; padding: 0.2rem 0.8rem;
+      border-radius: 30px; font-size: 0.7rem; font-weight: 600; color: #90b4ff; margin-bottom: 0.8rem;
+    }
+
+    /* Boxes */
+    .explainer-box {
+      background: #0a0f1c; border-radius: 16px; padding: 1.5rem;
+      margin: 1.5rem 0; border: 1px solid rgba(59,130,246,0.3); border-left: 4px solid #3b82f6;
+    }
+    .explainer-box h4 { color: #3b82f6; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .explainer-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+    .warning-box {
+      background: rgba(251, 191, 36, 0.05); border-radius: 16px; padding: 1.5rem;
+      margin: 1.5rem 0; border: 1px solid rgba(251, 191, 36, 0.3); border-left: 4px solid #fbbf24;
+    }
+    .warning-box h4 { color: #fbbf24; margin-bottom: 0.8rem; }
+    .warning-box p { color: #b0b8d4; font-size: 0.95rem; }
+
+    .trust-box {
+      background: rgba(16, 185, 129, 0.05); border-radius: 16px; padding: 1.5rem;
+      margin: 1.5rem 0; border: 1px solid rgba(16, 185, 129, 0.3); border-left: 4px solid #10b981;
+    }
+    .trust-box h4 { color: #10b981; margin-bottom: 0.8rem; }
+    .trust-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.8rem; }
+
+    .bitcoin-box {
+      background: linear-gradient(135deg, #1a1f2e, #0a0f1c);
+      border-radius: 20px; padding: 1.5rem; margin: 1.5rem 0;
+      border: 1px solid rgba(247, 147, 26, 0.2);
+    }
+    .bitcoin-box h4 { color: #f7931a; margin-bottom: 0.8rem; }
+    .bitcoin-box p { color: #b0b8d4; font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+    /* CTA */
+    .cta-whatsapp {
+      background: linear-gradient(145deg, #071127, #010208); margin: 2.5rem 0;
+      padding: 2.5rem; border-radius: 32px; text-align: center;
+      border: 1px solid rgba(59,130,246,0.3);
+    }
+    .cta-whatsapp h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .cta-whatsapp .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E); padding: 1rem 2.5rem;
+      border-radius: 48px; font-weight: 700; font-size: 1.1rem;
+      display: inline-flex; align-items: center; gap: 0.8rem; margin-top: 1.5rem;
+      transition: 0.2s; color: white; text-decoration: none;
+    }
+    .cta-whatsapp .btn-whatsapp:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(37,211,102,0.3); }
+    .info-contact {
+      background: #0a0f1c; padding: 1rem; border-radius: 16px;
+      display: inline-block; margin: 0.8rem auto; font-size: 0.9rem;
+      color: #cbd5e6; text-align: left;
+    }
+    .info-contact p { margin: 0.3rem 0; }
+
+    footer { border-top: 1px solid rgba(59,130,246,0.2); padding: 2.5rem 0 1.5rem; margin-top: 2rem; }
+    .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; align-items: center; }
+    .footer-logo { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #fff, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-links a { color: #a0a9ce; text-decoration: none; font-size: 0.9rem; }
+    .footer-links a:hover { color: #3b82f6; }
+    .copyright { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5b6b9e; }
+
+    .whatsapp-float {
+      position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); transition: all 0.3s ease; z-index: 999;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float i { font-size: 2.8rem; color: white; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+      .whatsapp-float i { font-size: 2.2rem; }
+      .container { padding: 0 1.2rem; }
+      .service-header h1 { font-size: 1.8rem; }
+    }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/CyberXpert/" class="logo">CYBER<span>XPERT</span></a>
+    <div class="nav-links">
+      <a href="/CyberXpert/servicos">Serviços</a>
+      <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+      <a href="/CyberXpert/faq">FAQ</a>
+      <a href="/CyberXpert/contato">Contato</a>
+      <a href="/CyberXpert/acompanhar-pedido" class="track-btn"><i class="fas fa-map-marker-alt"></i> Acompanhar Pedido</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="service-hero">
+    <div class="service-icon-large">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="service-header">
+      <h1>Hackear E-mail</h1>
+      <div class="rating-badge">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <span>45 avaliações • 4.8/5</span>
+      </div>
+      <p style="margin-top: 0.8rem; color: #b0b8d4;">Acesso completo e remoto a qualquer conta de e-mail — Gmail, Outlook, Yahoo, corporativos e mais. A chave mestra da vida digital de qualquer pessoa.</p>
+      <div class="hero-buttons">
+        <a href="/CyberXpert/contato" class="btn-primary"><i class="fab fa-whatsapp"></i> Falar com Especialista</a>
+        <a href="/CyberXpert/como-funciona" class="btn-outline"><i class="fas fa-book-open"></i> Quero Entender Como Funciona</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Cards -->
+  <div class="info-cards">
+    <div class="info-card"><i class="fas fa-clock"></i><h4>Entrega Rápida</h4><p>5-8 horas em casos padrão</p></div>
+    <div class="info-card"><i class="fas fa-shield-alt"></i><h4>100% Indetectável</h4><p>Sem rastros ou notificações</p></div>
+    <div class="info-card"><i class="fas fa-headset"></i><h4>Suporte 24/7</h4><p>Acompanhamento em tempo real</p></div>
+    <div class="info-card"><i class="fas fa-globe"></i><h4>Todos os Provedores</h4><p>Gmail, Outlook, Yahoo e mais</p></div>
+  </div>
+
+  <!-- Descrição -->
+  <div class="section-block">
+    <h2>Descrição do Serviço</h2>
+    <p>Nosso serviço de hacking de e-mail oferece acesso completo e remoto a qualquer conta de e-mail — Gmail, Outlook (Hotmail), Yahoo Mail, e-mails corporativos e praticamente qualquer provedor. Uma vez obtido o acesso, você pode visualizar todas as mensagens recebidas e enviadas, anexos, contatos salvos, rascunhos e muito mais, sem que o proprietário da conta saiba.</p>
+    
+    <div class="explainer-box">
+      <h4><i class="fas fa-key mr-2"></i> Por que o e-mail é a chave mestra</h4>
+      <p>O e-mail é o centro da vida digital de qualquer pessoa. Com ele, você pode redefinir senhas de redes sociais, acessar contas vinculadas, descobrir quais serviços a pessoa usa, visualizar comprovantes de compras, extratos e muito mais. Hackear um e-mail muitas vezes significa ter acesso a tudo o que está vinculado a ele.</p>
+    </div>
+    
+    <h3>Recursos Incluídos</h3>
+    <ul>
+      <li>Acesso completo a todas as mensagens recebidas e enviadas (incluindo excluídas)</li>
+      <li>Visualização de anexos, fotos, documentos e arquivos</li>
+      <li>Monitoramento de novos e-mails em tempo real</li>
+      <li>Acesso à lista de contatos salvos</li>
+      <li>Visualização de rascunhos e itens da lixeira</li>
+      <li>Possibilidade de redefinir senhas de redes sociais vinculadas ao e-mail</li>
+      <li>Descoberta de contas e serviços associados ao e-mail</li>
+      <li>Suporte 24/7 durante todo o período contratado</li>
+    </ul>
+  </div>
+
+  <!-- Como Funciona o Acesso -->
+  <div class="section-block">
+    <h2>Como Funciona o Acesso</h2>
+    <p>Nosso método de acesso a e-mails é 100% remoto e indetectável. Utilizamos o site oficial de cada provedor como porta de entrada para o acesso.</p>
+    
+    <div class="explainer-box">
+      <h4><i class="fas fa-info-circle mr-2"></i> Acessamos diretamente pelo site oficial</h4>
+      <p>Realizamos o acesso através dos sites oficiais — <a href="https://mail.google.com" target="_blank" rel="noopener" class="highlight-link">Gmail <i class="fas fa-external-link-alt"></i></a>, <a href="https://outlook.live.com" target="_blank" rel="noopener" class="highlight-link">Outlook <i class="fas fa-external-link-alt"></i></a>, <a href="https://mail.yahoo.com" target="_blank" rel="noopener" class="highlight-link">Yahoo Mail <i class="fas fa-external-link-alt"></i></a> ou qualquer outro provedor. É exatamente como se o próprio dono estivesse entrando na conta — sem aplicativos de terceiros, sem ferramentas suspeitas.</p>
+    </div>
+
+    <p>O acesso é configurado de duas formas possíveis, dependendo do caso:</p>
+    <ul>
+      <li><strong>Via Token de Sessão:</strong> Geramos tokens de acesso válidos que permitem entrar na conta como se fosse o próprio usuário, sem disparar notificações de novo login.</li>
+      <li><strong>Via Cookies de Sessão:</strong> Após o primeiro acesso, o provedor de e-mail armazena pequenos arquivos chamados <strong>cookies</strong> no navegador. Esses cookies funcionam como uma "chave de acesso" que mantém a sessão ativa. Conseguimos injetar esses cookies para acessar a conta de forma transparente.</li>
+    </ul>
+
+    <div class="explainer-box">
+      <h4><i class="fas fa-cookie-bite mr-2"></i> O que são Cookies?</h4>
+      <p>Cookies são pequenos arquivos que os sites salvam no seu navegador para lembrar quem você é. Sabe quando você entra no Gmail e ele já te reconhece sem pedir senha de novo? Isso é o cookie funcionando. No e-mail, os cookies guardam a informação de que você já fez login e está autorizado a acessar aquela conta. Nós trabalhamos com a injeção desses cookies para obter acesso sem disparar alertas.</p>
+    </div>
+
+    <p>Todo o processo é realizado sem deixar rastros e sem notificar o proprietário da conta. O acesso é mantido através de nossos servidores seguros, garantindo sua privacidade.</p>
+
+    <p style="margin-top: 1rem;">
+      <a href="/CyberXpert/como-funciona" class="highlight-link">📖 Leia o guia completo do processo aqui →</a>
+    </p>
+  </div>
+
+  <!-- Tempo de Execução -->
+  <div class="section-block">
+    <h2>Tempo de Execução</h2>
+    <div class="timeline-grid">
+      <div class="timeline-item"><div class="time-title">CONTAS PADRÃO</div><div class="time-desc">5 a 8 horas</div><div class="time-note">Após confirmação do pagamento</div></div>
+      <div class="timeline-item"><div class="time-title">VERIFICAÇÃO EM 2 ETAPAS</div><div class="time-desc">Até 24 horas</div><div class="time-note">Taxa adicional de R$ 250,00</div></div>
+      <div class="timeline-item"><div class="time-title">E-MAILS CORPORATIVOS</div><div class="time-desc">3 a 5 dias</div><div class="time-note">Sob consulta</div></div>
+      <div class="timeline-item"><div class="time-title">CONTAS BLOQUEADAS</div><div class="time-desc">Sob consulta</div><div class="time-note">Consulte antes</div></div>
+    </div>
+    <p>Nossa equipe trabalha 24/7 para garantir os melhores prazos possíveis. Você receberá atualizações em tempo real sobre o progresso.</p>
+  </div>
+
+  <!-- Pagamento -->
+  <div class="section-block">
+    <h2>Formas de Pagamento</h2>
+    <div class="payment-options">
+      <div class="payment-card">
+        <div class="badge-payment">ANTECIPADO</div>
+        <div class="price">R$ 500,00</div>
+        <p><strong>Pagamento Adiantado</strong></p>
+        <ul>
+          <li>100% do valor pago antecipadamente</li>
+          <li>Nenhum acréscimo</li>
+          <li>Processo iniciado imediatamente</li>
+          <li>Aceita PIX, transferência e cripto</li>
+        </ul>
+      </div>
+      <div class="payment-card">
+        <div class="badge-payment">EQUILÍBRIO</div>
+        <div class="price">R$ 600,00</div>
+        <p><strong>Pagamento Parcial</strong></p>
+        <ul>
+          <li>50% no início e 50% na conclusão</li>
+          <li>Processo iniciado após primeiro pagamento</li>
+          <li>Aceita PIX, transferência e cripto</li>
+        </ul>
+      </div>
+      <div class="payment-card">
+        <div class="badge-payment">APÓS PROVAS</div>
+        <div class="price">R$ 800,00</div>
+        <p><strong>Pagamento Após Provas</strong></p>
+        <ul>
+          <li>100% do valor pago somente após verificação</li>
+          <li>Exclusivamente em Bitcoin (BTC)</li>
+          <li>Requer comprovação de fundos antes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Como Funcionam as Provas -->
+  <div class="section-block">
+    <h2>Como Funcionam as Provas</h2>
+    <p>Disponível exclusivamente na opção de <strong>Pagamento Após Provas</strong>. As provas são fornecidas para comprovar que o serviço foi concluído com sucesso, não para expor conteúdos privados ou sensíveis.</p>
+    
+    <div class="explainer-box">
+      <h4><i class="fas fa-video mr-2"></i> Como é feita a prova em vídeo?</h4>
+      <p>Gravamos a tela inteira do computador, sem cortes ou edições, mostrando:</p>
+      <ul>
+        <li>O navegador sendo aberto com a barra de endereços visível</li>
+        <li>A digitação do endereço oficial do provedor de e-mail</li>
+        <li>O carregamento completo da página no site oficial</li>
+        <li>O login sendo realizado com sucesso na conta alvo</li>
+        <li>A data e hora do sistema visíveis durante toda a gravação</li>
+      </ul>
+      <p style="margin-top: 0.8rem;">Isso garante que você veja, com seus próprios olhos, que o acesso é real e funcional — direto no site oficial do provedor, sem simulações ou montagens.</p>
+    </div>
+
+    <p><strong>Atenção:</strong> Não fornecemos provas sob demanda, leitura de mensagens específicas ou qualquer conteúdo que viole a privacidade. Se você insistir em solicitar mais provas além do padrão estabelecido, o atendimento será encerrado. Nosso compromisso é com a entrega do serviço contratado, não com exposição desnecessária.</p>
+  </div>
+
+  <!-- Pagamento em Bitcoin Explicado -->
+  <div class="section-block">
+    <h2>Pagamento em Bitcoin — Como Funciona</h2>
+    
+    <div class="bitcoin-box">
+      <h4><i class="fab fa-bitcoin"></i> Por que Bitcoin na opção Após Provas?</h4>
+      <p>A opção de <strong>Pagamento Após Provas</strong> exige pagamento exclusivamente em Bitcoin (BTC). Não aceitamos PIX, transferência ou qualquer outro meio para essa modalidade específica.</p>
+      <p>O motivo é simples: essa é a opção para quem realmente precisa de segurança máxima. Infelizmente, há muitos golpes na internet — pessoas que recebem o serviço e somem sem pagar, ou que tentam manipular comprovantes falsos. Por isso, para quem preza por segurança e quer ver o resultado antes de pagar, oferecemos essa modalidade com um valor um pouco maior e pagamento em Bitcoin, que é irreversível e rastreável, protegendo ambas as partes.</p>
+      <p>Essa modalidade é para quem valoriza confiança e transparência. Cobramos mais caro porque entregamos mais: provas reais, processo seguro e a tranquilidade de pagar apenas depois de ver o resultado.</p>
+    </div>
+
+    <div class="explainer-box">
+      <h4><i class="fas fa-shopping-cart mr-2"></i> Como comprar Bitcoin (mesmo sendo iniciante)</h4>
+      <p>Comprar Bitcoin é mais simples do que parece. Siga este passo a passo:</p>
+      <ol style="color: #b0b8d4; padding-left: 1.2rem; margin: 1rem 0; line-height: 2;">
+        <li><strong>Crie uma conta em uma corretora confiável.</strong> As mais usadas no Brasil são:
+          <ul>
+            <li><strong>Binance</strong> (a maior do mundo, aceita PIX)</li>
+            <li><strong>Mercado Bitcoin</strong> (brasileira, interface simples)</li>
+            <li><strong>Foxbit</strong> (boa para iniciantes)</li>
+          </ul>
+        </li>
+        <li><strong>Compre Bitcoin com PIX.</strong> Todas essas corretoras aceitam PIX. Você transfere o valor em reais e recebe os Bitcoins na sua conta da corretora. É instantâneo.</li>
+        <li><strong>Transfira para sua carteira pessoal.</strong> Recomendamos carteiras como Trust Wallet ou Exodus (são aplicativos gratuitos). Transfira os BTC da corretora para sua carteira.</li>
+        <li><strong>Envie um print da sua carteira com o saldo.</strong> Isso serve apenas para comprovar que você tem os fundos disponíveis. <strong>Você não precisa nos transferir nada antes das provas.</strong></li>
+        <li><strong>Após receber as provas, você faz o pagamento.</strong> Só depois de assistir ao vídeo de acesso e confirmar que está tudo certo, você transfere os Bitcoins para nossa carteira.</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <h4><i class="fas fa-exclamation-triangle mr-2"></i> Importante: Nos contate antes de comprar</h4>
+      <p><strong>Recomendamos que você nos contate antes de iniciar a compra de Bitcoin.</strong> Explicaremos tudo em detalhes e te guiaremos no passo a passo correto. Alguns clientes, na hora de transferir para a carteira pessoal, acabam enviando para o lugar errado por falta de atenção. Não compre sem nos questionar antes ou sem pesquisar — assista a vídeos no YouTube sobre como comprar Bitcoin e transferir para uma carteira. Se tiver qualquer dúvida, fale conosco primeiro. É mais seguro e evita perda de dinheiro.</p>
+    </div>
+
+    <div class="warning-box">
+      <h4><i class="fas fa-hand-holding-usd mr-2"></i> Resumo importante</h4>
+      <p>Você não precisa transferir nenhum valor antecipadamente. Basta comprar os Bitcoins, deixá-los na sua carteira e nos enviar um print comprovando que tem o saldo. O pagamento só acontece depois que você receber e aprovar as provas. Se tiver qualquer dúvida sobre como comprar Bitcoin, fale conosco no WhatsApp — orientamos você em cada passo.</p>
+    </div>
+  </div>
+
+  <!-- Garantias -->
+  <div class="section-block">
+    <h2>Garantias</h2>
+    <ul>
+      <li><strong>Garantia de Satisfação:</strong> Se não conseguirmos acessar a conta, devolvemos 100% do valor pago</li>
+      <li><strong>Sigilo Absoluto:</strong> Seus dados e o propósito do serviço são mantidos em total sigilo</li>
+      <li><strong>Suporte Contínuo:</strong> Assistência durante todo o período contratado</li>
+      <li><strong>Atualizações Gratuitas:</strong> Manutenção do acesso mesmo após atualizações do provedor</li>
+    </ul>
+  </div>
+
+  <!-- Está com medo? Leia isso -->
+  <div class="section-block">
+    <h2>Está com medo de comprar e não receber o que espera?</h2>
+    
+    <div class="trust-box">
+      <h4><i class="fas fa-heart mr-2"></i> Entendemos perfeitamente</h4>
+      <p>Sabemos que a internet está cheia de promessas falsas. É normal sentir receio. Você não é o primeiro a se sentir assim — e não será o último. Recebemos dezenas de clientes por mês, e cerca de 90% deles chegam com as mesmas perguntas:</p>
+      <p style="color: #fbbf24; font-style: italic;">"Mas eu posso pagar depois?"<br>
+      "Mas eu posso ver primeiro?"<br>
+      "Mas eu posso entrar na conta antes de pagar?"<br>
+      "Deixa eu só ver isso aqui antes..."<br>
+      "Me mostra só esse e-mail que eu pago..."</p>
+      <p>Serviços hackers são caros, complexos e demorados. Infelizmente, 70% das pessoas que nos chamam apenas fazem perguntas ou tentam conseguir o serviço de graça, insistindo em coisas como "deixa eu entrar primeiro que pago a mais" ou "me fala só isso" ou "me mostra só aquilo".</p>
+      <p>Lidamos com esse tipo de situação todos os dias — e ainda assim, temos que manter o foco no serviço, que é técnico, delicado e consome horas da nossa equipe.</p>
+      <p>Por isso, criamos a <strong>opção de Pagamento Após Provas por R$ 800 em Bitcoin</strong>: para quem quer segurança máxima e prioridade no atendimento. Nela, você só paga depois de ver o resultado com seus próprios olhos.</p>
+      <p>Caso ainda tenha dúvidas, temos seções inteiras dedicadas a respondê-las:</p>
+      <p style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+        <a href="/CyberXpert/como-funciona" class="highlight-link">🔧 Ver todo o processo de hackeamento detalhado →</a>
+        <a href="/CyberXpert/faq" class="highlight-link">📖 Ver todas as Perguntas Frequentes (FAQ) →</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-whatsapp">
+    <h2>Pronto para começar?</h2>
+    <p>Para iniciar seu atendimento, clique no botão abaixo. Preferimos que você já nos envie:</p>
+    <div class="info-contact">
+      <p>Serviço que deseja contratar: Hackear E-mail</p>
+      <p>Endereço de e-mail da conta alvo</p>
+      <p>Sua preferência de forma de pagamento</p>
+    </div>
+    <a href="/CyberXpert/contato" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Falar com Especialista Agora</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">CyberXpert</div>
+      <div class="footer-links">
+        <a href="/CyberXpert/servicos">Serviços</a>
+        <a href="/CyberXpert/sobre-nos">Sobre Nós</a>
+        <a href="/CyberXpert/faq">FAQ</a>
+        <a href="/CyberXpert/contato">Contato</a>
+      </div>
+      <div><i class="fas fa-globe"></i> Português (BR) | BRL (R$)</div>
+    </div>
+    <div class="copyright">© 2026 CyberXpert. Todos os direitos reservados.</div>
+  </footer>
+</div>
+
+<a href="/CyberXpert/contato" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
